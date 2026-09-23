@@ -1,0 +1,1761 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLUBE · Parceiros 2026</title>
+<meta name="description" content="Apresentação do CLUBE para parceiros e patrocinadores — Rua da Consolação, 1813, São Paulo.">
+<meta property="og:title" content="CLUBE · Parceiros 2026">
+<meta property="og:description" content="Proposta de parceria do CLUBE. Rua da Consolação, 1813, São Paulo.">
+<meta property="og:image" content="https://clube-parceiros-2026.vercel.app/assets/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://clube-parceiros-2026.vercel.app">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@font-face{font-family:"Archivo";src:url("assets/Archivo-ExtraLight.woff2") format("woff2");font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:"Archivo";src:url("assets/Archivo-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Archivo";src:url("assets/Archivo-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Archivo";src:url("assets/Archivo-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Archivo";src:url("assets/Archivo-LightItalic.woff2") format("woff2");font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:"Archivo";src:url("assets/Archivo-Italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+
+:root{
+  --black:#000000;
+  --ink:#0a0a0b;
+  --deep:#6f6f6f;
+  --base:#9d9d9e;
+  --mid:#b7b9bc;
+  --light:#cccccd;
+  --soft:#e3e4e5;
+  --white:#ffffff;
+  --heat:#ff0000; --pulse:#ff4c2c; --impact:#ff8564;
+  --flow:#00b02a; --signal:#00c059; --field:#00771a;
+  --freq:#00a0e2; --glow:#07b9df; --night:#0070ae;
+  --metal:linear-gradient(90deg,#6f6f6f 1%,#ffffff 19%,#9c9d9d 41%,#d2d3d3 52%,#b4b4b5 64%,#858585 70%,#cbcccd 75%,#e3e4e5 84%);
+  --metal-v:linear-gradient(180deg,#6f6f6f 1%,#ffffff 19%,#9c9d9d 41%,#d2d3d3 52%,#b4b4b5 64%,#858585 70%,#cbcccd 75%,#e3e4e5 84%);
+  --grad-red:linear-gradient(90deg,#ff8564 0%,#ff4c2c 55%,#ff0000 91%);
+  --grad-green:linear-gradient(90deg,#00c059 0%,#00b02a 55%,#00771a 91%);
+  --grad-blue:linear-gradient(90deg,#07b9df 0%,#00a0e2 55%,#0070ae 91%);
+  --archivo:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --gap:6px;
+  --pad:clamp(20px,3.2vw,48px);
+  --bar:44px;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  background:var(--black);
+  color:var(--soft);
+  font-family:var(--archivo);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* ---------- top bar: the signature line kept from the 2023 deck ---------- */
+.bar{
+  position:fixed;inset:0 0 auto 0;height:var(--bar);z-index:20;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  padding:0 var(--pad);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;
+  color:var(--mid);
+  mix-blend-mode:difference;
+  pointer-events:none;
+}
+.bar .l{display:flex;gap:2.4em}
+.bar .c{font-variant-numeric:tabular-nums}
+.bar .r{text-align:right}
+.bar .c b{font-weight:400;color:var(--white)}
+
+/* ---------- deck ---------- */
+.deck{
+  height:100vh;height:100svh;overflow-y:auto;overflow-x:hidden;
+  scroll-snap-type:y mandatory;scroll-behavior:smooth;overscroll-behavior-y:contain;
+  scrollbar-width:none;
+}
+.deck::-webkit-scrollbar{display:none}
+.slide{
+  position:relative;
+  min-height:100vh;min-height:100svh;
+  scroll-snap-align:start;
+  padding:calc(var(--bar) + 8px) var(--pad) var(--pad);
+  display:grid;gap:var(--gap);
+  background:var(--black);color:var(--soft);
+}
+.slide.light{background:var(--soft);color:var(--black)}
+.slide.grey{background:var(--light);color:var(--black)}
+
+/* blocks: rectangular, no radius, no overlap — per brandbook */
+.blk{position:relative;overflow:hidden;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(16px,2vw,28px)}
+.blk.img,.blk.fig,.blk.card,.blk.feed,.blk.lockup,.s-capa .hero{min-height:0}
+.blk.img{padding:0;min-height:160px}
+.blk.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.blk.img.cover-top img{object-position:50% 20%}
+.blk.black{background:var(--black);color:var(--soft)}
+.blk.ink{background:var(--ink);color:var(--soft)}
+.blk.soft{background:var(--soft);color:var(--black)}
+.blk.mid{background:var(--mid);color:var(--black)}
+.blk.light{background:var(--light);color:var(--black)}
+.blk.deep{background:var(--deep);color:var(--white)}
+.blk.metal{background:var(--metal);background-size:112% 100%;background-position:100% 0;color:var(--black)}
+.blk.metal-v{background:var(--metal-v);color:var(--black)}
+.blk.red{background:var(--grad-red);color:var(--black)}
+.blk.green{background:var(--grad-green);color:var(--black)}
+.blk.blue{background:var(--grad-blue);color:var(--black)}
+.blk.heat{background:var(--heat);color:var(--black)}
+.blk.flow{background:var(--flow);color:var(--black)}
+.blk.freq{background:var(--freq);color:var(--black)}
+.blk.top{justify-content:flex-start}
+.blk.between{justify-content:space-between}
+.blk.center{justify-content:center;align-items:center;text-align:center}
+
+/* ---------- type scale (Archivo hierarchy) ---------- */
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;opacity:.75;margin:0 0 .9em}
+.h1{font-weight:200;font-size:clamp(40px,6.4vw,104px);line-height:.96;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.h2{font-weight:300;font-size:clamp(30px,4.2vw,64px);line-height:1;letter-spacing:-.015em;margin:0;text-wrap:balance}
+.h3{font-weight:300;font-size:clamp(22px,2.4vw,36px);line-height:1.1;margin:0;text-wrap:balance}
+.h4{font-weight:400;font-size:clamp(16px,1.35vw,20px);line-height:1.2;margin:0}
+.body{font-size:clamp(14px,1.15vw,17px);line-height:1.5;max-width:62ch;margin:0}
+.body+.body{margin-top:.9em}
+.small{font-size:clamp(12px,.95vw,14px);line-height:1.45;max-width:58ch;margin:0}
+.muted{opacity:.7}
+.hot{color:var(--heat)}
+.num{font-weight:200;font-size:clamp(56px,7vw,120px);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin:0}
+.rule{border:0;border-top:1px solid currentColor;opacity:.25;margin:14px 0}
+ul.list{list-style:none;padding:0;margin:0;display:grid;gap:.45em}
+ul.list li{padding-left:1.1em;position:relative;font-size:clamp(13px,1.05vw,16px);line-height:1.45}
+ul.list li::before{content:"";position:absolute;left:0;top:.62em;width:.45em;height:1px;background:currentColor}
+.tag{display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:400;padding:.5em .8em;border:1px solid currentColor}
+
+/* ---------- logo: raster mask filled with animated metal ---------- */
+.logo{
+  display:block;aspect-ratio:1478/362;
+  -webkit-mask:url("assets/logo-clube.webp") center/contain no-repeat;
+  mask:url("assets/logo-clube.webp") center/contain no-repeat;
+  background:var(--metal);background-size:300% 100%;
+  animation:sweep 9s linear infinite;
+}
+.logo.solid{background:currentColor;animation:none}
+.logo.bar-v{aspect-ratio:1462/568;-webkit-mask-image:url("assets/logo-clube-bar.webp");mask-image:url("assets/logo-clube-bar.webp")}
+@keyframes sweep{from{background-position:0% 0}to{background-position:-200% 0}}
+.metal-text{background:var(--metal);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sweep 9s linear infinite}
+.mark{width:100%;height:100%;object-fit:contain}
+@media (prefers-reduced-motion:reduce){.logo,.metal-text{animation:none}}
+
+/* ---------- 21st-inspired elements, ported to vanilla ---------- */
+/* liquid metal (WebGL) inside the masked logo */
+.logo{position:relative}
+.logo canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.logo.gl{background:none;animation:none}
+/* text marquee with progressive fade at the edges */
+.marquee{overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee .track{display:inline-flex;gap:0;will-change:transform;animation:marquee var(--speed,28s) linear infinite}
+.marquee.reverse .track{animation-direction:reverse}
+.marquee .track>span{display:inline-block;padding:0 .35em}
+.marquee .track .sep{opacity:.45}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ribbon{font-weight:200;font-size:clamp(34px,4.6vw,72px);line-height:1;letter-spacing:-.02em;text-transform:uppercase}
+/* lockup marquee (co-branding) */
+.lockups{margin-top:auto;padding-top:clamp(16px,2vw,28px);border-top:1px solid rgba(0,0,0,.18);width:100%}
+.lockups .track>span{display:inline-flex;align-items:center;gap:0;padding:0 2.2em}
+.lockups .logo{width:150px;color:var(--black)}
+.lockups .div{width:2px;height:34px;background:var(--black);margin:0 1.2em}
+.lockups .partner{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:400}
+/* word-by-word title reveal */
+.w{display:inline-block}
+.slide.entered .w{animation:wordUp .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(140ms + var(--w,0) * 45ms)}
+@keyframes wordUp{from{opacity:0;transform:translateY(.35em)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.marquee .track{animation:none}.slide.entered .w{animation:none}}
+
+/* full-bleed image slide: the picture is the page, with a gallery behind the arrows */
+.slide.s-full{padding:0;display:block;overflow:hidden}
+.s-full .gal{position:absolute;inset:0}
+.s-full .fr{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .55s cubic-bezier(.2,.7,.2,1)}
+.s-full .fr.on{opacity:1;visibility:visible}
+.s-full .fr img,.s-full .fr video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.s-full .cap p.small + p.small{margin-top:.8em}
+/* layout boards are shown whole, never cropped */
+.s-full .fr.fit img{object-fit:contain;background:#000}
+.s-full .blk.cap{position:absolute;left:var(--pad);bottom:var(--pad);max-width:min(440px,calc(100% - 2*var(--pad)));background:var(--black);color:var(--soft)}
+.s-full .blk.cap .h3{margin-bottom:.35em}
+.s-full .arw{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:clamp(38px,3.2vw,52px);height:clamp(38px,3.2vw,52px);
+  display:grid;place-items:center;padding:0;border:1px solid rgba(227,228,229,.4);background:rgba(0,0,0,.32);color:var(--soft);
+  cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .25s,border-color .25s,opacity .25s}
+.s-full .arw svg{width:40%;height:40%;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:square}
+.s-full .arw:hover{background:rgba(0,0,0,.72);border-color:var(--soft)}
+.s-full .arw:focus-visible{outline:2px solid var(--soft);outline-offset:3px}
+.s-full .arw.prev{left:var(--pad)}
+.s-full .arw.next{right:var(--pad)}
+.s-full .count{position:absolute;right:var(--pad);top:calc(var(--bar) + clamp(14px,1.8vw,26px));z-index:5;display:flex;align-items:center;gap:10px;
+  font-size:11px;letter-spacing:.18em;font-weight:400;color:var(--soft)}
+.s-full .count .n{opacity:.55}
+.s-full .count .n b{font-weight:500;opacity:1;color:var(--soft)}
+.s-full .count .ticks{display:flex;gap:6px}
+.s-full .count .ticks i{width:16px;height:2px;background:rgba(227,228,229,.28);cursor:pointer;transition:background .25s}
+.s-full .count .ticks i.on{background:var(--soft)}
+@media (max-width:900px){
+  body:not(.pdf) .slide.s-full{min-height:72svh}
+  body:not(.pdf) .s-full .arw{width:40px;height:40px}
+}
+
+/* ---------- slide layouts ---------- */
+/* capa */
+.s-capa{grid-template-columns:1fr;grid-template-rows:1fr auto}
+.s-capa .hero{display:grid;place-items:center;place-content:center;padding:0;min-height:40svh}
+.s-capa .hero .logo{width:min(64vw,900px)}
+.s-capa .foot{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:var(--gap);padding:0}
+.s-capa .foot .blk{min-height:120px}
+
+/* índice */
+.s-index{grid-template-columns:5fr 7fr}
+.s-index ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;counter-reset:i}
+.s-index ol li{counter-increment:i;font-size:clamp(15px,1.5vw,24px);font-weight:300;line-height:1.15;padding:.55em 0;border-bottom:1px solid rgba(0,0,0,.18);display:flex;gap:1em;align-items:baseline}
+.s-index ol li::before{content:counter(i,decimal-leading-zero);font-size:.6em;letter-spacing:.1em;font-weight:400;opacity:.6;font-variant-numeric:tabular-nums}
+.s-index ol li a{text-decoration:none}
+
+/* conceito */
+.s-conceito{grid-template-columns:repeat(4,1fr);grid-template-rows:auto 1fr}
+.s-conceito .intro{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end}
+.s-conceito .step{min-height:0}
+.s-conceito .step .h3{margin-bottom:.4em}
+.s-conceito .step .arrow{position:absolute;top:clamp(16px,2vw,28px);right:clamp(16px,2vw,28px);font-size:11px;letter-spacing:.18em;opacity:.55}
+
+/* frase */
+.s-frase{grid-template-columns:1fr;place-items:center}
+.s-frase .h1{text-align:center;font-size:clamp(44px,8vw,150px)}
+
+/* missão */
+.s-missao{grid-template-columns:7fr 5fr;grid-template-rows:1fr 1fr}
+.s-missao .txt{grid-row:1/3}
+
+/* noturno (stats) */
+.s-noturno{grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto auto;align-content:space-between}
+.s-noturno .head{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end}
+/* os quatro números são um conjunto: alinhados pela base e do tamanho do próprio
+   conteúdo. Esticado, o bloco metálico virava uma barra sozinha na página. */
+.s-noturno .stat{align-self:start;justify-content:flex-start;--rule:rgba(0,0,0,.22);--beam:rgba(0,0,0,.75)}
+.s-noturno .stat .num{margin-bottom:.15em}
+.s-noturno .quote{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:var(--pad);align-items:start;padding:clamp(16px,2vw,28px)}
+.s-noturno .quote .h3{font-style:italic;font-weight:300}
+
+/* pilares */
+/* fios que se desenham na entrada e refletem no hover (Estratégias e estatísticas) */
+.rule-row{position:relative;border-top:none !important}
+.rule-row::before,.rule-row::after{content:"";position:absolute;left:0;top:0;height:1px;pointer-events:none}
+.rule-row::before{right:0;background:var(--rule,rgba(227,228,229,.3));transform:scaleX(0);transform-origin:left center}
+.slide.entered .rule-row::before{animation:ruleIn .75s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(160ms + var(--i,0) * 110ms)}
+.rule-row::after{width:38%;opacity:0;background:linear-gradient(90deg,transparent,var(--beam,rgba(227,228,229,.95)),transparent)}
+@media (hover:hover){.rule-row:hover::after{animation:ruleBeam 1s cubic-bezier(.3,.6,.3,1)}}
+@keyframes ruleIn{to{transform:scaleX(1)}}
+@keyframes ruleBeam{0%{opacity:0;transform:translateX(-40%)}15%{opacity:1}100%{opacity:0;transform:translateX(262%)}}
+@media (prefers-reduced-motion:reduce){
+  .slide.entered .rule-row::before{animation:none;transform:scaleX(1)}
+  .rule-row:hover::after{animation:none}
+}
+
+.s-pilares{grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto auto;align-content:space-between}
+.s-pilares .head{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end}
+.s-pilares .pilar{align-self:start;justify-content:flex-start}
+.s-pilares .pilar .idx{font-size:11px;letter-spacing:.18em;font-weight:400;opacity:.5;margin-bottom:2.4em}
+.s-pilares .pilar .h4{margin-bottom:.5em}
+.s-pilares .foot{grid-column:1/-1;padding-top:0}
+
+/* espaço */
+.s-espaco{grid-template-columns:8fr 4fr;grid-template-rows:2fr 1fr 1fr 1fr}
+.s-espaco .big{grid-row:1/5}
+.s-espaco .cap{grid-column:2}
+
+/* andares: lista que abre e revela a foto do andar (porte do cinematic-list do 21st.dev) */
+.s-andares{grid-template-rows:auto 1fr;gap:var(--gap)}
+.s-andares .head{display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end;padding:clamp(16px,2vw,28px) 0}
+.s-andares .cine{display:flex;flex-direction:column;justify-content:center;padding:0;background:none;border-top:1px solid rgba(227,228,229,.18)}
+.s-andares .row{position:relative;display:flex;align-items:center;overflow:hidden;cursor:default;
+  height:clamp(88px,12vh,132px);border-bottom:1px solid rgba(227,228,229,.18);
+  transition:height .7s cubic-bezier(.25,1,.5,1)}
+.s-andares .row .bg{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity .7s ease-out}
+.s-andares .row .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1s ease-out}
+.s-andares .row .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.82),rgba(0,0,0,.25) 55%,rgba(0,0,0,.05))}
+.s-andares .row .in{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;width:100%;
+  padding:0 clamp(16px,2.2vw,34px);gap:clamp(16px,2vw,32px)}
+.s-andares .row .lft{display:flex;align-items:center;gap:clamp(20px,3.4vw,56px);min-width:0}
+.s-andares .row .idx{font-size:11px;letter-spacing:.18em;font-weight:400;opacity:.45;font-variant-numeric:tabular-nums;transition:opacity .5s}
+.s-andares .row .nome{font-weight:300;font-size:clamp(24px,3.4vw,52px);line-height:1;letter-spacing:-.02em;margin:0;
+  transition:transform .7s cubic-bezier(.25,1,.5,1),color .5s}
+.s-andares .row .sub{margin:.5em 0 0;max-width:46ch;opacity:0;transform:translateY(10px);
+  transition:opacity .6s ease-out .1s,transform .6s cubic-bezier(.25,1,.5,1) .1s}
+.s-andares .row .meta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;opacity:.45;
+  transform:translateY(12px);transition:opacity .7s,transform .7s cubic-bezier(.25,1,.5,1)}
+.s-andares .row .go{flex:none;width:clamp(36px,2.8vw,44px);height:clamp(36px,2.8vw,44px);border-radius:50%;
+  border:1px solid rgba(227,228,229,.35);display:grid;place-items:center;color:var(--soft);
+  transition:background .5s,border-color .5s,color .5s,transform .5s}
+.s-andares .row .go svg{width:42%;height:42%;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:square;transition:transform .5s}
+@media (hover:hover){
+  .s-andares .row:hover{height:min(46vh,420px)}
+  .s-andares .row:hover .bg{opacity:1}
+  .s-andares .row:hover .bg img{transform:scale(1)}
+  .s-andares .row:hover .idx{opacity:.85}
+  .s-andares .row:hover .nome{transform:translateY(-6px);color:var(--white)}
+  .s-andares .row:hover .sub{opacity:.9;transform:none}
+  .s-andares .row:hover .meta{opacity:1;transform:none}
+  .s-andares .row:hover .go{background:var(--soft);border-color:var(--soft);color:var(--black);transform:scale(1.1)}
+  .s-andares .row:hover .go svg{transform:rotate(-45deg)}
+}
+@media (max-width:900px){
+  body:not(.pdf) .s-andares .head{grid-template-columns:1fr}
+  body:not(.pdf) .s-andares .row{height:clamp(76px,14vh,110px)}
+  body:not(.pdf) .s-andares .row .sub,body:not(.pdf) .s-andares .row .meta{display:none}
+}
+/* impresso: todos os andares abertos, com a foto visível */
+body.pdf .s-andares .row{height:auto;min-height:210px}
+body.pdf .s-andares .row .bg{opacity:1}
+body.pdf .s-andares .row .bg img{transform:none}
+body.pdf .s-andares .row .sub,body.pdf .s-andares .row .meta{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.s-andares .row,.s-andares .row *{transition:none !important}}
+
+.s-galeria{grid-template-columns:repeat(3,1fr);grid-template-rows:auto 1fr 1fr}
+/* a noite: retratos em pé nas pontas, horizontais no miolo */
+.s-noite{grid-template-columns:repeat(4,1fr);grid-template-rows:auto 1fr 1fr}
+.s-noite .head{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end}
+.s-noite .tall{grid-row:2/4}
+.s-noite .blk.img{min-height:0}
+.s-galeria .head{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end}
+
+/* galeria expansível: painéis numa linha flex; o aberto assume a proporção da foto, os outros dividem o resto.
+   Só no link, em telas largas e com movimento liberado; PDF, celular e movimento reduzido mantêm a grade estática. */
+:root{--ez:cubic-bezier(.22,1,.36,1)}
+.slide.xg-on{grid-template-columns:minmax(0,1fr) !important;grid-template-rows:auto minmax(0,1fr) !important}
+.slide.xg-on>.head{grid-column:1/-1}
+.slide.xg-on>.blk.img,.slide.xg-on>.blk.cap{display:none !important}
+.xg-strip{grid-column:1/-1;display:flex;flex-direction:column;gap:8px;min-height:0;min-width:0;width:100%;height:100%;overflow:hidden}
+.xg-row{display:flex;align-items:center;gap:8px;flex:1 1 0;min-height:0;min-width:0;width:100%}
+.xp{position:relative;flex:1 1 0px;min-width:32px;height:100%;padding:0;margin:0;border:0;background:#000;overflow:hidden;cursor:pointer;
+  color:inherit;font:inherit;text-align:left;
+  transition:flex-grow .62s var(--ez),flex-basis .62s var(--ez),height .62s var(--ez)}
+.xp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.xp::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,0) 45%);opacity:0;transition:opacity .4s var(--ez);pointer-events:none}
+.xp .xc{position:absolute;left:clamp(14px,1.4vw,22px);right:clamp(14px,1.4vw,22px);bottom:clamp(12px,1.3vw,20px);z-index:1;color:#fff;
+  opacity:0;transform:translateY(10px);transition:opacity .35s var(--ez),transform .4s var(--ez);pointer-events:none}
+.xp .xc b{display:block;font-weight:400;font-size:clamp(15px,1.25vw,19px);line-height:1.2;text-wrap:balance}
+.xp .xc span{display:block;margin-top:.35em;font-size:clamp(12px,.9vw,14px);line-height:1.45;max-width:46ch;opacity:.85;text-wrap:pretty}
+.xp.open::after,.xp.open .xc{opacity:1}
+.xp.open .xc{transform:none}
+.xp:focus-visible{outline:2px solid var(--soft);outline-offset:3px}
+.slide.light .xp:focus-visible{outline-color:var(--black)}
+
+/* statements: uma frase grande, centralizada, com o conceito principal */
+.s-statement{grid-template-columns:1fr;place-items:center}
+.s-statement .h1{text-align:center;font-size:clamp(40px,6.8vw,124px);max-width:14ch;text-wrap:balance;line-height:1.02}
+.s-statement.light .h1{color:var(--black)}
+/* mobiliário: texto + duas fotos */
+.s-mob{grid-template-columns:5fr 3.4fr 3.6fr;grid-template-rows:1fr 1fr}
+.s-mob .txt{grid-column:1;grid-row:1/3}
+.s-mob .img{min-height:0}
+.s-mob .tall{grid-column:2;grid-row:1/3}
+/* the force: crédito do estúdio */
+.s-force{grid-template-columns:5fr 7fr}
+.s-force .mark{display:grid;place-items:center;place-content:center;padding:0}
+.s-force .mark .tf{width:min(26vw,300px);aspect-ratio:1;-webkit-mask:url("assets/logo-theforce.webp") center/contain no-repeat;mask:url("assets/logo-theforce.webp") center/contain no-repeat;background:currentColor;color:var(--soft)}
+@media (max-width:900px){
+  body:not(.pdf) .s-menu .trilha{grid-column:1/-1 !important;height:52svh;min-height:280px}
+  body:not(.pdf) .slide.xg-on{grid-template-columns:1fr !important}
+  body:not(.pdf) .slide.xg-on>.head,body:not(.pdf) .slide.xg-on>.xg-strip{grid-column:1/-1 !important}
+  body:not(.pdf) .slide.xg-on .xg-strip{height:64svh;width:100%}
+  body:not(.pdf) .s-mob{grid-template-columns:1fr}
+  body:not(.pdf) .s-mob .img{aspect-ratio:3/2}
+  body:not(.pdf) .s-force{grid-template-columns:1fr}
+}
+
+/* capítulo do conceito (02–04): a tese em tipografia grande, depois a identidade e a comunicação como ilustração dela */
+.s-tese{grid-template-columns:5fr 7fr;gap:var(--pad);align-items:stretch}
+.s-tese .lead{display:flex;flex-direction:column;justify-content:space-between;padding:clamp(16px,2vw,28px) 0}
+.s-tese .lead .h1{font-size:clamp(34px,4.7vw,80px);line-height:1;max-width:11ch}
+.s-tese .lead .fonte{max-width:40ch}
+.s-tese .teses{display:grid;grid-template-rows:repeat(3,1fr);padding:0;background:none}
+.s-tese .tese{display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,2vw,32px);align-content:center;padding:clamp(14px,1.8vw,26px) 0}
+.s-tese .tese .idx{font-size:11px;letter-spacing:.18em;font-weight:400;opacity:.5;padding-top:.55em;font-variant-numeric:tabular-nums}
+.s-tese .tese .h3{font-size:clamp(22px,2.5vw,40px);margin:0 0 .4em}
+.s-tese .tese .big{font-size:clamp(15px,1.4vw,22px);line-height:1.45;max-width:50ch;margin:0;text-wrap:pretty}
+.cap-cont{display:block;margin-bottom:.9em}
+.s-essencia .txt .body{font-size:clamp(15px,1.3vw,20px);max-width:48ch}
+.s-marca .txt .h2{font-size:clamp(26px,3vw,48px)}
+.s-marca .txt .body{font-size:clamp(15px,1.3vw,20px);max-width:44ch}
+@media (max-width:900px){
+  body:not(.pdf) .s-tese{grid-template-columns:1fr}
+  body:not(.pdf) .s-tese .lead .h1{max-width:none}
+}
+
+/* essência + figuras */
+.s-essencia{grid-template-columns:3fr 3fr 6fr;grid-template-rows:1fr 1fr}
+.s-essencia .txt{grid-column:3;grid-row:1/3}
+.s-essencia .fig{display:grid;place-items:center;padding:clamp(12px,1.5vw,24px);min-height:220px}
+.s-essencia .fig img{position:absolute;inset:0;margin:auto;width:auto;height:auto;max-width:calc(100% - 2*clamp(12px,1.5vw,24px));max-height:calc(100% - 2*clamp(12px,1.5vw,24px));object-fit:contain}
+.s-essencia .fig .cap{position:absolute;left:clamp(16px,2vw,28px);bottom:clamp(12px,1.5vw,22px);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+
+/* marca / mockups */
+.s-marca{grid-template-columns:repeat(2,1fr);grid-template-rows:1fr 1fr}
+.s-marca .txt{grid-row:2}
+
+/* programação */
+.s-prog{grid-template-columns:5fr 4fr 3fr;grid-template-rows:1fr 1fr auto}
+.s-prog .txt{grid-row:1/3}
+.s-prog .ribbon-blk{grid-column:1/-1;padding:clamp(14px,1.6vw,22px) 0}
+.s-prog .who{position:absolute;inset:auto 0 0 0;padding:clamp(16px,2vw,28px);background:linear-gradient(180deg,transparent,rgba(0,0,0,.75))}
+
+/* artistas */
+.s-arte{grid-template-columns:repeat(4,1fr);grid-template-rows:auto 1fr auto}
+.s-arte .head{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end}
+.s-arte .cap{background:var(--ink);min-height:auto}
+.s-arte .cap .h4{margin-bottom:.35em}
+
+/* membership: the card is rendered live, so it gets its own block system */
+.mcard.tilt{transition:transform .35s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;will-change:transform}
+.mcard{background:#111 url("assets/card-grafite-2k.webp") center/cover no-repeat !important}
+.mcard>canvas.lux{position:absolute;inset:0;width:100%;height:100%;display:block;border-radius:inherit}
+.mcard{position:relative;width:100%;aspect-ratio:1.586;border-radius:4.2%/6.7%;overflow:hidden;background:#9c9d9d;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.mcard canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.s-card{grid-template-columns:5fr 7fr}
+.s-card .stage{display:flex;align-items:center;justify-content:center;padding:clamp(20px,3vw,44px)}
+.s-card .stage .mcard{max-width:820px}
+
+/* iPhone 17 Pro, graded with the curve measured off the retouched frame */
+.s-wallet{display:block;padding:0;overflow:hidden}
+.s-wallet .m17{position:absolute;right:1%;top:50%;transform:translateY(-50%);height:97%;aspect-ratio:1180/1230;
+  filter:url(#m17grade);--cx:330px;--cy:60px;--cw:1180}
+.s-wallet .m17 .space{position:absolute;left:0;top:0;width:2000px;height:1335px;transform-origin:0 0}
+.s-wallet .m17 .space>img{position:absolute;display:block}
+.s-wallet .m17 .base{left:0;top:0;width:2000px;height:1335px}
+.s-wallet .m17 .mask{position:absolute;left:577px;top:322px;width:537px;height:863px;overflow:hidden;background:#000;
+  -webkit-mask:url("assets/m17-screen.webp") 0 0/100% 100% no-repeat;mask:url("assets/m17-screen.webp") 0 0/100% 100% no-repeat}
+.s-wallet .m17 .content{position:absolute;left:0;top:0;width:1260px;height:2736px;transform-origin:0 0;
+  transform:translate(-577px,-322px) matrix3d(0.254653,0.048873,0,-0.000018,-0.079100,0.279219,0,-0.000006,0,0,1,0,776.300000,317.817352,0,1)}
+.s-wallet .m17 .content .ios{transform:scale(4.2);transform-origin:0 0}
+.s-wallet .m17 .l7{left:572px;top:151px;width:773px;mix-blend-mode:screen}
+.s-wallet .m17 .l8{left:572px;top:151px;width:773px;mix-blend-mode:multiply}
+.s-wallet .m17 .cam2{left:885px;top:357px;width:110px}
+.s-wallet .copy{position:absolute;left:var(--pad);bottom:11%;width:30%;min-width:290px;max-width:420px;z-index:2}
+
+/* iOS screens, 300 x 651 design units */
+.ios{position:relative;width:300px;height:651px;background:#000;color:#fff;overflow:hidden;
+  font-family:-apple-system,"SF Pro Text","SF Pro Display",system-ui,"Segoe UI",Roboto,sans-serif}
+.ios .st{position:absolute;top:16px;left:26px;right:26px;display:flex;justify-content:space-between;font-size:13px;font-weight:600;z-index:2}
+.ios .hd{position:absolute;top:66px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:center}
+.ios .hd b{font-size:28px;font-weight:700;letter-spacing:-.02em}
+.ios .hd i{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#2c2c2e;font-style:normal;font-size:19px;line-height:1;margin-left:8px}
+.ios .hm{position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:110px;height:5px;border-radius:3px;background:#fff;opacity:.9}
+.ios .stk{position:absolute;left:12px;right:12px;top:118px}
+.ios .pass{position:relative;height:174px;border-radius:12px;overflow:hidden}
+.ios .pass .mcard{width:100%;height:100%;aspect-ratio:auto;border-radius:12px;box-shadow:none}
+.ios .tp{position:absolute;left:12px;right:12px;top:58px;aspect-ratio:1.586;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+.ios .tp .mcard{width:100%;height:100%;aspect-ratio:auto;border-radius:12px;box-shadow:none}
+.ios .ctr{position:absolute;left:0;right:0;top:46%;display:grid;justify-items:center;gap:10px}
+.ios .ctr .ic{width:38px;height:38px;border-radius:50%;border:2.5px solid #0a84ff;display:grid;place-items:center;color:#0a84ff}
+.ios .ctr .ic svg{width:22px;height:22px}
+.ios .ctr span{font-size:13px;font-weight:400;color:#c7c7cc}
+
+/* hotel: texto e retrato à esquerda, paisagem ocupando a coluna da direita */
+.s-hotel{grid-template-columns:5fr 4fr 4fr;grid-template-rows:1fr}
+.s-hotel .txt{grid-column:1}
+.s-hotel .port{grid-column:2;min-height:0}
+.s-hotel .land{grid-column:3;min-height:0}
+@media (max-width:900px){
+  body:not(.pdf) .s-hotel{grid-template-columns:1fr}
+  body:not(.pdf) .s-hotel .port,body:not(.pdf) .s-hotel .land{aspect-ratio:3/2}
+}
+
+/* door + wrist: one composed scene */
+.s-porta{display:block;padding:0;overflow:hidden}
+.s-porta .copy p.small+p.small{margin-top:.9em}
+.s-porta .copy{position:absolute;left:var(--pad);top:calc(var(--bar) + 7%);width:26%;min-width:280px;max-width:360px;z-index:3}
+.s-porta .scene{position:absolute;right:1.5%;bottom:0;width:min(71%,calc(100% - 400px));max-height:88%;aspect-ratio:1000/700}
+.s-porta .scene>*{position:absolute}
+.s-porta .slot-a{left:28%;top:0;width:35.5%}
+.s-porta .slot-b{left:64.5%;top:5%;width:35.5%}
+.s-porta .wslot{left:0;bottom:-3%;width:25%;aspect-ratio:210/330}
+.s-porta .wslot .wch{position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(var(--k,1))}
+/* iPhone shell - 19.5:9, the real device ratio */
+/* passe: Wallet e porta na mesma página. O iPhone do Wallet é o herói à direita; o trio da porta fica no meio, em escala menor */
+.s-passe .copy{left:var(--pad);top:calc(var(--bar) + 5%);bottom:auto;width:26%;min-width:280px;max-width:380px;z-index:3}
+.s-passe .copy .sub{margin:1.3em 0 .45em;padding-top:1.1em;border-top:1px solid rgba(227,228,229,.18)}
+.s-passe .m17{right:-5%;height:86%;z-index:1}
+.s-passe .scene{left:28.5%;right:auto;bottom:0;width:34.5%;max-height:70%;z-index:2}
+
+.ph{position:relative;width:100%;aspect-ratio:300/651;border-radius:13%/6%;background:#000;
+  border:7px solid #1c1c1e;box-shadow:0 34px 70px rgba(0,0,0,.75),0 0 0 2px #3a3a3c;overflow:hidden}
+.ph .isl{position:absolute;left:50%;top:1.7%;transform:translateX(-50%);width:29.3%;aspect-ratio:88/26;border-radius:99px;background:#000;z-index:3}
+.ph .ios{position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(var(--k,1))}
+
+/* wrist */
+.wch{position:relative;width:210px;height:330px;display:grid;place-items:center}
+.wch .bnd{position:absolute;left:50%;transform:translateX(-50%);width:138px;height:100%;background:#1a1a1c;border-radius:32px;box-shadow:inset 0 0 0 2px #2a2a2c}
+.wch .bdy{position:relative;width:184px;height:226px;border-radius:46px;background:#0b0b0c;border:7px solid #2b2b2e;box-shadow:0 30px 60px rgba(0,0,0,.7),0 0 0 2px #444;overflow:hidden;color:#fff;
+  font-family:-apple-system,"SF Pro Text",system-ui,sans-serif}
+.wch .crw{position:absolute;right:-12px;top:62px;width:10px;height:34px;border-radius:5px;background:#3a3a3c}
+.wch .tm{position:absolute;top:10px;right:16px;font-size:12px;font-weight:600}
+.wch .wc{position:absolute;left:10px;right:10px;top:36px;aspect-ratio:1.586;border-radius:10px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.6)}
+.wch .wc .mcard{width:100%;height:100%;aspect-ratio:auto;border-radius:10px;box-shadow:none}
+.wch .dn{position:absolute;left:0;right:0;bottom:24px;text-align:center;font-size:14px;font-weight:600}
+.wch .dn i{display:inline-grid;place-items:center;width:15px;height:15px;border-radius:50%;background:#fff;color:#000;font-size:10px;font-style:normal;vertical-align:-2px;margin-right:6px}
+
+/* cardápio */
+.s-menu{grid-template-columns:repeat(4,1fr);grid-template-rows:auto 1fr}
+.s-menu .head{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end}
+.s-menu .trilha{grid-column:1/-1;position:relative;min-height:0;overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none}
+.s-menu .trilha.drag{cursor:grabbing}
+.s-menu .palco{position:absolute;left:0;top:0;width:996px;height:330px;transform-origin:0 0;contain:layout style}
+.s-menu .tri{position:absolute;left:0;top:0;width:66px;height:88px;offset-path:path('M1 209.434C58.5872 255.935 387.926 325.938 482.583 209.434C600.905 63.8051 525.516 -43.2211 427.332 19.9613C329.149 83.1436 352.902 242.723 515.041 267.302C644.752 286.966 943.56 181.94 995 156.5');offset-anchor:50% 50%;
+  will-change:offset-distance;backface-visibility:hidden}
+.s-menu .tri .tph{width:100%;height:100%;overflow:hidden;box-shadow:0 10px 22px -10px rgba(0,0,0,.55);
+  transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.s-menu .tri .tph img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;-webkit-user-drag:none}
+@media (hover:hover){.s-menu .tri:hover .tph{transform:scale(1.5)}}
+.s-menu .hname{position:absolute;left:0;bottom:clamp(8px,1.4vw,22px);pointer-events:none}
+.s-menu .hname .eyebrow{margin:0 0 .4em}
+.s-menu .hname .h4{margin:0;transition:opacity .3s}
+
+/* social */
+.s-social{grid-template-columns:4fr 4fr 4fr;grid-template-rows:1fr}
+.s-social .feed{padding:0;background:var(--ink)}
+.s-social .feed img{position:absolute;inset:clamp(10px,1.2vw,18px);margin:auto;width:auto;height:auto;max-width:calc(100% - 2*clamp(10px,1.2vw,18px));max-height:calc(100% - 2*clamp(10px,1.2vw,18px));object-fit:contain}
+.s-social .feed .cap{position:absolute;left:0;bottom:0;z-index:2;padding:.7em 1em;background:var(--black);color:var(--soft);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
+
+/* parceria */
+.s-porque{grid-template-columns:5fr 7fr;grid-template-rows:1fr 1fr 1fr}
+.s-porque .lead{grid-row:1/4}
+.s-porque .row{display:grid;grid-template-columns:auto 1fr;gap:var(--pad);align-items:start;justify-content:start}
+.s-porque .row .h4{min-width:9em}
+.s-cotas{grid-template-columns:1fr;grid-template-rows:auto 1fr;gap:0}
+/* cabeçalho sobre doze colunas: título à esquerda, texto a partir da sétima */
+.s-cotas .head{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--pad);align-items:end;
+  padding-bottom:clamp(20px,2.6vw,38px);border-bottom:1px solid rgba(0,0,0,.25)}
+.s-cotas .head .ttl{grid-column:1/6}
+.s-cotas .head .intro{grid-column:7/13;max-width:none;margin:0}
+/* as três cotas compartilham as mesmas linhas: tudo alinha na horizontal */
+.s-cotas .cotas{display:grid;grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto auto auto 1fr auto}
+.s-cotas .cota{display:grid;grid-row:1/-1;grid-template-rows:subgrid;
+  padding:clamp(20px,2.4vw,34px) clamp(18px,2.2vw,32px) 0;border-left:1px solid rgba(0,0,0,.18)}
+.s-cotas .cota:first-child{border-left:none;padding-left:0}
+@supports not (grid-template-rows:subgrid){
+  .s-cotas .cotas{grid-template-rows:1fr}
+  .s-cotas .cota{grid-row:auto;grid-template-rows:auto auto auto auto 1fr auto}
+}
+.s-cotas .idx{display:flex;gap:1.2em;align-items:baseline;font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;font-weight:400;margin:0}
+.s-cotas .idx b{font-weight:500}
+.s-cotas .idx span{opacity:.5}
+.s-cotas .name{font-size:clamp(30px,3.8vw,56px);font-weight:200;letter-spacing:-.025em;line-height:1;
+  margin:clamp(14px,1.8vw,26px) 0 0;padding-bottom:clamp(10px,1.1vw,16px);position:relative}
+.s-cotas .name::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:3px;background:var(--accent)}
+.s-cotas .lede{margin:clamp(12px,1.4vw,20px) 0 0;max-width:30ch}
+.s-cotas .items{list-style:none;padding:0;margin:clamp(16px,2vw,28px) 0 0;display:grid}
+.s-cotas .items li{font-size:clamp(12px,.92vw,15px);line-height:1.4;padding:.72em 0;
+  border-top:1px solid rgba(0,0,0,.12)}
+.s-cotas .items li:last-child{border-bottom:1px solid rgba(0,0,0,.12)}
+.s-cotas .price{align-self:end;margin:0;padding:clamp(14px,1.4vw,20px) 0 0;border-top:1px solid rgba(0,0,0,.25);font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;font-weight:400;opacity:.6}
+
+/* co-branding */
+.s-cobrand{grid-template-columns:5fr 7fr;grid-template-rows:1fr auto}
+.s-cobrand .txt{grid-row:1/3}
+.s-cobrand .lockup{display:grid;place-items:center;padding:clamp(24px,4vw,64px)}
+.s-cobrand .lockup{justify-content:flex-start;gap:clamp(24px,4vw,64px)}
+.lockup-row{display:flex;align-items:center;gap:0;width:100%;max-width:820px;margin:auto 0}
+.lockup-row .logo{width:44%;color:var(--black)}
+.lockup-row .div{width:2px;height:80px;background:var(--black);margin:0 6%}
+.lockup-row .partner{flex:1;border:1px dashed rgba(0,0,0,.45);height:80px;display:grid;place-items:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:400}
+.s-cobrand .rules{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);padding:0;background:none}
+
+/* contato */
+.s-contato{grid-template-columns:1fr 1fr;grid-template-rows:1fr auto}
+.s-contato .big{grid-column:1/-1;display:grid;place-items:center;place-content:center;padding:0}
+.s-contato .big .logo{width:min(48vw,700px)}
+.s-contato .foot .h3{margin-bottom:.4em}
+
+/* nav hint + counter */
+.hint{position:fixed;right:var(--pad);bottom:18px;z-index:20;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);mix-blend-mode:difference;display:flex;gap:1.6em;align-items:center}
+.hint button{all:unset;cursor:pointer;padding:.55em .7em;border:1px solid currentColor;line-height:1;min-height:32px;min-width:32px;box-sizing:border-box;text-align:center;font-size:11px;letter-spacing:.18em;text-transform:uppercase;touch-action:manipulation}
+.hint button:hover{background:rgba(255,255,255,.12)}
+.hint button:focus-visible{outline:2px solid var(--freq);outline-offset:2px}
+.menu[hidden]{display:none}
+.menu{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.94);color:var(--soft);padding:calc(var(--bar) + 16px) var(--pad) var(--pad);overflow:auto;display:flex;flex-direction:column;gap:24px}
+.menu-head{display:flex;justify-content:space-between;align-items:center}
+.menu-head button{all:unset;cursor:pointer;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:.6em .8em;border:1px solid currentColor;min-height:44px;box-sizing:border-box}
+.menu-head button:focus-visible{outline:2px solid var(--freq);outline-offset:2px}
+.menu-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 32px;counter-reset:m}
+.menu-list li{counter-increment:m;border-bottom:1px solid rgba(255,255,255,.14)}
+.menu-list a{display:flex;gap:1em;align-items:baseline;padding:.75em 0;min-height:44px;box-sizing:border-box;text-decoration:none;font-size:clamp(16px,1.3vw,20px);font-weight:300}
+.menu-list a::before{content:counter(m,decimal-leading-zero);font-size:.65em;letter-spacing:.1em;opacity:.55;font-variant-numeric:tabular-nums}
+.menu-list a:hover,.menu-list a[aria-current="true"]{color:var(--white);font-weight:400}
+.menu-list a:focus-visible{outline:2px solid var(--freq);outline-offset:-2px}
+/* entrance: blocks rise in once a slide becomes active */
+.slide.entered .blk{animation:rise .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 70ms)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.slide.entered .blk{animation:none}}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  body:not(.pdf){overflow:auto}
+  body:not(.pdf) .body{font-size:16px}body:not(.pdf) .small{font-size:14px}body:not(.pdf) ul.list li{font-size:15px}body:not(.pdf) .eyebrow{font-size:11px}body:not(.pdf) .h4{font-size:17px}
+  body:not(.pdf) .bar{grid-template-columns:1fr auto;font-size:10px;letter-spacing:.14em}
+  body:not(.pdf) .bar .l{gap:1.4em}body:not(.pdf) .bar .l span:nth-child(3){display:none}body:not(.pdf) .bar .r{display:none}
+  body:not(.pdf) .s-social .feed{min-height:0;aspect-ratio:4/5}
+  body:not(.pdf) .hint{display:flex;right:16px;bottom:16px;mix-blend-mode:normal;background:var(--black);padding:6px}
+  body:not(.pdf) .hint .kbd,body:not(.pdf) .hint #prev,body:not(.pdf) .hint #next{display:none}
+  body:not(.pdf) .hint #menuBtn{min-height:44px;min-width:44px;padding:.6em 1em}
+  body:not(.pdf) .deck{height:auto;scroll-snap-type:none;overflow:visible}
+  body:not(.pdf) .slide{height:auto;min-height:100svh;grid-template-columns:1fr !important;grid-template-rows:none !important}
+  body:not(.pdf) .slide>*{grid-column:auto !important;grid-row:auto !important}
+  body:not(.pdf) .slide.s-galeria,body:not(.pdf) .slide.s-marca,body:not(.pdf) .slide.s-menu{grid-template-columns:1fr 1fr !important}
+  body:not(.pdf) .slide.s-galeria>.head,body:not(.pdf) .slide.s-menu>.head,body:not(.pdf) .slide.s-marca>.txt{grid-column:1/-1 !important}
+  body:not(.pdf) .s-galeria .blk.img,body:not(.pdf) .s-marca .blk.img,body:not(.pdf) .s-menu .blk.img{min-height:0;aspect-ratio:4/5}
+  body:not(.pdf) .s-arte>:nth-child(2){order:1}body:not(.pdf) .s-arte>:nth-child(6){order:2}
+  body:not(.pdf) .s-arte>:nth-child(3){order:3}body:not(.pdf) .s-arte>:nth-child(7){order:4}
+  body:not(.pdf) .s-arte>:nth-child(4){order:5}body:not(.pdf) .s-arte>:nth-child(8){order:6}
+  body:not(.pdf) .s-arte>:nth-child(5){order:7}body:not(.pdf) .s-arte>:nth-child(9){order:8}
+  body:not(.pdf) .blk.img{min-height:220px}
+  body:not(.pdf) .s-capa .hero{min-height:60svh}
+  body:not(.pdf) .s-capa .foot{grid-template-columns:1fr}
+  body:not(.pdf) .s-index ol{grid-template-columns:1fr}
+  body:not(.pdf) .s-conceito .intro,body:not(.pdf) .s-noturno .head,body:not(.pdf) .s-galeria .head,body:not(.pdf) .s-arte .head,body:not(.pdf) .s-menu .head{grid-template-columns:1fr}
+  body:not(.pdf) .s-cotas .head{grid-template-columns:1fr}
+  body:not(.pdf) .s-cotas .head .ttl,body:not(.pdf) .s-cotas .head .intro{grid-column:1/-1}
+  body:not(.pdf) .s-cotas .cotas{grid-template-columns:1fr;grid-template-rows:none}
+  body:not(.pdf) .s-cotas .cota{grid-row:auto;grid-template-rows:none;border-left:none;padding-left:0;padding-top:clamp(24px,6vw,40px)}
+  body:not(.pdf) .s-noturno .quote{grid-template-columns:1fr}
+  body:not(.pdf) .s-cobrand .rules{grid-template-columns:1fr}
+  body:not(.pdf) .s-pilares .head{grid-template-columns:1fr}
+  body:not(.pdf) .s-essencia .fig{min-height:320px}
+  body:not(.pdf) .s-wallet{display:grid;padding:calc(var(--bar) + 8px) var(--pad) var(--pad)}
+  body:not(.pdf) .s-wallet .m17{position:relative;right:auto;top:auto;transform:none;height:auto;width:100%}
+  body:not(.pdf) .s-wallet .copy{position:static;width:auto;max-width:none;min-width:0}
+  body:not(.pdf) .s-porta{display:grid;padding:calc(var(--bar) + 8px) var(--pad) var(--pad)}
+  body:not(.pdf) .s-porta .copy{position:static;width:auto;max-width:none;min-width:0}
+  body:not(.pdf) .s-porta .scene{position:relative;right:auto;bottom:auto;width:100%;max-height:none}
+  body:not(.pdf) .s-passe .scene{left:auto}
+  body:not(.pdf) .s-passe .m17{right:auto}
+  body:not(.pdf) .s-porque .row{grid-template-columns:1fr}
+  body:not(.pdf) .bar{mix-blend-mode:normal;background:var(--black)}
+}
+/* ---------- modo PDF: tudo parado, uma página por slide ---------- */
+body.pdf .bar,body.pdf .hint,body.pdf .menu,body.pdf .lockups,body.pdf .s-full .arw,body.pdf .s-full .count{display:none!important}
+body.pdf{cursor:auto}
+/* cada slide ocupa a página inteira, seja qual for a largura que o navegador
+   escolher para imprimir — daí a proporção em vez de uma medida fixa */
+body.pdf{overflow:visible}
+body.pdf .deck{height:auto;overflow:hidden;scroll-snap-type:none;scroll-behavior:auto}
+body.pdf .slide{width:auto;height:auto;min-height:0;aspect-ratio:16/9;scroll-snap-align:none;overflow:hidden;break-after:page;page-break-after:always}
+body.pdf .slide:last-child{break-after:auto;page-break-after:auto}
+body.pdf .slide .blk,body.pdf .slide .w{animation:none!important;opacity:1!important;transform:none!important}
+/* o fio é desenhado por animação: no PDF ele precisa nascer pronto */
+body.pdf .rule-row::before{animation:none!important;transform:scaleX(1)!important}
+body.pdf .rule-row::after{display:none}
+body.pdf .marquee .track{animation:none!important}
+body.pdf .logo{animation:none;background-position:0 0}
+body.pdf .logo canvas{display:none!important}
+body.pdf .logo.gl{background:var(--metal)}
+body.pdf .mcard.tilt{transition:none;transform:none!important}
+body.pdf .s-full .fr{position:absolute;opacity:1;visibility:visible}
+/* o telefone que sangra para fora do slide é recortado dentro da própria cena:
+   em impressão qualquer transbordo faz o Chrome encolher a página inteira */
+body.pdf .s-porta .scene{overflow:hidden}
+body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max-width:100%}
+
+@media print{
+  @page{size:338.67mm 190.5mm;margin:0}
+  /* no PDF a página é a medida: milímetros batem exatamente com a @page */
+  body.pdf .slide{width:338.67mm;height:190.4mm;aspect-ratio:auto;min-height:0;overflow:hidden;break-after:page;page-break-after:always}
+  body.pdf .slide:last-child{break-after:auto;page-break-after:auto}
+  body.pdf,body.pdf html{overflow:visible}
+  body.pdf .deck{height:auto;overflow:visible}
+  html,body{overflow:visible;height:auto;background:var(--black)}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .bar,.hint,.menu{display:none !important}
+  .deck{height:auto;overflow:visible;scroll-snap-type:none}
+  .slide{width:1280px;height:720px;min-height:0;break-after:page;page-break-after:always;padding:36px 44px 44px;overflow:hidden}
+  .slide:last-child{break-after:auto}
+  .slide.entered .blk{animation:none}
+  .logo{animation:none;background-position:0 0}
+  .logo canvas,.lockups{display:none !important}
+  .logo.gl{background:var(--metal)}
+  .marquee .track{animation:none}
+  .rule-row::before{animation:none!important;transform:scaleX(1)!important}
+  .rule-row::after{display:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><filter id="m17grade" color-interpolation-filters="sRGB">
+<feComponentTransfer>
+<feFuncR type="table" tableValues="0 0.0118 0.0314 0.051 0.0784 0.1098 0.1451 0.1882 0.2314 0.2824 0.3412 0.4 0.4667 0.5333 0.6 0.6824 0.7765 0.851 0.9176 0.9725 1 1 1 1 1 1 1 1 1 1 1 1 1"/>
+<feFuncG type="table" tableValues="0 0.0118 0.0314 0.051 0.0784 0.1098 0.1451 0.1882 0.2314 0.2824 0.3412 0.4 0.4667 0.5333 0.6 0.6745 0.7725 0.8471 0.9176 0.9686 1 1 1 1 1 1 1 1 1 1 1 1 1"/>
+<feFuncB type="table" tableValues="0 0.0118 0.0314 0.051 0.0784 0.1098 0.1451 0.1882 0.2314 0.2824 0.3412 0.4 0.4667 0.5333 0.6 0.6706 0.7647 0.8431 0.9137 0.9216 0.9725 1 1 1 1 1 1 1 1 1 1 1 1"/>
+</feComponentTransfer></filter></svg>
+
+<header class="bar" aria-hidden="true">
+  <div class="l"><span>the force</span><span>clube</span><span>.cc</span></div>
+  <div class="c"><b id="cur">01</b> / <span id="tot">21</span></div>
+  <div class="r">Parceiros · 2026</div>
+</header>
+
+<main class="deck" id="deck">
+
+<!-- 01 CAPA -->
+<section class="slide s-capa" id="capa">
+  <div class="blk black hero">
+    <div class="logo solid" role="img" aria-label="CLUBE" style="color:#fff"></div>
+  </div>
+  <div class="foot">
+    <div class="blk ink top">
+      <p class="eyebrow">Proposta de parceria</p>
+      <p class="h4">Bar, restaurante &amp; pista<br>Rua da Consolação, 1813 · São Paulo</p>
+    </div>
+    <div class="blk red center" style="min-width:140px">2026</div>
+  </div>
+</section>
+
+<!-- 02 O CONCEITO · 1/3 · A TESE -->
+<section class="slide s-tese" id="conceito">
+  <div class="lead">
+    <div><p class="eyebrow">O conceito · 1 / 3</p><h1 class="h1">O clássico e a tecnologia, na Consolação</h1></div>
+    <p class="small muted fonte">Sobre o piso paulista: Figueiredo e Velloso, Anais do Museu Paulista, 2025.</p>
+  </div>
+  <div class="blk teses">
+    <div class="tese rule-row" style="--i:0"><p class="idx">01</p><div><h3 class="h3">A calçada da Consolação</h3><p class="big">A Consolação foi a primeira via de São Paulo a receber o piso paulista, em pedra portuguesa. Da porta para dentro, o chão do CLUBE continua a calçada da rua.</p></div></div>
+    <div class="tese rule-row" style="--i:1"><p class="idx">02</p><div><h3 class="h3">O clássico é matéria</h3><p class="big">Pedra portuguesa, concreto, travertino, couro, ônix, alumínio fundido e, no rooftop, uma fogueira. Tudo o que tem peso, temperatura e idade.</p></div></div>
+    <div class="tese rule-row" style="--i:2"><p class="idx">03</p><div><h3 class="h3">A tecnologia é luz</h3><p class="big">Projeção mapeada na escada, painéis de LED no bar e na pista, telas verticais e um balcão que muda de cor. No bolso, o cartão de membro no Wallet.</p></div></div>
+  </div>
+</section>
+
+<!-- 05 IDENTIDADE · A FRICÇÃO VIRA FORMA -->
+<section class="slide s-essencia" id="essencia">
+  <div class="blk black fig"><img src="assets/fig-a-1.webp" alt="Personagem A Anfitriã, silhueta metálica fragmentada" loading="lazy" decoding="async"><span class="cap">01 · A Anfitriã</span></div>
+  <div class="blk black fig"><img src="assets/fig-b-1.webp" alt="Personagem A Eufórica" loading="lazy" decoding="async"><span class="cap">02 · A Eufórica</span></div>
+  <div class="blk ink between txt">
+    <div>
+      <p class="eyebrow">O conceito · 2 / 3 · Na identidade</p>
+      <h2 class="h2">O fragmento em outra escala</h2>
+    </div>
+    <div>
+      <p class="body">O que une o clássico e a tecnologia é o fragmento. A pedra do mosaico, o ponto do LED e o bloco das silhuetas são a mesma unidade em três escalas.</p>
+      <p class="body">Os Personagens do Calor Coletivo são a clique da casa: A Anfitriã, A Eufórica, O Frequente, O Registro, A It Girl, O Faminto, O Curador, O Flerte e O Beijo. Nove retratos de quem já se enxergou ali.</p>
+      <p class="body">Há mestres calceteiros que escondem no piso uma pedra-assinatura, encontrada apenas por quem sabe olhar. O CLUBE é de quem se reconhece no que vê: não por dinheiro, não por lista, por olhar.</p>
+    </div>
+  </div>
+  <div class="blk metal-v fig"><img src="assets/fig-a-2.webp" alt="Personagem em estado fragmento" loading="lazy" decoding="async"><span class="cap">Fragmento</span></div>
+  <div class="blk red fig"><img src="assets/fig-c-1.webp" alt="Personagem O Frequente" loading="lazy" decoding="async"><span class="cap">03 · O Frequente</span></div>
+</section>
+
+<!-- 06 A FRICÇÃO IMPRESSA -->
+<section class="slide s-marca" id="marca">
+  <div class="blk img"><img src="assets/mock-storefront.webp" alt="Fachada do CLUBE com neon do personagem" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/mock-portacopos.webp" alt="Porta-copos CLUBE" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/mock-mesa.jpg" alt="Cardápio de mesa CLUBE" loading="lazy" decoding="async"></div>
+  <div class="blk ink between txt">
+    <div><p class="eyebrow">O conceito · 3 / 3 · Na comunicação</p><h2 class="h2">A mesma textura em cada superfície</h2></div>
+    <p class="body">O fragmento sai do piso e aparece na vitrine, no porta-copos, no cardápio e no cartão de membro. Em cada peça, um lugar reservado para a marca parceira.</p>
+  </div>
+</section>
+
+<!-- STATEMENT 1 -->
+<section class="slide s-statement" id="st-1">
+  <h1 class="h1" data-copy="statement-1">Matéria que fica, luz que muda</h1>
+</section>
+
+<!-- 05 MISSÃO -->
+<section class="slide s-missao" id="missao">
+  <div class="blk ink between txt">
+    <div>
+      <p class="eyebrow">Nossa missão</p>
+      <h2 class="h2">Redefinir a noite</h2>
+    </div>
+    <div>
+      <p class="body">A noite paulistana anda repetida. Muda o endereço, e o salão, a luz e o roteiro continuam os mesmos.</p>
+      <p class="body">No lugar da repetição, o CLUBE reúne o clássico e a tecnologia na mesma casa. Pedra, concreto e couro convivem com LED e projeção mapeada.</p>
+      <p class="body">Dois andares e um rooftop mudam de ritmo ao longo da noite: o bar no primeiro andar, a pista no segundo, a fogueira no rooftop. A noite inteira em um endereço, e nenhuma hora igual à anterior.</p>
+    </div>
+  </div>
+  <div class="blk img"><img src="assets/missao-retrato.webp" alt="Convidado de costas, camisa com a inscrição Art on Display, Courtesy of Josué Thomas"></div>
+  <div class="blk img"><img src="assets/missao-cabine.webp" alt="Vista da cabine do DJ para a pista, tudo em luz vermelha" style="object-position:center 42%"></div>
+</section>
+
+
+<!-- STATEMENT 2 -->
+<section class="slide s-statement light" id="st-2">
+  <h1 class="h1" data-copy="statement-2">Dois andares e um rooftop, uma noite</h1>
+</section>
+
+<!-- 08 O ESPAÇO · OS TRÊS ANDARES -->
+<section class="slide s-andares" id="espaco">
+  <div class="head">
+    <div><p class="eyebrow">O espaço</p><h2 class="h2">Consolação, 1813</h2></div>
+    <p class="body">Dois andares e um rooftop em um único endereço. Cada um tem escala, som e público próprios, e a noite sobe de um para o outro.</p>
+  </div>
+  <div class="blk cine">
+    <div class="row">
+      <div class="bg"><img src="assets/full-bar.webp" alt="Salão do bar principal com o balcão iluminado" loading="lazy" decoding="async"></div>
+      <div class="in">
+        <div class="lft">
+          <span class="idx">01</span>
+          <div><h3 class="nome">Bar principal</h3><p class="small sub">Cozinha e coquetelaria com serviço estendido pela madrugada. É onde a noite começa devagar.</p></div>
+        </div>
+        <div class="rgt" style="display:flex;align-items:center;gap:clamp(14px,1.6vw,26px)">
+          <span class="meta">1º andar · mesa e balcão</span>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="bg"><img src="assets/espaco-03.webp" alt="Andar da pista, em concreto e penumbra" loading="lazy" decoding="async"></div>
+      <div class="in">
+        <div class="lft">
+          <span class="idx">02</span>
+          <div><h3 class="nome">Pista</h3><p class="small sub">Som, luz e tecnologia imersiva, com bar próprio. O coração da casa.</p></div>
+        </div>
+        <div class="rgt" style="display:flex;align-items:center;gap:clamp(14px,1.6vw,26px)">
+          <span class="meta">2º andar · som fechado</span>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="bg"><img src="assets/full-rooftop.webp" alt="Rooftop à noite, com a fogueira acesa e a cidade ao fundo" loading="lazy" decoding="async"></div>
+      <div class="in">
+        <div class="lft">
+          <span class="idx">03</span>
+          <div><h3 class="nome">Rooftop</h3><p class="small sub">Lounge e bar a céu aberto, jardim e vista da cidade. Abre no fim da tarde e fecha por último.</p></div>
+        </div>
+        <div class="rgt" style="display:flex;align-items:center;gap:clamp(14px,1.6vw,26px)">
+          <span class="meta">Cobertura · céu aberto</span>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 GALERIA DO ESPAÇO -->
+<section class="slide s-galeria" id="galeria">
+  <div class="head">
+    <div><p class="eyebrow">O espaço</p><h2 class="h2">Do bar ao rooftop</h2></div>
+    <p class="body">Concreto, metal e luz. Cada andar tem escala, luz e público próprios, e nenhuma fotografia que sai de um se parece com a do outro.</p>
+  </div>
+  <div class="blk img"><img src="assets/espaco-08.webp" alt="Salão do bar principal visto em perspectiva" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/espaco-01.webp" alt="Lounge do bar principal com assentos curvos e luz rasante" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/espaco-03.webp" alt="Bar menor do andar da pista, com balcão de travertino iluminado" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/espaco-05.webp" alt="Rooftop do CLUBE à noite, com a cidade ao fundo" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/espaco-07.webp" alt="Fogueira central do rooftop cercada por bancos" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/espaco-04.webp" alt="Vista da cidade a partir do rooftop envidraçado" loading="lazy" decoding="async"></div>
+</section>
+
+<!-- 09d A ESCADA · PROJEÇÃO MAPEADA -->
+<section class="slide s-full" id="projecao">
+  <div class="gal">
+    <figure class="fr on">
+      <video src="assets/projecao.mp4" poster="assets/projecao-poster.webp"
+             muted loop playsinline preload="none" disablepictureinpicture
+             aria-label="Escada de projeção mapeada do CLUBE: as paredes viram uma paisagem de mar e pôr do sol"></video>
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O espaço · Projeção mapeada</p>
+        <h3 class="h3">Uma escada que nunca é a mesma</h3>
+        <p class="small">As paredes entre a pista e o rooftop formam uma tela contínua de projeção mapeada. Mar, deserto ou o universo de quem assina a temporada: o cenário muda a cada set.</p>
+        <p class="small">É o ativo mais visível da casa para quem assina com a gente: conteúdo próprio dentro da experiência, sem placa e sem banner.</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 09e O HOTEL -->
+<section class="slide s-hotel" id="hotel">
+  <div class="blk ink txt">
+    <p class="eyebrow">O espaço · O hotel</p>
+    <h2 class="h2">Uma noite que tem quarto</h2>
+    <p class="body">O CLUBE ocupa um prédio que também é hotel. O convidado chega de tarde, janta no quarto, desce para a pista e dorme dois andares acima.</p>
+    <p class="small muted" style="margin-top:1em">Room service, enxoval, chave de quarto e amenities são superfícies de assinatura. E a diária é o brinde que ninguém recusa: o contato com a marca não termina quando a música para.</p>
+  </div>
+  <div class="blk img port"><img src="assets/hotel-03.webp" alt="Hóspede com mala dentro do elevador vermelho do prédio" loading="lazy" decoding="async"></div>
+  <div class="blk img land"><img src="assets/hotel-04.webp" alt="Corredor dos quartos, com paredes vermelhas e arandelas acesas" loading="lazy" decoding="async"></div>
+</section>
+
+
+
+<!-- MOBILIÁRIO -->
+<section class="slide s-mob" id="mobiliario">
+  <div class="blk ink txt between">
+    <div><p class="eyebrow" data-copy="mob-eyebrow">Mobiliário</p><h2 class="h2" data-copy="mob-titulo">Peças desenhadas para esta casa</h2></div>
+    <div><p class="body" data-copy="mob-texto">O mobiliário foi projetado com o designer Antonio especialmente para o espaço, no vocabulário de metal e concreto da identidade. Nenhuma peça veio de catálogo: cada uma responde a um lugar da casa, ao modo de sentar, apoiar o copo ou encostar na borda da pista. Peças assinadas, desenhadas para o uso que a noite exige.</p><p class="small muted" style="margin-top:1em" data-copy="mob-legenda">Alumínio fundido, couro e concreto em escala de corpo: o mobiliário segue o vocabulário da identidade.</p></div>
+  </div>
+  <div class="blk img tall"><img src="assets/mob-cadeiras.webp" alt="Banquetas de alumínio fundido vazado junto ao balcão do bar" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/mob-banco.webp" alt="Banco corrido de couro sobre base de concreto, ao longo da parede" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/mob-detalhe.webp" alt="Detalhe da trama vazada do alumínio fundido das banquetas" loading="lazy" decoding="async"></div>
+</section>
+
+<!-- 13 GALERIA DE ARTE -->
+<section class="slide s-arte" id="arte">
+  <div class="head">
+    <div><p class="eyebrow">Galeria</p><h2 class="h2">Os artistas</h2></div>
+    <p class="body">Curadoria de artistas para a primeira exposição da galeria do CLUBE. Arte contemporânea brasileira ocupando as paredes onde a noite acontece.</p>
+  </div>
+  <div class="blk img cover-top"><img src="assets/gleeson-02.webp" alt="Obra de Gleeson Paulino" loading="lazy" decoding="async"></div>
+  <div class="blk img cover-top"><img src="assets/saboia-01.jpg" alt="Obra de Samuel de Saboia" loading="lazy" decoding="async"></div>
+  <div class="blk img cover-top"><img src="assets/furcolin-02.webp" alt="Obra de Alexandre Furcolin" loading="lazy" decoding="async"></div>
+  <div class="blk img cover-top"><img src="assets/dejumatos-01.webp" alt="Dejumatos" loading="lazy" decoding="async"></div>
+  <div class="blk cap"><h4 class="h4">Gleeson Paulino</h4><p class="small">Entre São Paulo, Londres e Paris, produz imagens neorromânticas que traduzem a tensão entre o clássico e o contemporâneo. Publicado nas principais revistas de moda do mundo.</p></div>
+  <div class="blk cap"><h4 class="h4">Samuel de Saboia</h4><p class="small">Nascido no Recife em 1997, autodidata, carrega na pintura a natureza exuberante e a luz intensa que marcam seu olhar. Vive e trabalha em São Paulo.</p></div>
+  <div class="blk cap"><h4 class="h4">Alexandre Furcolin</h4><p class="small">Artista visual e fotógrafo, explora as fronteiras da linguagem visual em fotolivros, instalações, esculturas site-specific e performances.</p></div>
+  <div class="blk cap"><h4 class="h4">Dejumatos</h4><p class="small">Diretora, roteirista e modeladora 3D. Cria narrativas imersivas em XR e VR que usam tecnologia para amplificar a consciência humana.</p></div>
+</section>
+
+<!-- STATEMENT 3 -->
+<section class="slide s-statement" id="st-3">
+  <h1 class="h1" data-copy="statement-3">O clube de quem enxerga</h1>
+</section>
+
+<!-- 13b MEMBERSHIP · HERO -->
+<section class="slide s-full" id="cardhero">
+  <div class="gal">
+    <figure class="fr on">
+      <video src="assets/hero-cartao.mp4" poster="assets/hero-cartao-poster.webp"
+             muted loop playsinline preload="none" disablepictureinpicture
+             aria-label="Cartão de membro do CLUBE em metal escovado, com a luz correndo pela borda"></video>
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">CLUBE · Membership</p>
+        <h3 class="h3">Feito para poucos</h3>
+        <p class="small">Nominal, numerado e gravado em metal escovado. Existe apenas no celular de quem é membro.</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 14 MEMBERSHIP · O CARTÃO -->
+<section class="slide s-card" id="membership">
+  <div class="blk ink between txt">
+    <div><p class="eyebrow">Membership</p><h2 class="h2">Um passaporte para a noite</h2></div>
+    <div>
+      <p class="body">O cartão de membro do CLUBE é digital. Não tem plástico, produção nem logística: é emitido em segundos, a custo zero por unidade, e vai morar ao lado dos cartões do banco.</p>
+      <p class="body">Nominal, numerado e gravado em grafite escovado. A leitura é de metal usinado, do tipo que bancos privados cobram caro para produzir. Sem custo unitário, a escassez passa a ser decisão de curadoria.</p>
+      <p class="small muted" style="margin-top:1em">Cada número é único e intransferível. É o que transforma acesso em pertencimento, e pertencimento em receita recorrente.</p>
+    </div>
+  </div>
+  <div class="blk black stage"><div class="mcard tilt"></div></div>
+</section>
+
+<!-- 14b MEMBERSHIP · NO IPHONE, NA PORTA E NO PULSO -->
+<section class="slide s-porta s-wallet s-passe" id="porta">
+  <div class="blk ink copy">
+    <p class="eyebrow">Membership · No iPhone e na porta</p>
+    <h3 class="h3">Ao lado dos cartões do banco</h3>
+    <p class="small">O CLUBE ocupa o mesmo lugar que Apple Card, Nubank ou Amex: a carteira que o membro abre várias vezes por dia. Presença de marca permanente, sem um centavo de mídia, e um canal direto que não depende de algoritmo.</p>
+    <h4 class="h4 sub">Aproxima e entra</h4>
+    <p class="small">O passe substitui lista, pulseira e fila. A entrada leva um segundo e a equipe da porta passa a administrar gente, não papel.</p>
+    <p class="small">No iPhone ou no Apple Watch, a credencial está sempre à mão. E cada acesso vira informação: quem veio, com que frequência, em quais noites. É essa base que dá lastro a uma parceria.</p>
+  </div>
+  <div class="m17">
+    <div class="space">
+      <img class="base" src="assets/m17-base.jpg" alt="iPhone 17 Pro com o cartão CLUBE no Wallet" loading="lazy" decoding="async">
+      <div class="mask"><div class="content"><div class="ios">
+            <div class="st"><span>9:41</span><span>●●●● ⌔ ▮</span></div>
+            <div class="hd"><b>Wallet</b><span><i>▣</i><i>+</i></span></div>
+            <div class="stk"><div class="pass"><div class="mcard"></div></div></div>
+            <div class="hm"></div>
+          </div></div></div>
+      <img class="l7" src="assets/m17-l7.webp" alt="" loading="lazy" decoding="async">
+      <img class="l8" src="assets/m17-l8.webp" alt="" loading="lazy" decoding="async">
+      <img class="cam2" src="assets/m17-cam2.png" alt="" loading="lazy" decoding="async">
+    </div>
+  </div>
+  <div class="scene">
+    <div class="slot-a"><div class="ph"><div class="isl"></div><div class="ios">
+          <div class="st"><span>9:41</span><span>●●●● ⌔ ▮</span></div>
+          <div class="tp"><div class="mcard"></div></div>
+          <div class="ctr"><div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M10 6H6v4M38 6h4v4M6 38v4h4M42 38v4h-4"/><path d="M17 20v3M31 20v3M24 20v7h-2"/><path d="M17 31c2 2.5 4.5 3.5 7 3.5s5-1 7-3.5"/></svg></div><span>Hold Near Reader</span></div>
+          <div class="hm"></div>
+        </div></div></div>
+    <div class="slot-b"><div class="ph"><div class="isl"></div><div class="ios">
+          <div class="st"><span>9:41</span><span>●●●● ⌔ ▮</span></div>
+          <div class="tp"><div class="mcard"></div></div>
+          <div class="ctr"><div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 25l8 8 14-16"/></svg></div><span>Done</span></div>
+          <div class="hm"></div>
+        </div></div></div>
+    <div class="wslot">
+      <div class="wch">
+        <div class="bnd"></div>
+        <div class="bdy"><div class="crw"></div><div class="tm">9:41</div>
+          <div class="wc"><div class="mcard"></div></div>
+          <div class="dn"><i>✓</i>Done</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O APP -->
+<section class="slide s-pilares" id="app">
+  <div class="head">
+    <div><p class="eyebrow" data-copy="app-eyebrow">O app</p><h2 class="h2" data-copy="app-titulo">A casa inteira em um app</h2></div>
+    <p class="body" data-copy="app-texto">O app do CLUBE reúne membership, reservas, programação, cardápio e a porta em um lugar. O cartão de membro vive no Apple Wallet: nominal, numerado, gravado em metal escovado.</p>
+  </div>
+  <div class="blk pilar rule-row" style="--i:0"><p class="idx">01</p><h3 class="h4" data-copy="app-1-titulo">Membership</h3><p class="small" data-copy="app-1-texto">Cartão nominal e numerado no Apple Wallet, com o status do membro sempre visível.</p></div>
+  <div class="blk pilar rule-row" style="--i:1"><p class="idx">02</p><h3 class="h4" data-copy="app-2-titulo">Reservas</h3><p class="small" data-copy="app-2-texto">Mesa no restaurante, lugar no bar e rooftop reservados pelo próprio membro, direto no app.</p></div>
+  <div class="blk pilar rule-row" style="--i:2"><p class="idx">03</p><h3 class="h4" data-copy="app-3-titulo">Programação</h3><p class="small" data-copy="app-3-texto">A agenda da casa por turno e por andar, com o cardápio do dia ao lado.</p></div>
+  <div class="blk pilar rule-row" style="--i:3"><p class="idx">04</p><h3 class="h4" data-copy="app-4-titulo">Acesso</h3><p class="small" data-copy="app-4-texto">O cartão é a chave: apresentado na porta, identifica o membro e libera a entrada.</p></div>
+  <div class="blk foot"><p class="small muted">Em desenvolvimento pela The Force. O cartão de membro mora no Wallet; o app cuida do resto.</p></div>
+</section>
+
+
+<!-- 15 CARDÁPIO -->
+<section class="slide s-menu light" id="cardapio">
+  <div class="head">
+    <div><p class="eyebrow">O cardápio</p><h2 class="h2">Uma noite que não cobra o dia seguinte</h2></div>
+    <p class="body">Coquetelaria clássica reinventada, com e sem álcool, no mesmo nível de cuidado. Quem decide beber menos não recebe um refrigerante: recebe um drink que exigiu o mesmo tempo de criação.</p>
+  </div>
+  <div class="trilha" data-trilha aria-label="Drinks da carta correndo em curva: arraste para girar">
+    <div class="palco">
+      <div class="tri" data-name="Negroni"><div class="tph"><img src="assets/drink-03.webp" alt="Negroni" loading="lazy" decoding="async" draggable="false"></div></div>
+      <div class="tri" data-name="Gin tônica"><div class="tph"><img src="assets/drink-07.webp" alt="Gin tônica" loading="lazy" decoding="async" draggable="false"></div></div>
+      <div class="tri" data-name="Espresso martini"><div class="tph"><img src="assets/drink-04.webp" alt="Espresso martini" loading="lazy" decoding="async" draggable="false"></div></div>
+      <div class="tri" data-name="Dry martini"><div class="tph"><img src="assets/drink-08.webp" alt="Dry martini" loading="lazy" decoding="async" draggable="false"></div></div>
+      <div class="tri" data-name="Hibisco, sem álcool"><div class="tph"><img src="assets/drink-09.webp" alt="Hibisco, sem álcool" loading="lazy" decoding="async" draggable="false"></div></div>
+      <div class="tri" data-name="Moscow mule"><div class="tph"><img src="assets/drink-02.webp" alt="Moscow mule" loading="lazy" decoding="async" draggable="false"></div></div>
+      <div class="tri" data-name="Whisky sour"><div class="tph"><img src="assets/drink-10.webp" alt="Whisky sour" loading="lazy" decoding="async" draggable="false"></div></div>
+      <div class="tri" data-name="Spritz"><div class="tph"><img src="assets/drink-11.webp" alt="Spritz" loading="lazy" decoding="async" draggable="false"></div></div>
+      <div class="tri" data-name="Old fashioned"><div class="tph"><img src="assets/drink-06.webp" alt="Old fashioned" loading="lazy" decoding="async" draggable="false"></div></div>
+      <div class="tri" data-name="Café tônica"><div class="tph"><img src="assets/drink-12.webp" alt="Café tônica" loading="lazy" decoding="async" draggable="false"></div></div>
+    </div>
+    <div class="hname"><p class="eyebrow">Da carta</p><p class="h4" data-hname>Dez drinks, com e sem álcool</p></div>
+  </div>
+</section>
+
+<!-- 16 SOCIAL & PR -->
+<section class="slide s-social" id="social">
+  <div class="blk ink between txt">
+    <div><p class="eyebrow">Social media &amp; PR</p><h2 class="h2">Dois ritmos de feed</h2></div>
+    <div>
+      <p class="body">O conteúdo mistura foto de festa, registro do ambiente, imagem abstrata e natureza.</p>
+      <p class="body">O sistema prevê duas direções que coexistem: um feed <strong style="font-weight:500">sóbrio</strong>, fotográfico e controlado, e um feed <strong style="font-weight:500">dinâmico</strong>, denso, fragmentado e cheio de cor. Marcas parceiras entram nos dois.</p>
+    </div>
+  </div>
+  <div class="blk feed"><img src="assets/feed-sobrio-grid.webp" alt="Preview do feed sóbrio do CLUBE" loading="lazy" decoding="async"><span class="cap">Feed sóbrio</span></div>
+  <div class="blk feed"><img src="assets/feed-dinamico.webp" alt="Preview do feed dinâmico do CLUBE" loading="lazy" decoding="async"><span class="cap">Feed dinâmico</span></div>
+</section>
+
+<!-- STATEMENT 4 -->
+<section class="slide s-statement light" id="st-4">
+  <h1 class="h1" data-copy="statement-4">Marcas dentro da noite, não ao lado</h1>
+</section>
+
+<!-- INSERÇÃO DE MARCA -->
+<section class="slide s-galeria" id="insercao">
+  <div class="head">
+    <div><p class="eyebrow">Parceria</p><h2 class="h2">A marca dentro do espaço</h2></div>
+    <p class="body">Simulação sobre os renders da casa, com a própria marca do CLUBE no lugar do parceiro: o painel de LED do bar, o tampo do balcão que muda de cor e as telas verticais da parede. Presente em cada plano, sem interromper a noite.</p>
+  </div>
+  <div class="blk img"><img src="assets/ins-01-salao-led.webp" alt="Salão do bar com a marca no painel de LED sob o balcão" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/ins-04-close-led.webp" alt="Detalhe do painel de LED com a marca em branco quente" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/ins-02-pista-balcao.webp" alt="Balcão da pista com tampo e faixa de LED em vermelho, marca na faixa" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/ins-05-close-balcao.webp" alt="Detalhe da faixa de LED em vermelho com a marca em branco" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/ins-03-momento-azul.webp" alt="Salão inteiro na luz azul da marca, com a marca em uma das telas verticais" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/ins-06-close-telas.webp" alt="Telas verticais na parede dos sofás, uma delas com a marca" loading="lazy" decoding="async"></div>
+</section>
+
+<!-- 17 POR QUE O CLUBE -->
+<section class="slide s-porque" id="porque">
+  <div class="blk metal between lead">
+    <div><p class="eyebrow">Parceria</p><h2 class="h2">Por que estar no CLUBE</h2></div>
+    <p class="body">Dois andares, um rooftop, um endereço e um público que escolhe com cuidado onde passa a noite. Cada parceria é desenhada sob medida: presença física no espaço, lugar na programação e conteúdo co-criado dentro do sistema visual da marca. Sem placa e sem banner.</p>
+  </div>
+  <div class="blk ink row"><h4 class="h4">Quem frequenta</h4><p class="small">Geração Z e millennials de São Paulo, movidos por estética, cultura e bem-estar. Um público que sai menos, escolhe melhor e fotografa tudo o que escolhe.</p></div>
+  <div class="blk ink row"><h4 class="h4">Onde a marca aparece</h4><p class="small">Fachada e painéis de LED, a escada de projeção, rooftop, pista, cardápio de mesa, embalagens, sinalização, o cartão de membro e as redes.</p></div>
+  <div class="blk ink row"><h4 class="h4">O que se pode criar</h4><p class="small">Assinar noites e residências, ocupar o rooftop, lançar um produto no cardápio, criar um drop de merchandising e co-assinar conteúdo.</p></div>
+</section>
+
+<!-- 18 COTAS -->
+<section class="slide s-cotas light" id="cotas">
+  <div class="head">
+    <div class="ttl"><p class="eyebrow">Formatos de parceria</p><h2 class="h2">O que cada cota entrega</h2></div>
+    <p class="body intro">Três cotas, três lugares na casa. Cada uma define onde a marca entra, por quanto tempo e diante de qual público.</p>
+  </div>
+  <div class="cotas">
+    <article class="cota" style="--accent:var(--grad-red)">
+      <p class="idx"><b>01</b><span>Cota título</span></p>
+      <h3 class="name">Heat</h3>
+      <p class="lede small">A marca em noites escolhidas da programação e nos canais digitais, com regularidade ao longo do ano.</p>
+      <ul class="items">
+        <li>Patrocínio de uma noite da programação por trimestre</li>
+        <li>Painéis de LED internos por 6 meses</li>
+        <li>Produto no bar nas noites da parceria</li>
+        <li>Destaque na programação do app e nos canais do CLUBE em cada edição</li>
+        <li>Convites de membro para a equipe da marca nas noites da parceria</li>
+        <li>Relatório de público e presença por edição</li>
+      </ul>
+      <p class="price">Valor sob consulta</p>
+    </article>
+    <article class="cota" style="--accent:var(--grad-green)">
+      <p class="idx"><b>02</b><span>Cota ativação</span></p>
+      <h3 class="name">Flow</h3>
+      <p class="lede small">Um ciclo de eventos: a marca presente quando a casa está cheia.</p>
+      <ul class="items">
+        <li>Ativação no rooftop ou na pista</li>
+        <li>Produto no cardápio durante o ciclo</li>
+        <li>Sinalização e materiais de mesa</li>
+        <li>Cobertura no feed e nos stories</li>
+        <li>Convites para membros</li>
+      </ul>
+      <p class="price">Valor sob consulta</p>
+    </article>
+    <article class="cota" style="--accent:var(--grad-blue)">
+      <p class="idx"><b>03</b><span>Cota conteúdo</span></p>
+      <h3 class="name">Frequency</h3>
+      <p class="lede small">Uma entrada pelo conteúdo: produção nossa, assinatura conjunta.</p>
+      <ul class="items">
+        <li>Série de conteúdo no sistema visual do CLUBE</li>
+        <li>Presença em uma noite da programação</li>
+        <li>Drop de merchandising co-assinado</li>
+        <li>Menção no membership</li>
+      </ul>
+      <p class="price">Valor sob consulta</p>
+    </article>
+  </div>
+</section>
+
+<!-- 19 CO-BRANDING -->
+<section class="slide s-cobrand light" id="cobranding">
+  <div class="blk soft between txt">
+    <div><p class="eyebrow">Co-branding</p><h2 class="h2">Sua marca ao lado da nossa</h2></div>
+    <div>
+      <p class="body">O brand book do CLUBE define como parcerias aparecem: logos alinhados, distância de três módulos e um traço divisor entre eles. Consistência para a sua marca, coerência para a nossa.</p>
+      <p class="small muted" style="margin-top:1em">Aplicável em fachada, LED, cardápio, sinalização, embalagens e digital.</p>
+    </div>
+  </div>
+  <div class="blk light lockup">
+    <div class="lockup-row">
+      <div class="logo solid" role="img" aria-label="CLUBE"></div>
+      <div class="div"></div>
+      <div class="partner">sua marca</div>
+    </div>
+    <div class="lockups marquee" style="--speed:40s" aria-hidden="true"><div class="track" data-repeat="3"><span><i class="logo solid"></i><i class="div"></i><b class="partner">Bebidas</b></span><span><i class="logo solid"></i><i class="div"></i><b class="partner">Moda</b></span><span><i class="logo solid"></i><i class="div"></i><b class="partner">Áudio</b></span><span><i class="logo solid"></i><i class="div"></i><b class="partner">Mobilidade</b></span><span><i class="logo solid"></i><i class="div"></i><b class="partner">Beleza</b></span><span><i class="logo solid"></i><i class="div"></i><b class="partner">Tech</b></span></div></div>
+  </div>
+  <div class="rules">
+    <div class="blk metal"><h4 class="h4">3x</h4><p class="small">Distância entre os logos, definida pelo módulo “x” do logotipo.</p></div>
+    <div class="blk metal"><h4 class="h4">x / 10</h4><p class="small">Largura do traço divisor, com altura até o limite do clear space.</p></div>
+    <div class="blk metal"><h4 class="h4">Preto ou prata</h4><p class="small">Versões principais do logotipo. Cores e gradientes sempre com contraste garantido.</p></div>
+  </div>
+</section>
+
+<!-- 20 PANORAMA -->
+<section class="slide s-noite" id="panorama">
+  <div class="head">
+    <div><p class="eyebrow">A noite</p><h2 class="h2">Presença, ritmo, encontro</h2></div>
+    <p class="body">O que se repete a cada noite: um público que chega pela música, permanece pela companhia e retorna pelo que viveu ali.</p>
+  </div>
+  <div class="blk img tall" style="grid-column:1"><img src="assets/noite-dj1.webp" alt="DJ tocando ao ar livre no fim da tarde" loading="lazy" decoding="async"></div>
+  <div class="blk img" style="grid-column:2;grid-row:2"><img src="assets/noite-duo.webp" alt="Duas convidadas posando com copos na mão" loading="lazy" decoding="async"></div>
+  <div class="blk img" style="grid-column:3;grid-row:2"><img src="assets/noite-pista.webp" alt="Pista cheia, conversa e cerveja na mão" loading="lazy" decoding="async"></div>
+  <div class="blk img tall" style="grid-column:4"><img src="assets/noite-peace.webp" alt="Convidado na pista, dois dedos em V sobre o rosto" loading="lazy" decoding="async"></div>
+  <div class="blk img" style="grid-column:2;grid-row:3"><img src="assets/noite-crouch.webp" alt="Dois convidados posando na calçada depois da festa" loading="lazy" decoding="async" style="object-position:center 62%"></div>
+  <div class="blk img" style="grid-column:3;grid-row:3"><img src="assets/noite-rosas.webp" alt="Vendedor de rosas passando pelas mesas" loading="lazy" decoding="async" style="object-position:center 58%"></div>
+</section>
+
+<!-- THE FORCE -->
+<section class="slide s-force" id="theforce">
+  <div class="blk black mark"><div class="tf" role="img" aria-label="The Force"></div></div>
+  <div class="blk ink between">
+    <div><p class="eyebrow" data-copy="tf-eyebrow">Direção criativa e artística</p><h2 class="h2" data-copy="tf-titulo">Uma casa assinada pela The Force</h2></div>
+    <div><p class="body" data-copy="tf-texto">A The Force responde pela direção criativa e artística do CLUBE: conceito, marca, identidade, sistema de membership, espaço digital e esta apresentação. O estúdio também desenvolve o app da casa. O trabalho começou na ideia e seguiu até a porta, do cartão de metal ao painel da fachada.</p><p class="small muted" style="margin-top:1em">theforce.cc</p></div>
+  </div>
+</section>
+
+<!-- 21 CONTATO -->
+<section class="slide s-contato" id="contato">
+  <div class="blk black big">
+    <div class="logo solid" role="img" aria-label="CLUBE" style="color:#fff"></div>
+  </div>
+  <div class="blk ink foot">
+    <h3 class="h3">Rua da Consolação, 1813</h3>
+    <p class="small muted">São Paulo · SP</p>
+  </div>
+  <div class="blk ink foot">
+    <h3 class="h3">Venha conhecer a casa</h3>
+    <p class="small">Agende uma visita e desenhamos o formato ao seu lado.</p>
+    <p class="small muted">@clubesp · theforce.cc</p>
+  </div>
+</section>
+
+</main>
+
+
+<div class="hint">
+  <span class="kbd" aria-hidden="true">← → navegar</span>
+  <button type="button" id="prev" aria-label="Slide anterior">↑</button>
+  <button type="button" id="next" aria-label="Próximo slide">↓</button>
+  <button type="button" id="menuBtn" aria-haspopup="dialog" aria-controls="menu" aria-expanded="false">Índice</button>
+</div>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Índice da apresentação" hidden>
+  <div class="menu-head">
+    <span class="eyebrow" style="margin:0">Índice</span>
+    <button type="button" id="menuClose" aria-label="Fechar índice">Fechar ×</button>
+  </div>
+  <ol class="menu-list" id="menuList"></ol>
+</div>
+
+<script>
+(function(){
+  var deck=document.getElementById('deck');
+  /* ---- modo PDF: ?pdf na URL ou class="pdf" no body ---- */
+  var PDF=/[?&]pdf\b/.test(location.search)||document.body.classList.contains('pdf');
+  if(PDF){
+    document.body.classList.add('pdf');
+    /* cada foto da galeria vira a sua própria página */
+    Array.prototype.forEach.call(document.querySelectorAll('.s-full'),function(sl){
+      var frs=Array.prototype.slice.call(sl.querySelectorAll('.fr')), after=sl;
+      frs.forEach(function(fr,i){
+        fr.classList.add('on');
+        if(i===0) return;
+        var sec=document.createElement('section');
+        sec.className=sl.className; sec.id=sl.id+'-'+(i+1);
+        var gal=document.createElement('div'); gal.className='gal'; gal.appendChild(fr);
+        sec.appendChild(gal);
+        after.parentNode.insertBefore(sec,after.nextSibling); after=sec;
+      });
+      Array.prototype.forEach.call(sl.querySelectorAll('.arw,.count'),function(e){e.remove()});
+    });
+    /* o vídeo vira o seu quadro de abertura */
+    Array.prototype.forEach.call(document.querySelectorAll('video'),function(v){
+      var im=document.createElement('img');
+      im.src=v.getAttribute('poster'); im.alt=v.getAttribute('aria-label')||'';
+      v.parentNode.replaceChild(im,v);
+    });
+  }
+  var slides=Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var cur=document.getElementById('cur'), tot=document.getElementById('tot');
+  var menu=document.getElementById('menu'), menuBtn=document.getElementById('menuBtn'), menuClose=document.getElementById('menuClose'), menuList=document.getElementById('menuList');
+  var mobile=function(){return window.innerWidth<=900};
+  tot.textContent=String(slides.length).padStart(2,'0');
+  var idx=0;
+  slides.forEach(function(sl){Array.prototype.forEach.call(sl.querySelectorAll('.blk'),function(b,i){b.style.setProperty('--i',i)})});
+  function goTo(i){
+    i=Math.max(0,Math.min(slides.length-1,i));
+    slides[i].scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function setActive(sl){
+    idx=slides.indexOf(sl);
+    cur.textContent=String(idx+1).padStart(2,'0');
+    if(history.replaceState) history.replaceState(null,'','#'+sl.id);
+    if(!sl.classList.contains('entered')) sl.classList.add('entered');
+    playVid(sl,true);
+    Array.prototype.forEach.call(menuList.querySelectorAll('a'),function(a){a.setAttribute('aria-current',a.getAttribute('href')==='#'+sl.id?'true':'false')});
+  }
+  // first slide is at rest on load: mark it entered without animating (the inline override is cleared once it leaves)
+  slides[0].classList.add('entered');
+  Array.prototype.forEach.call(slides[0].querySelectorAll('.blk, .w'),function(b){b.style.animation='none'});
+  function playVid(sl,on){
+    if(PDF) return;
+    var v=sl.querySelector('video'); if(!v) return;
+    if(on){ if(v.preload==='none'){v.preload='auto';v.load();} var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); }
+    else { v.pause(); try{v.currentTime=0;}catch(e){} }
+  }
+  function leave(sl){
+    sl.classList.remove('entered');
+    playVid(sl,false);
+    if(sl._gal) sl._gal.reset();
+    Array.prototype.forEach.call(sl.querySelectorAll('.blk, .w'),function(b){ if(b.style.animation) b.style.animation=''; });
+    Array.prototype.forEach.call(sl.querySelectorAll('.num'),function(n){ if(n.dataset.final){ n.textContent=n.dataset.final; } delete n.dataset.done; if(n._raf){cancelAnimationFrame(n._raf);n._raf=0;} });
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting) setActive(e.target); else leave(e.target); });
+    },{root:mobile()?null:deck,rootMargin:'-50% 0px -50% 0px',threshold:0});
+    slides.forEach(function(s){io.observe(s)});
+  }
+  /* ---- galleries on the full-bleed slides: arrows, ticks, counter ---- */
+  function galStep(sl,dir){
+    var g=sl&&sl._gal; if(!g) return false;
+    if(dir>0 && g.i>=g.n-1) return false;   // let the deck move on at the end
+    if(dir<0 && g.i<=0) return false;
+    g.go(g.i+dir); return true;
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.s-full'),function(sl){
+    var frs=Array.prototype.slice.call(sl.querySelectorAll('.fr'));
+    var arws=Array.prototype.slice.call(sl.querySelectorAll('.arw'));
+    var box=sl.querySelector('.count'), cnt=box&&box.querySelector('.n b');
+    var ticks=box?Array.prototype.slice.call(box.querySelectorAll('.ticks i')):[];
+    if(frs.length<2){ arws.forEach(function(a){a.remove()}); if(box) box.remove(); return; }
+    var g={i:0,n:frs.length};
+    g.go=function(n){
+      n=Math.max(0,Math.min(g.n-1,n)); if(n===g.i) return;
+      frs[g.i].classList.remove('on'); g.i=n; frs[g.i].classList.add('on');
+      if(cnt) cnt.textContent=String(g.i+1).padStart(2,'0');
+      ticks.forEach(function(t,k){t.classList.toggle('on',k===g.i)});
+      arws[0].disabled=g.i===0; arws[1].disabled=g.i===g.n-1;
+      arws[0].style.opacity=g.i===0?'.35':''; arws[1].style.opacity=g.i===g.n-1?'.35':'';
+      var nx=frs[g.i+1]&&frs[g.i+1].querySelector('img'); if(nx) nx.loading='eager';
+    };
+    g.reset=function(){ if(g.i!==0){ frs[g.i].classList.remove('on'); g.i=0; frs[0].classList.add('on');
+      if(cnt) cnt.textContent='01'; ticks.forEach(function(t,k){t.classList.toggle('on',k===0)});
+      arws[0].disabled=true; arws[0].style.opacity='.35'; arws[1].disabled=false; arws[1].style.opacity=''; } };
+    arws[0].addEventListener('click',function(e){e.stopPropagation();g.go(g.i-1)});
+    arws[1].addEventListener('click',function(e){e.stopPropagation();g.go(g.i+1)});
+    ticks.forEach(function(t){t.addEventListener('click',function(e){e.stopPropagation();g.go(+t.getAttribute('data-go'))})});
+    arws[0].disabled=true; arws[0].style.opacity='.35';
+    sl._gal=g;
+  });
+
+  // menu
+  var titles={capa:'Capa',conceito:'O conceito · O clássico e a tecnologia',missao:'Nossa missão',espaco:'O espaço',mobiliario:'Peças desenhadas para esta casa',app:'A casa inteira em um app',theforce:'The Force',galeria:'Do bar ao rooftop',projecao:'A escada · projeção mapeada',hotel:'O hotel',essencia:'O conceito · Na identidade',marca:'O conceito · Na comunicação',arte:'Galeria · Os artistas',cardhero:'Membership · Feito para poucos',membership:'Membership · O cartão',porta:'Membership · No iPhone e na porta',cardapio:'O cardápio',social:'Social media & PR',insercao:'A marca dentro do espaço',porque:'Por que estar no CLUBE',cotas:'Formatos de parceria',cobranding:'Co-branding',panorama:'A noite',contato:'Contato','st-1':'Matéria que fica, luz que muda','st-2':'Dois andares e um rooftop, uma noite','st-3':'O clube de quem enxerga','st-4':'Marcas dentro da noite, não ao lado'};
+  slides.forEach(function(sl){
+    var li=document.createElement('li'), a=document.createElement('a');
+    a.href='#'+sl.id; a.textContent=titles[sl.id]||sl.id;
+    a.addEventListener('click',function(ev){ev.preventDefault();closeMenu();goTo(slides.indexOf(sl));});
+    li.appendChild(a); menuList.appendChild(li);
+  });
+  function openMenu(){menu.hidden=false;menuBtn.setAttribute('aria-expanded','true');menuClose.focus();}
+  function closeMenu(){menu.hidden=true;menuBtn.setAttribute('aria-expanded','false');menuBtn.focus();}
+  menuBtn.addEventListener('click',function(){menu.hidden?openMenu():closeMenu()});
+  menuClose.addEventListener('click',closeMenu);
+  document.addEventListener('keydown',function(ev){
+    if(ev.target && /input|textarea/i.test(ev.target.tagName)) return;
+    if(!menu.hidden){ if(ev.key==='Escape'){ev.preventDefault();closeMenu();} return; }
+    if(ev.key==='ArrowRight'||ev.key==='ArrowDown'||ev.key==='PageDown'||ev.key===' '){ev.preventDefault();
+      if(ev.key==='ArrowRight'&&galStep(slides[idx],1))return; goTo(idx+1);}
+    else if(ev.key==='ArrowLeft'||ev.key==='ArrowUp'||ev.key==='PageUp'){ev.preventDefault();
+      if(ev.key==='ArrowLeft'&&galStep(slides[idx],-1))return; goTo(idx-1);}
+    else if(ev.key==='Home'){goTo(0);} else if(ev.key==='End'){goTo(slides.length-1);}
+    else if(ev.key==='m'||ev.key==='M'){openMenu();}
+  });
+  document.getElementById('next').addEventListener('click',function(){goTo(idx+1)});
+  document.getElementById('prev').addEventListener('click',function(){goTo(idx-1)});
+  function jump(){var t=location.hash&&document.getElementById(location.hash.slice(1)); if(t){t.scrollIntoView({behavior:'instant',block:'start'}); setActive(t);}}
+  window.addEventListener('hashchange',jump); window.addEventListener('load',jump); setTimeout(jump,60); setTimeout(jump,400);
+
+  /* ---- marquee: duplicate the track so the loop is seamless ---- */
+  Array.prototype.forEach.call(document.querySelectorAll('.marquee .track'),function(t){
+    var n=parseInt(t.getAttribute('data-repeat')||'2',10), html=t.innerHTML, out='';
+    for(var i=0;i<n*2;i++) out+=html;
+    t.innerHTML=out;
+  });
+
+  /* ---- word-by-word reveal on titles (Mythshire spans stay whole) ---- */
+  var wi=0;
+  Array.prototype.forEach.call(document.querySelectorAll('.slide:not(#capa) .h1, .slide:not(#capa) .h2'),function(h){
+    wi=0;
+    Array.prototype.slice.call(h.childNodes).forEach(function(node){
+      if(node.nodeType===3){
+        var parts=node.textContent.split(/(\s+)/), frag=document.createDocumentFragment();
+        parts.forEach(function(pt){
+          if(!pt) return;
+          if(/^\s+$/.test(pt)){frag.appendChild(document.createTextNode(pt));return;}
+          var sp=document.createElement('span'); sp.className='w'; sp.textContent=pt; sp.style.setProperty('--w',wi++); frag.appendChild(sp);
+        });
+        h.replaceChild(frag,node);
+      } else if(node.nodeType===1 && node.tagName!=='BR'){
+        node.classList.add('w'); node.style.setProperty('--w',wi++);
+      }
+    });
+  });
+
+  /* ---- number ticker on the stats slide ---- */
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tick(el){
+    if(el.dataset.done) return; el.dataset.done='1';
+    if(!el.dataset.final) el.dataset.final=el.textContent;
+    var raw=el.dataset.final, m=raw.match(/^(\D*)(\d+)(.*)$/); if(!m||reduce) return;
+    var pre=m[1], target=parseInt(m[2],10), suf=m[3], t0=null, dur=1300;
+    function step(ts){ if(!t0) t0=ts; var k=Math.min(1,(ts-t0)/dur); k=1-Math.pow(1-k,3);
+      el.textContent=pre+Math.round(target*k)+suf; if(k<1) el._raf=requestAnimationFrame(step); else el._raf=0; }
+    el.textContent=pre+'0'+suf; el._raf=requestAnimationFrame(step);
+  }
+  var _setActive=setActive;
+  setActive=function(sl){ _setActive(sl); Array.prototype.forEach.call(sl.querySelectorAll('.num'),tick); glVisible(sl); };
+
+  /* ---- liquid metal: WebGL fill for the masked logo (brand metal ramp) ---- */
+  var gls=[];
+  function initGL(logo){
+    if(reduce) return;
+    var cv=document.createElement('canvas'); logo.appendChild(cv);
+    var gl=cv.getContext('webgl',{antialias:false,alpha:false,premultipliedAlpha:false}); if(!gl){logo.removeChild(cv);return;}
+    var vs='attribute vec2 a;void main(){gl_Position=vec4(a,0.,1.);}';
+    var fs='precision highp float;uniform vec2 r;uniform float t;'+
+      'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}'+
+      'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}'+
+      'float fbm(vec2 p){float v=0.,a=.5;for(int k=0;k<5;k++){v+=a*n(p);p=p*2.07+vec2(1.7,9.2);a*=.5;}return v;}'+
+      'vec3 st(int k){if(k==0)return vec3(.435);if(k==1)return vec3(1.);if(k==2)return vec3(.612,.616,.616);if(k==3)return vec3(.824,.827,.827);if(k==4)return vec3(.706,.706,.71);if(k==5)return vec3(.522);if(k==6)return vec3(.796,.8,.804);return vec3(.89,.894,.898);}'+
+      'float ps(int k){if(k==0)return .01;if(k==1)return .19;if(k==2)return .41;if(k==3)return .52;if(k==4)return .64;if(k==5)return .70;if(k==6)return .75;return .84;}'+
+      'vec3 ramp(float x){vec3 c=st(0);for(int k=0;k<7;k++){float a=ps(k),b=ps(k+1);float u=clamp((x-a)/(b-a),0.,1.);u=u*u*(3.-2.*u);c=mix(c,st(k+1),step(a,x)*u);}return c;}'+
+      'void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=vec2(uv.x*r.x/r.y,uv.y);'+
+      'float w=fbm(p*1.6+vec2(t*.10,-t*.06));float w2=fbm(p*3.2+w*1.8+vec2(-t*.04,t*.03));'+
+      'float x=uv.x*1.15+(w2-.5)*1.1-t*.05;float b=abs(fract(x)*2.-1.);'+
+      'vec3 c=ramp(.01+b*.83);float sp=pow(smoothstep(.58,.96,w2),3.);c+=sp*.32;c-=pow(smoothstep(.35,.0,w),2.)*.12;'+
+      'gl_FragColor=vec4(clamp(c,0.,1.),1.);}';
+    function sh(type,src){var o=gl.createShader(type);gl.shaderSource(o,src);gl.compileShader(o);return o;}
+    var pr=gl.createProgram(); gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs)); gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs)); gl.linkProgram(pr);
+    if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){logo.removeChild(cv);return;}
+    gl.useProgram(pr);
+    var buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf); gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+    var a=gl.getAttribLocation(pr,'a'); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a,2,gl.FLOAT,false,0,0);
+    var ur=gl.getUniformLocation(pr,'r'), ut=gl.getUniformLocation(pr,'t');
+    var item={logo:logo,cv:cv,gl:gl,ur:ur,ut:ut,on:false,raf:0};
+    function size(){var d=Math.min(window.devicePixelRatio||1,1.5); var W=Math.max(1,Math.round(logo.clientWidth*d)), H=Math.max(1,Math.round(logo.clientHeight*d)); if(cv.width!==W||cv.height!==H){cv.width=W;cv.height=H;gl.viewport(0,0,W,H);}}
+    item.size=size; size(); logo.classList.add('gl'); gls.push(item);
+    window.addEventListener('resize',size);
+  }
+  function loop(item){ if(!item.on) return; item.size(); item.gl.uniform2f(item.ur,item.cv.width,item.cv.height); item.gl.uniform1f(item.ut,performance.now()/1000); item.gl.drawArrays(item.gl.TRIANGLE_STRIP,0,4); item.raf=requestAnimationFrame(function(){loop(item)}); }
+  function glVisible(sl){ gls.forEach(function(it){ var vis=sl.contains(it.logo); if(vis&&!it.on){it.on=true;loop(it);} else if(!vis&&it.on){it.on=false;cancelAnimationFrame(it.raf);} }); }
+  Array.prototype.forEach.call(document.querySelectorAll('.logo:not(.solid)'),initGL);
+  glVisible(slides[0]);
+  document.addEventListener('visibilitychange',function(){ gls.forEach(function(it){ if(document.hidden){it.on=false;cancelAnimationFrame(it.raf);} }); if(!document.hidden) glVisible(slides[idx]); });
+})();
+</script>
+
+<script>
+/* CLUBE membership card: brushed silver with real lighting, engraving from a height map */
+(function(){
+  var deck=document.getElementById('deck');
+  var VS='attribute vec2 a;varying vec2 v;void main(){v=a*.5+.5;gl_Position=vec4(a,0.,1.);}';
+  var FS=[
+  'precision highp float;varying vec2 v;uniform vec2 r;uniform vec3 L;uniform sampler2D N;uniform sampler2D R;uniform sampler2D C;uniform sampler2D Hm;uniform float K;uniform vec2 P;',
+  'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}',
+  'float n2(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}',
+  'vec3 st(int k){if(k==0)return vec3(.435);if(k==1)return vec3(1.);if(k==2)return vec3(.612,.616,.616);if(k==3)return vec3(.824,.827,.827);if(k==4)return vec3(.706,.706,.71);if(k==5)return vec3(.522);if(k==6)return vec3(.796,.8,.804);return vec3(.89,.894,.898);}',
+  'float ps(int k){if(k==0)return .01;if(k==1)return .19;if(k==2)return .41;if(k==3)return .52;if(k==4)return .64;if(k==5)return .70;if(k==6)return .75;return .84;}',
+  'vec3 ramp(float x){vec3 c=st(0);for(int k=0;k<7;k++){float a=ps(k),b=ps(k+1);float u=clamp((x-a)/(b-a),0.,1.);u=u*u*(3.-2.*u);c=mix(c,st(k+1),step(a,x)*u);}return c;}',
+  'void main(){',
+  ' vec2 uv=vec2(v.x,1.-v.y); float ar=r.x/r.y; vec2 tu=vec2(uv.x*ar,uv.y)*1.25;',
+  ' vec3 nm=texture2D(N,tu).xyz*2.-1.; float gr=texture2D(C,tu).r; float ro=texture2D(R,tu).r;',
+  ' vec2 px=1./r; float m=texture2D(Hm,uv).r;',
+  ' float hx=texture2D(Hm,uv+vec2(px.x,0.)).r-texture2D(Hm,uv-vec2(px.x,0.)).r; float hy=texture2D(Hm,uv+vec2(0.,px.y)).r-texture2D(Hm,uv-vec2(0.,px.y)).r;',
+  ' vec3 Nn=normalize(vec3(nm.xy*3.2+vec2(-hx,hy)*.35,1.));',
+  ' vec3 Vv=vec3(0.,0.,1.); vec3 Ll=normalize(L); vec3 H=normalize(Ll+Vv); float nh=max(dot(Nn,H),0.);',
+  ' float rough=mix(.30,.58,clamp((ro-.09)/.08,0.,1.));',
+  ' float spec=pow(nh,mix(110.,22.,rough))*(1.-rough)*1.15+pow(nh,5.)*.16;',
+  ' float diff=max(0.,dot(Nn,Ll));',
+  ' vec3 Rv=reflect(-Vv,Nn); float ex=fract(.42+Rv.x*.55+Rv.y*.22+uv.x*.12+L.x*.14); float band=abs(ex*2.-1.);',
+  ' vec3 env=ramp(.01+band*.83);',
+  ' vec3 base=vec3(.70,.705,.71)*(.97+(gr-.86)*.3);',
+  ' vec2 dq=(uv-P)*vec2(ar,1.); float pl=exp(-dot(dq,dq)*14.);',
+  ' vec3 metal=(base*(.40+.30*diff)+env*.26)*K+vec3(spec)*mix(.12,1.,K)+(base*.6+env*.25+vec3(spec*.55))*pl*(1.-K);',
+  ' float e=smoothstep(.30,.70,m);',
+  ' vec3 ink=vec3(.105,.11,.115)*(.92+gr*.1)+env*.04+vec3(pow(nh,9.)*.05);',
+  ' vec3 col=mix(metal,ink,e);',
+  ' gl_FragColor=vec4(clamp(col,0.,1.),1.);}'
+  ].join('\n');
+
+  var PDF=/[?&]pdf\b/.test(location.search)||document.body.classList.contains('pdf');
+  var mouse={x:0,y:0,on:false};
+  document.addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;mouse.on=true;});
+  document.addEventListener('mouseleave',function(){mouse.on=false;});
+  var imgs={}, height=null, heightHero=null, reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function load(src){return new Promise(function(res,rej){var i=new Image();i.onload=function(){res(i)};i.onerror=rej;i.src=src;});}
+  function white(img,w,h){var c=document.createElement('canvas');c.width=Math.ceil(w);c.height=Math.ceil(h);var x=c.getContext('2d');x.drawImage(img,0,0,w,h);x.globalCompositeOperation='source-in';x.fillStyle='#fff';x.fillRect(0,0,w,h);return c;}
+
+  /* engraving: logo top-left, Membership top-right, name and number bottom-left, figure bottom-right */
+  function buildHeight(W,H){
+    var c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');
+    x.fillStyle='#000';x.fillRect(0,0,W,H);
+    var pad=W*.065;
+    var lw=W*.24, lh=lw*362/1478; x.drawImage(white(imgs.logo,lw,lh),pad,H*.12);
+    x.fillStyle='#fff'; x.textBaseline='alphabetic';
+    x.font='400 '+(W*.019)+'px Archivo'; x.letterSpacing='.22em'; x.textAlign='right'; x.fillText('MEMBERSHIP',W-pad,H*.12+W*.019); x.textAlign='left';
+    var ny=H*.735; x.letterSpacing='-.01em'; x.font='400 '+(W*.050)+'px Archivo'; x.fillText('Zaaire Garcia',pad,ny);
+    var ly=H*.735+W*.036;
+    x.font='300 '+(W*.019)+'px Archivo'; x.letterSpacing='.12em'; x.fillText('Nº 0001',pad,ly);
+    var fw=W*.17, fh=fw*1089/900; x.globalAlpha=1; x.drawImage(white(imgs.fig,fw,fh),W-pad-fw,ly-fh); x.globalAlpha=1;
+    var c2=document.createElement('canvas');c2.width=W;c2.height=H;var x2=c2.getContext('2d');
+    x2.filter='blur('+Math.max(.5,W/2600)+'px)'; x2.drawImage(c,0,0);
+    return c2;
+  }
+
+  function makeCard(el){
+    var cv=document.createElement('canvas'); el.appendChild(cv);
+    var gl=cv.getContext('webgl',{antialias:true,alpha:false,preserveDrawingBuffer:PDF});
+    if(!gl){el.style.background='linear-gradient(118deg,#6f6f6f,#fff 19%,#9c9d9d 41%,#d2d3d3 52%,#b4b4b5 64%,#858585 70%,#cbcccd 75%,#e3e4e5 84%)';return;}
+    function sh(t,src){var o=gl.createShader(t);gl.shaderSource(o,src);gl.compileShader(o);return o;}
+    var pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,VS));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,FS));gl.linkProgram(pr);
+    if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){el.removeChild(cv);return;}
+    gl.useProgram(pr);
+    var b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+    var a=gl.getAttribLocation(pr,'a');gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,2,gl.FLOAT,false,0,0);
+    function tex(u,src,rep){var t=gl.createTexture();gl.activeTexture(gl.TEXTURE0+u);gl.bindTexture(gl.TEXTURE_2D,t);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,src);var w=rep?gl.REPEAT:gl.CLAMP_TO_EDGE;if(rep)gl.generateMipmap(gl.TEXTURE_2D);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,rep?gl.LINEAR_MIPMAP_LINEAR:gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,w);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,w);}
+    var hero=el.hasAttribute('data-hero');
+    var hm=hero?(heightHero=heightHero||buildHeight(3072,Math.round(3072/1.586))):(height=height||buildHeight(1600,Math.round(1600/1.586)));
+    tex(0,imgs.normal,1); tex(1,imgs.rough,1); tex(2,hm); tex(3,imgs.color,1);
+    gl.uniform1i(gl.getUniformLocation(pr,'N'),0);gl.uniform1i(gl.getUniformLocation(pr,'R'),1);gl.uniform1i(gl.getUniformLocation(pr,'Hm'),2);gl.uniform1i(gl.getUniformLocation(pr,'C'),3);
+    var ur=gl.getUniformLocation(pr,'r'),uL=gl.getUniformLocation(pr,'L'),uP=gl.getUniformLocation(pr,'P');
+    var uK=gl.getUniformLocation(pr,'K'); gl.uniform1f(uK,hero?.13:1.); gl.uniform2f(uP,-9.,-9.);
+    var lx=-.35,ly=.55,raf=0,on=false;
+    var host=el.classList.contains('tilt')?el:null;
+    function draw(ts){
+      if(!on) return;
+      var d=Math.min(devicePixelRatio||1,hero?1.6:2),W=Math.round(cv.clientWidth*d),H=Math.round(cv.clientHeight*d);
+      if(W>0&&(cv.width!==W||cv.height!==H)){cv.width=W;cv.height=H;gl.viewport(0,0,W,H);}
+      var tx=-.35,ty=.55;
+      if(hero){ if(el._P){ tx=el._L[0]; ty=el._L[1]; gl.uniform2f(uP,el._P[0],el._P[1]); } if(el._K!=null) gl.uniform1f(uK,el._K); }
+      else if(PDF||reduce){ /* parado, luz na posição de repouso */ }
+      else if(mouse.on){
+        /* a luz segue o cursor e o cartão inclina na direção dele */
+        var rc=el.getBoundingClientRect();
+        var x=(mouse.x-(rc.left+rc.width/2))/Math.max(rc.width,1),
+            y=(mouse.y-(rc.top+rc.height/2))/Math.max(rc.height,1);
+        x=Math.max(-1.5,Math.min(1.5,x)); y=Math.max(-1.5,Math.min(1.5,y));
+        tx=-.35+x*1.2; ty=.55-y*1.0;
+        if(host){ var near=Math.abs(x)<.6&&Math.abs(y)<.6;
+          host.style.transform=near?'perspective(1000px) rotateY('+(x*16).toFixed(2)+'deg) rotateX('+(-y*14).toFixed(2)+'deg)':''; }
+      }
+      else { var t=ts/1000; tx=-.35+Math.sin(t*.35)*.5; ty=.55+Math.cos(t*.27)*.3; if(host) host.style.transform=''; }
+      lx+=(tx-lx)*.1; ly+=(ty-ly)*.1;
+      gl.uniform2f(ur,cv.width,cv.height); gl.uniform3f(uL,lx,ly,1.15);
+      gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+      raf=requestAnimationFrame(draw);
+    }
+    if(PDF){ /* quadro parado, redesenhado sempre que a página o exibe */
+      on=true; raf=requestAnimationFrame(draw);
+      return;
+    }
+    /* only the visible slide burns frames */
+    var io=new IntersectionObserver(function(e){
+      var vis=e[0].isIntersecting;
+      if(vis&&!on){on=true;raf=requestAnimationFrame(draw);}
+      else if(!vis&&on){on=false;cancelAnimationFrame(raf);if(host)host.style.transform='';}
+    },{root:window.innerWidth>900?deck:null,threshold:0});
+    io.observe(el);
+  }
+
+  /* keep the phone mockup's 2000px scene fitted to whatever box it lands in */
+  function fitM17(){
+    document.querySelectorAll('.m17').forEach(function(m){
+      var cs=getComputedStyle(m), cw=parseFloat(cs.getPropertyValue('--cw'))||2000;
+      var k=m.clientWidth/cw;
+      m.querySelector('.space').style.transform='scale('+k+') translate(calc(-1 * '+cs.getPropertyValue('--cx').trim()+'), calc(-1 * '+cs.getPropertyValue('--cy').trim()+'))';
+    });
+  }
+  window.addEventListener('resize',fitM17);
+  window.addEventListener('beforeprint',fitM17);
+  window.__fitM17=fitM17;
+  fitM17();
+
+  // keep every iOS/watchOS screen at its native design scale
+  function autoscale(sel,base){
+    var els=[].slice.call(document.querySelectorAll(sel));
+    if(!els.length) return;
+    var f=function(el){el.style.setProperty('--k',(el.clientWidth/base).toFixed(4))};
+    els.forEach(f);
+    var redo=function(){els.forEach(f)};
+    window.addEventListener('beforeprint',redo);
+    window.__refit=(window.__refit?(function(p){return function(){p();redo()}})(window.__refit):redo);
+    if(window.ResizeObserver){var ro=new ResizeObserver(function(es){es.forEach(function(e){f(e.target)})});els.forEach(function(el){ro.observe(el)})}
+    else{var run=function(){els.forEach(f)};window.addEventListener('resize',run)}
+  }
+  autoscale('.ph',300); autoscale('.s-porta .wslot',210);
+
+  Promise.all([load('assets/logo-clube.webp'),load('assets/fig-a-1.webp'),load('assets/metal044-normal.jpg'),load('assets/metal044-rough.jpg'),load('assets/metal044-color.jpg'),document.fonts.load('400 40px Archivo'),document.fonts.load('300 40px Archivo'),document.fonts.ready])
+    .then(function(v){
+      imgs.logo=v[0];imgs.fig=v[1];imgs.normal=v[2];imgs.rough=v[3];imgs.color=v[4];
+      document.querySelectorAll('[data-mcard]').forEach(makeCard);
+      fitM17();
+    });
+})();
+</script>
+<script>
+/* luz dos cartões, por pixel: segue o cursor; sem mouse, desliza sozinha */
+(function(){
+  if(/[?&]pdf\b/.test(location.search)||document.body.classList.contains('pdf')) return;   /* no PDF fica a imagem plana */
+  var cards=[].slice.call(document.querySelectorAll('.mcard')); if(!cards.length) return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* reduz em etapas de metade: cada passo faz média real dos pixels, então os riscos não serrilham */
+  function shrink(img,w){
+    var cw=img.naturalWidth||img.width, ch=img.naturalHeight||img.height, src=img;
+    if(w>=cw) return img;
+    while(cw/2>=w){ var c=document.createElement('canvas'); c.width=Math.round(cw/2); c.height=Math.round(ch/2);
+      var x=c.getContext('2d'); x.imageSmoothingQuality='high'; x.drawImage(src,0,0,c.width,c.height); src=c; cw=c.width; ch=c.height; }
+    var f=document.createElement('canvas'); f.width=w; f.height=Math.round(ch*w/cw);
+    var y=f.getContext('2d'); y.imageSmoothingQuality='high'; y.drawImage(src,0,0,f.width,f.height); return f;
+  }
+  var VS='attribute vec2 a;varying vec2 v;void main(){v=a*.5+.5;gl_Position=vec4(a,0.,1.);}';
+  var FS=[
+    'precision mediump float;varying vec2 v;uniform sampler2D B;uniform sampler2D F;uniform sampler2D T;uniform vec2 S;uniform vec2 TS;uniform float Q;',
+    'void main(){',
+    ' vec2 uv=vec2(v.x,1.-v.y);',
+    ' vec3 base=texture2D(B,uv).rgb; vec3 f=texture2D(F,uv).rgb;',
+    ' float ink=f.g; float lng=f.b*2.-1.;',
+    ' float hi=texture2D(T,uv*TS).r*2.-1.;',
+    ' float det=mix(f.r*2.-1.,hi,Q);',
+    ' base+=vec3(hi*.010*Q*(1.-ink));',
+    /* a posição da luz é deslocada pelos riscos longos: a borda da faixa desfia no escovado */
+    ' float x=uv.x+lng*.032+det*.004+(uv.y-S.y)*.08; float d=x-S.x;',
+    ' float core=exp(-d*d/.012); float wide=exp(-d*d/.090);',
+    /* cada risco reflete diferente: claro acende mais, escuro quase não acende */
+    ' float streak=clamp(.78+det*mix(1.10,.55,Q),.12,1.9);',
+    ' float metal=(core*.68+wide*.24)*streak;',
+    ' float silver=(core*.62+wide*.22);',
+    ' vec3 col=base+vec3(mix(metal,silver,ink));',
+    ' gl_FragColor=vec4(clamp(col,0.,1.),1.);}'
+  ].join('\n');
+  function load(src){return new Promise(function(res,rej){var i=new Image();i.onload=function(){res(i)};i.onerror=rej;i.src=src;});}
+  var m={x:0,y:0,on:false,t:0};
+  document.addEventListener('mousemove',function(e){m.x=e.clientX;m.y=e.clientY;m.on=true;m.t=performance.now();});
+  document.addEventListener('mouseleave',function(){m.on=false;});
+  Promise.all([load('assets/card-grafite-2k.webp'),load('assets/card-grafite-4k.webp'),load('assets/card-fx-2k.webp'),load('assets/card-brush-tile.webp')]).then(function(im){
+    var items=[];
+    cards.forEach(function(el,i){
+      var cv=document.createElement('canvas'); cv.className='lux';
+      var gl=cv.getContext('webgl',{antialias:false,alpha:false,premultipliedAlpha:false}); if(!gl) return;
+      function sh(t,src){var o=gl.createShader(t);gl.shaderSource(o,src);gl.compileShader(o);return o;}
+      var pr=gl.createProgram(); gl.attachShader(pr,sh(gl.VERTEX_SHADER,VS)); gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,FS)); gl.linkProgram(pr);
+      if(!gl.getProgramParameter(pr,gl.LINK_STATUS)) return;
+      gl.useProgram(pr);
+      var b=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,b); gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+      var a=gl.getAttribLocation(pr,'a'); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a,2,gl.FLOAT,false,0,0);
+      function tex(u,img){var t=gl.createTexture();gl.activeTexture(gl.TEXTURE0+u);gl.bindTexture(gl.TEXTURE_2D,t);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,img);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);}
+      gl.uniform1i(gl.getUniformLocation(pr,'B'),0); gl.uniform1i(gl.getUniformLocation(pr,'F'),1); gl.uniform1i(gl.getUniformLocation(pr,'T'),2);
+      var tt=gl.createTexture(); gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D,tt); gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,im[3]);
+      gl.generateMipmap(gl.TEXTURE_2D); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR_MIPMAP_LINEAR); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.REPEAT); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.REPEAT);
+      el.appendChild(cv);
+      items.push({el:el,cv:cv,gl:gl,tex:tex,big:el.classList.contains('tilt'),tw:0,uS:gl.getUniformLocation(pr,'S'),uTS:gl.getUniformLocation(pr,'TS'),uQ:gl.getUniformLocation(pr,'Q'),x:.55,y:.45,ph:i*1.7});
+    });
+    function frame(now){
+      if(!document.hidden){
+        var idle=!m.on||now-m.t>2600, t=now/1000;
+        items.forEach(function(o){
+          var r=o.el.getBoundingClientRect();
+          if(r.bottom<0||r.top>innerHeight||r.width<2) return;
+          var tx,ty;
+          if(reduce){ tx=.55; ty=.45; }
+          else if(!idle){ tx=(m.x-r.left)/r.width; ty=(m.y-r.top)/r.height; tx=Math.max(-.3,Math.min(1.3,tx)); ty=Math.max(0,Math.min(1,ty)); }
+          else { tx=.5+Math.sin(t*.42+o.ph)*.5; ty=.45+Math.cos(t*.31+o.ph)*.18; }
+          o.x+=(tx-o.x)*.08; o.y+=(ty-o.y)*.08;
+          var d=Math.min(devicePixelRatio||1,2), W=Math.round(o.cv.clientWidth*d), H=Math.round(o.cv.clientHeight*d);
+          if(W>0&&(o.cv.width!==W||o.cv.height!==H)){o.cv.width=W;o.cv.height=H;o.gl.viewport(0,0,W,H);}
+          if(W>0&&(!o.tw||Math.abs(W-o.tw)/W>.25)){
+            o.tw=W;
+            if(o.big&&W>=1000){ o.tex(0,im[1]); o.tex(1,im[2]); o.gl.uniform1f(o.uQ,0); }   /* cartão grande: 4K + mapa 2K, como aprovado */
+            else { var tw=Math.max(256,Math.round(W*1.25)); o.tex(0,shrink(im[0],tw)); o.tex(1,shrink(im[2],tw)); o.gl.uniform1f(o.uQ,.5); }
+            o.gl.uniform2f(o.uTS,W/310,H/310);   /* 1 amostra = 310 px de tela: a mesma espessura de risco do cartão grande */
+          }
+          o.gl.uniform2f(o.uS,o.x,o.y); o.gl.drawArrays(o.gl.TRIANGLE_STRIP,0,4);
+        });
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+    window.__luxAt=function(x,y){items.forEach(function(o){o.x=x;o.y=y;});m.on=false;};   /* inspeção */
+  });
+})();
+/* cartão solo: inclina na direção do cursor */
+(function(){var c=document.querySelector('.mcard.tilt'); if(!c||window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(); var x=(e.clientX-(r.left+r.width/2))/r.width, y=(e.clientY-(r.top+r.height/2))/r.height;
+    c.style.transform=(Math.abs(x)<.6&&Math.abs(y)<.6)?'perspective(1000px) rotateY('+(x*16).toFixed(2)+'deg) rotateX('+(-y*14).toFixed(2)+'deg)':'';});
+  document.addEventListener('mouseleave',function(){c.style.transform=''});})();
+
+
+/* marquee em curva do cardápio (porte do marquee-along-svg-path): corre sozinho, desacelera no hover, arrasta */
+(function(){
+  var el=document.querySelector('[data-trilha]'); if(!el) return;
+  var palco=el.querySelector('.palco'), label=el.querySelector('[data-hname]');
+  var base=[].slice.call(palco.querySelectorAll('.tri'));
+  base.forEach(function(n){ var c=n.cloneNode(true); c.setAttribute('aria-hidden','true'); palco.appendChild(c); });   /* repeat = 2 */
+  var items=[].slice.call(palco.querySelectorAll('.tri')), N=items.length;
+  var PDF=document.body.classList.contains('pdf'), reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var off=0, V=reduce||PDF?0:2.2, hover=false, hf=1, drag=null, dv=0, last=performance.now();
+  function wrap(v){ return ((v%100)+100)%100; }
+  function fit(){ var s=Math.min(el.clientWidth/996, el.clientHeight/330), ox=(el.clientWidth-996*s)/2, oy=(el.clientHeight-330*s)/2;
+    palco.style.transform='translate('+ox+'px,'+oy+'px) scale('+s+')'; }
+  function place(){ items.forEach(function(it,i){ var d=wrap(off+i*100/N); it.style.offsetDistance=d.toFixed(3)+'%'; it.style.zIndex=String(1+Math.floor(d/10)); }); }
+  function tick(now){ var dt=Math.min(.05,(now-last)/1000); last=now;
+    hf+=((hover?0.3:1)-hf)*Math.min(1,dt*8);
+    if(!drag){ off+=V*dt*hf+dv; dv*=Math.pow(0.04,dt); } place(); requestAnimationFrame(tick); }
+  items.forEach(function(it){
+    it.addEventListener('mouseenter',function(){ hover=true; if(label){label.style.opacity=0; setTimeout(function(){label.textContent=it.getAttribute('data-name'); label.style.opacity=1;},150);} });
+    it.addEventListener('mouseleave',function(){ hover=false; });
+  });
+  el.addEventListener('pointerdown',function(e){ drag={x:e.clientX}; el.classList.add('drag'); el.setPointerCapture(e.pointerId); dv=0; });
+  el.addEventListener('pointermove',function(e){ if(!drag) return; var dx=e.clientX-drag.x; drag.x=e.clientX; var s=el.clientWidth/996; off+=dx*0.1/s; dv=dx*0.1/s; });
+  function up(){ if(!drag) return; drag=null; el.classList.remove('drag'); }
+  el.addEventListener('pointerup',up); el.addEventListener('pointercancel',up);
+  window.addEventListener('resize',fit); if(window.ResizeObserver) new ResizeObserver(fit).observe(el);
+  fit(); place(); if(!PDF) requestAnimationFrame(tick);
+})();
+
+/* galeria expansível (spec "fotos e texto se reorganizam"): hover, toque ou Tab abrem um painel;
+   largura aberta = altura × proporção natural da foto; se não couber, cede a altura; os demais dividem o resto */
+(function(){
+  if(document.body.classList.contains('pdf')) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var GAP=8, SLIVER=32;
+  var CAPS={
+    insercao:[["Painel de LED do bar","A marca uma vez, pequena, em branco quente. A faixa continua sendo luz do ambiente."],
+              ["O painel de perto","Tamanho e brilho de sinalização, não de anúncio."],
+              ["O balcão muda de cor","Tampo e painel de LED na mesma cor, as outras luzes mais baixas. A marca apenas na faixa."],
+              ["O painel de perto, em vermelho","A faixa de ônix acesa na cor da marca, e a marca sobre ela, em branco."],
+              ["O momento da marca","O espaço inteiro na cor da marca, do teto ao balcão, por uma noite. A marca em uma única tela."],
+              ["A parede dos sofás","As telas verticais mostram conteúdo escuro e uma delas leva a marca, do tamanho de um quadro."]],
+    arte:[["Gleeson Paulino","Entre São Paulo, Londres e Paris, imagens neorromânticas entre o clássico e o contemporâneo."],
+          ["Samuel de Saboia","Recife, 1997. Autodidata, pinta a natureza exuberante e a luz intensa que marcam seu olhar."],
+          ["Alexandre Furcolin","Artista visual e fotógrafo: fotolivros, instalações, esculturas site-specific e performances."],
+          ["Dejumatos","Diretora, roteirista e modeladora 3D. Narrativas imersivas em XR e VR."]]
+  };
+  function build(slide){
+    var blks=[].slice.call(slide.querySelectorAll(':scope > .blk.img')); if(blks.length<2) return;
+    var strip=document.createElement('div'); strip.className='xg-strip';
+    var caps=CAPS[slide.id]||null, all=[];
+    blks.forEach(function(b,i){
+      var img=b.querySelector('img'); if(!img) return;
+      img.loading='eager';
+      var btn=document.createElement('button'); btn.type='button'; btn.className='xp';
+      var t=caps?caps[i][0]:img.alt, d=caps?caps[i][1]:'';
+      btn.setAttribute('aria-label','Ampliar: '+t);
+      btn.appendChild(img);
+      var c=document.createElement('span'); c.className='xc'; c.innerHTML='<b></b>'+(d?'<span></span>':'');
+      c.querySelector('b').textContent=t; if(d) c.querySelector('span').textContent=d;
+      btn.appendChild(c); all.push(btn);
+    });
+    /* até 4 fotos: uma linha; mais que isso: linhas de 3, para a vizinha continuar ao alcance do mouse */
+    var per=all.length>4?3:all.length, rows=[];
+    for(var r=0;r<all.length;r+=per){ var row=document.createElement('div'); row.className='xg-row'; all.slice(r,r+per).forEach(function(b){row.appendChild(b)}); strip.appendChild(row); rows.push({el:row,panels:all.slice(r,r+per),openI:-1,restW:0}); }
+    slide.appendChild(strip); slide.classList.add('xg-on');
+    rows.forEach(function(R){
+      var panels=R.panels;
+      function ref(){ if(R.openI<0) R.restW=R.el.clientWidth; return R.restW; }   /* largura de referência congelada enquanto algo está aberto */
+      function open(i){
+        var W=ref(), H=R.el.clientHeight, n=panels.length, img=panels[i].querySelector('img');
+        var ar=(img.naturalWidth&&img.naturalHeight)?img.naturalWidth/img.naturalHeight:1.5;
+        var maxW=W-GAP*(n-1)-SLIVER*(n-1);
+        var w=Math.min(H*ar,maxW), h=Math.min(H,w/ar);
+        R.openI=i;
+        panels.forEach(function(p,k){
+          if(k===i){ p.style.flex='0 0 '+w.toFixed(1)+'px'; p.style.height=h.toFixed(1)+'px'; p.classList.add('open'); }
+          else { p.style.flex='1 1 0px'; p.style.height='100%'; p.classList.remove('open'); }
+        });
+      }
+      function close(){ R.openI=-1; panels.forEach(function(p){ p.style.flex='1 1 0px'; p.style.height='100%'; p.classList.remove('open'); }); }
+      panels.forEach(function(p,i){
+        p.addEventListener('mouseenter',function(){ open(i); });
+        p.addEventListener('focus',function(){ open(i); });
+        p.addEventListener('click',function(){ if(R.openI===i && !matchMedia('(hover:hover)').matches) close(); else open(i); });
+      });
+      R.el.addEventListener('mouseleave',close);
+      R.el.addEventListener('focusout',function(e){ if(!R.el.contains(e.relatedTarget)) close(); });
+      window.addEventListener('resize',function(){ var i=R.openI; R.openI=-1; ref(); if(i>=0) open(i); });
+      ref();
+    });
+  }
+  /* a decisão não pode ser tomada uma vez só: a janela pode abrir estreita e crescer depois */
+  function tryBuild(){
+    if(!window.matchMedia('(hover:hover)').matches || window.innerWidth<560) return;
+    ['galeria','insercao','arte','panorama'].forEach(function(id){ var sl=document.getElementById(id); if(sl && !sl.classList.contains('xg-on')) build(sl); });
+  }
+  var tb=null; window.addEventListener('resize',function(){ clearTimeout(tb); tb=setTimeout(tryBuild,200); });
+  tryBuild();
+})();
+</script>
+</body>
+</html>

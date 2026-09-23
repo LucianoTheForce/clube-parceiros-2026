@@ -1,0 +1,32 @@
+# Repositório da apresentação CLUBE · Parceiros 2026.
+# Estratégia: ignora tudo e libera só o que faz parte do projeto.
+*
+!.gitignore
+!README.md
+
+# o deck
+!clube-apresentacao/
+!clube-apresentacao/**
+clube-apresentacao/.env*
+clube-apresentacao/.vercel/
+clube-apresentacao/card-lab/
+clube-apresentacao/.vercelignore
+
+# vídeos leves usados pela versão de arquivo único
+!build-assets/
+!build-assets/**
+
+# scripts de build, PDF e captura
+!build.py
+!make_pdf.py
+!shrink_pdf.py
+!snap_slide.py
+
+# preview do dev server (Claude Code)
+!.claude/
+!.claude/launch.json
+
+# nunca
+*.env
+*.env.*
+__pycache__/
