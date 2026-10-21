@@ -9,6 +9,7 @@ Publicada em: https://clube-parceiros-2026.vercel.app
 | Caminho | O que é |
 |---|---|
 | `clube-apresentacao/index.html` | O deck. Um arquivo, HTML/CSS/JS puros, sem framework. 28 páginas com scroll-snap. |
+| `clube-apresentacao/cotas.html` | Cotas de patrocínio 2027 (Headliner, Co-Headliner, Support): 12 páginas no mesmo sistema visual, com uma introdução curta ao CLUBE. Publicada em `/cotas.html`. |
 | `clube-apresentacao/assets/` | Imagens (WebP), vídeos (MP4), fontes (Archivo em WOFF2) e texturas do cartão. |
 | `clube-apresentacao/vercel.json` | Cabeçalhos de publicação (`noindex`, cache dos assets). |
 | `build-assets/` | Versões leves dos vídeos, usadas apenas na exportação de arquivo único. |
@@ -40,6 +41,8 @@ Gera na raiz:
 - `CLUBE-parceiros-2026-pasta.zip` — a pasta do deck, sem credenciais.
 
 Para o PDF: `python make_pdf.py CLUBE-parceiros-2026-PDF.html _raw.pdf` e depois `python shrink_pdf.py`.
+
+PDF das cotas: copiar `cotas.html` com `<body class="pdf">` para dentro de `clube-apresentacao/`, rodar `make_pdf.py` sobre a cópia e `shrink_pdf.py` no resultado.
 
 ## Publicar
 
