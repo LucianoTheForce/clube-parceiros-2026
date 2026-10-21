@@ -3,17 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CLUBE · Parceiros 2026</title>
-<meta name="description" content="Apresentação do CLUBE para parceiros e patrocinadores — Rua da Consolação, 1813, São Paulo.">
-<meta property="og:title" content="CLUBE · Parceiros 2026">
-<meta property="og:description" content="Proposta de parceria do CLUBE. Rua da Consolação, 1813, São Paulo.">
+<title>CLUBE · Cotas de patrocínio 2027</title>
+<meta name="description" content="Cotas de patrocínio do CLUBE — Rua da Consolação, 1813, São Paulo.">
+<meta property="og:title" content="CLUBE · Cotas de patrocínio 2027">
+<meta property="og:description" content="Cotas de patrocínio do CLUBE. Rua da Consolação, 1813, São Paulo.">
 <meta property="og:image" content="https://clube-parceiros-2026.vercel.app/assets/og-cover.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://clube-parceiros-2026.vercel.app">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta name="twitter:card" content="summary_large_image">
 <style>
 @font-face{font-family:"Archivo";src:url("assets/Archivo-ExtraLight.woff2") format("woff2");font-weight:200;font-style:normal;font-display:swap}
 @font-face{font-family:"Archivo";src:url("assets/Archivo-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
@@ -688,21 +684,60 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   .rule-row::before{animation:none!important;transform:scaleX(1)!important}
   .rule-row::after{display:none}
 }
+
+/* ---------- cotas.html: layouts próprios deste deck ---------- */
+/* três andares lado a lado, com legenda sobre a foto */
+.s-tres{grid-template-columns:repeat(3,1fr);grid-template-rows:auto 1fr}
+.s-tres .head{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end;padding-bottom:clamp(8px,1vw,14px)}
+.lbl{position:absolute;left:0;bottom:0;z-index:2;padding:.8em 1.1em;background:var(--black);color:var(--soft);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
+/* co-branding sem o letreiro: a linha do lockup precisa de uma coluna com largura */
+.s-cobrand .lockup{grid-template-columns:100%}
+/* valor da cota em destaque, rótulo abaixo */
+.s-cotas .price{opacity:1}
+.s-cotas .price b{display:block;font-size:clamp(24px,2.5vw,40px);font-weight:300;letter-spacing:-.015em;text-transform:none;margin-bottom:.35em}
+.s-cotas .price span{opacity:.6}
+/* brand waves: foto em cima, legenda embaixo, três colunas */
+.s-waves{grid-template-columns:repeat(3,1fr);grid-template-rows:auto 1fr auto}
+.s-waves .head{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end;padding-bottom:clamp(8px,1vw,14px)}
+.s-waves .cap{justify-content:flex-start}
+.s-waves .cap .h3{margin-bottom:.35em}
+.tiers{display:flex;flex-wrap:wrap;gap:6px;margin:1.2em 0 0}
+.tiers span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;padding:.5em .8em;border:1px solid rgba(227,228,229,.3);border-bottom:2px solid var(--accent)}
+/* tabelas de contrapartida */
+.s-tab{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+.s-tab .head,.s-casa .head{display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end;padding-bottom:clamp(8px,1vw,14px)}
+.s-casa{grid-template-columns:8fr 4fr;grid-template-rows:auto 1fr}
+.s-casa .head{display:block;grid-column:1}
+.s-casa .side{grid-column:2;grid-row:1/3}
+.tabwrap{padding:0;justify-content:center}
+.tab{width:100%;border-collapse:collapse}
+.tab th,.tab td{padding:clamp(14px,1.6vw,24px) clamp(8px,1vw,16px) clamp(14px,1.6vw,24px) 0;border-top:1px solid rgba(227,228,229,.18);text-align:left;font-weight:300;vertical-align:middle}
+.tab tbody tr:last-child td{border-bottom:1px solid rgba(227,228,229,.18)}
+.tab th{border-top:none;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;vertical-align:bottom}
+.tab th i{display:block;height:3px;margin-top:.9em;background:var(--accent)}
+.tab .c{text-align:center;width:17%;padding-right:0}
+.tab th.c{padding-left:clamp(8px,1vw,16px);padding-right:clamp(8px,1vw,16px)}
+.tab td .h4{margin-bottom:.3em}
+.tab .v{font-weight:200;font-size:clamp(36px,4.2vw,68px);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.tab .no{opacity:.3}
+.tab .dot{display:inline-block;width:10px;height:10px;background:currentColor}
+.tab.tight td,.tab.tight th{padding-top:clamp(7px,.75vw,12px);padding-bottom:clamp(7px,.75vw,12px);font-size:clamp(13px,1.05vw,16px)}
+.tab.tight th{font-size:11px}
+.tab.tight td b{font-weight:400}
+.slide.light .tab th,.slide.light .tab td{border-color:rgba(0,0,0,.16)}
+@media (max-width:900px){
+  body:not(.pdf) .s-tres .head,body:not(.pdf) .s-waves .head,body:not(.pdf) .s-tab .head{grid-template-columns:1fr}
+  body:not(.pdf) .s-tres .blk.img,body:not(.pdf) .s-waves .blk.img{aspect-ratio:3/2}
+  body:not(.pdf) .tab .v{font-size:32px}
+}
 </style>
 </head>
 <body>
 
-<svg width="0" height="0" aria-hidden="true" style="position:absolute"><filter id="m17grade" color-interpolation-filters="sRGB">
-<feComponentTransfer>
-<feFuncR type="table" tableValues="0 0.0118 0.0314 0.051 0.0784 0.1098 0.1451 0.1882 0.2314 0.2824 0.3412 0.4 0.4667 0.5333 0.6 0.6824 0.7765 0.851 0.9176 0.9725 1 1 1 1 1 1 1 1 1 1 1 1 1"/>
-<feFuncG type="table" tableValues="0 0.0118 0.0314 0.051 0.0784 0.1098 0.1451 0.1882 0.2314 0.2824 0.3412 0.4 0.4667 0.5333 0.6 0.6745 0.7725 0.8471 0.9176 0.9686 1 1 1 1 1 1 1 1 1 1 1 1 1"/>
-<feFuncB type="table" tableValues="0 0.0118 0.0314 0.051 0.0784 0.1098 0.1451 0.1882 0.2314 0.2824 0.3412 0.4 0.4667 0.5333 0.6 0.6706 0.7647 0.8431 0.9137 0.9216 0.9725 1 1 1 1 1 1 1 1 1 1 1 1"/>
-</feComponentTransfer></filter></svg>
-
 <header class="bar" aria-hidden="true">
   <div class="l"><span>the force</span><span>clube</span><span>.cc</span></div>
-  <div class="c"><b id="cur">01</b> / <span id="tot">21</span></div>
-  <div class="r">Parceiros · 2026</div>
+  <div class="c"><b id="cur">01</b> / <span id="tot">11</span></div>
+  <div class="r">Cotas · 2027</div>
 </header>
 
 <main class="deck" id="deck">
@@ -714,424 +749,98 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   </div>
   <div class="foot">
     <div class="blk ink top">
-      <p class="eyebrow">Proposta de parceria</p>
-      <p class="h4">Bar, restaurante &amp; pista<br>Rua da Consolação, 1813 · São Paulo</p>
+      <p class="eyebrow">Cotas de patrocínio</p>
+      <p class="h4">Headliner · Co-Headliner · Support<br>Rua da Consolação, 1813 · São Paulo</p>
     </div>
-    <div class="blk red center" style="min-width:140px">2026</div>
+    <div class="blk red center" style="min-width:140px">2027</div>
   </div>
 </section>
 
-<!-- 02 O CONCEITO · 1/3 · A TESE -->
-<section class="slide s-tese" id="conceito">
+<!-- 02 O CLUBE -->
+<section class="slide s-tese" id="clube">
   <div class="lead">
-    <div><p class="eyebrow">O conceito · 1 / 3</p><h1 class="h1">O clássico e a tecnologia, na Consolação</h1></div>
-    <p class="small muted fonte">Sobre o piso paulista: Figueiredo e Velloso, Anais do Museu Paulista, 2025.</p>
+    <div><p class="eyebrow">O CLUBE</p><h1 class="h1">Bar, pista e rooftop na Consolação</h1></div>
+    <p class="small muted fonte">Rua da Consolação, 1813 · São Paulo</p>
   </div>
   <div class="blk teses">
-    <div class="tese rule-row" style="--i:0"><p class="idx">01</p><div><h3 class="h3">A calçada da Consolação</h3><p class="big">A Consolação foi a primeira via de São Paulo a receber o piso paulista, em pedra portuguesa. Da porta para dentro, o chão do CLUBE continua a calçada da rua.</p></div></div>
-    <div class="tese rule-row" style="--i:1"><p class="idx">02</p><div><h3 class="h3">O clássico é matéria</h3><p class="big">Pedra portuguesa, concreto, travertino, couro, ônix, alumínio fundido e, no rooftop, uma fogueira. Tudo o que tem peso, temperatura e idade.</p></div></div>
-    <div class="tese rule-row" style="--i:2"><p class="idx">03</p><div><h3 class="h3">A tecnologia é luz</h3><p class="big">Projeção mapeada na escada, painéis de LED no bar e na pista, telas verticais e um balcão que muda de cor. No bolso, o cartão de membro no Wallet.</p></div></div>
+    <div class="tese rule-row" style="--i:0"><p class="idx">01</p><div><h3 class="h3">Um endereço, três ambientes</h3><p class="big">Bar no primeiro andar, pista no segundo e rooftop na cobertura, num prédio que também é hotel.</p></div></div>
+    <div class="tese rule-row" style="--i:1"><p class="idx">02</p><div><h3 class="h3">Música no centro</h3><p class="big">A programação é feita com DJs e coletivos da cena de São Paulo, para um público que sai para ouvir música.</p></div></div>
+    <div class="tese rule-row" style="--i:2"><p class="idx">03</p><div><h3 class="h3">Superfícies de luz</h3><p class="big">Painéis de LED no bar e na pista, telas e uma escada com projeção mapeada. É por elas que as marcas parceiras entram na noite.</p></div></div>
   </div>
 </section>
 
-<!-- 05 IDENTIDADE · A FRICÇÃO VIRA FORMA -->
-<section class="slide s-essencia" id="essencia">
-  <div class="blk black fig"><img src="assets/fig-a-1.webp" alt="Personagem A Anfitriã, silhueta metálica fragmentada" loading="lazy" decoding="async"><span class="cap">01 · A Anfitriã</span></div>
-  <div class="blk black fig"><img src="assets/fig-b-1.webp" alt="Personagem A Eufórica" loading="lazy" decoding="async"><span class="cap">02 · A Eufórica</span></div>
-  <div class="blk ink between txt">
-    <div>
-      <p class="eyebrow">O conceito · 2 / 3 · Na identidade</p>
-      <h2 class="h2">O fragmento em outra escala</h2>
-    </div>
-    <div>
-      <p class="body">O que une o clássico e a tecnologia é o fragmento. A pedra do mosaico, o ponto do LED e o bloco das silhuetas são a mesma unidade em três escalas.</p>
-      <p class="body">Os Personagens do Calor Coletivo são a clique da casa: A Anfitriã, A Eufórica, O Frequente, O Registro, A It Girl, O Faminto, O Curador, O Flerte e O Beijo. Nove retratos de quem já se enxergou ali.</p>
-      <p class="body">Há mestres calceteiros que escondem no piso uma pedra-assinatura, encontrada apenas por quem sabe olhar. O CLUBE é de quem se reconhece no que vê: não por dinheiro, não por lista, por olhar.</p>
-    </div>
-  </div>
-  <div class="blk metal-v fig"><img src="assets/fig-a-2.webp" alt="Personagem em estado fragmento" loading="lazy" decoding="async"><span class="cap">Fragmento</span></div>
-  <div class="blk red fig"><img src="assets/fig-c-1.webp" alt="Personagem O Frequente" loading="lazy" decoding="async"><span class="cap">03 · O Frequente</span></div>
-</section>
-
-<!-- 06 A FRICÇÃO IMPRESSA -->
-<section class="slide s-marca" id="marca">
-  <div class="blk img"><img src="assets/mock-storefront.webp" alt="Fachada do CLUBE com neon do personagem" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/mock-portacopos.webp" alt="Porta-copos CLUBE" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/mock-mesa.jpg" alt="Cardápio de mesa CLUBE" loading="lazy" decoding="async"></div>
-  <div class="blk ink between txt">
-    <div><p class="eyebrow">O conceito · 3 / 3 · Na comunicação</p><h2 class="h2">A mesma textura em cada superfície</h2></div>
-    <p class="body">O fragmento sai do piso e aparece na vitrine, no porta-copos, no cardápio e no cartão de membro. Em cada peça, um lugar reservado para a marca parceira.</p>
-  </div>
-</section>
-
-<!-- STATEMENT 1 -->
-<section class="slide s-statement" id="st-1">
-  <h1 class="h1" data-copy="statement-1">Matéria que fica, luz que muda</h1>
-</section>
-
-<!-- 05 MISSÃO -->
-<section class="slide s-missao" id="missao">
-  <div class="blk ink between txt">
-    <div>
-      <p class="eyebrow">Nossa missão</p>
-      <h2 class="h2">Redefinir a noite</h2>
-    </div>
-    <div>
-      <p class="body">A noite paulistana anda repetida. Muda o endereço, e o salão, a luz e o roteiro continuam os mesmos.</p>
-      <p class="body">No lugar da repetição, o CLUBE reúne o clássico e a tecnologia na mesma casa. Pedra, concreto e couro convivem com LED e projeção mapeada.</p>
-      <p class="body">Dois andares e um rooftop mudam de ritmo ao longo da noite: o bar no primeiro andar, a pista no segundo, a fogueira no rooftop. A noite inteira em um endereço, e nenhuma hora igual à anterior.</p>
-    </div>
-  </div>
-  <div class="blk img"><img src="assets/missao-retrato.webp" alt="Convidado de costas, camisa com a inscrição Art on Display, Courtesy of Josué Thomas"></div>
-  <div class="blk img"><img src="assets/missao-cabine.webp" alt="Vista da cabine do DJ para a pista, tudo em luz vermelha" style="object-position:center 42%"></div>
-</section>
-
-
-<!-- STATEMENT 2 -->
-<section class="slide s-statement light" id="st-2">
-  <h1 class="h1" data-copy="statement-2">Dois andares e um rooftop, uma noite</h1>
-</section>
-
-<!-- 08 O ESPAÇO · OS TRÊS ANDARES -->
-<section class="slide s-andares" id="espaco">
-  <div class="head">
-    <div><p class="eyebrow">O espaço</p><h2 class="h2">Consolação, 1813</h2></div>
-    <p class="body">Dois andares e um rooftop em um único endereço. Cada um tem escala, som e público próprios, e a noite sobe de um para o outro.</p>
-  </div>
-  <div class="blk cine">
-    <div class="row">
-      <div class="bg"><img src="assets/full-bar.webp" alt="Salão do bar principal com o balcão iluminado" loading="lazy" decoding="async"></div>
-      <div class="in">
-        <div class="lft">
-          <span class="idx">01</span>
-          <div><h3 class="nome">Bar principal</h3><p class="small sub">Cozinha e coquetelaria com serviço estendido pela madrugada. É onde a noite começa devagar.</p></div>
-        </div>
-        <div class="rgt" style="display:flex;align-items:center;gap:clamp(14px,1.6vw,26px)">
-          <span class="meta">1º andar · mesa e balcão</span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></span>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="bg"><img src="assets/espaco-03.webp" alt="Andar da pista, em concreto e penumbra" loading="lazy" decoding="async"></div>
-      <div class="in">
-        <div class="lft">
-          <span class="idx">02</span>
-          <div><h3 class="nome">Pista</h3><p class="small sub">Som, luz e tecnologia imersiva, com bar próprio. O coração da casa.</p></div>
-        </div>
-        <div class="rgt" style="display:flex;align-items:center;gap:clamp(14px,1.6vw,26px)">
-          <span class="meta">2º andar · som fechado</span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></span>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="bg"><img src="assets/full-rooftop.webp" alt="Rooftop à noite, com a fogueira acesa e a cidade ao fundo" loading="lazy" decoding="async"></div>
-      <div class="in">
-        <div class="lft">
-          <span class="idx">03</span>
-          <div><h3 class="nome">Rooftop</h3><p class="small sub">Lounge e bar a céu aberto, jardim e vista da cidade. Abre no fim da tarde e fecha por último.</p></div>
-        </div>
-        <div class="rgt" style="display:flex;align-items:center;gap:clamp(14px,1.6vw,26px)">
-          <span class="meta">Cobertura · céu aberto</span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 09 GALERIA DO ESPAÇO -->
-<section class="slide s-galeria" id="galeria">
+<!-- 03 O ESPAÇO -->
+<section class="slide s-tres" id="espaco">
   <div class="head">
     <div><p class="eyebrow">O espaço</p><h2 class="h2">Do bar ao rooftop</h2></div>
-    <p class="body">Concreto, metal e luz. Cada andar tem escala, luz e público próprios, e nenhuma fotografia que sai de um se parece com a do outro.</p>
+    <p class="body">A noite começa no bar, sobe para a pista e termina no rooftop.</p>
   </div>
-  <div class="blk img"><img src="assets/espaco-08.webp" alt="Salão do bar principal visto em perspectiva" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/espaco-01.webp" alt="Lounge do bar principal com assentos curvos e luz rasante" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/espaco-03.webp" alt="Bar menor do andar da pista, com balcão de travertino iluminado" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/espaco-05.webp" alt="Rooftop do CLUBE à noite, com a cidade ao fundo" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/espaco-07.webp" alt="Fogueira central do rooftop cercada por bancos" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/espaco-04.webp" alt="Vista da cidade a partir do rooftop envidraçado" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/full-bar.webp" alt="Salão do bar principal com o balcão iluminado" loading="lazy" decoding="async"><span class="lbl">01 · Bar · 1º andar</span></div>
+  <div class="blk img"><img src="assets/espaco-03.webp" alt="Andar da pista, com balcão de travertino iluminado" loading="lazy" decoding="async"><span class="lbl">02 · Pista · 2º andar</span></div>
+  <div class="blk img"><img src="assets/full-rooftop.webp" alt="Rooftop à noite, com a fogueira acesa e a cidade ao fundo" loading="lazy" decoding="async"><span class="lbl">03 · Rooftop · cobertura</span></div>
 </section>
 
-<!-- 09d A ESCADA · PROJEÇÃO MAPEADA -->
-<section class="slide s-full" id="projecao">
-  <div class="gal">
-    <figure class="fr on">
-      <video src="assets/projecao.mp4" poster="assets/projecao-poster.webp"
-             muted loop playsinline preload="none" disablepictureinpicture
-             aria-label="Escada de projeção mapeada do CLUBE: as paredes viram uma paisagem de mar e pôr do sol"></video>
-      <figcaption class="blk ink cap">
-        <p class="eyebrow">O espaço · Projeção mapeada</p>
-        <h3 class="h3">Uma escada que nunca é a mesma</h3>
-        <p class="small">As paredes entre a pista e o rooftop formam uma tela contínua de projeção mapeada. Mar, deserto ou o universo de quem assina a temporada: o cenário muda a cada set.</p>
-        <p class="small">É o ativo mais visível da casa para quem assina com a gente: conteúdo próprio dentro da experiência, sem placa e sem banner.</p>
-      </figcaption>
-    </figure>
-  </div>
+<!-- STATEMENT -->
+<section class="slide s-statement light" id="st-1">
+  <h1 class="h1">A marca presente, sem tomar o lugar da casa</h1>
 </section>
 
-<!-- 09e O HOTEL -->
-<section class="slide s-hotel" id="hotel">
-  <div class="blk ink txt">
-    <p class="eyebrow">O espaço · O hotel</p>
-    <h2 class="h2">Uma noite que tem quarto</h2>
-    <p class="body">O CLUBE ocupa um prédio que também é hotel. O convidado chega de tarde, janta no quarto, desce para a pista e dorme dois andares acima.</p>
-    <p class="small muted" style="margin-top:1em">Room service, enxoval, chave de quarto e amenities são superfícies de assinatura. E a diária é o brinde que ninguém recusa: o contato com a marca não termina quando a música para.</p>
-  </div>
-  <div class="blk img port"><img src="assets/hotel-03.webp" alt="Hóspede com mala dentro do elevador vermelho do prédio" loading="lazy" decoding="async"></div>
-  <div class="blk img land"><img src="assets/hotel-04.webp" alt="Corredor dos quartos, com paredes vermelhas e arandelas acesas" loading="lazy" decoding="async"></div>
-</section>
-
-
-
-<!-- MOBILIÁRIO -->
-<section class="slide s-mob" id="mobiliario">
-  <div class="blk ink txt between">
-    <div><p class="eyebrow" data-copy="mob-eyebrow">Mobiliário</p><h2 class="h2" data-copy="mob-titulo">Peças desenhadas para esta casa</h2></div>
-    <div><p class="body" data-copy="mob-texto">O mobiliário foi projetado com o designer Antonio especialmente para o espaço, no vocabulário de metal e concreto da identidade. Nenhuma peça veio de catálogo: cada uma responde a um lugar da casa, ao modo de sentar, apoiar o copo ou encostar na borda da pista. Peças assinadas, desenhadas para o uso que a noite exige.</p><p class="small muted" style="margin-top:1em" data-copy="mob-legenda">Alumínio fundido, couro e concreto em escala de corpo: o mobiliário segue o vocabulário da identidade.</p></div>
-  </div>
-  <div class="blk img tall"><img src="assets/mob-cadeiras.webp" alt="Banquetas de alumínio fundido vazado junto ao balcão do bar" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/mob-banco.webp" alt="Banco corrido de couro sobre base de concreto, ao longo da parede" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/mob-detalhe.webp" alt="Detalhe da trama vazada do alumínio fundido das banquetas" loading="lazy" decoding="async"></div>
-</section>
-
-<!-- 13 GALERIA DE ARTE -->
-<section class="slide s-arte" id="arte">
-  <div class="head">
-    <div><p class="eyebrow">Galeria</p><h2 class="h2">Os artistas</h2></div>
-    <p class="body">Curadoria de artistas para a primeira exposição da galeria do CLUBE. Arte contemporânea brasileira ocupando as paredes onde a noite acontece.</p>
-  </div>
-  <div class="blk img cover-top"><img src="assets/gleeson-02.webp" alt="Obra de Gleeson Paulino" loading="lazy" decoding="async"></div>
-  <div class="blk img cover-top"><img src="assets/saboia-01.jpg" alt="Obra de Samuel de Saboia" loading="lazy" decoding="async"></div>
-  <div class="blk img cover-top"><img src="assets/furcolin-02.webp" alt="Obra de Alexandre Furcolin" loading="lazy" decoding="async"></div>
-  <div class="blk img cover-top"><img src="assets/dejumatos-01.webp" alt="Dejumatos" loading="lazy" decoding="async"></div>
-  <div class="blk cap"><h4 class="h4">Gleeson Paulino</h4><p class="small">Entre São Paulo, Londres e Paris, produz imagens neorromânticas que traduzem a tensão entre o clássico e o contemporâneo. Publicado nas principais revistas de moda do mundo.</p></div>
-  <div class="blk cap"><h4 class="h4">Samuel de Saboia</h4><p class="small">Nascido no Recife em 1997, autodidata, carrega na pintura a natureza exuberante e a luz intensa que marcam seu olhar. Vive e trabalha em São Paulo.</p></div>
-  <div class="blk cap"><h4 class="h4">Alexandre Furcolin</h4><p class="small">Artista visual e fotógrafo, explora as fronteiras da linguagem visual em fotolivros, instalações, esculturas site-specific e performances.</p></div>
-  <div class="blk cap"><h4 class="h4">Dejumatos</h4><p class="small">Diretora, roteirista e modeladora 3D. Cria narrativas imersivas em XR e VR que usam tecnologia para amplificar a consciência humana.</p></div>
-</section>
-
-<!-- STATEMENT 3 -->
-<section class="slide s-statement" id="st-3">
-  <h1 class="h1" data-copy="statement-3">O clube de quem enxerga</h1>
-</section>
-
-<!-- 13b MEMBERSHIP · HERO -->
-<section class="slide s-full" id="cardhero">
-  <div class="gal">
-    <figure class="fr on">
-      <video src="assets/hero-cartao.mp4" poster="assets/hero-cartao-poster.webp"
-             muted loop playsinline preload="none" disablepictureinpicture
-             aria-label="Cartão de membro do CLUBE em metal escovado, com a luz correndo pela borda"></video>
-      <figcaption class="blk ink cap">
-        <p class="eyebrow">CLUBE · Membership</p>
-        <h3 class="h3">Feito para poucos</h3>
-        <p class="small">Nominal, numerado e gravado em metal escovado. Existe apenas no celular de quem é membro.</p>
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- 14 MEMBERSHIP · O CARTÃO -->
-<section class="slide s-card" id="membership">
-  <div class="blk ink between txt">
-    <div><p class="eyebrow">Membership</p><h2 class="h2">Um passaporte para a noite</h2></div>
-    <div>
-      <p class="body">O cartão de membro do CLUBE é digital. Não tem plástico, produção nem logística: é emitido em segundos, a custo zero por unidade, e vai morar ao lado dos cartões do banco.</p>
-      <p class="body">Nominal, numerado e gravado em grafite escovado. A leitura é de metal usinado, do tipo que bancos privados cobram caro para produzir. Sem custo unitário, a escassez passa a ser decisão de curadoria.</p>
-      <p class="small muted" style="margin-top:1em">Cada número é único e intransferível. É o que transforma acesso em pertencimento, e pertencimento em receita recorrente.</p>
-    </div>
-  </div>
-  <div class="blk black stage"><div class="mcard tilt"></div></div>
-</section>
-
-<!-- 14b MEMBERSHIP · NO IPHONE, NA PORTA E NO PULSO -->
-<section class="slide s-porta s-wallet s-passe" id="porta">
-  <div class="blk ink copy">
-    <p class="eyebrow">Membership · No iPhone e na porta</p>
-    <h3 class="h3">Ao lado dos cartões do banco</h3>
-    <p class="small">O CLUBE ocupa o mesmo lugar que Apple Card, Nubank ou Amex: a carteira que o membro abre várias vezes por dia. Presença de marca permanente, sem um centavo de mídia, e um canal direto que não depende de algoritmo.</p>
-    <h4 class="h4 sub">Aproxima e entra</h4>
-    <p class="small">O passe substitui lista, pulseira e fila. A entrada leva um segundo e a equipe da porta passa a administrar gente, não papel.</p>
-    <p class="small">No iPhone ou no Apple Watch, a credencial está sempre à mão. E cada acesso vira informação: quem veio, com que frequência, em quais noites. É essa base que dá lastro a uma parceria.</p>
-  </div>
-  <div class="m17">
-    <div class="space">
-      <img class="base" src="assets/m17-base.jpg" alt="iPhone 17 Pro com o cartão CLUBE no Wallet" loading="lazy" decoding="async">
-      <div class="mask"><div class="content"><div class="ios">
-            <div class="st"><span>9:41</span><span>●●●● ⌔ ▮</span></div>
-            <div class="hd"><b>Wallet</b><span><i>▣</i><i>+</i></span></div>
-            <div class="stk"><div class="pass"><div class="mcard"></div></div></div>
-            <div class="hm"></div>
-          </div></div></div>
-      <img class="l7" src="assets/m17-l7.webp" alt="" loading="lazy" decoding="async">
-      <img class="l8" src="assets/m17-l8.webp" alt="" loading="lazy" decoding="async">
-      <img class="cam2" src="assets/m17-cam2.png" alt="" loading="lazy" decoding="async">
-    </div>
-  </div>
-  <div class="scene">
-    <div class="slot-a"><div class="ph"><div class="isl"></div><div class="ios">
-          <div class="st"><span>9:41</span><span>●●●● ⌔ ▮</span></div>
-          <div class="tp"><div class="mcard"></div></div>
-          <div class="ctr"><div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M10 6H6v4M38 6h4v4M6 38v4h4M42 38v4h-4"/><path d="M17 20v3M31 20v3M24 20v7h-2"/><path d="M17 31c2 2.5 4.5 3.5 7 3.5s5-1 7-3.5"/></svg></div><span>Hold Near Reader</span></div>
-          <div class="hm"></div>
-        </div></div></div>
-    <div class="slot-b"><div class="ph"><div class="isl"></div><div class="ios">
-          <div class="st"><span>9:41</span><span>●●●● ⌔ ▮</span></div>
-          <div class="tp"><div class="mcard"></div></div>
-          <div class="ctr"><div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 25l8 8 14-16"/></svg></div><span>Done</span></div>
-          <div class="hm"></div>
-        </div></div></div>
-    <div class="wslot">
-      <div class="wch">
-        <div class="bnd"></div>
-        <div class="bdy"><div class="crw"></div><div class="tm">9:41</div>
-          <div class="wc"><div class="mcard"></div></div>
-          <div class="dn"><i>✓</i>Done</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- O APP -->
-<section class="slide s-pilares" id="app">
-  <div class="head">
-    <div><p class="eyebrow" data-copy="app-eyebrow">O app</p><h2 class="h2" data-copy="app-titulo">A casa inteira em um app</h2></div>
-    <p class="body" data-copy="app-texto">O app do CLUBE reúne membership, reservas, programação, cardápio e a porta em um lugar. O cartão de membro vive no Apple Wallet: nominal, numerado, gravado em metal escovado.</p>
-  </div>
-  <div class="blk pilar rule-row" style="--i:0"><p class="idx">01</p><h3 class="h4" data-copy="app-1-titulo">Membership</h3><p class="small" data-copy="app-1-texto">Cartão nominal e numerado no Apple Wallet, com o status do membro sempre visível.</p></div>
-  <div class="blk pilar rule-row" style="--i:1"><p class="idx">02</p><h3 class="h4" data-copy="app-2-titulo">Reservas</h3><p class="small" data-copy="app-2-texto">Mesa no restaurante, lugar no bar e rooftop reservados pelo próprio membro, direto no app.</p></div>
-  <div class="blk pilar rule-row" style="--i:2"><p class="idx">03</p><h3 class="h4" data-copy="app-3-titulo">Programação</h3><p class="small" data-copy="app-3-texto">A agenda da casa por turno e por andar, com o cardápio do dia ao lado.</p></div>
-  <div class="blk pilar rule-row" style="--i:3"><p class="idx">04</p><h3 class="h4" data-copy="app-4-titulo">Acesso</h3><p class="small" data-copy="app-4-texto">O cartão é a chave: apresentado na porta, identifica o membro e libera a entrada.</p></div>
-  <div class="blk foot"><p class="small muted">Em desenvolvimento pela The Force. O cartão de membro mora no Wallet; o app cuida do resto.</p></div>
-</section>
-
-
-<!-- 15 CARDÁPIO -->
-<section class="slide s-menu light" id="cardapio">
-  <div class="head">
-    <div><p class="eyebrow">O cardápio</p><h2 class="h2">Uma noite que não cobra o dia seguinte</h2></div>
-    <p class="body">Coquetelaria clássica reinventada, com e sem álcool, no mesmo nível de cuidado. Quem decide beber menos não recebe um refrigerante: recebe um drink que exigiu o mesmo tempo de criação.</p>
-  </div>
-  <div class="trilha" data-trilha aria-label="Drinks da carta correndo em curva: arraste para girar">
-    <div class="palco">
-      <div class="tri" data-name="Negroni"><div class="tph"><img src="assets/drink-03.webp" alt="Negroni" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Gin tônica"><div class="tph"><img src="assets/drink-07.webp" alt="Gin tônica" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Espresso martini"><div class="tph"><img src="assets/drink-04.webp" alt="Espresso martini" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Dry martini"><div class="tph"><img src="assets/drink-08.webp" alt="Dry martini" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Hibisco, sem álcool"><div class="tph"><img src="assets/drink-09.webp" alt="Hibisco, sem álcool" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Moscow mule"><div class="tph"><img src="assets/drink-02.webp" alt="Moscow mule" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Whisky sour"><div class="tph"><img src="assets/drink-10.webp" alt="Whisky sour" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Spritz"><div class="tph"><img src="assets/drink-11.webp" alt="Spritz" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Old fashioned"><div class="tph"><img src="assets/drink-06.webp" alt="Old fashioned" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Café tônica"><div class="tph"><img src="assets/drink-12.webp" alt="Café tônica" loading="lazy" decoding="async" draggable="false"></div></div>
-    </div>
-    <div class="hname"><p class="eyebrow">Da carta</p><p class="h4" data-hname>Dez drinks, com e sem álcool</p></div>
-  </div>
-</section>
-
-<!-- 16 SOCIAL & PR -->
-<section class="slide s-social" id="social">
-  <div class="blk ink between txt">
-    <div><p class="eyebrow">Social media &amp; PR</p><h2 class="h2">Dois ritmos de feed</h2></div>
-    <div>
-      <p class="body">O conteúdo mistura foto de festa, registro do ambiente, imagem abstrata e natureza.</p>
-      <p class="body">O sistema prevê duas direções que coexistem: um feed <strong style="font-weight:500">sóbrio</strong>, fotográfico e controlado, e um feed <strong style="font-weight:500">dinâmico</strong>, denso, fragmentado e cheio de cor. Marcas parceiras entram nos dois.</p>
-    </div>
-  </div>
-  <div class="blk feed"><img src="assets/feed-sobrio-grid.webp" alt="Preview do feed sóbrio do CLUBE" loading="lazy" decoding="async"><span class="cap">Feed sóbrio</span></div>
-  <div class="blk feed"><img src="assets/feed-dinamico.webp" alt="Preview do feed dinâmico do CLUBE" loading="lazy" decoding="async"><span class="cap">Feed dinâmico</span></div>
-</section>
-
-<!-- STATEMENT 4 -->
-<section class="slide s-statement light" id="st-4">
-  <h1 class="h1" data-copy="statement-4">Marcas dentro da noite, não ao lado</h1>
-</section>
-
-<!-- INSERÇÃO DE MARCA -->
-<section class="slide s-galeria" id="insercao">
-  <div class="head">
-    <div><p class="eyebrow">Parceria</p><h2 class="h2">A marca dentro do espaço</h2></div>
-    <p class="body">Simulação sobre os renders da casa, com a própria marca do CLUBE no lugar do parceiro: o painel de LED do bar, o tampo do balcão que muda de cor e as telas verticais da parede. Presente em cada plano, sem interromper a noite.</p>
-  </div>
-  <div class="blk img"><img src="assets/ins-01-salao-led.webp" alt="Salão do bar com a marca no painel de LED sob o balcão" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/ins-04-close-led.webp" alt="Detalhe do painel de LED com a marca em branco quente" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/ins-02-pista-balcao.webp" alt="Balcão da pista com tampo e faixa de LED em vermelho, marca na faixa" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/ins-05-close-balcao.webp" alt="Detalhe da faixa de LED em vermelho com a marca em branco" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/ins-03-momento-azul.webp" alt="Salão inteiro na luz azul da marca, com a marca em uma das telas verticais" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/ins-06-close-telas.webp" alt="Telas verticais na parede dos sofás, uma delas com a marca" loading="lazy" decoding="async"></div>
-</section>
-
-<!-- 17 POR QUE O CLUBE -->
-<section class="slide s-porque" id="porque">
-  <div class="blk metal between lead">
-    <div><p class="eyebrow">Parceria</p><h2 class="h2">Por que estar no CLUBE</h2></div>
-    <p class="body">Dois andares, um rooftop, um endereço e um público que escolhe com cuidado onde passa a noite. Cada parceria é desenhada sob medida: presença física no espaço, lugar na programação e conteúdo co-criado dentro do sistema visual da marca. Sem placa e sem banner.</p>
-  </div>
-  <div class="blk ink row"><h4 class="h4">Quem frequenta</h4><p class="small">Geração Z e millennials de São Paulo, movidos por estética, cultura e bem-estar. Um público que sai menos, escolhe melhor e fotografa tudo o que escolhe.</p></div>
-  <div class="blk ink row"><h4 class="h4">Onde a marca aparece</h4><p class="small">Fachada e painéis de LED, a escada de projeção, rooftop, pista, cardápio de mesa, embalagens, sinalização, o cartão de membro e as redes.</p></div>
-  <div class="blk ink row"><h4 class="h4">O que se pode criar</h4><p class="small">Assinar noites e residências, ocupar o rooftop, lançar um produto no cardápio, criar um drop de merchandising e co-assinar conteúdo.</p></div>
-</section>
-
-<!-- 18 COTAS -->
+<!-- 04 COTAS -->
 <section class="slide s-cotas light" id="cotas">
   <div class="head">
-    <div class="ttl"><p class="eyebrow">Formatos de parceria</p><h2 class="h2">O que cada cota entrega</h2></div>
-    <p class="body intro">Três cotas, três lugares na casa. Cada uma define onde a marca entra, por quanto tempo e diante de qual público.</p>
+    <div class="ttl"><p class="eyebrow">Cotas de patrocínio</p><h2 class="h2">Três cotas</h2></div>
+    <p class="body intro">Um patrocinador master e dois níveis de apoio. Nas três, a marca está em toda a comunicação do projeto, sempre com discrição.</p>
   </div>
   <div class="cotas">
     <article class="cota" style="--accent:var(--grad-red)">
-      <p class="idx"><b>01</b><span>Cota título</span></p>
-      <h3 class="name">Heat</h3>
-      <p class="lede small">A marca em noites escolhidas da programação e nos canais digitais, com regularidade ao longo do ano.</p>
+      <p class="idx"><b>01</b><span>Patrocinador master</span></p>
+      <h3 class="name">Headliner</h3>
+      <p class="lede small">A marca mais presente da casa, com ativação no espaço durante todo o contrato.</p>
       <ul class="items">
-        <li>Patrocínio de uma noite da programação por trimestre</li>
-        <li>Painéis de LED internos por 6 meses</li>
-        <li>Produto no bar nas noites da parceria</li>
-        <li>Destaque na programação do app e nos canais do CLUBE em cada edição</li>
-        <li>Convites de membro para a equipe da marca nas noites da parceria</li>
-        <li>Relatório de público e presença por edição</li>
+        <li>Presença da marca em toda a comunicação do projeto</li>
+        <li>Ativação de marca no espaço pelo período</li>
+        <li>Assinatura no topo do cardápio</li>
+        <li>Projector, LED e Color Wave</li>
+        <li>3 eventos open bar e 3 locações do espaço</li>
+        <li>10 convidados por noite e 20% em A&amp;B e hospedagem</li>
       </ul>
-      <p class="price">Valor sob consulta</p>
+      <p class="price"><b>R$ 1,5 mi</b><span>por ano de contrato</span></p>
     </article>
     <article class="cota" style="--accent:var(--grad-green)">
-      <p class="idx"><b>02</b><span>Cota ativação</span></p>
-      <h3 class="name">Flow</h3>
-      <p class="lede small">Um ciclo de eventos: a marca presente quando a casa está cheia.</p>
+      <p class="idx"><b>02</b><span>Apoio</span></p>
+      <h3 class="name">Co-Headliner</h3>
+      <p class="lede small">Presença forte nos momentos de pista.</p>
       <ul class="items">
-        <li>Ativação no rooftop ou na pista</li>
-        <li>Produto no cardápio durante o ciclo</li>
-        <li>Sinalização e materiais de mesa</li>
-        <li>Cobertura no feed e nos stories</li>
-        <li>Convites para membros</li>
+        <li>Presença da marca em toda a comunicação do projeto</li>
+        <li>Logo no rodapé do cardápio</li>
+        <li>LED e Color Wave</li>
+        <li>2 eventos open bar e 2 locações do espaço</li>
+        <li>10 convidados por noite e 10% em A&amp;B e hospedagem</li>
       </ul>
-      <p class="price">Valor sob consulta</p>
+      <p class="price"><b>R$ 1 mi</b><span>por ano de contrato</span></p>
     </article>
     <article class="cota" style="--accent:var(--grad-blue)">
-      <p class="idx"><b>03</b><span>Cota conteúdo</span></p>
-      <h3 class="name">Frequency</h3>
-      <p class="lede small">Uma entrada pelo conteúdo: produção nossa, assinatura conjunta.</p>
+      <p class="idx"><b>03</b><span>Apoio</span></p>
+      <h3 class="name">Support</h3>
+      <p class="lede small">A entrada na família de marcas do CLUBE.</p>
       <ul class="items">
-        <li>Série de conteúdo no sistema visual do CLUBE</li>
-        <li>Presença em uma noite da programação</li>
-        <li>Drop de merchandising co-assinado</li>
-        <li>Menção no membership</li>
+        <li>Presença da marca em toda a comunicação do projeto</li>
+        <li>Logo no rodapé do cardápio</li>
+        <li>Color Wave</li>
+        <li>1 evento open bar e 1 locação do espaço</li>
       </ul>
-      <p class="price">Valor sob consulta</p>
+      <p class="price"><b>R$ 500 mil</b><span>por ano de contrato</span></p>
     </article>
   </div>
 </section>
 
-<!-- 19 CO-BRANDING -->
-<section class="slide s-cobrand light" id="cobranding">
+<!-- 05 PRESENÇA NA COMUNICAÇÃO -->
+<section class="slide s-cobrand light" id="comunicacao">
   <div class="blk soft between txt">
-    <div><p class="eyebrow">Co-branding</p><h2 class="h2">Sua marca ao lado da nossa</h2></div>
+    <div><p class="eyebrow">Nas três cotas</p><h2 class="h2">Presença da marca em toda a comunicação do projeto</h2></div>
     <div>
-      <p class="body">O brand book do CLUBE define como parcerias aparecem: logos alinhados, distância de três módulos e um traço divisor entre eles. Consistência para a sua marca, coerência para a nossa.</p>
-      <p class="small muted" style="margin-top:1em">Aplicável em fachada, LED, cardápio, sinalização, embalagens e digital.</p>
+      <p class="body">Redes, convites, ingressos, cardápio e materiais do CLUBE levam a assinatura das marcas parceiras.</p>
+      <p class="small muted" style="margin-top:1em">A marca assina junto, na regra do brand book: logos alinhados, traço divisor e espaço de respiro.</p>
     </div>
   </div>
   <div class="blk light lockup">
@@ -1140,39 +849,119 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
       <div class="div"></div>
       <div class="partner">sua marca</div>
     </div>
-    <div class="lockups marquee" style="--speed:40s" aria-hidden="true"><div class="track" data-repeat="3"><span><i class="logo solid"></i><i class="div"></i><b class="partner">Bebidas</b></span><span><i class="logo solid"></i><i class="div"></i><b class="partner">Moda</b></span><span><i class="logo solid"></i><i class="div"></i><b class="partner">Áudio</b></span><span><i class="logo solid"></i><i class="div"></i><b class="partner">Mobilidade</b></span><span><i class="logo solid"></i><i class="div"></i><b class="partner">Beleza</b></span><span><i class="logo solid"></i><i class="div"></i><b class="partner">Tech</b></span></div></div>
   </div>
   <div class="rules">
-    <div class="blk metal"><h4 class="h4">3x</h4><p class="small">Distância entre os logos, definida pelo módulo “x” do logotipo.</p></div>
-    <div class="blk metal"><h4 class="h4">x / 10</h4><p class="small">Largura do traço divisor, com altura até o limite do clear space.</p></div>
-    <div class="blk metal"><h4 class="h4">Preto ou prata</h4><p class="small">Versões principais do logotipo. Cores e gradientes sempre com contraste garantido.</p></div>
+    <div class="blk metal"><h4 class="h4">Headliner</h4><p class="small">Assinatura no topo do cardápio e primeira posição nos materiais.</p></div>
+    <div class="blk metal"><h4 class="h4">Co-Headliner e Support</h4><p class="small">Logo no rodapé do cardápio e dos materiais, abaixo da marca master.</p></div>
+    <div class="blk metal"><h4 class="h4">Sempre discreta</h4><p class="small">A marca acompanha a identidade do CLUBE e não disputa espaço com ela.</p></div>
   </div>
 </section>
 
-<!-- 20 PANORAMA -->
-<section class="slide s-noite" id="panorama">
+<!-- 06 BRAND WAVES -->
+<section class="slide s-waves" id="waves">
   <div class="head">
-    <div><p class="eyebrow">A noite</p><h2 class="h2">Presença, ritmo, encontro</h2></div>
-    <p class="body">O que se repete a cada noite: um público que chega pela música, permanece pela companhia e retorna pelo que viveu ali.</p>
+    <div><p class="eyebrow">Ativações na noite</p><h2 class="h2">Brand Waves</h2></div>
+    <p class="body">A marca entra junto com a música, nos picos da noite, quando o público está mais atento.</p>
   </div>
-  <div class="blk img tall" style="grid-column:1"><img src="assets/noite-dj1.webp" alt="DJ tocando ao ar livre no fim da tarde" loading="lazy" decoding="async"></div>
-  <div class="blk img" style="grid-column:2;grid-row:2"><img src="assets/noite-duo.webp" alt="Duas convidadas posando com copos na mão" loading="lazy" decoding="async"></div>
-  <div class="blk img" style="grid-column:3;grid-row:2"><img src="assets/noite-pista.webp" alt="Pista cheia, conversa e cerveja na mão" loading="lazy" decoding="async"></div>
-  <div class="blk img tall" style="grid-column:4"><img src="assets/noite-peace.webp" alt="Convidado na pista, dois dedos em V sobre o rosto" loading="lazy" decoding="async"></div>
-  <div class="blk img" style="grid-column:2;grid-row:3"><img src="assets/noite-crouch.webp" alt="Dois convidados posando na calçada depois da festa" loading="lazy" decoding="async" style="object-position:center 62%"></div>
-  <div class="blk img" style="grid-column:3;grid-row:3"><img src="assets/noite-rosas.webp" alt="Vendedor de rosas passando pelas mesas" loading="lazy" decoding="async" style="object-position:center 58%"></div>
+  <div class="blk img"><img src="assets/projecao-poster.webp" alt="Escada com projeção mapeada" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/ins-01-salao-led.webp" alt="Painel de LED com a marca sob o balcão" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/ins-03-momento-azul.webp" alt="Salão inteiro na luz azul da marca" loading="lazy" decoding="async"></div>
+  <div class="blk ink cap">
+    <p class="eyebrow">Na troca de DJ</p>
+    <h3 class="h3">Projector Wave</h3>
+    <p class="small">A marca ocupa a escada de projeção mapeada a cada troca de DJ.</p>
+    <p class="tiers"><span class="on" style="--accent:var(--heat)">Headliner</span></p>
+  </div>
+  <div class="blk ink cap">
+    <p class="eyebrow">Na entrada da atração</p>
+    <h3 class="h3">LED Wave</h3>
+    <p class="small">A marca aparece no painel de LED da pista quando cada atração entra.</p>
+    <p class="tiers"><span class="on" style="--accent:var(--heat)">Headliner</span><span class="on" style="--accent:var(--flow)">Co-Headliner</span></p>
+  </div>
+  <div class="blk ink cap">
+    <p class="eyebrow">Na entrada da atração</p>
+    <h3 class="h3">Color Wave</h3>
+    <p class="small">Balcões de LED, telas e painéis acendem nas cores da marca.</p>
+    <p class="tiers"><span class="on" style="--accent:var(--heat)">Headliner</span><span class="on" style="--accent:var(--flow)">Co-Headliner</span><span class="on" style="--accent:var(--freq)">Support</span></p>
+  </div>
 </section>
 
-<!-- THE FORCE -->
-<section class="slide s-force" id="theforce">
-  <div class="blk black mark"><div class="tf" role="img" aria-label="The Force"></div></div>
-  <div class="blk ink between">
-    <div><p class="eyebrow" data-copy="tf-eyebrow">Direção criativa e artística</p><h2 class="h2" data-copy="tf-titulo">Uma casa assinada pela The Force</h2></div>
-    <div><p class="body" data-copy="tf-texto">A The Force responde pela direção criativa e artística do CLUBE: conceito, marca, identidade, sistema de membership, espaço digital e esta apresentação. O estúdio também desenvolve o app da casa. O trabalho começou na ideia e seguiu até a porta, do cartão de metal ao painel da fachada.</p><p class="small muted" style="margin-top:1em">theforce.cc</p></div>
+<!-- 07 ATIVAÇÃO NO ESPAÇO (MASTER) -->
+<section class="slide s-hotel" id="ativacao">
+  <div class="blk ink between txt">
+    <div><p class="eyebrow">Exclusivo Headliner</p><h2 class="h2">Ativação de marca no espaço pelo período</h2></div>
+    <div>
+      <p class="body">Durante todo o contrato, o patrocinador master tem uma ativação própria dentro do CLUBE.</p>
+      <p class="small muted" style="margin-top:1em">O formato é desenhado com a nossa equipe, na linguagem da casa, para fazer parte do ambiente.</p>
+    </div>
+  </div>
+  <div class="blk img port"><img src="assets/ins-02-pista-balcao.webp" alt="Balcão da pista com faixa de LED na cor da marca" loading="lazy" decoding="async"></div>
+  <div class="blk img land"><img src="assets/espaco-07.webp" alt="Fogueira central do rooftop cercada por bancos" loading="lazy" decoding="async"></div>
+</section>
+
+<!-- 08 EVENTOS E LOCAÇÕES -->
+<section class="slide s-tab" id="eventos">
+  <div class="head">
+    <div><p class="eyebrow">A casa para a marca</p><h2 class="h2">Eventos e locações do espaço</h2></div>
+    <p class="body">A marca usa o CLUBE para os próprios eventos, quando quiser.</p>
+  </div>
+  <div class="blk tabwrap">
+    <table class="tab">
+      <thead><tr><th></th><th class="c">Headliner<i style="--accent:var(--grad-red)"></i></th><th class="c">Co-Headliner<i style="--accent:var(--grad-green)"></i></th><th class="c">Support<i style="--accent:var(--grad-blue)"></i></th></tr></thead>
+      <tbody>
+        <tr><td><h4 class="h4">Eventos open bar</h4><p class="small muted">Total na parceria. Até 100 pessoas, com o espaço inteiro só para a marca, de domingo a quinta, exceto feriados.</p></td><td class="c v">3</td><td class="c v">2</td><td class="c v">1</td></tr>
+        <tr><td><h4 class="h4">Locações do espaço</h4><p class="small muted">Por ano de contrato. Reuniões, apresentações e lançamentos, com o espaço vazio e sem open bar.</p></td><td class="c v">3</td><td class="c v">2</td><td class="c v">1</td></tr>
+      </tbody>
+    </table>
+    <p class="small muted" style="margin-top:1.4em">Eventos para mais de 100 pessoas são possíveis, com open bar pago à parte por convidado adicional.</p>
   </div>
 </section>
 
-<!-- 21 CONTATO -->
+<!-- 09 RELACIONAMENTO -->
+<section class="slide s-casa" id="relacionamento">
+  <div class="head">
+    <p class="eyebrow">Relacionamento</p><h2 class="h2">A casa da marca em São Paulo</h2>
+    <p class="body" style="margin-top:1em">O CLUBE recebe os clientes, parceiros e embaixadores que a marca quiser encantar.</p>
+  </div>
+  <div class="blk tabwrap">
+    <table class="tab">
+      <thead><tr><th></th><th class="c">Headliner<i style="--accent:var(--grad-red)"></i></th><th class="c">Co-Headliner<i style="--accent:var(--grad-green)"></i></th><th class="c">Support<i style="--accent:var(--grad-blue)"></i></th></tr></thead>
+      <tbody>
+        <tr><td><h4 class="h4">Convidados por noite</h4><p class="small muted">A marca escolhe quem entra</p></td><td class="c v">10</td><td class="c v">10</td><td class="c v no">—</td></tr>
+        <tr><td><h4 class="h4">Desconto da marca</h4><p class="small muted">Comida, bebida e hospedagem</p></td><td class="c v">20%</td><td class="c v">10%</td><td class="c v no">—</td></tr>
+      </tbody>
+    </table>
+    <p class="small muted" style="margin-top:1.4em">A lista não acumula: se a marca não indicar nomes, a vaga da noite não é usada.</p>
+  </div>
+  <div class="blk img side"><img src="assets/hotel-03.webp" alt="Hóspede com mala dentro do elevador vermelho do prédio" loading="lazy" decoding="async"></div>
+</section>
+
+<!-- 10 COMPARATIVO -->
+<section class="slide s-tab light" id="comparativo">
+  <div class="head">
+    <div><p class="eyebrow">Resumo</p><h2 class="h2">Comparativo das cotas</h2></div>
+  </div>
+  <div class="blk tabwrap">
+    <table class="tab tight">
+      <thead><tr><th>Contrapartida</th><th class="c">Headliner<i style="--accent:var(--grad-red)"></i></th><th class="c">Co-Headliner<i style="--accent:var(--grad-green)"></i></th><th class="c">Support<i style="--accent:var(--grad-blue)"></i></th></tr></thead>
+      <tbody>
+        <tr><td>Investimento por ano</td><td class="c"><b>R$ 1,5 mi</b></td><td class="c"><b>R$ 1 mi</b></td><td class="c"><b>R$ 500 mil</b></td></tr>
+        <tr><td>Presença da marca em toda a comunicação do projeto</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
+        <tr><td>Ativação de marca no espaço pelo período</td><td class="c"><i class="dot"></i></td><td class="c no">—</td><td class="c no">—</td></tr>
+        <tr><td>Marca no cardápio</td><td class="c">Topo</td><td class="c">Rodapé</td><td class="c">Rodapé</td></tr>
+        <tr><td>Projector Wave</td><td class="c"><i class="dot"></i></td><td class="c no">—</td><td class="c no">—</td></tr>
+        <tr><td>LED Wave</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c no">—</td></tr>
+        <tr><td>Color Wave</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
+        <tr><td>Eventos open bar (total na parceria)</td><td class="c">3</td><td class="c">2</td><td class="c">1</td></tr>
+        <tr><td>Locações do espaço (por ano)</td><td class="c">3</td><td class="c">2</td><td class="c">1</td></tr>
+        <tr><td>Desconto em comida, bebida e hospedagem</td><td class="c">20%</td><td class="c">10%</td><td class="c no">—</td></tr>
+        <tr><td>Convidados da marca por noite</td><td class="c">10</td><td class="c">10</td><td class="c no">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 11 CONTATO -->
 <section class="slide s-contato" id="contato">
   <div class="blk black big">
     <div class="logo solid" role="img" aria-label="CLUBE" style="color:#fff"></div>
@@ -1182,14 +971,13 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
     <p class="small muted">São Paulo · SP</p>
   </div>
   <div class="blk ink foot">
-    <h3 class="h3">Venha conhecer a casa</h3>
-    <p class="small">Agende uma visita e desenhamos o formato ao seu lado.</p>
+    <h3 class="h3">Vamos conversar</h3>
+    <p class="small">Agende uma visita e escolhemos juntos a cota da sua marca.</p>
     <p class="small muted">@clubesp · theforce.cc</p>
   </div>
 </section>
 
 </main>
-
 
 <div class="hint">
   <span class="kbd" aria-hidden="true">← → navegar</span>
@@ -1309,7 +1097,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   });
 
   // menu
-  var titles={capa:'Capa',conceito:'O conceito · O clássico e a tecnologia',missao:'Nossa missão',espaco:'O espaço',mobiliario:'Peças desenhadas para esta casa',app:'A casa inteira em um app',theforce:'The Force',galeria:'Do bar ao rooftop',projecao:'A escada · projeção mapeada',hotel:'O hotel',essencia:'O conceito · Na identidade',marca:'O conceito · Na comunicação',arte:'Galeria · Os artistas',cardhero:'Membership · Feito para poucos',membership:'Membership · O cartão',porta:'Membership · No iPhone e na porta',cardapio:'O cardápio',social:'Social media & PR',insercao:'A marca dentro do espaço',porque:'Por que estar no CLUBE',cotas:'Formatos de parceria',cobranding:'Co-branding',panorama:'A noite',contato:'Contato','st-1':'Matéria que fica, luz que muda','st-2':'Dois andares e um rooftop, uma noite','st-3':'O clube de quem enxerga','st-4':'Marcas dentro da noite, não ao lado'};
+  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop','st-1':'A marca presente, sem tomar o lugar da casa',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',ativacao:'Ativação no espaço',eventos:'Eventos e locações',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',contato:'Contato'};
   slides.forEach(function(sl){
     var li=document.createElement('li'), a=document.createElement('a');
     a.href='#'+sl.id; a.textContent=titles[sl.id]||sl.id;
@@ -1411,350 +1199,6 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   Array.prototype.forEach.call(document.querySelectorAll('.logo:not(.solid)'),initGL);
   glVisible(slides[0]);
   document.addEventListener('visibilitychange',function(){ gls.forEach(function(it){ if(document.hidden){it.on=false;cancelAnimationFrame(it.raf);} }); if(!document.hidden) glVisible(slides[idx]); });
-})();
-</script>
-
-<script>
-/* CLUBE membership card: brushed silver with real lighting, engraving from a height map */
-(function(){
-  var deck=document.getElementById('deck');
-  var VS='attribute vec2 a;varying vec2 v;void main(){v=a*.5+.5;gl_Position=vec4(a,0.,1.);}';
-  var FS=[
-  'precision highp float;varying vec2 v;uniform vec2 r;uniform vec3 L;uniform sampler2D N;uniform sampler2D R;uniform sampler2D C;uniform sampler2D Hm;uniform float K;uniform vec2 P;',
-  'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}',
-  'float n2(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}',
-  'vec3 st(int k){if(k==0)return vec3(.435);if(k==1)return vec3(1.);if(k==2)return vec3(.612,.616,.616);if(k==3)return vec3(.824,.827,.827);if(k==4)return vec3(.706,.706,.71);if(k==5)return vec3(.522);if(k==6)return vec3(.796,.8,.804);return vec3(.89,.894,.898);}',
-  'float ps(int k){if(k==0)return .01;if(k==1)return .19;if(k==2)return .41;if(k==3)return .52;if(k==4)return .64;if(k==5)return .70;if(k==6)return .75;return .84;}',
-  'vec3 ramp(float x){vec3 c=st(0);for(int k=0;k<7;k++){float a=ps(k),b=ps(k+1);float u=clamp((x-a)/(b-a),0.,1.);u=u*u*(3.-2.*u);c=mix(c,st(k+1),step(a,x)*u);}return c;}',
-  'void main(){',
-  ' vec2 uv=vec2(v.x,1.-v.y); float ar=r.x/r.y; vec2 tu=vec2(uv.x*ar,uv.y)*1.25;',
-  ' vec3 nm=texture2D(N,tu).xyz*2.-1.; float gr=texture2D(C,tu).r; float ro=texture2D(R,tu).r;',
-  ' vec2 px=1./r; float m=texture2D(Hm,uv).r;',
-  ' float hx=texture2D(Hm,uv+vec2(px.x,0.)).r-texture2D(Hm,uv-vec2(px.x,0.)).r; float hy=texture2D(Hm,uv+vec2(0.,px.y)).r-texture2D(Hm,uv-vec2(0.,px.y)).r;',
-  ' vec3 Nn=normalize(vec3(nm.xy*3.2+vec2(-hx,hy)*.35,1.));',
-  ' vec3 Vv=vec3(0.,0.,1.); vec3 Ll=normalize(L); vec3 H=normalize(Ll+Vv); float nh=max(dot(Nn,H),0.);',
-  ' float rough=mix(.30,.58,clamp((ro-.09)/.08,0.,1.));',
-  ' float spec=pow(nh,mix(110.,22.,rough))*(1.-rough)*1.15+pow(nh,5.)*.16;',
-  ' float diff=max(0.,dot(Nn,Ll));',
-  ' vec3 Rv=reflect(-Vv,Nn); float ex=fract(.42+Rv.x*.55+Rv.y*.22+uv.x*.12+L.x*.14); float band=abs(ex*2.-1.);',
-  ' vec3 env=ramp(.01+band*.83);',
-  ' vec3 base=vec3(.70,.705,.71)*(.97+(gr-.86)*.3);',
-  ' vec2 dq=(uv-P)*vec2(ar,1.); float pl=exp(-dot(dq,dq)*14.);',
-  ' vec3 metal=(base*(.40+.30*diff)+env*.26)*K+vec3(spec)*mix(.12,1.,K)+(base*.6+env*.25+vec3(spec*.55))*pl*(1.-K);',
-  ' float e=smoothstep(.30,.70,m);',
-  ' vec3 ink=vec3(.105,.11,.115)*(.92+gr*.1)+env*.04+vec3(pow(nh,9.)*.05);',
-  ' vec3 col=mix(metal,ink,e);',
-  ' gl_FragColor=vec4(clamp(col,0.,1.),1.);}'
-  ].join('\n');
-
-  var PDF=/[?&]pdf\b/.test(location.search)||document.body.classList.contains('pdf');
-  var mouse={x:0,y:0,on:false};
-  document.addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;mouse.on=true;});
-  document.addEventListener('mouseleave',function(){mouse.on=false;});
-  var imgs={}, height=null, heightHero=null, reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function load(src){return new Promise(function(res,rej){var i=new Image();i.onload=function(){res(i)};i.onerror=rej;i.src=src;});}
-  function white(img,w,h){var c=document.createElement('canvas');c.width=Math.ceil(w);c.height=Math.ceil(h);var x=c.getContext('2d');x.drawImage(img,0,0,w,h);x.globalCompositeOperation='source-in';x.fillStyle='#fff';x.fillRect(0,0,w,h);return c;}
-
-  /* engraving: logo top-left, Membership top-right, name and number bottom-left, figure bottom-right */
-  function buildHeight(W,H){
-    var c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');
-    x.fillStyle='#000';x.fillRect(0,0,W,H);
-    var pad=W*.065;
-    var lw=W*.24, lh=lw*362/1478; x.drawImage(white(imgs.logo,lw,lh),pad,H*.12);
-    x.fillStyle='#fff'; x.textBaseline='alphabetic';
-    x.font='400 '+(W*.019)+'px Archivo'; x.letterSpacing='.22em'; x.textAlign='right'; x.fillText('MEMBERSHIP',W-pad,H*.12+W*.019); x.textAlign='left';
-    var ny=H*.735; x.letterSpacing='-.01em'; x.font='400 '+(W*.050)+'px Archivo'; x.fillText('Zaaire Garcia',pad,ny);
-    var ly=H*.735+W*.036;
-    x.font='300 '+(W*.019)+'px Archivo'; x.letterSpacing='.12em'; x.fillText('Nº 0001',pad,ly);
-    var fw=W*.17, fh=fw*1089/900; x.globalAlpha=1; x.drawImage(white(imgs.fig,fw,fh),W-pad-fw,ly-fh); x.globalAlpha=1;
-    var c2=document.createElement('canvas');c2.width=W;c2.height=H;var x2=c2.getContext('2d');
-    x2.filter='blur('+Math.max(.5,W/2600)+'px)'; x2.drawImage(c,0,0);
-    return c2;
-  }
-
-  function makeCard(el){
-    var cv=document.createElement('canvas'); el.appendChild(cv);
-    var gl=cv.getContext('webgl',{antialias:true,alpha:false,preserveDrawingBuffer:PDF});
-    if(!gl){el.style.background='linear-gradient(118deg,#6f6f6f,#fff 19%,#9c9d9d 41%,#d2d3d3 52%,#b4b4b5 64%,#858585 70%,#cbcccd 75%,#e3e4e5 84%)';return;}
-    function sh(t,src){var o=gl.createShader(t);gl.shaderSource(o,src);gl.compileShader(o);return o;}
-    var pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,VS));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,FS));gl.linkProgram(pr);
-    if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){el.removeChild(cv);return;}
-    gl.useProgram(pr);
-    var b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
-    var a=gl.getAttribLocation(pr,'a');gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,2,gl.FLOAT,false,0,0);
-    function tex(u,src,rep){var t=gl.createTexture();gl.activeTexture(gl.TEXTURE0+u);gl.bindTexture(gl.TEXTURE_2D,t);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,src);var w=rep?gl.REPEAT:gl.CLAMP_TO_EDGE;if(rep)gl.generateMipmap(gl.TEXTURE_2D);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,rep?gl.LINEAR_MIPMAP_LINEAR:gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,w);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,w);}
-    var hero=el.hasAttribute('data-hero');
-    var hm=hero?(heightHero=heightHero||buildHeight(3072,Math.round(3072/1.586))):(height=height||buildHeight(1600,Math.round(1600/1.586)));
-    tex(0,imgs.normal,1); tex(1,imgs.rough,1); tex(2,hm); tex(3,imgs.color,1);
-    gl.uniform1i(gl.getUniformLocation(pr,'N'),0);gl.uniform1i(gl.getUniformLocation(pr,'R'),1);gl.uniform1i(gl.getUniformLocation(pr,'Hm'),2);gl.uniform1i(gl.getUniformLocation(pr,'C'),3);
-    var ur=gl.getUniformLocation(pr,'r'),uL=gl.getUniformLocation(pr,'L'),uP=gl.getUniformLocation(pr,'P');
-    var uK=gl.getUniformLocation(pr,'K'); gl.uniform1f(uK,hero?.13:1.); gl.uniform2f(uP,-9.,-9.);
-    var lx=-.35,ly=.55,raf=0,on=false;
-    var host=el.classList.contains('tilt')?el:null;
-    function draw(ts){
-      if(!on) return;
-      var d=Math.min(devicePixelRatio||1,hero?1.6:2),W=Math.round(cv.clientWidth*d),H=Math.round(cv.clientHeight*d);
-      if(W>0&&(cv.width!==W||cv.height!==H)){cv.width=W;cv.height=H;gl.viewport(0,0,W,H);}
-      var tx=-.35,ty=.55;
-      if(hero){ if(el._P){ tx=el._L[0]; ty=el._L[1]; gl.uniform2f(uP,el._P[0],el._P[1]); } if(el._K!=null) gl.uniform1f(uK,el._K); }
-      else if(PDF||reduce){ /* parado, luz na posição de repouso */ }
-      else if(mouse.on){
-        /* a luz segue o cursor e o cartão inclina na direção dele */
-        var rc=el.getBoundingClientRect();
-        var x=(mouse.x-(rc.left+rc.width/2))/Math.max(rc.width,1),
-            y=(mouse.y-(rc.top+rc.height/2))/Math.max(rc.height,1);
-        x=Math.max(-1.5,Math.min(1.5,x)); y=Math.max(-1.5,Math.min(1.5,y));
-        tx=-.35+x*1.2; ty=.55-y*1.0;
-        if(host){ var near=Math.abs(x)<.6&&Math.abs(y)<.6;
-          host.style.transform=near?'perspective(1000px) rotateY('+(x*16).toFixed(2)+'deg) rotateX('+(-y*14).toFixed(2)+'deg)':''; }
-      }
-      else { var t=ts/1000; tx=-.35+Math.sin(t*.35)*.5; ty=.55+Math.cos(t*.27)*.3; if(host) host.style.transform=''; }
-      lx+=(tx-lx)*.1; ly+=(ty-ly)*.1;
-      gl.uniform2f(ur,cv.width,cv.height); gl.uniform3f(uL,lx,ly,1.15);
-      gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
-      raf=requestAnimationFrame(draw);
-    }
-    if(PDF){ /* quadro parado, redesenhado sempre que a página o exibe */
-      on=true; raf=requestAnimationFrame(draw);
-      return;
-    }
-    /* only the visible slide burns frames */
-    var io=new IntersectionObserver(function(e){
-      var vis=e[0].isIntersecting;
-      if(vis&&!on){on=true;raf=requestAnimationFrame(draw);}
-      else if(!vis&&on){on=false;cancelAnimationFrame(raf);if(host)host.style.transform='';}
-    },{root:window.innerWidth>900?deck:null,threshold:0});
-    io.observe(el);
-  }
-
-  /* keep the phone mockup's 2000px scene fitted to whatever box it lands in */
-  function fitM17(){
-    document.querySelectorAll('.m17').forEach(function(m){
-      var cs=getComputedStyle(m), cw=parseFloat(cs.getPropertyValue('--cw'))||2000;
-      var k=m.clientWidth/cw;
-      m.querySelector('.space').style.transform='scale('+k+') translate(calc(-1 * '+cs.getPropertyValue('--cx').trim()+'), calc(-1 * '+cs.getPropertyValue('--cy').trim()+'))';
-    });
-  }
-  window.addEventListener('resize',fitM17);
-  window.addEventListener('beforeprint',fitM17);
-  window.__fitM17=fitM17;
-  fitM17();
-
-  // keep every iOS/watchOS screen at its native design scale
-  function autoscale(sel,base){
-    var els=[].slice.call(document.querySelectorAll(sel));
-    if(!els.length) return;
-    var f=function(el){el.style.setProperty('--k',(el.clientWidth/base).toFixed(4))};
-    els.forEach(f);
-    var redo=function(){els.forEach(f)};
-    window.addEventListener('beforeprint',redo);
-    window.__refit=(window.__refit?(function(p){return function(){p();redo()}})(window.__refit):redo);
-    if(window.ResizeObserver){var ro=new ResizeObserver(function(es){es.forEach(function(e){f(e.target)})});els.forEach(function(el){ro.observe(el)})}
-    else{var run=function(){els.forEach(f)};window.addEventListener('resize',run)}
-  }
-  autoscale('.ph',300); autoscale('.s-porta .wslot',210);
-
-  Promise.all([load('assets/logo-clube.webp'),load('assets/fig-a-1.webp'),load('assets/metal044-normal.jpg'),load('assets/metal044-rough.jpg'),load('assets/metal044-color.jpg'),document.fonts.load('400 40px Archivo'),document.fonts.load('300 40px Archivo'),document.fonts.ready])
-    .then(function(v){
-      imgs.logo=v[0];imgs.fig=v[1];imgs.normal=v[2];imgs.rough=v[3];imgs.color=v[4];
-      document.querySelectorAll('[data-mcard]').forEach(makeCard);
-      fitM17();
-    });
-})();
-</script>
-<script>
-/* luz dos cartões, por pixel: segue o cursor; sem mouse, desliza sozinha */
-(function(){
-  if(/[?&]pdf\b/.test(location.search)||document.body.classList.contains('pdf')) return;   /* no PDF fica a imagem plana */
-  var cards=[].slice.call(document.querySelectorAll('.mcard')); if(!cards.length) return;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* reduz em etapas de metade: cada passo faz média real dos pixels, então os riscos não serrilham */
-  function shrink(img,w){
-    var cw=img.naturalWidth||img.width, ch=img.naturalHeight||img.height, src=img;
-    if(w>=cw) return img;
-    while(cw/2>=w){ var c=document.createElement('canvas'); c.width=Math.round(cw/2); c.height=Math.round(ch/2);
-      var x=c.getContext('2d'); x.imageSmoothingQuality='high'; x.drawImage(src,0,0,c.width,c.height); src=c; cw=c.width; ch=c.height; }
-    var f=document.createElement('canvas'); f.width=w; f.height=Math.round(ch*w/cw);
-    var y=f.getContext('2d'); y.imageSmoothingQuality='high'; y.drawImage(src,0,0,f.width,f.height); return f;
-  }
-  var VS='attribute vec2 a;varying vec2 v;void main(){v=a*.5+.5;gl_Position=vec4(a,0.,1.);}';
-  var FS=[
-    'precision mediump float;varying vec2 v;uniform sampler2D B;uniform sampler2D F;uniform sampler2D T;uniform vec2 S;uniform vec2 TS;uniform float Q;',
-    'void main(){',
-    ' vec2 uv=vec2(v.x,1.-v.y);',
-    ' vec3 base=texture2D(B,uv).rgb; vec3 f=texture2D(F,uv).rgb;',
-    ' float ink=f.g; float lng=f.b*2.-1.;',
-    ' float hi=texture2D(T,uv*TS).r*2.-1.;',
-    ' float det=mix(f.r*2.-1.,hi,Q);',
-    ' base+=vec3(hi*.010*Q*(1.-ink));',
-    /* a posição da luz é deslocada pelos riscos longos: a borda da faixa desfia no escovado */
-    ' float x=uv.x+lng*.032+det*.004+(uv.y-S.y)*.08; float d=x-S.x;',
-    ' float core=exp(-d*d/.012); float wide=exp(-d*d/.090);',
-    /* cada risco reflete diferente: claro acende mais, escuro quase não acende */
-    ' float streak=clamp(.78+det*mix(1.10,.55,Q),.12,1.9);',
-    ' float metal=(core*.68+wide*.24)*streak;',
-    ' float silver=(core*.62+wide*.22);',
-    ' vec3 col=base+vec3(mix(metal,silver,ink));',
-    ' gl_FragColor=vec4(clamp(col,0.,1.),1.);}'
-  ].join('\n');
-  function load(src){return new Promise(function(res,rej){var i=new Image();i.onload=function(){res(i)};i.onerror=rej;i.src=src;});}
-  var m={x:0,y:0,on:false,t:0};
-  document.addEventListener('mousemove',function(e){m.x=e.clientX;m.y=e.clientY;m.on=true;m.t=performance.now();});
-  document.addEventListener('mouseleave',function(){m.on=false;});
-  Promise.all([load('assets/card-grafite-2k.webp'),load('assets/card-grafite-4k.webp'),load('assets/card-fx-2k.webp'),load('assets/card-brush-tile.webp')]).then(function(im){
-    var items=[];
-    cards.forEach(function(el,i){
-      var cv=document.createElement('canvas'); cv.className='lux';
-      var gl=cv.getContext('webgl',{antialias:false,alpha:false,premultipliedAlpha:false}); if(!gl) return;
-      function sh(t,src){var o=gl.createShader(t);gl.shaderSource(o,src);gl.compileShader(o);return o;}
-      var pr=gl.createProgram(); gl.attachShader(pr,sh(gl.VERTEX_SHADER,VS)); gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,FS)); gl.linkProgram(pr);
-      if(!gl.getProgramParameter(pr,gl.LINK_STATUS)) return;
-      gl.useProgram(pr);
-      var b=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,b); gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
-      var a=gl.getAttribLocation(pr,'a'); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a,2,gl.FLOAT,false,0,0);
-      function tex(u,img){var t=gl.createTexture();gl.activeTexture(gl.TEXTURE0+u);gl.bindTexture(gl.TEXTURE_2D,t);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,img);
-        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
-        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);}
-      gl.uniform1i(gl.getUniformLocation(pr,'B'),0); gl.uniform1i(gl.getUniformLocation(pr,'F'),1); gl.uniform1i(gl.getUniformLocation(pr,'T'),2);
-      var tt=gl.createTexture(); gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D,tt); gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,im[3]);
-      gl.generateMipmap(gl.TEXTURE_2D); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR_MIPMAP_LINEAR); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
-      gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.REPEAT); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.REPEAT);
-      el.appendChild(cv);
-      items.push({el:el,cv:cv,gl:gl,tex:tex,big:el.classList.contains('tilt'),tw:0,uS:gl.getUniformLocation(pr,'S'),uTS:gl.getUniformLocation(pr,'TS'),uQ:gl.getUniformLocation(pr,'Q'),x:.55,y:.45,ph:i*1.7});
-    });
-    function frame(now){
-      if(!document.hidden){
-        var idle=!m.on||now-m.t>2600, t=now/1000;
-        items.forEach(function(o){
-          var r=o.el.getBoundingClientRect();
-          if(r.bottom<0||r.top>innerHeight||r.width<2) return;
-          var tx,ty;
-          if(reduce){ tx=.55; ty=.45; }
-          else if(!idle){ tx=(m.x-r.left)/r.width; ty=(m.y-r.top)/r.height; tx=Math.max(-.3,Math.min(1.3,tx)); ty=Math.max(0,Math.min(1,ty)); }
-          else { tx=.5+Math.sin(t*.42+o.ph)*.5; ty=.45+Math.cos(t*.31+o.ph)*.18; }
-          o.x+=(tx-o.x)*.08; o.y+=(ty-o.y)*.08;
-          var d=Math.min(devicePixelRatio||1,2), W=Math.round(o.cv.clientWidth*d), H=Math.round(o.cv.clientHeight*d);
-          if(W>0&&(o.cv.width!==W||o.cv.height!==H)){o.cv.width=W;o.cv.height=H;o.gl.viewport(0,0,W,H);}
-          if(W>0&&(!o.tw||Math.abs(W-o.tw)/W>.25)){
-            o.tw=W;
-            if(o.big&&W>=1000){ o.tex(0,im[1]); o.tex(1,im[2]); o.gl.uniform1f(o.uQ,0); }   /* cartão grande: 4K + mapa 2K, como aprovado */
-            else { var tw=Math.max(256,Math.round(W*1.25)); o.tex(0,shrink(im[0],tw)); o.tex(1,shrink(im[2],tw)); o.gl.uniform1f(o.uQ,.5); }
-            o.gl.uniform2f(o.uTS,W/310,H/310);   /* 1 amostra = 310 px de tela: a mesma espessura de risco do cartão grande */
-          }
-          o.gl.uniform2f(o.uS,o.x,o.y); o.gl.drawArrays(o.gl.TRIANGLE_STRIP,0,4);
-        });
-      }
-      requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-    window.__luxAt=function(x,y){items.forEach(function(o){o.x=x;o.y=y;});m.on=false;};   /* inspeção */
-  });
-})();
-/* cartão solo: inclina na direção do cursor */
-(function(){var c=document.querySelector('.mcard.tilt'); if(!c||window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  document.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(); var x=(e.clientX-(r.left+r.width/2))/r.width, y=(e.clientY-(r.top+r.height/2))/r.height;
-    c.style.transform=(Math.abs(x)<.6&&Math.abs(y)<.6)?'perspective(1000px) rotateY('+(x*16).toFixed(2)+'deg) rotateX('+(-y*14).toFixed(2)+'deg)':'';});
-  document.addEventListener('mouseleave',function(){c.style.transform=''});})();
-
-
-/* marquee em curva do cardápio (porte do marquee-along-svg-path): corre sozinho, desacelera no hover, arrasta */
-(function(){
-  var el=document.querySelector('[data-trilha]'); if(!el) return;
-  var palco=el.querySelector('.palco'), label=el.querySelector('[data-hname]');
-  var base=[].slice.call(palco.querySelectorAll('.tri'));
-  base.forEach(function(n){ var c=n.cloneNode(true); c.setAttribute('aria-hidden','true'); palco.appendChild(c); });   /* repeat = 2 */
-  var items=[].slice.call(palco.querySelectorAll('.tri')), N=items.length;
-  var PDF=document.body.classList.contains('pdf'), reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var off=0, V=reduce||PDF?0:2.2, hover=false, hf=1, drag=null, dv=0, last=performance.now();
-  function wrap(v){ return ((v%100)+100)%100; }
-  function fit(){ var s=Math.min(el.clientWidth/996, el.clientHeight/330), ox=(el.clientWidth-996*s)/2, oy=(el.clientHeight-330*s)/2;
-    palco.style.transform='translate('+ox+'px,'+oy+'px) scale('+s+')'; }
-  function place(){ items.forEach(function(it,i){ var d=wrap(off+i*100/N); it.style.offsetDistance=d.toFixed(3)+'%'; it.style.zIndex=String(1+Math.floor(d/10)); }); }
-  function tick(now){ var dt=Math.min(.05,(now-last)/1000); last=now;
-    hf+=((hover?0.3:1)-hf)*Math.min(1,dt*8);
-    if(!drag){ off+=V*dt*hf+dv; dv*=Math.pow(0.04,dt); } place(); requestAnimationFrame(tick); }
-  items.forEach(function(it){
-    it.addEventListener('mouseenter',function(){ hover=true; if(label){label.style.opacity=0; setTimeout(function(){label.textContent=it.getAttribute('data-name'); label.style.opacity=1;},150);} });
-    it.addEventListener('mouseleave',function(){ hover=false; });
-  });
-  el.addEventListener('pointerdown',function(e){ drag={x:e.clientX}; el.classList.add('drag'); el.setPointerCapture(e.pointerId); dv=0; });
-  el.addEventListener('pointermove',function(e){ if(!drag) return; var dx=e.clientX-drag.x; drag.x=e.clientX; var s=el.clientWidth/996; off+=dx*0.1/s; dv=dx*0.1/s; });
-  function up(){ if(!drag) return; drag=null; el.classList.remove('drag'); }
-  el.addEventListener('pointerup',up); el.addEventListener('pointercancel',up);
-  window.addEventListener('resize',fit); if(window.ResizeObserver) new ResizeObserver(fit).observe(el);
-  fit(); place(); if(!PDF) requestAnimationFrame(tick);
-})();
-
-/* galeria expansível (spec "fotos e texto se reorganizam"): hover, toque ou Tab abrem um painel;
-   largura aberta = altura × proporção natural da foto; se não couber, cede a altura; os demais dividem o resto */
-(function(){
-  if(document.body.classList.contains('pdf')) return;
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var GAP=8, SLIVER=32;
-  var CAPS={
-    insercao:[["Painel de LED do bar","A marca uma vez, pequena, em branco quente. A faixa continua sendo luz do ambiente."],
-              ["O painel de perto","Tamanho e brilho de sinalização, não de anúncio."],
-              ["O balcão muda de cor","Tampo e painel de LED na mesma cor, as outras luzes mais baixas. A marca apenas na faixa."],
-              ["O painel de perto, em vermelho","A faixa de ônix acesa na cor da marca, e a marca sobre ela, em branco."],
-              ["O momento da marca","O espaço inteiro na cor da marca, do teto ao balcão, por uma noite. A marca em uma única tela."],
-              ["A parede dos sofás","As telas verticais mostram conteúdo escuro e uma delas leva a marca, do tamanho de um quadro."]],
-    arte:[["Gleeson Paulino","Entre São Paulo, Londres e Paris, imagens neorromânticas entre o clássico e o contemporâneo."],
-          ["Samuel de Saboia","Recife, 1997. Autodidata, pinta a natureza exuberante e a luz intensa que marcam seu olhar."],
-          ["Alexandre Furcolin","Artista visual e fotógrafo: fotolivros, instalações, esculturas site-specific e performances."],
-          ["Dejumatos","Diretora, roteirista e modeladora 3D. Narrativas imersivas em XR e VR."]]
-  };
-  function build(slide){
-    var blks=[].slice.call(slide.querySelectorAll(':scope > .blk.img')); if(blks.length<2) return;
-    var strip=document.createElement('div'); strip.className='xg-strip';
-    var caps=CAPS[slide.id]||null, all=[];
-    blks.forEach(function(b,i){
-      var img=b.querySelector('img'); if(!img) return;
-      img.loading='eager';
-      var btn=document.createElement('button'); btn.type='button'; btn.className='xp';
-      var t=caps?caps[i][0]:img.alt, d=caps?caps[i][1]:'';
-      btn.setAttribute('aria-label','Ampliar: '+t);
-      btn.appendChild(img);
-      var c=document.createElement('span'); c.className='xc'; c.innerHTML='<b></b>'+(d?'<span></span>':'');
-      c.querySelector('b').textContent=t; if(d) c.querySelector('span').textContent=d;
-      btn.appendChild(c); all.push(btn);
-    });
-    /* até 4 fotos: uma linha; mais que isso: linhas de 3, para a vizinha continuar ao alcance do mouse */
-    var per=all.length>4?3:all.length, rows=[];
-    for(var r=0;r<all.length;r+=per){ var row=document.createElement('div'); row.className='xg-row'; all.slice(r,r+per).forEach(function(b){row.appendChild(b)}); strip.appendChild(row); rows.push({el:row,panels:all.slice(r,r+per),openI:-1,restW:0}); }
-    slide.appendChild(strip); slide.classList.add('xg-on');
-    rows.forEach(function(R){
-      var panels=R.panels;
-      function ref(){ if(R.openI<0) R.restW=R.el.clientWidth; return R.restW; }   /* largura de referência congelada enquanto algo está aberto */
-      function open(i){
-        var W=ref(), H=R.el.clientHeight, n=panels.length, img=panels[i].querySelector('img');
-        var ar=(img.naturalWidth&&img.naturalHeight)?img.naturalWidth/img.naturalHeight:1.5;
-        var maxW=W-GAP*(n-1)-SLIVER*(n-1);
-        var w=Math.min(H*ar,maxW), h=Math.min(H,w/ar);
-        R.openI=i;
-        panels.forEach(function(p,k){
-          if(k===i){ p.style.flex='0 0 '+w.toFixed(1)+'px'; p.style.height=h.toFixed(1)+'px'; p.classList.add('open'); }
-          else { p.style.flex='1 1 0px'; p.style.height='100%'; p.classList.remove('open'); }
-        });
-      }
-      function close(){ R.openI=-1; panels.forEach(function(p){ p.style.flex='1 1 0px'; p.style.height='100%'; p.classList.remove('open'); }); }
-      panels.forEach(function(p,i){
-        p.addEventListener('mouseenter',function(){ open(i); });
-        p.addEventListener('focus',function(){ open(i); });
-        p.addEventListener('click',function(){ if(R.openI===i && !matchMedia('(hover:hover)').matches) close(); else open(i); });
-      });
-      R.el.addEventListener('mouseleave',close);
-      R.el.addEventListener('focusout',function(e){ if(!R.el.contains(e.relatedTarget)) close(); });
-      window.addEventListener('resize',function(){ var i=R.openI; R.openI=-1; ref(); if(i>=0) open(i); });
-      ref();
-    });
-  }
-  /* a decisão não pode ser tomada uma vez só: a janela pode abrir estreita e crescer depois */
-  function tryBuild(){
-    if(!window.matchMedia('(hover:hover)').matches || window.innerWidth<560) return;
-    ['galeria','insercao','arte','panorama'].forEach(function(id){ var sl=document.getElementById(id); if(sl && !sl.classList.contains('xg-on')) build(sl); });
-  }
-  var tb=null; window.addEventListener('resize',function(){ clearTimeout(tb); tb=setTimeout(tryBuild,200); });
-  tryBuild();
 })();
 </script>
 </body>
