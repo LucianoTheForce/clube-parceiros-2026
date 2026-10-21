@@ -795,11 +795,10 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
     <article class="cota" style="--accent:var(--grad-red)">
       <p class="idx"><b>01</b><span>Patrocinador master</span></p>
       <h3 class="name">Headliner</h3>
-      <p class="lede small">A marca mais presente da casa, com ativação no espaço durante todo o contrato.</p>
+      <p class="lede small">A marca mais presente da casa, com todas as Brand Waves.</p>
       <ul class="items">
         <li>Presença da marca em toda a comunicação do projeto</li>
-        <li>Ativação de marca no espaço pelo período</li>
-        <li>Assinatura no topo do cardápio</li>
+        <li>Logo no rodapé do cardápio</li>
         <li>Projector, LED e Color Wave</li>
         <li>3 eventos open bar e 3 locações do espaço</li>
         <li>10 convidados por noite e 20% em A&amp;B e hospedagem</li>
@@ -851,8 +850,8 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
     </div>
   </div>
   <div class="rules">
-    <div class="blk metal"><h4 class="h4">Headliner</h4><p class="small">Assinatura no topo do cardápio e primeira posição nos materiais.</p></div>
-    <div class="blk metal"><h4 class="h4">Co-Headliner e Support</h4><p class="small">Logo no rodapé do cardápio e dos materiais, abaixo da marca master.</p></div>
+    <div class="blk metal"><h4 class="h4">Cardápio</h4><p class="small">Logo das marcas parceiras no rodapé, nas três cotas.</p></div>
+    <div class="blk metal"><h4 class="h4">Ordem</h4><p class="small">Headliner primeiro, depois Co-Headliner e Support.</p></div>
     <div class="blk metal"><h4 class="h4">Sempre discreta</h4><p class="small">A marca acompanha a identidade do CLUBE e não disputa espaço com ela.</p></div>
   </div>
 </section>
@@ -886,18 +885,6 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   </div>
 </section>
 
-<!-- 07 ATIVAÇÃO NO ESPAÇO (MASTER) -->
-<section class="slide s-hotel" id="ativacao">
-  <div class="blk ink between txt">
-    <div><p class="eyebrow">Exclusivo Headliner</p><h2 class="h2">Ativação de marca no espaço pelo período</h2></div>
-    <div>
-      <p class="body">Durante todo o contrato, o patrocinador master tem uma ativação própria dentro do CLUBE.</p>
-      <p class="small muted" style="margin-top:1em">O formato é desenhado com a nossa equipe, na linguagem da casa, para fazer parte do ambiente.</p>
-    </div>
-  </div>
-  <div class="blk img port"><img src="assets/ins-02-pista-balcao.webp" alt="Balcão da pista com faixa de LED na cor da marca" loading="lazy" decoding="async"></div>
-  <div class="blk img land"><img src="assets/espaco-07.webp" alt="Fogueira central do rooftop cercada por bancos" loading="lazy" decoding="async"></div>
-</section>
 
 <!-- 08 EVENTOS E LOCAÇÕES -->
 <section class="slide s-tab" id="eventos">
@@ -947,8 +934,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
       <tbody>
         <tr><td>Investimento por ano</td><td class="c"><b>R$ 1,5 mi</b></td><td class="c"><b>R$ 1 mi</b></td><td class="c"><b>R$ 500 mil</b></td></tr>
         <tr><td>Presença da marca em toda a comunicação do projeto</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
-        <tr><td>Ativação de marca no espaço pelo período</td><td class="c"><i class="dot"></i></td><td class="c no">—</td><td class="c no">—</td></tr>
-        <tr><td>Marca no cardápio</td><td class="c">Topo</td><td class="c">Rodapé</td><td class="c">Rodapé</td></tr>
+        <tr><td>Logo no rodapé do cardápio</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
         <tr><td>Projector Wave</td><td class="c"><i class="dot"></i></td><td class="c no">—</td><td class="c no">—</td></tr>
         <tr><td>LED Wave</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c no">—</td></tr>
         <tr><td>Color Wave</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
@@ -1097,7 +1083,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   });
 
   // menu
-  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop','st-1':'A marca presente, sem tomar o lugar da casa',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',ativacao:'Ativação no espaço',eventos:'Eventos e locações',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',contato:'Contato'};
+  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop','st-1':'A marca presente, sem tomar o lugar da casa',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos e locações',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',contato:'Contato'};
   slides.forEach(function(sl){
     var li=document.createElement('li'), a=document.createElement('a');
     a.href='#'+sl.id; a.textContent=titles[sl.id]||sl.id;
