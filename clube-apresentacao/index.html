@@ -526,7 +526,7 @@ body.pdf .s-andares .row .sub,body.pdf .s-andares .row .meta{opacity:1;transform
 .s-porque .lead{grid-row:1/4}
 .s-porque .row{display:grid;grid-template-columns:auto 1fr;gap:var(--pad);align-items:start;justify-content:start}
 .s-porque .row .h4{min-width:9em}
-.s-cotas{grid-template-columns:1fr;grid-template-rows:auto 1fr;gap:0}
+.s-cotas{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;gap:0}
 /* cabeçalho sobre doze colunas: título à esquerda, texto a partir da sétima */
 .s-cotas .head{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--pad);align-items:end;
   padding-bottom:clamp(20px,2.6vw,38px);border-bottom:1px solid rgba(0,0,0,.25)}
@@ -724,6 +724,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 .tab.tight td,.tab.tight th{padding-top:clamp(7px,.75vw,12px);padding-bottom:clamp(7px,.75vw,12px);font-size:clamp(13px,1.05vw,16px)}
 .tab.tight th{font-size:11px}
 .tab.tight td b{font-weight:400}
+.s-cotas .nota{padding-top:clamp(12px,1.4vw,20px);max-width:none}
 .slide.light .tab th,.slide.light .tab td{border-color:rgba(0,0,0,.16)}
 @media (max-width:900px){
   body:not(.pdf) .s-tres .head,body:not(.pdf) .s-waves .head,body:not(.pdf) .s-tab .head{grid-template-columns:1fr}
@@ -813,7 +814,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
         <li>Presença da marca na comunicação do projeto</li>
         <li>Logo no rodapé do cardápio</li>
         <li>LED e Color Wave</li>
-        <li>1 evento open bar e 1 sem open bar por ano</li>
+        <li>2 eventos open bar e 2 sem open bar na parceria</li>
         <li>10 convidados por noite e 10% em A&amp;B e hospedagem</li>
       </ul>
       <p class="price"><b>R$ 1 mi</b><span>3 anos de parceria</span></p>
@@ -826,11 +827,12 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
         <li>Presença da marca na comunicação do projeto</li>
         <li>Logo no rodapé do cardápio</li>
         <li>Color Wave</li>
-        <li>1 evento open bar e 1 sem open bar por ano</li>
+        <li>1 evento open bar e 1 sem open bar na parceria</li>
       </ul>
       <p class="price"><b>R$ 500 mil</b><span>3 anos de parceria</span></p>
     </article>
   </div>
+  <p class="small muted nota">Não estão incluídos custos de produção, como cenografia, artístico e conteúdo específico para as telas.</p>
 </section>
 
 <!-- 05 PRESENÇA NA COMUNICAÇÃO -->
@@ -890,17 +892,17 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 <section class="slide s-tab" id="eventos">
   <div class="head">
     <div><p class="eyebrow">A casa para a marca</p><h2 class="h2">Eventos da marca no CLUBE</h2></div>
-    <p class="body">Nas três cotas, a marca usa o CLUBE para dois eventos próprios por ano, um com open bar e um sem.</p>
+    <p class="body">A marca usa o CLUBE para os próprios eventos. A Headliner tem um com open bar e um sem a cada ano de parceria.</p>
   </div>
   <div class="blk tabwrap">
     <table class="tab">
       <thead><tr><th></th><th class="c">Headliner<i style="--accent:var(--grad-red)"></i></th><th class="c">Co-Headliner<i style="--accent:var(--grad-green)"></i></th><th class="c">Support<i style="--accent:var(--grad-blue)"></i></th></tr></thead>
       <tbody>
-        <tr><td><h4 class="h4">Evento open bar</h4><p class="small muted">Por ano. Até 100 pessoas, com o espaço inteiro só para a marca, de domingo a quinta, exceto feriados.</p></td><td class="c v">1</td><td class="c v">1</td><td class="c v">1</td></tr>
-        <tr><td><h4 class="h4">Evento sem open bar</h4><p class="small muted">Por ano. Reuniões, apresentações e lançamentos, com o espaço vazio.</p></td><td class="c v">1</td><td class="c v">1</td><td class="c v">1</td></tr>
+        <tr><td><h4 class="h4">Eventos com open bar</h4><p class="small muted">Total nos 3 anos. Até 100 pessoas, com o espaço inteiro só para a marca, de domingo a quinta, exceto feriados.</p></td><td class="c v">3</td><td class="c v">2</td><td class="c v">1</td></tr>
+        <tr><td><h4 class="h4">Eventos sem open bar</h4><p class="small muted">Total nos 3 anos. Reuniões, apresentações e lançamentos, com o espaço vazio.</p></td><td class="c v">3</td><td class="c v">2</td><td class="c v">1</td></tr>
       </tbody>
     </table>
-    <p class="small muted" style="margin-top:1.4em">Eventos para mais de 100 pessoas são possíveis, com open bar pago à parte por convidado adicional.</p>
+    <p class="small muted" style="margin-top:1.4em">Eventos para mais de 100 pessoas são possíveis, com open bar pago à parte por convidado adicional. Não estão incluídos custos de produção, como cenografia, artístico e conteúdo específico para as telas.</p>
   </div>
 </section>
 
@@ -938,12 +940,13 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
         <tr><td>Projector Wave</td><td class="c"><i class="dot"></i></td><td class="c no">—</td><td class="c no">—</td></tr>
         <tr><td>LED Wave</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c no">—</td></tr>
         <tr><td>Color Wave</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
-        <tr><td>Evento open bar (por ano)</td><td class="c">1</td><td class="c">1</td><td class="c">1</td></tr>
-        <tr><td>Evento sem open bar (por ano)</td><td class="c">1</td><td class="c">1</td><td class="c">1</td></tr>
+        <tr><td>Eventos com open bar (nos 3 anos)</td><td class="c">3</td><td class="c">2</td><td class="c">1</td></tr>
+        <tr><td>Eventos sem open bar (nos 3 anos)</td><td class="c">3</td><td class="c">2</td><td class="c">1</td></tr>
         <tr><td>Desconto em comida, bebida e hospedagem</td><td class="c">20%</td><td class="c">10%</td><td class="c no">—</td></tr>
         <tr><td>Convidados da marca por noite</td><td class="c">10</td><td class="c">10</td><td class="c no">—</td></tr>
       </tbody>
     </table>
+    <p class="small muted" style="margin-top:1.2em">Não estão incluídos custos de produção, como cenografia, artístico e conteúdo específico para as telas.</p>
   </div>
 </section>
 
