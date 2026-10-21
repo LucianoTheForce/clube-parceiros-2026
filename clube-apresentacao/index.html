@@ -697,7 +697,8 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 .s-cotas .price b{display:block;font-size:clamp(24px,2.5vw,40px);font-weight:300;letter-spacing:-.015em;text-transform:none;margin-bottom:.35em}
 .s-cotas .price span{opacity:.6}
 /* brand waves: foto em cima, legenda embaixo, três colunas */
-.s-waves{grid-template-columns:repeat(3,1fr);grid-template-rows:auto 1fr auto}
+.s-waves{grid-template-columns:repeat(3,1fr);grid-template-rows:auto 1fr auto auto}
+.s-waves .wnote{grid-column:1/-1;margin:0;padding-top:6px}
 .s-waves .head{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end;padding-bottom:clamp(8px,1vw,14px)}
 .s-waves .cap{justify-content:flex-start}
 .s-waves .cap .h3{margin-bottom:.35em}
@@ -725,6 +726,11 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 .tab.tight th{font-size:11px}
 .tab.tight td b{font-weight:400}
 .s-cotas .nota{padding-top:clamp(12px,1.4vw,20px);max-width:none}
+.s-cotas .items li{padding:.4em 0}
+.s-cotas .head{padding-bottom:clamp(12px,1.6vw,24px)}
+.s-cotas .cota{padding-top:clamp(14px,1.6vw,24px)}
+.s-cotas .name{margin-top:clamp(10px,1.2vw,18px)}
+.s-cotas .items{margin-top:clamp(12px,1.4vw,20px)}
 .slide.light .tab th,.slide.light .tab td{border-color:rgba(0,0,0,.16)}
 @media (max-width:900px){
   body:not(.pdf) .s-tres .head,body:not(.pdf) .s-waves .head,body:not(.pdf) .s-tab .head{grid-template-columns:1fr}
@@ -737,7 +743,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 
 <header class="bar" aria-hidden="true">
   <div class="l"><span>the force</span><span>clube</span><span>.cc</span></div>
-  <div class="c"><b id="cur">01</b> / <span id="tot">11</span></div>
+  <div class="c"><b id="cur">01</b> / <span id="tot">12</span></div>
   <div class="r">Cotas · 2027</div>
 </header>
 
@@ -766,7 +772,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   <div class="blk teses">
     <div class="tese rule-row" style="--i:0"><p class="idx">01</p><div><h3 class="h3">Um endereço, três ambientes</h3><p class="big">Bar no primeiro andar, pista no segundo e rooftop na cobertura, num prédio que também é hotel.</p></div></div>
     <div class="tese rule-row" style="--i:1"><p class="idx">02</p><div><h3 class="h3">Música no centro</h3><p class="big">A programação é feita com DJs e coletivos da cena de São Paulo, para um público que sai para ouvir música.</p></div></div>
-    <div class="tese rule-row" style="--i:2"><p class="idx">03</p><div><h3 class="h3">Superfícies de luz</h3><p class="big">Painéis de LED no bar e na pista, telas e uma escada com projeção mapeada. É por elas que as marcas parceiras entram na noite.</p></div></div>
+    <div class="tese rule-row" style="--i:2"><p class="idx">03</p><div><h3 class="h3">Superfícies de luz</h3><p class="big">Telas e painel de LED no bar, balcões de LED e uma sala imersiva com projeção mapeada. É por elas que as marcas parceiras entram na noite.</p></div></div>
   </div>
 </section>
 
@@ -796,11 +802,14 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
     <article class="cota" style="--accent:var(--grad-red)">
       <p class="idx"><b>01</b><span>Patrocinador master</span></p>
       <h3 class="name">Headliner</h3>
-      <p class="lede small">A marca mais presente da casa, com todas as Brand Waves.</p>
+      <p class="lede small">A única marca na sala imersiva e na cor da casa.</p>
       <ul class="items">
         <li>Presença da marca na comunicação do projeto</li>
         <li>Logo no rodapé do cardápio</li>
-        <li>Projector, LED e Color Wave</li>
+        <li>Projector Wave e Color Wave, exclusivos</li>
+        <li>LED Wave, com mais frequência</li>
+        <li>Drink assinado na carta</li>
+        <li>Exclusividade de categoria pelo período</li>
         <li>1 evento open bar e 1 sem open bar por ano</li>
         <li>10 convidados por noite e 20% em A&amp;B e hospedagem</li>
       </ul>
@@ -809,11 +818,12 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
     <article class="cota" style="--accent:var(--grad-green)">
       <p class="idx"><b>02</b><span>Apoio</span></p>
       <h3 class="name">Co-Headliner</h3>
-      <p class="lede small">Presença forte nos momentos de pista.</p>
+      <p class="lede small">Nas telas da casa e na carta, com drink assinado.</p>
       <ul class="items">
         <li>Presença da marca na comunicação do projeto</li>
         <li>Logo no rodapé do cardápio</li>
-        <li>LED e Color Wave</li>
+        <li>LED Wave</li>
+        <li>Drink assinado na carta</li>
         <li>2 eventos open bar e 2 sem open bar na parceria</li>
         <li>10 convidados por noite e 10% em A&amp;B e hospedagem</li>
       </ul>
@@ -826,7 +836,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
       <ul class="items">
         <li>Presença da marca na comunicação do projeto</li>
         <li>Logo no rodapé do cardápio</li>
-        <li>Color Wave</li>
+        <li>LED Wave</li>
         <li>1 evento open bar e 1 sem open bar na parceria</li>
       </ul>
       <p class="price"><b>R$ 500 mil</b><span>3 anos de parceria</span></p>
@@ -858,33 +868,48 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   </div>
 </section>
 
-<!-- 06 BRAND WAVES -->
+<!-- 06 SALA IMERSIVA (HEADLINER) -->
+<section class="slide s-hotel" id="sala">
+  <div class="blk ink between txt">
+    <div><p class="eyebrow">Projector Wave · Exclusivo Headliner</p><h2 class="h2">A sala imersiva</h2></div>
+    <div>
+      <p class="body">Uma sala com projeção mapeada nas paredes. É o espaço mais marcante da casa.</p>
+      <p class="body">Só a Headliner entra aqui: em alguns momentos da noite, a marca ocupa os projetores da sala e o painel logo abaixo.</p>
+      <p class="small muted" style="margin-top:1em">Frequência das inserções a ser definida.</p>
+    </div>
+  </div>
+  <div class="blk img port"><img src="assets/sala-imersiva-01.webp" alt="Sala imersiva com projeção mapeada em azul e laranja nas paredes" loading="lazy" decoding="async"></div>
+  <div class="blk img land"><img src="assets/sala-imersiva-02.webp" alt="Sala imersiva com projeção mapeada em vermelho" loading="lazy" decoding="async"></div>
+</section>
+
+<!-- 07 BRAND WAVES -->
 <section class="slide s-waves" id="waves">
   <div class="head">
-    <div><p class="eyebrow">Ativações na noite</p><h2 class="h2">Brand Waves</h2></div>
-    <p class="body">A marca entra junto com a música, nos picos da noite, quando o público está mais atento.</p>
+    <div><p class="eyebrow">Inserções na casa</p><h2 class="h2">Brand Waves</h2></div>
+    <p class="body">A marca entra nas telas, nos LEDs e na luz da casa ao longo da noite. A Headliner tem tudo o que as outras cotas têm, mais a sala imersiva e a cor da casa.</p>
   </div>
-  <div class="blk img"><img src="assets/projecao-poster.webp" alt="Escada com projeção mapeada" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/ins-01-salao-led.webp" alt="Painel de LED com a marca sob o balcão" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/sala-imersiva-02.webp" alt="Sala imersiva com projeção mapeada" loading="lazy" decoding="async"></div>
   <div class="blk img"><img src="assets/ins-03-momento-azul.webp" alt="Salão inteiro na luz azul da marca" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/ins-01-salao-led.webp" alt="Painel de LED com a marca sob o balcão" loading="lazy" decoding="async"></div>
   <div class="blk ink cap">
-    <p class="eyebrow">Na troca de DJ</p>
+    <p class="eyebrow">Sala imersiva</p>
     <h3 class="h3">Projector Wave</h3>
-    <p class="small">A marca ocupa a escada de projeção mapeada a cada troca de DJ.</p>
+    <p class="small">A marca ocupa os projetores da sala imersiva e o painel logo abaixo, em alguns momentos da noite.</p>
     <p class="tiers"><span class="on" style="--accent:var(--heat)">Headliner</span></p>
   </div>
   <div class="blk ink cap">
-    <p class="eyebrow">Na entrada da atração</p>
-    <h3 class="h3">LED Wave</h3>
-    <p class="small">A marca aparece no painel de LED da pista quando cada atração entra.</p>
-    <p class="tiers"><span class="on" style="--accent:var(--heat)">Headliner</span><span class="on" style="--accent:var(--flow)">Co-Headliner</span></p>
+    <p class="eyebrow">Uma vez por noite</p>
+    <h3 class="h3">Color Wave</h3>
+    <p class="small">A casa assume a cor da marca: telas e painel de LED do 1º andar e balcões e barras de LED do 1º e do 5º andar, com a marca nas telas.</p>
+    <p class="tiers"><span class="on" style="--accent:var(--heat)">Headliner</span></p>
   </div>
   <div class="blk ink cap">
-    <p class="eyebrow">Na entrada da atração</p>
-    <h3 class="h3">Color Wave</h3>
-    <p class="small">Balcões de LED, telas e painéis acendem nas cores da marca.</p>
+    <p class="eyebrow">Ao longo da noite</p>
+    <h3 class="h3">LED Wave</h3>
+    <p class="small">Inserções da marca nas telas e no painel de LED do 1º andar. A Headliner aparece com mais frequência.</p>
     <p class="tiers"><span class="on" style="--accent:var(--heat)">Headliner</span><span class="on" style="--accent:var(--flow)">Co-Headliner</span><span class="on" style="--accent:var(--freq)">Support</span></p>
   </div>
+  <p class="small muted wnote">Frequência das inserções a ser definida.</p>
 </section>
 
 
@@ -937,9 +962,11 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
         <tr><td>Investimento (3 anos de parceria)</td><td class="c"><b>R$ 1,5 mi</b></td><td class="c"><b>R$ 1 mi</b></td><td class="c"><b>R$ 500 mil</b></td></tr>
         <tr><td>Presença da marca na comunicação do projeto</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
         <tr><td>Logo no rodapé do cardápio</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
-        <tr><td>Projector Wave</td><td class="c"><i class="dot"></i></td><td class="c no">—</td><td class="c no">—</td></tr>
-        <tr><td>LED Wave</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c no">—</td></tr>
-        <tr><td>Color Wave</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
+        <tr><td>Projector Wave · sala imersiva</td><td class="c"><i class="dot"></i></td><td class="c no">—</td><td class="c no">—</td></tr>
+        <tr><td>Color Wave · a cor da casa, 1 vez por noite</td><td class="c"><i class="dot"></i></td><td class="c no">—</td><td class="c no">—</td></tr>
+        <tr><td>LED Wave · telas e LED do 1º andar</td><td class="c">Mais frequente</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
+        <tr><td>Drink assinado na carta</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c no">—</td></tr>
+        <tr><td>Exclusividade de categoria pelo período</td><td class="c"><i class="dot"></i></td><td class="c no">—</td><td class="c no">—</td></tr>
         <tr><td>Eventos com open bar (nos 3 anos)</td><td class="c">3</td><td class="c">2</td><td class="c">1</td></tr>
         <tr><td>Eventos sem open bar (nos 3 anos)</td><td class="c">3</td><td class="c">2</td><td class="c">1</td></tr>
         <tr><td>Desconto em comida, bebida e hospedagem</td><td class="c">20%</td><td class="c">10%</td><td class="c no">—</td></tr>
@@ -1086,7 +1113,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   });
 
   // menu
-  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop','st-1':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',contato:'Contato'};
+  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop','st-1':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',sala:'A sala imersiva',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',contato:'Contato'};
   slides.forEach(function(sl){
     var li=document.createElement('li'), a=document.createElement('a');
     a.href='#'+sl.id; a.textContent=titles[sl.id]||sl.id;
