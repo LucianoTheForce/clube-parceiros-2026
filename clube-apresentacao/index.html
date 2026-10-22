@@ -729,6 +729,8 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 .tab.tight td,.tab.tight th{padding-top:clamp(7px,.75vw,12px);padding-bottom:clamp(7px,.75vw,12px);font-size:clamp(13px,1.05vw,16px)}
 .tab.tight th{font-size:11px}
 .tab.tight td b{font-weight:400}
+#comparativo .tab.tight td,#comparativo .tab.tight th{padding-top:clamp(4px,.5vw,8px);padding-bottom:clamp(4px,.5vw,8px)}
+#comparativo .head{padding-bottom:0}
 .s-cotas .nota{padding-top:clamp(12px,1.4vw,20px);max-width:none}
 .s-cotas .items li{padding:.4em 0}
 .s-cotas .head{padding-bottom:clamp(12px,1.6vw,24px)}
@@ -765,6 +767,12 @@ body.pdf .ph18 .shot{display:block}
   body:not(.pdf) .ph18.back{display:none}
   body:not(.pdf) .ph18.front{left:50%}
 }
+
+/* instagram: dois feeds reais em grade 3x3, como no perfil */
+.s-social .igrid{padding:0;background:none;justify-content:flex-start}
+.s-social .igrid .eyebrow{margin:0 0 10px}
+.s-social .ig{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;width:100%;max-height:calc(100% - 28px);aspect-ratio:3/3.75;margin:0 auto}
+.s-social .ig img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;display:block}
 </style>
 </head>
 <body>
@@ -791,80 +799,36 @@ body.pdf .ph18 .shot{display:block}
   </div>
   <div class="foot">
     <div class="blk ink top">
-      <p class="eyebrow">Proposta de parceria</p>
-      <p class="h4">Bar, restaurante &amp; pista<br>Rua da Consolação, 1813 · São Paulo</p>
+      <p class="eyebrow">Cotas de patrocínio</p>
+      <p class="h4">Headliner · Co-Headliner · Support<br>Rua da Consolação, 1813 · São Paulo</p>
     </div>
     <div class="blk red center" style="min-width:140px">2027</div>
   </div>
 </section>
 
-<!-- 02 O CONCEITO · 1/3 · A TESE -->
-<section class="slide s-tese" id="conceito">
+<!-- 02 O CLUBE -->
+<section class="slide s-tese" id="clube">
   <div class="lead">
-    <div><p class="eyebrow">O conceito · 1 / 3</p><h1 class="h1">O clássico e a tecnologia, na Consolação</h1></div>
-    <p class="small muted fonte">Sobre o piso paulista: Figueiredo e Velloso, Anais do Museu Paulista, 2025.</p>
+    <div><p class="eyebrow">O CLUBE</p><h1 class="h1">Bar, pista e rooftop na Consolação</h1></div>
+    <p class="small muted fonte">Rua da Consolação, 1813 · São Paulo</p>
   </div>
   <div class="blk teses">
-    <div class="tese rule-row" style="--i:0"><p class="idx">01</p><div><h3 class="h3">A calçada da Consolação</h3><p class="big">A Consolação foi a primeira via de São Paulo a receber o piso paulista, em pedra portuguesa. Da porta para dentro, o chão do CLUBE continua a calçada da rua.</p></div></div>
-    <div class="tese rule-row" style="--i:1"><p class="idx">02</p><div><h3 class="h3">O clássico é matéria</h3><p class="big">Pedra portuguesa, concreto, travertino, couro, ônix, alumínio fundido e, no rooftop, uma fogueira. Tudo o que tem peso, temperatura e idade.</p></div></div>
-    <div class="tese rule-row" style="--i:2"><p class="idx">03</p><div><h3 class="h3">A tecnologia é luz</h3><p class="big">Projeção mapeada na sala imersiva, LED da parede ao teto na pista, a galeria digital nas telas do bar e um balcão que muda de cor. No bolso, o cartão de membro no Wallet.</p></div></div>
+    <div class="tese rule-row" style="--i:0"><p class="idx">01</p><div><h3 class="h3">Um endereço, do bar ao rooftop</h3><p class="big">Bar no primeiro andar, pista no segundo, bar com vista no quinto e rooftop na cobertura, num prédio que também é hotel.</p></div></div>
+    <div class="tese rule-row" style="--i:1"><p class="idx">02</p><div><h3 class="h3">Música no centro</h3><p class="big">A programação é feita com DJs, coletivos e artistas convidados da cena de São Paulo, do café da manhã à pista.</p></div></div>
+    <div class="tese rule-row" style="--i:2"><p class="idx">03</p><div><h3 class="h3">Superfícies de luz</h3><p class="big">Galeria digital nas telas do bar, LED da parede ao teto na pista, balcões de LED e uma sala imersiva com projeção mapeada. É por elas que as marcas parceiras entram na noite.</p></div></div>
   </div>
 </section>
 
-<!-- 05 IDENTIDADE · A FRICÇÃO VIRA FORMA -->
-<section class="slide s-essencia" id="essencia">
-  <div class="blk black fig"><img src="assets/fig-a-1.webp" alt="Personagem A Anfitriã, silhueta metálica fragmentada" loading="lazy" decoding="async"><span class="cap">01 · A Anfitriã</span></div>
-  <div class="blk black fig"><img src="assets/fig-b-1.webp" alt="Personagem A Eufórica" loading="lazy" decoding="async"><span class="cap">02 · A Eufórica</span></div>
-  <div class="blk ink between txt">
-    <div>
-      <p class="eyebrow">O conceito · 2 / 3 · Na identidade</p>
-      <h2 class="h2">O fragmento em outra escala</h2>
-    </div>
-    <div>
-      <p class="body">O que une o clássico e a tecnologia é o fragmento. A pedra do mosaico, o ponto do LED e o bloco das silhuetas são a mesma unidade em três escalas.</p>
-      <p class="body">Os Personagens do Calor Coletivo são a clique da casa: A Anfitriã, A Eufórica, O Frequente, O Registro, A It Girl, O Faminto, O Curador, O Flerte e O Beijo. Nove retratos de quem já se enxergou ali.</p>
-      <p class="body">Há mestres calceteiros que escondem no piso uma pedra-assinatura, encontrada apenas por quem sabe olhar. O CLUBE é de quem se reconhece no que vê: não por dinheiro, não por lista, por olhar.</p>
-    </div>
+<!-- 03 O ESPAÇO -->
+<section class="slide s-tres" id="espaco" style="grid-template-columns:repeat(4,1fr)">
+  <div class="head">
+    <div><p class="eyebrow">O espaço</p><h2 class="h2">Do bar ao rooftop</h2></div>
+    <p class="body">A noite começa no bar, passa pela pista e sobe até o bar com vista e o rooftop.</p>
   </div>
-  <div class="blk metal-v fig"><img src="assets/fig-a-2.webp" alt="Personagem em estado fragmento" loading="lazy" decoding="async"><span class="cap">Fragmento</span></div>
-  <div class="blk red fig"><img src="assets/fig-c-1.webp" alt="Personagem O Frequente" loading="lazy" decoding="async"><span class="cap">03 · O Frequente</span></div>
-</section>
-
-<!-- 06 A FRICÇÃO IMPRESSA -->
-<section class="slide s-marca" id="marca">
-  <div class="blk img"><img src="assets/mock-storefront.webp" alt="Fachada do CLUBE com neon do personagem" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/mock-portacopos.webp" alt="Porta-copos CLUBE" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/mock-mesa.jpg" alt="Cardápio de mesa CLUBE" loading="lazy" decoding="async"></div>
-  <div class="blk ink between txt">
-    <div><p class="eyebrow">O conceito · 3 / 3 · Na comunicação</p><h2 class="h2">A mesma textura em cada superfície</h2></div>
-    <p class="body">O fragmento sai do piso e aparece na vitrine, no porta-copos, no cardápio e no cartão de membro. Em cada peça, um lugar reservado para a marca parceira.</p>
-  </div>
-</section>
-
-<!-- STATEMENT 1 -->
-<section class="slide s-statement" id="st-1">
-  <h1 class="h1" data-copy="statement-1">Matéria que fica, luz que muda</h1>
-</section>
-
-<!-- 05 MISSÃO -->
-<section class="slide s-missao" id="missao">
-  <div class="blk ink between txt">
-    <div>
-      <p class="eyebrow">Nossa missão</p>
-      <h2 class="h2">Redefinir a noite</h2>
-    </div>
-    <div>
-      <p class="body">A noite paulistana anda repetida. Muda o endereço, e o salão, a luz e o roteiro continuam os mesmos.</p>
-      <p class="body">No lugar da repetição, o CLUBE reúne o clássico e a tecnologia na mesma casa. Pedra, concreto e couro convivem com LED e projeção mapeada.</p>
-      <p class="body">Bar, pista, bar com vista e rooftop mudam de ritmo ao longo do dia, do café da manhã à pista. Vinte e quatro horas em um endereço, e nenhuma hora igual à anterior.</p>
-    </div>
-  </div>
-  <div class="blk img"><img src="assets/missao-retrato.webp" alt="Convidado de costas, camisa com a inscrição Art on Display, Courtesy of Josué Thomas"></div>
-  <div class="blk img"><img src="assets/missao-cabine.webp" alt="Vista da cabine do DJ para a pista, tudo em luz vermelha" style="object-position:center 42%"></div>
-</section>
-
-<section class="slide s-statement light" id="st-2">
-  <h1 class="h1">Do café da manhã à pista, 24 horas</h1>
+  <div class="blk img"><img src="assets/real-bar.webp" alt="Salão do bar do 1º andar, com banco de couro e telas na parede" loading="lazy" decoding="async"><span class="lbl">01 · Bar · 1º andar</span></div>
+  <div class="blk img"><img src="assets/real-pista.webp" alt="Pista, com a cabine de travertino ao fundo" loading="lazy" decoding="async"><span class="lbl">02 · Pista · 2º andar</span></div>
+  <div class="blk img"><img src="assets/real-bar-vista.webp" alt="Bar com vista para a cidade ao pôr do sol" loading="lazy" decoding="async"><span class="lbl">03 · Bar com vista · 5º andar</span></div>
+  <div class="blk img"><img src="assets/real-rooftop.webp" alt="Rooftop com balcão curvo, plantas e a cidade ao fundo" loading="lazy" decoding="async"><span class="lbl">04 · Rooftop</span></div>
 </section>
 
 <section class="slide s-pilares" id="dia">
@@ -879,80 +843,6 @@ body.pdf .ph18 .shot{display:block}
   <div class="blk foot"><p class="small muted">Hotel com recepção 24 horas.</p></div>
 </section>
 
-<section class="slide s-andares" id="espaco">
-  <div class="head">
-    <div><p class="eyebrow">O espaço</p><h2 class="h2">Consolação, 1813</h2></div>
-    <p class="body">Quatro ambientes no mesmo endereço, mais a sala imersiva e o hotel. A noite sobe de um para o outro.</p>
-  </div>
-  <div class="blk cine">
-    <div class="row">
-      <div class="bg"><img src="assets/real-bar.webp" alt="Salão do bar do 1º andar, com banco de couro e telas na parede" loading="lazy" decoding="async"></div>
-      <div class="in">
-        <div class="lft">
-          <span class="idx">01</span>
-          <div><h3 class="nome">Bar</h3><p class="small sub">Bar e restaurante, do café da manhã ao jantar. As telas das paredes formam a galeria digital.</p></div>
-        </div>
-        <div class="rgt" style="display:flex;align-items:center;gap:clamp(14px,1.6vw,26px)">
-          <span class="meta">1º andar · mesa e balcão</span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></span>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="bg"><img src="assets/real-pista-ceu.webp" alt="Pista à noite, com o LED do teto e da parede abrindo um céu vermelho" loading="lazy" decoding="async"></div>
-      <div class="in">
-        <div class="lft">
-          <span class="idx">02</span>
-          <div><h3 class="nome">Pista</h3><p class="small sub">Som fechado e LED da parede ao teto: o teto se abre num céu com a identidade do CLUBE.</p></div>
-        </div>
-        <div class="rgt" style="display:flex;align-items:center;gap:clamp(14px,1.6vw,26px)">
-          <span class="meta">2º andar · qui a sáb, até as 4h</span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></span>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="bg"><img src="assets/real-bar-vista.webp" alt="Bar com vista, com balcão de LED laranja e a cidade pela janela" loading="lazy" decoding="async"></div>
-      <div class="in">
-        <div class="lft">
-          <span class="idx">03</span>
-          <div><h3 class="nome">Bar com vista</h3><p class="small sub">Balcão de LED e a cidade inteira pela janela.</p></div>
-        </div>
-        <div class="rgt" style="display:flex;align-items:center;gap:clamp(14px,1.6vw,26px)">
-          <span class="meta">5º andar · vista</span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></span>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="bg"><img src="assets/real-rooftop.webp" alt="Rooftop com balcão curvo, plantas e a cidade ao fundo" loading="lazy" decoding="async"></div>
-      <div class="in">
-        <div class="lft">
-          <span class="idx">04</span>
-          <div><h3 class="nome">Rooftop</h3><p class="small sub">Lounge e bar a céu aberto, da golden hour em diante.</p></div>
-        </div>
-        <div class="rgt" style="display:flex;align-items:center;gap:clamp(14px,1.6vw,26px)">
-          <span class="meta">Cobertura · céu aberto</span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide s-galeria" id="galeria">
-  <div class="head">
-    <div><p class="eyebrow">O espaço</p><h2 class="h2">Da entrada ao rooftop</h2></div>
-    <p class="body">Concreto, couro, pedra portuguesa e luz. Cada ambiente tem escala e público próprios.</p>
-  </div>
-  <div class="blk img"><img src="assets/real-acesso.webp" alt="Entrada do CLUBE, com portas de vidro e plantas na calçada" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/real-bar.webp" alt="Salão do bar do 1º andar" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/real-led-wave.webp" alt="Bar do 1º andar com o balcão de LED e as telas na parede" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/real-color-wave.webp" alt="Balcão vermelho com o logo CLUBE no LED" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/real-bar-vista.webp" alt="Bar com vista do 5º andar" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/real-rooftop.webp" alt="Rooftop no fim de tarde" loading="lazy" decoding="async"></div>
-</section>
-
 <section class="slide s-full" id="imersiva">
   <div class="gal">
     <figure class="fr on">
@@ -961,7 +851,7 @@ body.pdf .ph18 .shot{display:block}
         <p class="eyebrow">O espaço · Sala imersiva</p>
         <h3 class="h3">Uma sala que vira tela</h3>
         <p class="small">Projeção mapeada nas paredes, do piso ao teto. O conteúdo muda a cada noite: obras de artistas convidados e a identidade do CLUBE.</p>
-        <p class="small">É também o espaço mais forte para uma marca: nos momentos da Headliner, a sala inteira vira a marca.</p>
+        <p class="small">É o espaço mais forte para uma marca: só a Headliner entra aqui, e nos momentos dela a marca ocupa os projetores da sala e todos os LEDs e telas da casa.</p>
       </figcaption>
     </figure>
     <figure class="fr">
@@ -970,7 +860,7 @@ body.pdf .ph18 .shot{display:block}
         <p class="eyebrow">O espaço · Sala imersiva</p>
         <h3 class="h3">Uma sala que vira tela</h3>
         <p class="small">Projeção mapeada nas paredes, do piso ao teto. O conteúdo muda a cada noite: obras de artistas convidados e a identidade do CLUBE.</p>
-        <p class="small">É também o espaço mais forte para uma marca: nos momentos da Headliner, a sala inteira vira a marca.</p>
+        <p class="small">É o espaço mais forte para uma marca: só a Headliner entra aqui, e nos momentos dela a marca ocupa os projetores da sala e todos os LEDs e telas da casa.</p>
       </figcaption>
     </figure>
     <figure class="fr">
@@ -979,7 +869,7 @@ body.pdf .ph18 .shot{display:block}
         <p class="eyebrow">O espaço · Sala imersiva</p>
         <h3 class="h3">Uma sala que vira tela</h3>
         <p class="small">Projeção mapeada nas paredes, do piso ao teto. O conteúdo muda a cada noite: obras de artistas convidados e a identidade do CLUBE.</p>
-        <p class="small">É também o espaço mais forte para uma marca: nos momentos da Headliner, a sala inteira vira a marca.</p>
+        <p class="small">É o espaço mais forte para uma marca: só a Headliner entra aqui, e nos momentos dela a marca ocupa os projetores da sala e todos os LEDs e telas da casa.</p>
       </figcaption>
     </figure>
   </div>
@@ -1013,22 +903,6 @@ body.pdf .ph18 .shot{display:block}
   <div class="blk img land"><img src="assets/real-led-wave.webp" alt="Bar do 1º andar com as telas da galeria digital na parede" loading="lazy" decoding="async"></div>
 </section>
 
-<!-- 13 GALERIA DE ARTE -->
-<section class="slide s-arte" id="arte">
-  <div class="head">
-    <div><p class="eyebrow">Artistas convidados</p><h2 class="h2">Artistas na casa</h2></div>
-    <p class="body">A cada temporada, artistas convidados criam para a galeria digital, a sala imersiva e a pista. A primeira curadoria reúne arte contemporânea brasileira.</p>
-  </div>
-  <div class="blk img cover-top"><img src="assets/gleeson-02.webp" alt="Obra de Gleeson Paulino" loading="lazy" decoding="async"></div>
-  <div class="blk img cover-top"><img src="assets/saboia-01.jpg" alt="Obra de Samuel de Saboia" loading="lazy" decoding="async"></div>
-  <div class="blk img cover-top"><img src="assets/furcolin-02.webp" alt="Obra de Alexandre Furcolin" loading="lazy" decoding="async"></div>
-  <div class="blk img cover-top"><img src="assets/dejumatos-01.webp" alt="Dejumatos" loading="lazy" decoding="async"></div>
-  <div class="blk cap"><h4 class="h4">Gleeson Paulino</h4><p class="small">Entre São Paulo, Londres e Paris, produz imagens neorromânticas que traduzem a tensão entre o clássico e o contemporâneo. Publicado nas principais revistas de moda do mundo.</p></div>
-  <div class="blk cap"><h4 class="h4">Samuel de Saboia</h4><p class="small">Nascido no Recife em 1997, autodidata, carrega na pintura a natureza exuberante e a luz intensa que marcam seu olhar. Vive e trabalha em São Paulo.</p></div>
-  <div class="blk cap"><h4 class="h4">Alexandre Furcolin</h4><p class="small">Artista visual e fotógrafo, explora as fronteiras da linguagem visual em fotolivros, instalações, esculturas site-specific e performances.</p></div>
-  <div class="blk cap"><h4 class="h4">Dejumatos</h4><p class="small">Diretora, roteirista e modeladora 3D. Cria narrativas imersivas em XR e VR que usam tecnologia para amplificar a consciência humana.</p></div>
-</section>
-
 <!-- 09e O HOTEL -->
 <section class="slide s-hotel" id="hotel">
   <div class="blk ink txt">
@@ -1039,22 +913,6 @@ body.pdf .ph18 .shot{display:block}
   </div>
   <div class="blk img port"><img src="assets/hotel-03.webp" alt="Hóspede com mala dentro do elevador vermelho do prédio" loading="lazy" decoding="async"></div>
   <div class="blk img land"><img src="assets/hotel-04.webp" alt="Corredor dos quartos, com paredes vermelhas e arandelas acesas" loading="lazy" decoding="async"></div>
-</section>
-
-<!-- MOBILIÁRIO -->
-<section class="slide s-mob" id="mobiliario">
-  <div class="blk ink txt between">
-    <div><p class="eyebrow" data-copy="mob-eyebrow">Mobiliário</p><h2 class="h2" data-copy="mob-titulo">Peças desenhadas para esta casa</h2></div>
-    <div><p class="body" data-copy="mob-texto">O mobiliário foi projetado com o designer Antonio especialmente para o espaço, no vocabulário de metal e concreto da identidade. Nenhuma peça veio de catálogo: cada uma responde a um lugar da casa, ao modo de sentar, apoiar o copo ou encostar na borda da pista. Peças assinadas, desenhadas para o uso que a noite exige.</p><p class="small muted" style="margin-top:1em" data-copy="mob-legenda">Alumínio fundido, couro e concreto em escala de corpo: o mobiliário segue o vocabulário da identidade.</p></div>
-  </div>
-  <div class="blk img tall"><img src="assets/mob-cadeiras.webp" alt="Banquetas de alumínio fundido vazado junto ao balcão do bar" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/mob-banco.webp" alt="Banco corrido de couro sobre base de concreto, ao longo da parede" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/mob-detalhe.webp" alt="Detalhe da trama vazada do alumínio fundido das banquetas" loading="lazy" decoding="async"></div>
-</section>
-
-<!-- STATEMENT 3 -->
-<section class="slide s-statement" id="st-3">
-  <h1 class="h1" data-copy="statement-3">O clube de quem enxerga</h1>
 </section>
 
 <!-- 13b MEMBERSHIP · HERO -->
@@ -1098,68 +956,6 @@ body.pdf .ph18 .shot{display:block}
   <div class="blk foot"><p class="small muted">Benefícios do cartão: entrada sem fila, prioridade nas reservas de mesa, rooftop e hotel, convites para noites fechadas e vantagens das marcas parceiras.</p></div>
 </section>
 
-<!-- 14b MEMBERSHIP · NO IPHONE, NA PORTA E NO PULSO -->
-<section class="slide s-porta s-wallet s-passe" id="porta">
-  <div class="blk ink copy">
-    <p class="eyebrow">Membership · No iPhone e na porta</p>
-    <h3 class="h3">Ao lado dos cartões do banco</h3>
-    <p class="small">O CLUBE ocupa o mesmo lugar que Apple Card, Nubank ou Amex: a carteira que o membro abre várias vezes por dia. Presença de marca permanente, sem um centavo de mídia, e um canal direto que não depende de algoritmo.</p>
-    <h4 class="h4 sub">Aproxima e entra</h4>
-    <p class="small">O passe substitui lista, pulseira e fila. A entrada leva um segundo e a equipe da porta passa a administrar gente, não papel.</p>
-    <p class="small">No iPhone ou no Apple Watch, a credencial está sempre à mão. E cada acesso vira informação: quem veio, com que frequência, em quais noites. É essa base que dá lastro a uma parceria.</p>
-  </div>
-  <div class="m17">
-    <div class="space">
-      <img class="base" src="assets/m17-base.jpg" alt="iPhone 17 Pro com o cartão CLUBE no Wallet" loading="lazy" decoding="async">
-      <div class="mask"><div class="content"><div class="ios">
-            <div class="st"><span>9:41</span><span>●●●● ⌔ ▮</span></div>
-            <div class="hd"><b>Wallet</b><span><i>▣</i><i>+</i></span></div>
-            <div class="stk"><div class="pass"><div class="mcard"></div></div></div>
-            <div class="hm"></div>
-          </div></div></div>
-      <img class="l7" src="assets/m17-l7.webp" alt="" loading="lazy" decoding="async">
-      <img class="l8" src="assets/m17-l8.webp" alt="" loading="lazy" decoding="async">
-      <img class="cam2" src="assets/m17-cam2.png" alt="" loading="lazy" decoding="async">
-    </div>
-  </div>
-  <div class="scene">
-    <div class="slot-a"><div class="ph"><div class="isl"></div><div class="ios">
-          <div class="st"><span>9:41</span><span>●●●● ⌔ ▮</span></div>
-          <div class="tp"><div class="mcard"></div></div>
-          <div class="ctr"><div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M10 6H6v4M38 6h4v4M6 38v4h4M42 38v4h-4"/><path d="M17 20v3M31 20v3M24 20v7h-2"/><path d="M17 31c2 2.5 4.5 3.5 7 3.5s5-1 7-3.5"/></svg></div><span>Hold Near Reader</span></div>
-          <div class="hm"></div>
-        </div></div></div>
-    <div class="slot-b"><div class="ph"><div class="isl"></div><div class="ios">
-          <div class="st"><span>9:41</span><span>●●●● ⌔ ▮</span></div>
-          <div class="tp"><div class="mcard"></div></div>
-          <div class="ctr"><div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 25l8 8 14-16"/></svg></div><span>Done</span></div>
-          <div class="hm"></div>
-        </div></div></div>
-    <div class="wslot">
-      <div class="wch">
-        <div class="bnd"></div>
-        <div class="bdy"><div class="crw"></div><div class="tm">9:41</div>
-          <div class="wc"><div class="mcard"></div></div>
-          <div class="dn"><i>✓</i>Done</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- O APP -->
-<section class="slide s-pilares" id="app">
-  <div class="head">
-    <div><p class="eyebrow" data-copy="app-eyebrow">O app</p><h2 class="h2" data-copy="app-titulo">A casa inteira em um app</h2></div>
-    <p class="body" data-copy="app-texto">O app do CLUBE reúne a rádio, a programação, as reservas e o cartão de membro. Mostra o que está aberto agora, turno a turno.</p>
-  </div>
-  <div class="blk pilar rule-row" style="--i:0"><p class="idx">01</p><h3 class="h4" data-copy="app-1-titulo">Membership</h3><p class="small" data-copy="app-1-texto">Cartão nominal e numerado no Apple Wallet, com o status do membro sempre visível.</p></div>
-  <div class="blk pilar rule-row" style="--i:1"><p class="idx">02</p><h3 class="h4" data-copy="app-2-titulo">Reservas</h3><p class="small" data-copy="app-2-texto">Mesa no restaurante, lugar no bar e rooftop reservados pelo próprio membro, direto no app.</p></div>
-  <div class="blk pilar rule-row" style="--i:2"><p class="idx">03</p><h3 class="h4" data-copy="app-3-titulo">Programação</h3><p class="small" data-copy="app-3-texto">A agenda da casa por turno e por andar, com o cardápio do dia ao lado.</p></div>
-  <div class="blk pilar rule-row" style="--i:3"><p class="idx">04</p><h3 class="h4" data-copy="app-4-titulo">Rádio CLUBE</h3><p class="small" data-copy="app-4-texto">A rádio da casa, tocando no app e no site.</p></div>
-  <div class="blk foot"><p class="small muted">Em desenvolvimento pela The Force. O cartão de membro mora no Wallet; o app cuida do resto.</p></div>
-</section>
-
 <section class="slide s-radio" id="radio">
   <div class="blk ink between txt">
     <div><p class="eyebrow">O app · Rádio CLUBE</p><h2 class="h2">A casa no bolso</h2></div>
@@ -1181,40 +977,18 @@ body.pdf .ph18 .shot{display:block}
   </div>
 </section>
 
-<!-- 15 CARDÁPIO -->
-<section class="slide s-menu light" id="cardapio">
-  <div class="head">
-    <div><p class="eyebrow">O cardápio</p><h2 class="h2">Uma noite que não cobra o dia seguinte</h2></div>
-    <p class="body">Coquetelaria clássica reinventada, com e sem álcool, no mesmo nível de cuidado. Quem decide beber menos não recebe um refrigerante: recebe um drink que exigiu o mesmo tempo de criação.</p>
-  </div>
-  <div class="trilha" data-trilha aria-label="Drinks da carta correndo em curva: arraste para girar">
-    <div class="palco">
-      <div class="tri" data-name="Negroni"><div class="tph"><img src="assets/drink-03.webp" alt="Negroni" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Gin tônica"><div class="tph"><img src="assets/drink-07.webp" alt="Gin tônica" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Espresso martini"><div class="tph"><img src="assets/drink-04.webp" alt="Espresso martini" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Dry martini"><div class="tph"><img src="assets/drink-08.webp" alt="Dry martini" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Hibisco, sem álcool"><div class="tph"><img src="assets/drink-09.webp" alt="Hibisco, sem álcool" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Moscow mule"><div class="tph"><img src="assets/drink-02.webp" alt="Moscow mule" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Whisky sour"><div class="tph"><img src="assets/drink-10.webp" alt="Whisky sour" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Spritz"><div class="tph"><img src="assets/drink-11.webp" alt="Spritz" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Old fashioned"><div class="tph"><img src="assets/drink-06.webp" alt="Old fashioned" loading="lazy" decoding="async" draggable="false"></div></div>
-      <div class="tri" data-name="Café tônica"><div class="tph"><img src="assets/drink-12.webp" alt="Café tônica" loading="lazy" decoding="async" draggable="false"></div></div>
-    </div>
-    <div class="hname"><p class="eyebrow">Da carta</p><p class="h4" data-hname>Dez drinks, com e sem álcool</p></div>
-  </div>
-</section>
-
-<!-- 16 SOCIAL & PR -->
+<!-- INSTAGRAM E PR -->
 <section class="slide s-social" id="social">
   <div class="blk ink between txt">
-    <div><p class="eyebrow">Social media &amp; PR</p><h2 class="h2">Dois ritmos de feed</h2></div>
+    <div><p class="eyebrow">Instagram &amp; PR</p><h2 class="h2">O CLUBE nas redes e na imprensa</h2></div>
     <div>
-      <p class="body">O conteúdo mistura foto de festa, registro do ambiente, imagem abstrata e natureza.</p>
-      <p class="body">O sistema prevê duas direções que coexistem: um feed <strong style="font-weight:500">sóbrio</strong>, fotográfico e controlado, e um feed <strong style="font-weight:500">dinâmico</strong>, denso, fragmentado e cheio de cor. Marcas parceiras entram nos dois.</p>
+      <p class="body">O feed do CLUBE tem dois ritmos que convivem: um sóbrio e fotográfico, outro denso e colorido. As marcas parceiras entram nos dois.</p>
+      <p class="body">A assessoria de imprensa é de <strong style="font-weight:500">Thiago Miguel</strong> e <strong style="font-weight:500">Danilo Novaes</strong>.</p>
+      <p class="small muted" style="margin-top:1em">@clubesp</p>
     </div>
   </div>
-  <div class="blk feed"><img src="assets/feed-sobrio-grid.webp" alt="Preview do feed sóbrio do CLUBE" loading="lazy" decoding="async"><span class="cap">Feed sóbrio</span></div>
-  <div class="blk feed"><img src="assets/feed-dinamico.webp" alt="Preview do feed dinâmico do CLUBE" loading="lazy" decoding="async"><span class="cap">Feed dinâmico</span></div>
+  <div class="blk igrid"><p class="eyebrow">Feed sóbrio</p><div class="ig"><img src="assets/feed-s-01.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-02.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-03.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-04.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-05.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-06.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-07.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-08.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-09.webp" alt="" loading="lazy" decoding="async"></div></div>
+  <div class="blk igrid"><p class="eyebrow">Feed dinâmico</p><div class="ig"><img src="assets/feed-d-01.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-02.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-03.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-04.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-05.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-06.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-07.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-08.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-09.webp" alt="" loading="lazy" decoding="async"></div></div>
 </section>
 
 <!-- STATEMENT -->
@@ -1226,7 +1000,7 @@ body.pdf .ph18 .shot{display:block}
 <section class="slide s-cotas light" id="cotas">
   <div class="head">
     <div class="ttl"><p class="eyebrow">Cotas de patrocínio</p><h2 class="h2">Três cotas</h2></div>
-    <p class="body intro">Parcerias de 3 anos, com um patrocinador master e dois níveis de apoio. Nas três, a marca está na comunicação do projeto.</p>
+    <p class="body intro">Parcerias de 3, 2 ou 1 ano: um patrocinador master e dois níveis de apoio. Nas três, a marca está na comunicação do projeto.</p>
   </div>
   <div class="cotas">
     <article class="cota" style="--accent:var(--grad-red)">
@@ -1258,7 +1032,7 @@ body.pdf .ph18 .shot{display:block}
         <li>2 eventos open bar e 2 sem open bar na parceria</li>
         <li>10 convidados por noite e 10% em A&amp;B e hospedagem</li>
       </ul>
-      <p class="price"><b>R$ 1 mi</b><span>3 anos de parceria</span></p>
+      <p class="price"><b>R$ 1 mi</b><span>2 anos de parceria</span></p>
     </article>
     <article class="cota" style="--accent:var(--grad-blue)">
       <p class="idx"><b>03</b><span>Apoio</span></p>
@@ -1270,7 +1044,7 @@ body.pdf .ph18 .shot{display:block}
         <li>LED Wave</li>
         <li>1 evento open bar e 1 sem open bar na parceria</li>
       </ul>
-      <p class="price"><b>R$ 500 mil</b><span>3 anos de parceria</span></p>
+      <p class="price"><b>R$ 500 mil</b><span>1 ano de parceria</span></p>
     </article>
   </div>
   <p class="small muted nota">Não estão incluídos custos de produção, como cenografia, artístico e conteúdo específico para as telas.</p>
@@ -1297,20 +1071,6 @@ body.pdf .ph18 .shot{display:block}
     <div class="blk metal"><h4 class="h4">Ordem</h4><p class="small">Headliner primeiro, depois Co-Headliner e Support.</p></div>
     <div class="blk metal"><h4 class="h4">Redes e convites</h4><p class="small">Marca nas redes, nos convites e nos ingressos do CLUBE, nas três cotas.</p></div>
   </div>
-</section>
-
-<!-- 06 SALA IMERSIVA (HEADLINER) -->
-<section class="slide s-hotel" id="sala">
-  <div class="blk ink between txt">
-    <div><p class="eyebrow">Projector Wave · Exclusivo Headliner</p><h2 class="h2">A sala imersiva</h2></div>
-    <div>
-      <p class="body">Uma sala com projeção mapeada nas paredes. É o espaço mais marcante da casa.</p>
-      <p class="body">Só a Headliner entra aqui: em alguns momentos da noite, a marca ocupa os projetores da sala e todos os LEDs e telas da casa.</p>
-      <p class="small muted" style="margin-top:1em">Frequência das inserções a ser definida.</p>
-    </div>
-  </div>
-  <div class="blk img port"><img src="assets/real-sala-imersiva-01.webp" alt="Sala imersiva à noite, com personagem do CLUBE projetado sobre gradiente vermelho" loading="lazy" decoding="async"></div>
-  <div class="blk img land"><img src="assets/real-sala-imersiva-02.webp" alt="Sala imersiva com o logotipo CLUBE e personagem em metal projetados nas paredes" loading="lazy" decoding="async"></div>
 </section>
 
 <!-- 07 BRAND WAVES -->
@@ -1347,14 +1107,14 @@ body.pdf .ph18 .shot{display:block}
 <section class="slide s-tab" id="eventos">
   <div class="head">
     <div><p class="eyebrow">A casa para a marca</p><h2 class="h2">Eventos da marca no CLUBE</h2></div>
-    <p class="body">A marca usa o CLUBE para os próprios eventos. A Headliner tem um com open bar e um sem a cada ano de parceria.</p>
+    <p class="body">A marca usa o CLUBE para os próprios eventos: um com open bar e um sem a cada ano de parceria.</p>
   </div>
   <div class="blk tabwrap">
     <table class="tab">
       <thead><tr><th></th><th class="c">Headliner<i style="--accent:var(--grad-red)"></i></th><th class="c">Co-Headliner<i style="--accent:var(--grad-green)"></i></th><th class="c">Support<i style="--accent:var(--grad-blue)"></i></th></tr></thead>
       <tbody>
-        <tr><td><h4 class="h4">Eventos com open bar</h4><p class="small muted">Total nos 3 anos. Até 100 pessoas, com o espaço inteiro só para a marca, de domingo a quinta, exceto feriados.</p></td><td class="c v">3</td><td class="c v">2</td><td class="c v">1</td></tr>
-        <tr><td><h4 class="h4">Eventos sem open bar</h4><p class="small muted">Total nos 3 anos. Reuniões, apresentações e lançamentos, com o espaço vazio.</p></td><td class="c v">3</td><td class="c v">2</td><td class="c v">1</td></tr>
+        <tr><td><h4 class="h4">Eventos com open bar</h4><p class="small muted">Total na parceria. Até 100 pessoas, com o espaço inteiro só para a marca, de domingo a quinta, exceto feriados.</p></td><td class="c v">3</td><td class="c v">2</td><td class="c v">1</td></tr>
+        <tr><td><h4 class="h4">Eventos sem open bar</h4><p class="small muted">Total na parceria. Reuniões, apresentações e lançamentos, com o espaço vazio.</p></td><td class="c v">3</td><td class="c v">2</td><td class="c v">1</td></tr>
       </tbody>
     </table>
     <p class="small muted" style="margin-top:1.4em">Eventos para mais de 100 pessoas são possíveis, com open bar pago à parte por convidado adicional. Não estão incluídos custos de produção, como cenografia, artístico e conteúdo específico para as telas.</p>
@@ -1389,7 +1149,8 @@ body.pdf .ph18 .shot{display:block}
     <table class="tab tight">
       <thead><tr><th>Contrapartida</th><th class="c">Headliner<i style="--accent:var(--grad-red)"></i></th><th class="c">Co-Headliner<i style="--accent:var(--grad-green)"></i></th><th class="c">Support<i style="--accent:var(--grad-blue)"></i></th></tr></thead>
       <tbody>
-        <tr><td>Investimento (3 anos de parceria)</td><td class="c"><b>R$ 1,5 mi</b></td><td class="c"><b>R$ 1 mi</b></td><td class="c"><b>R$ 500 mil</b></td></tr>
+        <tr><td>Investimento total</td><td class="c"><b>R$ 1,5 mi</b></td><td class="c"><b>R$ 1 mi</b></td><td class="c"><b>R$ 500 mil</b></td></tr>
+        <tr><td>Duração da parceria</td><td class="c">3 anos</td><td class="c">2 anos</td><td class="c">1 ano</td></tr>
         <tr><td>Presença da marca na comunicação do projeto</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
         <tr><td>Logo no cardápio e no app</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
         <tr><td>Projector Wave · sala imersiva</td><td class="c"><i class="dot"></i></td><td class="c no">—</td><td class="c no">—</td></tr>
@@ -1397,28 +1158,14 @@ body.pdf .ph18 .shot{display:block}
         <tr><td>LED Wave · telas e LED do 1º andar</td><td class="c">Mais frequente</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td></tr>
         <tr><td>Drink assinado na carta</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c no">—</td></tr>
         <tr><td>Exclusividade de categoria pelo período</td><td class="c"><i class="dot"></i></td><td class="c"><i class="dot"></i></td><td class="c no">—</td></tr>
-        <tr><td>Eventos com open bar (nos 3 anos)</td><td class="c">3</td><td class="c">2</td><td class="c">1</td></tr>
-        <tr><td>Eventos sem open bar (nos 3 anos)</td><td class="c">3</td><td class="c">2</td><td class="c">1</td></tr>
+        <tr><td>Eventos com open bar (na parceria)</td><td class="c">3</td><td class="c">2</td><td class="c">1</td></tr>
+        <tr><td>Eventos sem open bar (na parceria)</td><td class="c">3</td><td class="c">2</td><td class="c">1</td></tr>
         <tr><td>Desconto em comida, bebida e hospedagem</td><td class="c">20%</td><td class="c">10%</td><td class="c no">—</td></tr>
         <tr><td>Convidados da marca por noite</td><td class="c">10</td><td class="c">10</td><td class="c no">—</td></tr>
       </tbody>
     </table>
     <p class="small muted" style="margin-top:1.2em">Não estão incluídos custos de produção, como cenografia, artístico e conteúdo específico para as telas.</p>
   </div>
-</section>
-
-<!-- 20 PANORAMA -->
-<section class="slide s-noite" id="panorama">
-  <div class="head">
-    <div><p class="eyebrow">A noite</p><h2 class="h2">Presença, ritmo, encontro</h2></div>
-    <p class="body">O que se repete a cada noite: um público que chega pela música, permanece pela companhia e retorna pelo que viveu ali.</p>
-  </div>
-  <div class="blk img tall" style="grid-column:1"><img src="assets/noite-dj1.webp" alt="DJ tocando ao ar livre no fim da tarde" loading="lazy" decoding="async"></div>
-  <div class="blk img" style="grid-column:2;grid-row:2"><img src="assets/noite-duo.webp" alt="Duas convidadas posando com copos na mão" loading="lazy" decoding="async"></div>
-  <div class="blk img" style="grid-column:3;grid-row:2"><img src="assets/noite-pista.webp" alt="Pista cheia, conversa e cerveja na mão" loading="lazy" decoding="async"></div>
-  <div class="blk img tall" style="grid-column:4"><img src="assets/noite-peace.webp" alt="Convidado na pista, dois dedos em V sobre o rosto" loading="lazy" decoding="async"></div>
-  <div class="blk img" style="grid-column:2;grid-row:3"><img src="assets/noite-crouch.webp" alt="Dois convidados posando na calçada depois da festa" loading="lazy" decoding="async" style="object-position:center 62%"></div>
-  <div class="blk img" style="grid-column:3;grid-row:3"><img src="assets/noite-rosas.webp" alt="Vendedor de rosas passando pelas mesas" loading="lazy" decoding="async" style="object-position:center 58%"></div>
 </section>
 
 <!-- THE FORCE -->
@@ -1567,7 +1314,7 @@ body.pdf .ph18 .shot{display:block}
   });
 
   // menu
-  var titles={capa:'Capa',conceito:'O conceito',essencia:'O conceito · Na identidade',marca:'O conceito · Na comunicação','st-1':'Matéria que fica, luz que muda',missao:'Nossa missão','st-2':'Do café da manhã à pista, 24 horas',dia:'Aberto 24 horas',espaco:'O espaço',galeria:'Da entrada ao rooftop',imersiva:'A sala imersiva','pista-led':'O LED da pista','galeria-digital':'A galeria digital',arte:'Artistas convidados',hotel:'O hotel',mobiliario:'Mobiliário','st-3':'O clube de quem enxerga',cardhero:'Membership · O cartão prata',membership:'Membership · O cartão',membros:'Clube de membros',porta:'Membership · No iPhone e na porta',app:'O app',radio:'Rádio CLUBE',cardapio:'O cardápio',social:'Social media & PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',sala:'Sala imersiva · Headliner',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',panorama:'A noite',theforce:'The Force',contato:'Contato'};
+  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'Um céu dentro da pista','galeria-digital':'A galeria digital',hotel:'O hotel',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app e a Rádio CLUBE',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
   slides.forEach(function(sl){
     var li=document.createElement('li'), a=document.createElement('a');
     a.href='#'+sl.id; a.textContent=titles[sl.id]||sl.id;
