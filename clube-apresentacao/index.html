@@ -801,6 +801,11 @@ body.pdf .ph18 .shot{display:block}
 .s-cobrand .rules .blk{min-height:clamp(120px,15vh,170px);justify-content:space-between}
 /* cabeçalhos de duas colunas: o texto alinha pela base do título */
 .s-galeria .head,.s-tres .head,.s-waves .head,.s-tab .head,.s-noite .head,.s-arte .head,.s-menu .head{align-items:end}
+
+/* hotel: só tipografia */
+.s-casa-hotel .stmt{text-align:center;max-width:min(1100px,90%);display:grid;justify-items:center}
+.s-casa-hotel .h1{max-width:13ch}
+.s-casa-hotel .body{margin-top:1.6em;max-width:54ch;font-size:clamp(16px,1.4vw,21px);opacity:.85}
 </style>
 </head>
 <body>
@@ -944,17 +949,12 @@ body.pdf .ph18 .shot{display:block}
 </section>
 
 <!-- 09e O HOTEL -->
-<section class="slide s-hotel" id="hotel">
-  <div class="blk ink between txt">
-    <div><p class="eyebrow">O espaço · O hotel</p>
-    <h2 class="h2">Uma noite que tem quarto</h2></div>
-    <div>
-    <p class="body">O CLUBE ocupa um prédio que também é hotel. O convidado chega de tarde, janta no quarto, desce para a pista e dorme dois andares acima.</p>
-    <p class="small muted" style="margin-top:1em">Room service, enxoval, chave de quarto e amenities são superfícies de assinatura. E a diária é o brinde que ninguém recusa: o contato com a marca não termina quando a música para.</p>
-    </div>
+<section class="slide s-statement s-casa-hotel" id="hotel">
+  <div class="stmt">
+    <p class="eyebrow">O hotel</p>
+    <h1 class="h1">Um clube para se sentir em casa</h1>
+    <p class="body">O CLUBE ocupa um prédio com três andares de hotel. Queremos uma comunidade que se sinta em casa: que chega para a noite, fica para dormir e pertence ao CLUBE.</p>
   </div>
-  <div class="blk img port"><img src="assets/hotel-03.webp" alt="Hóspede com mala dentro do elevador vermelho do prédio" loading="lazy" decoding="async"></div>
-  <div class="blk img land"><img src="assets/hotel-04.webp" alt="Corredor dos quartos, com paredes vermelhas e arandelas acesas" loading="lazy" decoding="async"></div>
 </section>
 
 <!-- 13b MEMBERSHIP · HERO -->
@@ -1352,7 +1352,7 @@ body.pdf .ph18 .shot{display:block}
   });
 
   // menu
-  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'A pista: LED P1.9 e som de alta fidelidade','galeria-digital':'A galeria digital',mobiliario:'Mobiliário',hotel:'O hotel',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app e a Rádio CLUBE',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
+  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'A pista: LED P1.9 e som de alta fidelidade','galeria-digital':'A galeria digital',mobiliario:'Mobiliário',hotel:'Um clube para se sentir em casa',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app e a Rádio CLUBE',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
   slides.forEach(function(sl){
     var li=document.createElement('li'), a=document.createElement('a');
     a.href='#'+sl.id; a.textContent=titles[sl.id]||sl.id;
