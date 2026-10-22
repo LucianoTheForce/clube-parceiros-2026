@@ -957,6 +957,70 @@ body.pdf .s-force .monada{display:none}
 .app-cta{display:inline-block;padding:.9em 1.4em;border:1px solid currentColor;text-decoration:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;transition:background .2s,color .2s}
 .app-cta:hover{background:var(--black);color:var(--soft)}
 @media (max-width:900px){ body:not(.pdf) .s-applive .iph{height:auto;aspect-ratio:1170/2532;width:min(78vw,340px);margin:0 auto} }
+
+/* ---------- polimento final: leitura confortável e ritmo editorial ---------- */
+/* tamanhos mínimos de leitura: nada abaixo de 13px no corpo, 11px nas etiquetas */
+.eyebrow{font-size:clamp(11px,.8vw,12px)}
+.body{font-size:clamp(16px,1.18vw,19px);line-height:1.6}
+.small{font-size:clamp(13.5px,1vw,15.5px);line-height:1.6}
+.h4{font-size:clamp(17px,1.4vw,21px);line-height:1.25}
+.h2{text-wrap:balance}
+.body,.small{text-wrap:pretty;hyphens:manual}
+/* títulos sempre separados do texto que vem depois */
+.blk.txt .h2,.head .h2{margin-bottom:0}
+.blk.between>div:first-child{margin-bottom:clamp(28px,5vh,64px)}
+/* The Force: título, respiro, texto em coluna de leitura, marcas, links */
+.s-force .blk.between{justify-content:flex-start;padding:clamp(28px,3.4vw,56px)}
+.s-force .blk.between>div:first-child{margin-bottom:clamp(32px,6vh,72px)}
+.s-force .h2{font-size:clamp(32px,3.4vw,54px);max-width:14ch}
+.s-force .body{max-width:56ch;font-size:clamp(15.5px,1.08vw,17.5px)}
+.s-force .body+.body{margin-top:1.1em}
+.s-force .tf-label,.s-force .tf-brands+p{margin-top:1.6em}
+.s-force .tf-brands{font-size:clamp(18px,1.55vw,24px);max-width:36ch}
+/* cotas: lista legível e preço com peso */
+.s-cotas .items li{font-size:clamp(13.5px,.98vw,15.5px);padding:.55em 0}
+.s-cotas .lede{font-size:clamp(14px,1.05vw,16px)}
+.s-cotas .price b{font-size:clamp(26px,2.6vw,42px)}
+/* waves e cards metálicos: título e texto com respiro */
+.s-waves .cap .h3{font-size:clamp(22px,2vw,30px)}
+.s-waves .cap .small{max-width:42ch}
+.s-cobrand .rules .h4{margin-bottom:.6em}
+/* tabelas: números e rótulos alinhados pela base, legenda em corpo legível */
+.tab td .small{font-size:clamp(13px,.95vw,14.5px)}
+.tab th{font-size:clamp(10.5px,.78vw,12px)}
+/* mobile: corpo um pouco maior e etiquetas legíveis */
+@media (max-width:900px){
+  body:not(.pdf) .body{font-size:17px}
+  body:not(.pdf) .small{font-size:14.5px}
+  body:not(.pdf) .eyebrow{font-size:11px}
+  body:not(.pdf) .s-cotas .items li{font-size:14.5px}
+  body:not(.pdf) .s-force .blk.between{padding:24px 20px 28px}
+  body:not(.pdf) .s-force .blk.between>div:first-child{margin-bottom:28px}
+  body:not(.pdf) .blk.between>div:first-child{margin-bottom:24px}
+}
+
+/* vídeo sempre como imagem em movimento: sem o botão de play nativo do iPhone/Android */
+video::-webkit-media-controls,video::-webkit-media-controls-start-playback-button,video::-webkit-media-controls-overlay-play-button,video::-webkit-media-controls-panel{display:none!important;-webkit-appearance:none;opacity:0!important}
+video{pointer-events:none}
+
+/* ---------- aberto 24 horas: quatro turnos como blocos da identidade ---------- */
+.s-dia{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;gap:clamp(14px,2vh,24px)}
+.s-dia .head{display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);align-items:end}
+.s-dia .turnos{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);min-height:0}
+.s-dia .turno{position:relative;overflow:hidden;background:var(--g);color:var(--black);padding:clamp(18px,1.8vw,28px);display:flex;flex-direction:column;min-height:0}
+.s-dia .turno .hora{margin:0;font-size:clamp(12px,.9vw,14px);letter-spacing:.16em;font-weight:500;font-variant-numeric:tabular-nums}
+.s-dia .turno .h3{margin:.35em 0 0;font-size:clamp(30px,3vw,52px);font-weight:300;letter-spacing:-.02em}
+.s-dia .turno .fig{position:absolute;left:50%;bottom:-2%;width:78%;height:72%;transform:translateX(-50%);
+  -webkit-mask:var(--fig) center bottom/contain no-repeat;mask:var(--fig) center bottom/contain no-repeat;background:#000;opacity:.9;
+  transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.s-dia .turno:hover .fig{transform:translateX(-50%) translateY(-3%) scale(1.03)}
+.s-dia .pe{margin:0}
+@media (max-width:900px){
+  body:not(.pdf) .s-dia .head{grid-template-columns:1fr}
+  body:not(.pdf) .s-dia .turnos{grid-template-columns:1fr 1fr}
+  body:not(.pdf) .s-dia .turno{aspect-ratio:3/4}
+  body:not(.pdf) .s-dia .turno .h3{font-size:28px}
+}
 </style>
 </head>
 <body>
@@ -990,16 +1054,18 @@ body.pdf .s-force .monada{display:none}
   </div>
 </section>
 
-<section class="slide s-pilares" id="dia">
+<section class="slide s-dia" id="dia">
   <div class="head">
     <div><p class="eyebrow">CLUBE · Rua da Consolação, 1813</p><h2 class="h2">Aberto 24 horas</h2></div>
-    <p class="body">Do café da manhã à pista, o CLUBE muda de ritmo a cada turno e não fecha: quando a pista acaba, o hotel recebe quem decide ficar.</p>
+    <p class="body">Do café da manhã à pista, a casa muda de ritmo a cada turno e não fecha.</p>
   </div>
-  <div class="blk pilar rule-row" style="--i:0"><p class="idx">07–12h</p><h3 class="h4">Café</h3><p class="small">A casa abre com o café da manhã.</p></div>
-  <div class="blk pilar rule-row" style="--i:1"><p class="idx">12–17h</p><h3 class="h4">Mesa</h3><p class="small">Almoço no restaurante.</p></div>
-  <div class="blk pilar rule-row" style="--i:2"><p class="idx">17–20h</p><h3 class="h4">Aperitivo</h3><p class="small">Fim de tarde no rooftop, da golden hour em diante.</p></div>
-  <div class="blk pilar rule-row" style="--i:3"><p class="idx">20–04h</p><h3 class="h4">Noite</h3><p class="small">Pista com DJ e cozinha da madrugada até as 2h.</p></div>
-  <div class="blk foot"><p class="small muted">Hotel com recepção 24 horas.</p></div>
+  <div class="turnos">
+    <article class="turno" style="--g:var(--grad-blue);--fig:url(assets/fig-e-1.webp)"><p class="hora">07–12h</p><h3 class="h3">Café</h3><i class="fig" aria-hidden="true"></i></article>
+    <article class="turno" style="--g:var(--metal-v);--fig:url(assets/fig-d-1.webp)"><p class="hora">12–17h</p><h3 class="h3">Mesa</h3><i class="fig" aria-hidden="true"></i></article>
+    <article class="turno" style="--g:var(--grad-green);--fig:url(assets/fig-g-1.webp)"><p class="hora">17–20h</p><h3 class="h3">Aperitivo</h3><i class="fig" aria-hidden="true"></i></article>
+    <article class="turno" style="--g:var(--grad-red);--fig:url(assets/fig-j-1.webp)"><p class="hora">20–04h</p><h3 class="h3">Noite</h3><i class="fig" aria-hidden="true"></i></article>
+  </div>
+  <p class="small muted pe">Hotel com recepção 24 horas.</p>
 </section>
 
 <!-- 02 O CLUBE -->
@@ -1109,7 +1175,16 @@ body.pdf .s-force .monada{display:none}
 <section class="slide s-full" id="galeria-digital">
   <div class="gal">
     <figure class="fr on">
-      <img src="assets/ins-06-close-telas.webp" alt="Render das telas verticais da Next Digital Gallery na parede do bar, com obras e o logo CLUBE" loading="lazy" decoding="async">
+      <img src="assets/galeria-telas-id.webp" alt="Telas verticais da Next Digital Gallery acesas com os personagens e o logo do CLUBE" loading="lazy" decoding="async">
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O espaço · Galeria digital</p>
+        <h3 class="h3">Next Digital Gallery</h3>
+        <p class="small">As telas verticais do bar formam uma galeria digital. A cada temporada, um artista convidado ocupa as telas com obras pensadas para elas.</p>
+        <p class="small">A mesma curadoria segue para a sala imersiva e para o LED da pista.</p>
+      </figcaption>
+    </figure>
+    <figure class="fr">
+      <img src="assets/galeria-azul-id.webp" alt="Salão do bar na luz azul, com as telas da Next Digital Gallery mostrando a identidade do CLUBE" loading="lazy" decoding="async">
       <figcaption class="blk ink cap">
         <p class="eyebrow">O espaço · Galeria digital</p>
         <h3 class="h3">Next Digital Gallery</h3>
@@ -1129,7 +1204,7 @@ body.pdf .s-force .monada{display:none}
   </div>
     <button type="button" class="arw prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
     <button type="button" class="arw next" aria-label="Próxima foto"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
-    <div class="count"><span class="n"><b>01</b> / 02</span><span class="ticks"><i class="on" data-go="0"></i><i data-go="1"></i></span></div>
+    <div class="count"><span class="n"><b>01</b> / 03</span><span class="ticks"><i class="on" data-go="0"></i><i data-go="1"></i><i data-go="2"></i></span></div>
 </section>
 
 <!-- MOBILIÁRIO -->
@@ -1185,10 +1260,10 @@ body.pdf .s-force .monada{display:none}
 <section class="slide s-pilares" id="membros">
   <div class="head">
     <div><p class="eyebrow">Clube de membros</p><h2 class="h2">Um clube que cresce por convite</h2></div>
-    <p class="body">O CLUBE começa com 50 membros fundadores, convidados pela casa. Cada um indica mais 10 pessoas. O clube cresce por relação, não por lista.</p>
+    <p class="body">O CLUBE começa com 50 membros fundadores, convidados pela casa, e cada um indica mais dez pessoas. O clube cresce por relação, não por lista.</p>
   </div>
   <div class="blk pilar rule-row" style="--i:0"><p class="num">50</p><h3 class="h4">Fundadores</h3><p class="small">Convidados pela casa.</p></div>
-  <div class="blk pilar rule-row" style="--i:1"><p class="num">+10</p><h3 class="h4">Indicações</h3><p class="small">Cada fundador indica dez pessoas.</p></div>
+  <div class="blk pilar rule-row" style="--i:1"><p class="num">+10</p><h3 class="h4">Indicações</h3><p class="small">De cada fundador.</p></div>
   <div class="blk pilar rule-row" style="--i:2"><p class="num">550</p><h3 class="h4">Membros</h3><p class="small">Na primeira formação do clube.</p></div>
   <div class="blk pilar rule-row" style="--i:3"><p class="num">Prata</p><h3 class="h4">Cartão</h3><p class="small">Nominal, numerado e intransferível.</p></div>
   <div class="blk foot"><p class="small muted">Benefícios do cartão: entrada sem fila, prioridade nas reservas de mesa, rooftop e hotel, convites para noites fechadas e vantagens das marcas parceiras.</p></div>
@@ -1298,9 +1373,9 @@ body.pdf .s-force .monada{display:none}
     </div>
   </div>
   <div class="rules">
-    <div class="blk metal"><h4 class="h4">Cardápio e app</h4><p class="small">Nas três cotas.</p></div>
-    <div class="blk metal"><h4 class="h4">Ordem</h4><p class="small">Headliner, Co-Headliner e Support.</p></div>
-    <div class="blk metal"><h4 class="h4">Redes e convites</h4><p class="small">E ingressos, nas três cotas.</p></div>
+    <div class="blk metal"><h4 class="h4">Cardápio e app</h4><p class="small">O logo das marcas parceiras no cardápio e no app.</p></div>
+    <div class="blk metal"><h4 class="h4">Hierarquia</h4><p class="small">Headliner primeiro, depois Co-Headliner e Support.</p></div>
+    <div class="blk metal"><h4 class="h4">Redes e convites</h4><p class="small">A assinatura nas redes, nos convites e nos ingressos.</p></div>
   </div>
 </section>
 
@@ -1308,7 +1383,7 @@ body.pdf .s-force .monada{display:none}
 <section class="slide s-waves" id="waves">
   <div class="head">
     <div><p class="eyebrow">Inserções na casa</p><h2 class="h2">Brand Waves</h2></div>
-    <p class="body">A marca entra nas telas, nos LEDs e na luz da casa ao longo da noite. A Headliner tem tudo o que as outras cotas têm, mais a sala imersiva e a cor da casa.</p>
+    <p class="body">A marca entra nas telas, nos LEDs e na luz da casa ao longo da noite. A Headliner soma a sala imersiva e a cor da casa.</p>
   </div>
   <div class="blk img"><img src="assets/real-sala-imersiva-03.webp" alt="Sala imersiva com dois personagens do CLUBE em vermelho projetados sobre metal" loading="lazy" decoding="async"></div>
   <div class="blk img"><img src="assets/real-color-wave.webp" alt="Balcão do bar na cor vermelha, com o logo no LED" loading="lazy" decoding="async"></div>
@@ -1322,7 +1397,7 @@ body.pdf .s-force .monada{display:none}
   <div class="blk ink cap">
     <p class="eyebrow">Uma vez por noite</p>
     <h3 class="h3">Color Wave</h3>
-    <p class="small">A casa assume a cor da marca: telas e painel de LED do 1º andar e balcões e barras de LED do 1º e do 7º andar, com a marca nas telas. Na pista, entra só a cor, sem a marca.</p>
+    <p class="small">A casa assume a cor da marca: telas e LEDs do 1º andar e balcões e barras de LED do 1º e do 7º, com a marca nas telas. Na pista, entra só a cor.</p>
     <p class="tiers"><span class="on" style="--accent:var(--freq)">Headliner</span></p>
   </div>
   <div class="blk ink cap">
@@ -1366,7 +1441,7 @@ body.pdf .s-force .monada{display:none}
         <tr><td><h4 class="h4">Desconto da marca</h4><p class="small muted">Comida, bebida e hospedagem</p></td><td class="c v">20%</td><td class="c v">10%</td><td class="c v no">—</td></tr>
       </tbody>
     </table>
-    <p class="small muted" style="margin-top:1.4em">A lista não acumula: se a marca não indicar nomes, a vaga da noite não é usada.</p>
+    <p class="small muted" style="margin-top:1.4em">A lista não acumula: a vaga que a marca não usar na noite não passa para a seguinte.</p>
   </div>
   <div class="blk img side"><img src="assets/real-acesso.webp" alt="Entrada do CLUBE à noite, com o painel de LED do logo e personagem na parede" loading="lazy" decoding="async" style="object-position:0% 50%"></div>
 </section>
@@ -1424,7 +1499,7 @@ body.pdf .s-force .monada{display:none}
   </div>
   <div class="blk ink foot">
     <h3 class="h3">Venha conhecer a casa</h3>
-    <p class="small">Agende uma visita e desenhamos o formato ao seu lado.</p>
+    <p class="small">Agende uma visita e desenhamos juntos a parceria da sua marca.</p>
     <p class="small muted">@clubesp · theforce.cc</p>
   </div>
 </section>
@@ -2073,17 +2148,18 @@ if(cv&&!document.body.classList.contains('pdf')){
     function breath(t){ const n=(t%4)/4; return n<.33 ? ease(n/.33)*.3+.9 : (1-easeIO((n-.33)/.67))*.3+.9; }
     cv.addEventListener('pointerdown',e=>{ drag=true; last={x:e.clientX,y:e.clientY}; lastT=performance.now()/1000; cv.setPointerCapture(e.pointerId); });
     cv.addEventListener('pointermove',e=>{ if(!drag) return; const dx=e.clientX-last.x, dy=e.clientY-last.y;
-      vel.y=dx*.001*32; vel.x=-dy*.001*32; vel.z=(Math.abs(dx)+Math.abs(dy))*.0005*8; last={x:e.clientX,y:e.clientY}; lastT=performance.now()/1000; });
+      vel.y=dx*.0045; vel.x=-dy*.0045; vel.z=(Math.abs(dx)+Math.abs(dy))*.0008; last={x:e.clientX,y:e.clientY}; lastT=performance.now()/1000; });
     cv.addEventListener('pointerup',()=>{ drag=false; lastT=performance.now()/1000; vel.x*=.7; vel.y*=.7; vel.z*=.7; });
     /* o mouse não move a mônada: o deslocamento dele vira impulso de giro, com a mesma inércia do arraste */
-    let pm=null; window.addEventListener('pointermove',e=>{ if(!on||drag){ pm=null; return; } if(pm){ const dx=e.clientX-pm.x, dy=e.clientY-pm.y;
-      vel.y+=dx*.00035; vel.x-=dy*.00035; vel.z+=(Math.abs(dx)+Math.abs(dy))*.00012; lastT=performance.now()/1000; } pm={x:e.clientX,y:e.clientY}; });
+    let pm=null; window.addEventListener('pointermove',e=>{ if(!on||drag||e.pointerType!=='mouse'){ pm=null; return; } if(pm){ const dx=e.clientX-pm.x, dy=e.clientY-pm.y;
+      vel.y+=dx*.00012; vel.x-=dy*.00012; vel.z+=(Math.abs(dx)+Math.abs(dy))*.00004; lastT=performance.now()/1000; } pm={x:e.clientX,y:e.clientY}; });
     function size(){ const w=cv.clientWidth, h=cv.clientHeight; if(!w||!h) return; r.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix(); }
     const clock=new THREE.Clock();
     function frame(){
       if(!on) return; size();
       const dt=Math.min(clock.getDelta(),.05), t=clock.elapsedTime, idle=performance.now()/1000-lastT;
       if(!drag){ ['x','y','z'].forEach(k=>{ vel[k]*=.95; if(idle>.5) vel[k]+=(orbit[k]-vel[k])*.2; if(Math.abs(vel[k])<Math.abs(orbit[k])) vel[k]=orbit[k]; }); }
+      const CAP=.06; ['x','y','z'].forEach(k=>{ vel[k]=Math.max(-CAP,Math.min(CAP,vel[k])); });
       rot.x+=vel.x*dt*60; rot.y+=vel.y*dt*60; rot.z+=vel.z*dt*60;
       g.rotation.x+=(rot.x+Math.PI/2-g.rotation.x)*.1;
       g.rotation.y+=(rot.y-g.rotation.y)*.1;
@@ -2095,6 +2171,17 @@ if(cv&&!document.body.classList.contains('pdf')){
     new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting&&!on){ on=true; clock.getDelta(); frame(); } else if(!e.isIntersecting&&on){ on=false; cancelAnimationFrame(raf); } }),{threshold:.1}).observe(slide);
   }
 }
+</script>
+<script>
+/* autoplay garantido: se o navegador bloquear, o vídeo começa no primeiro toque, clique ou rolagem */
+(function(){
+  if(document.body.classList.contains('pdf')) return;
+  var vids=Array.prototype.slice.call(document.querySelectorAll('video'));
+  vids.forEach(function(v){ v.muted=true; v.defaultMuted=true; v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline',''); v.controls=false; });
+  function kick(){ vids.forEach(function(v){ var r=v.getBoundingClientRect(); if(r.bottom>0&&r.top<innerHeight&&v.paused){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); } }); }
+  ['touchstart','pointerdown','keydown','scroll','wheel'].forEach(function(ev){ (ev==='scroll'?document.getElementById('deck')||window:window).addEventListener(ev,kick,{passive:true}); window.addEventListener(ev,kick,{passive:true}); });
+  if('IntersectionObserver' in window) vids.forEach(function(v){ new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) kick(); }); },{threshold:.3}).observe(v); });
+})();
 </script>
 </body>
 </html>
