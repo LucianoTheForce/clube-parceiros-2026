@@ -364,7 +364,7 @@ body.pdf .s-andares .row .sub,body.pdf .s-andares .row .meta{opacity:1;transform
 .s-force .tf-label{margin:1.8em 0 .7em;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;opacity:.6}
 .s-force .tf-brands span{white-space:nowrap}
 .s-force .tf-brands span:not(:last-child)::after{content:" ·";opacity:.45}
-.s-force .tf-brands{margin:0;font-size:clamp(17px,1.5vw,24px);font-weight:300;line-height:1.45;letter-spacing:-.005em;max-width:40ch;text-wrap:balance}
+.s-force .tf-brands{margin:.9em 0 0;font-size:clamp(17px,1.5vw,24px);font-weight:300;line-height:1.45;letter-spacing:-.005em;max-width:40ch;text-wrap:balance}
 .s-force .mark .tf{width:min(26vw,300px);aspect-ratio:1;-webkit-mask:url("assets/logo-theforce.webp") center/contain no-repeat;mask:url("assets/logo-theforce.webp") center/contain no-repeat;background:currentColor;color:var(--soft)}
 @media (max-width:900px){
   body:not(.pdf) .s-menu .trilha{grid-column:1/-1 !important;height:52svh;min-height:280px}
@@ -828,7 +828,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 .radio .rb-txt{overflow:hidden;text-overflow:ellipsis}
 .radio .rb-txt b{font-weight:500}
 .radio .rb-now{opacity:.7}
-.radio.on .rb-txt b::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--heat);margin-right:7px;vertical-align:1px;animation:rbPulse 1.6s ease-in-out infinite}
+.radio.on .rb-play::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--heat);margin-right:7px;vertical-align:1px;animation:rbPulse 1.6s ease-in-out infinite}
 @keyframes rbPulse{50%{opacity:.25}}
 body.pdf .radio{display:none}
 @media (max-width:900px){body:not(.pdf) .bar .r{display:flex!important}body:not(.pdf) .radio .rb-now{display:none}}
@@ -846,6 +846,31 @@ body.pdf .radio{display:none}
 body.pdf .s-applive iframe{display:none}
 body.pdf .s-applive .shot{display:block}
 @media (max-width:900px){body:not(.pdf) .s-applive .palco{min-height:640px}}
+
+/* ---------- slideshows: barra de progresso estilo stories ---------- */
+.s-full .count{left:var(--pad);right:var(--pad);top:calc(var(--bar) + 10px);gap:14px}
+.s-full .count .ticks{flex:1;gap:4px;order:-1}
+.s-full .count .ticks i{flex:1;width:auto;height:2px;border-radius:2px;background:rgba(255,255,255,.28);position:relative;overflow:hidden}
+.s-full .count .ticks i::after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left center}
+.s-full .count .ticks i.done::after{transform:scaleX(1)}
+.s-full .count .ticks i.on{background:rgba(255,255,255,.28)}
+.s-full.playing .count .ticks i.on::after{animation:storyFill var(--story,5000ms) linear forwards}
+.s-full.playing.hold .count .ticks i.on::after{animation-play-state:paused}
+@keyframes storyFill{to{transform:scaleX(1)}}
+/* ---------- Rádio CLUBE: botões e letreiro ---------- */
+.radio{gap:8px;max-width:min(460px,42vw)}
+.radio button{width:26px;height:26px;border:0;border-radius:50%;background:var(--soft);color:var(--black);flex:none;transition:transform .2s}
+.radio button:hover{transform:scale(1.08)}
+.radio .rb-next{background:none;color:inherit;width:20px}
+.radio svg{width:10px;height:10px}
+.radio .rb-next svg{width:12px;height:12px}
+.radio .rb-play .i-play{margin-left:2px}
+.radio .rb-txt{position:relative;overflow:hidden;width:min(300px,26vw);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.radio .rb-track{display:inline-flex;white-space:nowrap;animation:rbMarq 26s linear infinite}
+.radio .rb-track span{padding-right:2.5em}
+@keyframes rbMarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.radio.on .rb-txt::before{content:none}
+@media (prefers-reduced-motion:reduce){.radio .rb-track{animation:none}}
 </style>
 </head>
 <body>
@@ -860,7 +885,7 @@ body.pdf .s-applive .shot{display:block}
 <header class="bar" aria-hidden="true">
   <div class="l"><span>the force</span><span>clube</span><span>.cc</span></div>
   <div class="c"><b id="cur">01</b> / <span id="tot">21</span></div>
-  <div class="r"><div class="radio" id="radio-bar"><button type="button" class="rb-play" aria-label="Tocar a Rádio CLUBE"><svg viewBox="0 0 24 24" class="i-play"><path d="M7 4l13 8-13 8z"/></svg><svg viewBox="0 0 24 24" class="i-pause"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg></button><button type="button" class="rb-next" aria-label="Próxima faixa"><svg viewBox="0 0 24 24"><path d="M5 4l10 8-10 8zM17 4h2v16h-2z"/></svg></button><span class="rb-txt"><b>Rádio CLUBE</b> <span class="rb-now">ao vivo</span></span><audio preload="none"></audio></div></div>
+  <div class="r"><div class="radio" id="radio-bar"><button type="button" class="rb-play" aria-label="Tocar a Rádio CLUBE"><svg viewBox="0 0 24 24" class="i-play"><path d="M7 4l13 8-13 8z"/></svg><svg viewBox="0 0 24 24" class="i-pause"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg></button><button type="button" class="rb-next" aria-label="Próxima faixa"><svg viewBox="0 0 24 24"><path d="M5 4l10 8-10 8zM17 4h2v16h-2z"/></svg></button><span class="rb-txt"><span class="rb-track"><span class="rb-now">Rádio CLUBE</span><span class="rb-now" aria-hidden="true">Rádio CLUBE</span></span></span><audio preload="none"></audio></div></div>
 </header>
 
 <main class="deck" id="deck">
@@ -877,6 +902,18 @@ body.pdf .s-applive .shot{display:block}
     </div>
     <div class="blk red center" style="min-width:140px">2027</div>
   </div>
+</section>
+
+<section class="slide s-pilares" id="dia">
+  <div class="head">
+    <div><p class="eyebrow">CLUBE · Rua da Consolação, 1813</p><h2 class="h2">Aberto 24 horas</h2></div>
+    <p class="body">Do café da manhã à pista, o CLUBE muda de ritmo a cada turno e não fecha: quando a pista acaba, o hotel recebe quem decide ficar.</p>
+  </div>
+  <div class="blk pilar rule-row" style="--i:0"><p class="idx">07–12h</p><h3 class="h4">Café</h3><p class="small">A casa abre com o café da manhã.</p></div>
+  <div class="blk pilar rule-row" style="--i:1"><p class="idx">12–17h</p><h3 class="h4">Mesa</h3><p class="small">Almoço no restaurante.</p></div>
+  <div class="blk pilar rule-row" style="--i:2"><p class="idx">17–20h</p><h3 class="h4">Aperitivo</h3><p class="small">Fim de tarde no rooftop, da golden hour em diante.</p></div>
+  <div class="blk pilar rule-row" style="--i:3"><p class="idx">20–04h</p><h3 class="h4">Noite</h3><p class="small">Pista com DJ e cozinha da madrugada até as 2h.</p></div>
+  <div class="blk foot"><p class="small muted">Hotel com recepção 24 horas.</p></div>
 </section>
 
 <!-- 02 O CLUBE -->
@@ -933,17 +970,6 @@ body.pdf .s-applive .shot{display:block}
     <div class="count"><span class="n"><b>01</b> / 04</span><span class="ticks"><i class="on" data-go="0"></i><i data-go="1"></i><i data-go="2"></i><i data-go="3"></i></span></div>
 </section>
 
-<section class="slide s-pilares" id="dia">
-  <div class="head">
-    <div><p class="eyebrow">O dia da casa</p><h2 class="h2">Aberto 24 horas</h2></div>
-    <p class="body">O CLUBE muda de ritmo a cada turno e não fecha: quando a pista acaba, o hotel recebe quem decide ficar.</p>
-  </div>
-  <div class="blk pilar rule-row" style="--i:0"><p class="idx">07–12h</p><h3 class="h4">Café</h3><p class="small">A casa abre com o café da manhã.</p></div>
-  <div class="blk pilar rule-row" style="--i:1"><p class="idx">12–17h</p><h3 class="h4">Mesa</h3><p class="small">Almoço no restaurante.</p></div>
-  <div class="blk pilar rule-row" style="--i:2"><p class="idx">17–20h</p><h3 class="h4">Aperitivo</h3><p class="small">Fim de tarde no rooftop, da golden hour em diante.</p></div>
-  <div class="blk pilar rule-row" style="--i:3"><p class="idx">20–04h</p><h3 class="h4">Noite</h3><p class="small">Pista com DJ e cozinha da madrugada até as 2h.</p></div>
-  <div class="blk foot"><p class="small muted">Hotel com recepção 24 horas.</p></div>
-</section>
 
 <section class="slide s-full" id="imersiva">
   <div class="gal">
@@ -1067,58 +1093,9 @@ body.pdf .s-applive .shot{display:block}
   <div class="blk foot"><p class="small muted">Benefícios do cartão: entrada sem fila, prioridade nas reservas de mesa, rooftop e hotel, convites para noites fechadas e vantagens das marcas parceiras.</p></div>
 </section>
 
-<section class="slide s-full" id="radio">
-  <div class="gal">
-    <figure class="fr on">
-      <img src="assets/app-mock-agora.webp" alt="iPhone com o app do CLUBE na aba Agora, em estúdio" loading="lazy" decoding="async">
-      <figcaption class="blk ink cap">
-        <p class="eyebrow">O app · Agora</p>
-        <h3 class="h3">A casa no bolso</h3>
-        <p class="small">O que está aberto agora, turno a turno, com a Rádio CLUBE tocando no topo.</p>
-        <p class="small"><a href="https://clube-blond.vercel.app/clube" target="_blank" rel="noopener">Abrir o app ↗</a></p>
-      </figcaption>
-    </figure>
-    <figure class="fr">
-      <img src="assets/app-mock-programacao.webp" alt="iPhone com a programação da semana, sobre um bloco de alumínio" loading="lazy" decoding="async">
-      <figcaption class="blk ink cap">
-        <p class="eyebrow">O app · Programação</p>
-        <h3 class="h3">A semana inteira</h3>
-        <p class="small">DJ sets, aperitivo e late dinner, com reserva direto no app.</p>
-      </figcaption>
-    </figure>
-    <figure class="fr">
-      <img src="assets/app-mock-menu.webp" alt="iPhone com o cardápio, num set vermelho" loading="lazy" decoding="async">
-      <figcaption class="blk ink cap">
-        <p class="eyebrow">O app · Menu</p>
-        <h3 class="h3">A carta na mão</h3>
-        <p class="small">Comida e drinks do café à madrugada, com fotos de cada prato.</p>
-      </figcaption>
-    </figure>
-    <figure class="fr">
-      <img src="assets/app-mock-estadia.webp" alt="Mão segurando o iPhone com os quartos do hotel, em fundo preto" loading="lazy" decoding="async">
-      <figcaption class="blk ink cap">
-        <p class="eyebrow">O app · Estadia</p>
-        <h3 class="h3">Uma noite que tem quarto</h3>
-        <p class="small">Os quartos do hotel, reservados no mesmo lugar.</p>
-      </figcaption>
-    </figure>
-    <figure class="fr">
-      <img src="assets/app-mock-carteira.webp" alt="iPhone com o cartão de membro, sobre um bloco de travertino" loading="lazy" decoding="async">
-      <figcaption class="blk ink cap">
-        <p class="eyebrow">O app · Carteira</p>
-        <h3 class="h3">O cartão é a chave</h3>
-        <p class="small">O cartão de membro prata mora no app e abre a porta.</p>
-      </figcaption>
-    </figure>
-  </div>
-    <button type="button" class="arw prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
-    <button type="button" class="arw next" aria-label="Próxima foto"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
-    <div class="count"><span class="n"><b>01</b> / 05</span><span class="ticks"><i class="on" data-go="0"></i><i data-go="1"></i><i data-go="2"></i><i data-go="3"></i><i data-go="4"></i></span></div>
-</section>
-
 <section class="slide s-applive" id="app-live">
   <div class="etq">
-    <div><p class="eyebrow">O app · Ao vivo</p><h2 class="h2">Navegue pelo CLUBE</h2></div>
+    <div><p class="eyebrow">O app · Rádio CLUBE</p><h2 class="h2">A casa no bolso</h2></div>
     <div>
       <p class="body">Este é o app de verdade. Toque nas abas, veja a programação, abra o cardápio e dê play na Rádio CLUBE.</p>
       <p class="small muted" style="margin-top:1em"><a href="https://clube-blond.vercel.app/clube" target="_blank" rel="noopener">Abrir em tela cheia ↗</a></p>
@@ -1128,7 +1105,7 @@ body.pdf .s-applive .shot{display:block}
     <div class="iph">
       <div class="scr">
         <iframe data-src="https://clube-blond.vercel.app/clube" title="App do CLUBE, navegável" loading="lazy" allow="autoplay"></iframe>
-        <img class="shot" src="assets/app-mock-agora.webp" alt="">
+        <img class="shot" src="assets/app-tela-agora.webp" alt="">
       </div>
       <i class="isl"></i>
     </div>
@@ -1328,10 +1305,9 @@ body.pdf .s-applive .shot{display:block}
   <div class="blk ink between">
     <div><p class="eyebrow" data-copy="tf-eyebrow">Direção criativa e artística</p><h2 class="h2" data-copy="tf-titulo">Uma casa assinada pela The Force</h2></div>
     <div>
-      <p class="body" data-copy="tf-texto">Estúdio de arte e tecnologia de São Paulo. A The Force cria instalações, shows ao vivo, experiências imersivas e ações de marca para instituições culturais, grandes exposições, eventos e marcas.</p>
-      <p class="body">No CLUBE, assina a direção criativa e artística: conceito, marca, identidade, membership, o app, a sala imersiva, o conteúdo dos painéis de LED e esta apresentação.</p>
-      <p class="tf-label">Já trabalhou com</p>
-      <p class="tf-brands"><span>Alok</span> <span>Heineken</span> <span>Rock in Rio</span> <span>Nubank</span> <span>Melissa</span> <span>Paco Rabanne</span> <span>SPFW</span> <span>Chilli Beans</span> <span>Schutz</span> <span>Monte Carlo</span> <span>Amarello</span></p>
+      <p class="body" data-copy="tf-texto">A THE FORCE é uma agência full service de eventos, experiências e novas mídias e um estúdio de cultura e criação sediado em São Paulo. Atuamos no encontro entre arte, design e tecnologia, criando experiências imersivas, instalações interativas, narrativas audiovisuais e identidades. Desenvolvemos também aplicativos e sistemas interativos, integrando inovação e tecnologias emergentes a projetos para marcas, espaços e iniciativas culturais.</p>
+      <p class="body">Trabalhamos em colaboração com a vanguarda da criatividade brasileira, desenvolvendo projetos para marcas e instituições como:</p>
+      <p class="tf-brands"><span>MASP</span> <span>Bottega Veneta</span> <span>Calvin Klein</span> <span>Heineken</span> <span>Nike</span> <span>Gucci</span> <span>Paco Rabanne</span> <span>MIS</span> <span>Google</span> <span>Disney</span> <span>Japan House</span> <span>Cidade Matarazzo</span> <span>Melissa</span></p>
       <p class="small muted" style="margin-top:1.2em">theforce.cc</p>
     </div>
   </div>
@@ -1474,7 +1450,7 @@ body.pdf .s-applive .shot{display:block}
   });
 
   // menu
-  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'A pista: LED P1.9 e som de alta fidelidade','galeria-digital':'Next Digital Gallery',mobiliario:'Mobiliário',hotel:'Um clube para se sentir em casa',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app','app-live':'O app ao vivo',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
+  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'A pista: LED P1.9 e som de alta fidelidade','galeria-digital':'Next Digital Gallery',mobiliario:'Mobiliário',hotel:'Um clube para se sentir em casa',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros','app-live':'A casa no bolso',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
   slides.forEach(function(sl){
     var li=document.createElement('li'), a=document.createElement('a');
     a.href='#'+sl.id; a.textContent=titles[sl.id]||sl.id;
@@ -1923,15 +1899,19 @@ body.pdf .s-applive .shot{display:block}
 })();
 </script>
 <script>
-/* Rádio CLUBE: a mesma playlist do app, tocando a partir da barra do topo */
+/* Rádio CLUBE: a mesma playlist do app, tocando a partir da barra do topo; o letreiro já mostra a faixa antes do play */
 (function(){
   var box=document.getElementById('radio-bar'); if(!box||document.body.classList.contains('pdf')) return;
-  var au=box.querySelector('audio'), now=box.querySelector('.rb-now'), list=[], i=0;
-  function load(k){ i=(k+list.length)%list.length; var t=list[i]; au.src=t.url; now.textContent=t.artista.trim()+' · '+t.titulo; }
-  function play(){ if(!list.length) return; if(!au.src) load(Math.floor(Math.random()*list.length)); var p=au.play(); if(p&&p.catch) p.catch(function(){}); }
-  fetch('https://clube-blond.vercel.app/radio/playlist.json').then(function(r){return r.json()}).then(function(d){list=d.filter(function(t){return t.url});}).catch(function(){box.style.display='none';});
+  var au=box.querySelector('audio'), nows=box.querySelectorAll('.rb-now'), list=[], i=0;
+  function label(t){ return 'Rádio CLUBE · '+t.artista.trim()+' — '+t.titulo; }
+  function load(k){ i=(k+list.length)%list.length; var t=list[i], nx=list[(i+1)%list.length];
+    au.src=t.url; var txt=label(t)+'   ·   a seguir: '+nx.artista.trim()+' — '+nx.titulo;
+    Array.prototype.forEach.call(nows,function(n){n.textContent=txt}); }
+  function play(){ if(!list.length) return; var p=au.play(); if(p&&p.catch) p.catch(function(){}); }
+  fetch('https://clube-blond.vercel.app/radio/playlist.json').then(function(r){return r.json()}).then(function(d){
+    list=d.filter(function(t){return t.url}); if(list.length) load(Math.floor(Math.random()*list.length)); }).catch(function(){box.style.display='none';});
   box.querySelector('.rb-play').addEventListener('click',function(e){e.stopPropagation(); au.paused?play():au.pause();});
-  box.querySelector('.rb-next').addEventListener('click',function(e){e.stopPropagation(); if(!list.length) return; load(i+1); play();});
+  box.querySelector('.rb-next').addEventListener('click',function(e){e.stopPropagation(); if(!list.length) return; var was=!au.paused; load(i+1); if(was) play();});
   au.addEventListener('play',function(){box.classList.add('on')});
   au.addEventListener('pause',function(){box.classList.remove('on')});
   au.addEventListener('ended',function(){load(i+1); play();});
@@ -1946,18 +1926,26 @@ body.pdf .s-applive .shot{display:block}
   if('IntersectionObserver' in window) new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting) load();});},{rootMargin:'100% 0px'}).observe(document.getElementById('app-live'));
   else load();
 })();
-/* autoplay dos slideshows: avança sozinho enquanto o slide está na tela; pausa com o mouse em cima */
+/* autoplay dos slideshows com barra de progresso estilo stories: cada foto fica 5 s; pausa com o mouse em cima */
 (function(){
   if(document.body.classList.contains('pdf')||window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var EVERY=5000;
   Array.prototype.forEach.call(document.querySelectorAll('.s-full'),function(sl){
-    var t=0, hover=false;
-    function tick(){ var g=sl._gal; if(!g||hover) return; g.go(g.i>=g.n-1?0:g.i+1); }
-    function start(){ if(!t&&sl._gal) t=setInterval(tick,EVERY); }
-    function stop(){ clearInterval(t); t=0; }
-    sl.addEventListener('mouseenter',function(){hover=true}); sl.addEventListener('mouseleave',function(){hover=false});
-    Array.prototype.forEach.call(sl.querySelectorAll('.arw,.ticks i'),function(b){ b.addEventListener('click',function(){ stop(); start(); }); });
-    if('IntersectionObserver' in window) new IntersectionObserver(function(es){es.forEach(function(e){ e.isIntersecting&&e.intersectionRatio>.5?start():stop(); });},{threshold:[0,.5,1]}).observe(sl);
+    var g=sl._gal; if(!g) return;
+    var ticks=Array.prototype.slice.call(sl.querySelectorAll('.ticks i')), t=0, left=EVERY, t0=0, hold=false, live=false;
+    sl.style.setProperty('--story',EVERY+'ms');
+    var go=g.go; g.go=function(n){ go(n); paint(); restart(); };
+    var reset=g.reset; g.reset=function(){ reset(); paint(); };
+    function paint(){ ticks.forEach(function(k,j){ k.classList.toggle('done',j<g.i); k.classList.remove('on'); void k.offsetWidth; k.classList.toggle('on',j===g.i); }); }
+    function next(){ g.go(g.i>=g.n-1?0:g.i+1); }
+    function arm(ms){ clearTimeout(t); t0=Date.now(); left=ms; t=setTimeout(next,ms); }
+    function restart(){ if(live&&!hold) arm(EVERY); else left=EVERY; }
+    sl.addEventListener('mouseenter',function(){ if(!live) return; hold=true; sl.classList.add('hold'); clearTimeout(t); left=Math.max(0,left-(Date.now()-t0)); });
+    sl.addEventListener('mouseleave',function(){ if(!live) return; hold=false; sl.classList.remove('hold'); arm(left); });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting&&e.intersectionRatio>.5){ if(!live){ live=true; sl.classList.add('playing'); paint(); arm(EVERY); } }
+      else if(live){ live=false; clearTimeout(t); sl.classList.remove('playing','hold'); hold=false; }
+    });},{threshold:[0,.5,1]}).observe(sl);
   });
 })();
 </script>
