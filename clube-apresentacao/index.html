@@ -948,6 +948,8 @@ body.pdf .s-force .monada{display:none}
   body:not(.pdf) .s-applive iframe{width:100%!important;height:100%!important;transform:none!important}
   body:not(.pdf) .s-applive .isl{display:none}
 }
+
+@media (max-width:900px){ body:not(.pdf) .s-full .gal{cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none} }
 </style>
 </head>
 <body>
@@ -2020,6 +2022,12 @@ body.pdf .s-force .monada{display:none}
     function next(){ g.go(g.i>=g.n-1?0:g.i+1); }
     function arm(ms){ clearTimeout(t); t0=Date.now(); left=ms; t=setTimeout(next,ms); }
     function restart(){ if(live&&!hold) arm(EVERY); else left=EVERY; }
+    /* celular: toque como nos stories, direita avança e esquerda (primeiro terço) volta */
+    sl.addEventListener('click',function(e){
+      if(innerWidth>900||e.target.closest('a,button,.ticks')) return;
+      var r=sl.getBoundingClientRect(), x=e.clientX-r.left;
+      if(x<r.width/3){ if(g.i>0) g.go(g.i-1); else { paint(); restart(); } } else next();
+    });
     sl.addEventListener('mouseenter',function(){ if(!live) return; hold=true; sl.classList.add('hold'); clearTimeout(t); left=Math.max(0,left-(Date.now()-t0)); });
     sl.addEventListener('mouseleave',function(){ if(!live) return; hold=false; sl.classList.remove('hold'); arm(left); });
     if('IntersectionObserver' in window) new IntersectionObserver(function(es){es.forEach(function(e){
