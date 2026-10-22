@@ -361,6 +361,10 @@ body.pdf .s-andares .row .sub,body.pdf .s-andares .row .meta{opacity:1;transform
 /* the force: crédito do estúdio */
 .s-force{grid-template-columns:5fr 7fr}
 .s-force .mark{display:grid;place-items:center;place-content:center;padding:0}
+.s-force .tf-label{margin:1.8em 0 .7em;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;opacity:.6}
+.s-force .tf-brands span{white-space:nowrap}
+.s-force .tf-brands span:not(:last-child)::after{content:" ·";opacity:.45}
+.s-force .tf-brands{margin:0;font-size:clamp(17px,1.5vw,24px);font-weight:300;line-height:1.45;letter-spacing:-.005em;max-width:40ch;text-wrap:balance}
 .s-force .mark .tf{width:min(26vw,300px);aspect-ratio:1;-webkit-mask:url("assets/logo-theforce.webp") center/contain no-repeat;mask:url("assets/logo-theforce.webp") center/contain no-repeat;background:currentColor;color:var(--soft)}
 @media (max-width:900px){
   body:not(.pdf) .s-menu .trilha{grid-column:1/-1 !important;height:52svh;min-height:280px}
@@ -822,9 +826,9 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
     <p class="small muted fonte">Rua da Consolação, 1813 · São Paulo</p>
   </div>
   <div class="blk teses">
-    <div class="tese rule-row" style="--i:0"><p class="idx">01</p><div><h3 class="h3">Um endereço, do bar ao rooftop</h3><p class="big">Bar no primeiro andar, pista no segundo, bar com vista no quinto e rooftop na cobertura, num prédio que também é hotel.</p></div></div>
+    <div class="tese rule-row" style="--i:0"><p class="idx">01</p><div><h3 class="h3">Um endereço, do bar ao rooftop</h3><p class="big">Bar e restaurante no primeiro andar, pista e bar com vista no quinto e rooftop na cobertura, num prédio que também é hotel.</p></div></div>
     <div class="tese rule-row" style="--i:1"><p class="idx">02</p><div><h3 class="h3">Música no centro</h3><p class="big">A programação é feita com DJs, coletivos e artistas convidados da cena de São Paulo, do café da manhã à pista.</p></div></div>
-    <div class="tese rule-row" style="--i:2"><p class="idx">03</p><div><h3 class="h3">Superfícies de luz</h3><p class="big">Galeria digital nas telas do bar, painel de LED P1.9 da parede ao teto na pista, balcões de LED e uma sala imersiva com projeção mapeada. É por elas que as marcas parceiras entram na noite.</p></div></div>
+    <div class="tese rule-row" style="--i:2"><p class="idx">03</p><div><h3 class="h3">Beyond the screen</h3><p class="big">Galeria digital nas telas do bar, painel de LED P1.9 da parede ao teto na pista, balcões de LED e uma sala imersiva com projeção mapeada. É por elas que as marcas parceiras entram na noite.</p></div></div>
   </div>
 </section>
 
@@ -832,11 +836,11 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 <section class="slide s-tres" id="espaco" style="grid-template-columns:repeat(4,1fr)">
   <div class="head">
     <div><p class="eyebrow">O espaço</p><h2 class="h2">Do bar ao rooftop</h2></div>
-    <p class="body">A noite começa no bar, passa pela pista e sobe até o bar com vista e o rooftop.</p>
+    <p class="body">A noite começa no bar e restaurante, sobe para a pista e o bar com vista no quinto andar e termina no rooftop.</p>
   </div>
-  <div class="blk img"><img src="assets/real-bar.webp" alt="Salão do bar do 1º andar, com banco de couro e telas na parede" loading="lazy" decoding="async"><span class="lbl">01 · Bar · 1º andar</span></div>
-  <div class="blk img"><img src="assets/real-pista.webp" alt="Pista, com a cabine de travertino ao fundo" loading="lazy" decoding="async"><span class="lbl">02 · Pista · 2º andar</span></div>
-  <div class="blk img"><img src="assets/real-bar-vista.webp" alt="Bar com vista à noite, com barras de LED coloridas nas janelas e a cidade acesa" loading="lazy" decoding="async"><span class="lbl">03 · Bar com vista · 5º andar</span></div>
+  <div class="blk img"><img src="assets/real-bar.webp" alt="Salão do bar e restaurante do 1º andar, com banco de couro e telas na parede" loading="lazy" decoding="async"><span class="lbl">01 · Bar e restaurante · 1º andar</span></div>
+  <div class="blk img"><img src="assets/real-pista.webp" alt="Pista à noite, com a identidade do CLUBE no painel de LED atrás da cabine e no teto" loading="lazy" decoding="async"><span class="lbl">02 · Pista · 5º andar</span></div>
+  <div class="blk img"><img src="assets/real-bar-vista.webp" alt="Bar com vista à noite, com o balcão monolito de luz azul, barras de LED brancas nas janelas e a cidade acesa" loading="lazy" decoding="async"><span class="lbl">03 · Bar com vista · 5º andar</span></div>
   <div class="blk img"><img src="assets/real-rooftop.webp" alt="Rooftop no fim de tarde rosado, com balcão curvo, plantas e a cidade ao fundo" loading="lazy" decoding="async"><span class="lbl">04 · Rooftop</span></div>
 </section>
 
@@ -903,14 +907,14 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 
 <section class="slide s-hotel" id="galeria-digital">
   <div class="blk ink between txt">
-    <div><p class="eyebrow">O espaço · Galeria digital</p><h2 class="h2">Uma galeria em telas</h2></div>
+    <div><p class="eyebrow">O espaço · Galeria digital</p><h2 class="h2">Next Digital Gallery</h2></div>
     <div>
       <p class="body">As telas verticais do bar formam uma galeria digital. A cada temporada, um artista convidado ocupa as telas com obras pensadas para elas.</p>
       <p class="small muted" style="margin-top:1em">A mesma curadoria segue para a sala imersiva e para o LED da pista.</p>
     </div>
   </div>
   <div class="blk img port"><img src="assets/real-bar.webp" alt="Telas verticais na parede do bar, sobre o banco de couro" loading="lazy" decoding="async" style="object-position:30% 50%"></div>
-  <div class="blk img land"><img src="assets/real-led-wave.webp" alt="Bar do 1º andar com as telas da galeria digital na parede" loading="lazy" decoding="async"></div>
+  <div class="blk img land"><img src="assets/real-led-wave.webp" alt="Bar do 1º andar com as telas da Next Digital Gallery na parede e o balcão azul" loading="lazy" decoding="async"></div>
 </section>
 
 <!-- MOBILIÁRIO -->
@@ -1123,7 +1127,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   </div>
   <div class="blk img"><img src="assets/real-sala-imersiva-03.webp" alt="Sala imersiva com dois personagens do CLUBE em vermelho projetados sobre metal" loading="lazy" decoding="async"></div>
   <div class="blk img"><img src="assets/real-color-wave.webp" alt="Balcão do bar na cor vermelha, com o logo no LED" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/real-led-wave.webp" alt="Bar do 1º andar com as telas na parede e o balcão de LED" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/real-led-wave.webp" alt="Bar do 1º andar com as telas na parede e o balcão de LED azul" loading="lazy" decoding="async"></div>
   <div class="blk ink cap">
     <p class="eyebrow">Sala imersiva</p>
     <h3 class="h3">Projector Wave</h3>
@@ -1215,7 +1219,13 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   <div class="blk black mark"><div class="tf" role="img" aria-label="The Force"></div></div>
   <div class="blk ink between">
     <div><p class="eyebrow" data-copy="tf-eyebrow">Direção criativa e artística</p><h2 class="h2" data-copy="tf-titulo">Uma casa assinada pela The Force</h2></div>
-    <div><p class="body" data-copy="tf-texto">A The Force responde pela direção criativa e artística do CLUBE: conceito, marca, identidade, sistema de membership, espaço digital e esta apresentação. O estúdio também desenvolve o app da casa. O trabalho começou na ideia e seguiu até a porta, do cartão de metal ao painel da fachada.</p><p class="small muted" style="margin-top:1em">theforce.cc</p></div>
+    <div>
+      <p class="body" data-copy="tf-texto">Estúdio de arte e tecnologia de São Paulo. A The Force cria instalações, shows ao vivo, experiências imersivas e ações de marca para instituições culturais, grandes exposições, eventos e marcas.</p>
+      <p class="body">No CLUBE, assina a direção criativa e artística: conceito, marca, identidade, membership, o app, a sala imersiva, o conteúdo dos painéis de LED e esta apresentação.</p>
+      <p class="tf-label">Já trabalhou com</p>
+      <p class="tf-brands"><span>Alok</span> <span>Heineken</span> <span>Rock in Rio</span> <span>Nubank</span> <span>Melissa</span> <span>Paco Rabanne</span> <span>SPFW</span> <span>Chilli Beans</span> <span>Schutz</span> <span>Monte Carlo</span> <span>Amarello</span></p>
+      <p class="small muted" style="margin-top:1.2em">theforce.cc</p>
+    </div>
   </div>
 </section>
 
@@ -1356,7 +1366,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   });
 
   // menu
-  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'A pista: LED P1.9 e som de alta fidelidade','galeria-digital':'A galeria digital',mobiliario:'Mobiliário',hotel:'Um clube para se sentir em casa',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
+  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'A pista: LED P1.9 e som de alta fidelidade','galeria-digital':'Next Digital Gallery',mobiliario:'Mobiliário',hotel:'Um clube para se sentir em casa',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
   slides.forEach(function(sl){
     var li=document.createElement('li'), a=document.createElement('a');
     a.href='#'+sl.id; a.textContent=titles[sl.id]||sl.id;
