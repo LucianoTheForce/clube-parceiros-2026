@@ -30,3 +30,5 @@ clube-apresentacao/.vercelignore
 *.env
 *.env.*
 __pycache__/
+.vercel
+.env*
