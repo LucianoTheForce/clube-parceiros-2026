@@ -359,7 +359,7 @@ body.pdf .s-andares .row .sub,body.pdf .s-andares .row .meta{opacity:1;transform
 .s-mob .img{min-height:0}
 .s-mob .tall{grid-column:2;grid-row:1/3}
 /* the force: crédito do estúdio */
-.s-force{grid-template-columns:5fr 7fr}
+.s-force{grid-template-columns:6fr 6fr}
 .s-force .mark{display:grid;place-items:center;place-content:center;padding:0}
 .s-force .tf-label{margin:1.8em 0 .7em;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;opacity:.6}
 .s-force .tf-brands span{white-space:nowrap}
@@ -928,7 +928,7 @@ body.pdf .s-force .monada{display:none}
   body:not(.pdf) .s-applive .palco{min-height:0;padding:28px 0;background:none}
   body:not(.pdf) .s-applive .iph{height:auto;width:min(84vw,360px)}
   /* the force: mônada maior no topo */
-  body:not(.pdf) .s-force .mark{min-height:46svh}
+  body:not(.pdf) .s-force .mark{min-height:62svh}
   /* museu: obra em pé, etiqueta embaixo */
   body:not(.pdf) .s-museu{grid-template-columns:1fr;gap:24px}
   body:not(.pdf) .s-museu .detalhe{width:56%}
@@ -2054,7 +2054,7 @@ if(cv&&!document.body.classList.contains('pdf')){
       g.rotation.x+=(rot.x+Math.PI/2-g.rotation.x)*.1;
       g.rotation.y+=(rot.y-g.rotation.y)*.1;
       g.rotation.z+=(rot.z-g.rotation.z)*.1;
-      const k=(breath(t)+(drag?.2:0))*.62*Math.min(cv.clientWidth/cv.clientHeight*1.15,1);   // cabe com folga no bloco, também em telas estreitas
+      const k=(breath(t)+(drag?.2:0))*Math.min(cv.clientWidth/cv.clientHeight*1.08,1.05);   // cabe com folga no bloco, também em telas estreitas
       g.scale.setScalar(g.scale.x+(k-g.scale.x)*.1);
       r.render(scene,cam); raf=requestAnimationFrame(frame);
     }
