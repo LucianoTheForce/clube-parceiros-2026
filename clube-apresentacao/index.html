@@ -773,6 +773,34 @@ body.pdf .ph18 .shot{display:block}
 .s-social .igrid .eyebrow{margin:0 0 10px}
 .s-social .ig{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;width:100%;max-height:calc(100% - 28px);aspect-ratio:3/3.75;margin:0 auto}
 .s-social .ig img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+
+/* ---------- polimento: ritmo tipográfico único em todo o deck ---------- */
+/* um só estilo de título de seção: o da intro segue os h2 */
+.s-tese .lead .h1{font-weight:300;font-size:clamp(30px,4.2vw,64px);line-height:1;letter-spacing:-.015em;max-width:12ch}
+/* eyebrow sempre com o mesmo respiro antes do título */
+.eyebrow{margin:0 0 1.1em}
+/* texto corrido: medida e entrelinha confortáveis */
+.body{line-height:1.55;text-wrap:pretty}
+.small{text-wrap:pretty}
+.txt .body+.body,.cap .small+.small{margin-top:.9em}
+/* blocos de texto ao lado de fotos: título no topo, texto na base, com folga */
+.blk.txt{padding:clamp(22px,2.4vw,36px)}
+.blk.txt .h2{margin-bottom:.4em}
+/* pilares (24 horas e clube de membros): conteúdo maior, sem vãos vazios */
+.s-pilares{align-content:stretch;grid-template-rows:auto auto 1fr}
+.s-pilares .head{padding-bottom:clamp(8px,1vw,16px)}
+.s-pilares .pilar{align-self:start;padding-top:clamp(22px,2.4vw,36px);margin-top:clamp(28px,6vh,72px)}
+.s-pilares .foot{align-self:end}
+.s-pilares .pilar .idx{font-size:12px;margin-bottom:1.4em}
+.s-pilares .pilar .h4{font-size:clamp(22px,2.3vw,36px);font-weight:300;letter-spacing:-.01em;margin-bottom:.45em}
+.s-pilares .pilar .small{font-size:clamp(14px,1.1vw,17px);max-width:30ch}
+.s-pilares .pilar .num{margin-bottom:.12em}
+.s-pilares .pilar .num+.h4{font-size:clamp(16px,1.35vw,20px);font-weight:400;letter-spacing:0}
+.s-pilares .foot .small{font-size:clamp(13px,1vw,15px);max-width:70ch}
+/* comunicação: cards metálicos com altura para o texto respirar */
+.s-cobrand .rules .blk{min-height:clamp(120px,15vh,170px);justify-content:space-between}
+/* cabeçalhos de duas colunas: o texto alinha pela base do título */
+.s-galeria .head,.s-tres .head,.s-waves .head,.s-tab .head,.s-noite .head,.s-arte .head,.s-menu .head{align-items:end}
 </style>
 </head>
 <body>
@@ -815,7 +843,7 @@ body.pdf .ph18 .shot{display:block}
   <div class="blk teses">
     <div class="tese rule-row" style="--i:0"><p class="idx">01</p><div><h3 class="h3">Um endereço, do bar ao rooftop</h3><p class="big">Bar no primeiro andar, pista no segundo, bar com vista no quinto e rooftop na cobertura, num prédio que também é hotel.</p></div></div>
     <div class="tese rule-row" style="--i:1"><p class="idx">02</p><div><h3 class="h3">Música no centro</h3><p class="big">A programação é feita com DJs, coletivos e artistas convidados da cena de São Paulo, do café da manhã à pista.</p></div></div>
-    <div class="tese rule-row" style="--i:2"><p class="idx">03</p><div><h3 class="h3">Superfícies de luz</h3><p class="big">Galeria digital nas telas do bar, LED da parede ao teto na pista, balcões de LED e uma sala imersiva com projeção mapeada. É por elas que as marcas parceiras entram na noite.</p></div></div>
+    <div class="tese rule-row" style="--i:2"><p class="idx">03</p><div><h3 class="h3">Superfícies de luz</h3><p class="big">Galeria digital nas telas do bar, painel de LED P1.9 da parede ao teto na pista, balcões de LED e uma sala imersiva com projeção mapeada. É por elas que as marcas parceiras entram na noite.</p></div></div>
   </div>
 </section>
 
@@ -827,8 +855,8 @@ body.pdf .ph18 .shot{display:block}
   </div>
   <div class="blk img"><img src="assets/real-bar.webp" alt="Salão do bar do 1º andar, com banco de couro e telas na parede" loading="lazy" decoding="async"><span class="lbl">01 · Bar · 1º andar</span></div>
   <div class="blk img"><img src="assets/real-pista.webp" alt="Pista, com a cabine de travertino ao fundo" loading="lazy" decoding="async"><span class="lbl">02 · Pista · 2º andar</span></div>
-  <div class="blk img"><img src="assets/real-bar-vista.webp" alt="Bar com vista para a cidade ao pôr do sol" loading="lazy" decoding="async"><span class="lbl">03 · Bar com vista · 5º andar</span></div>
-  <div class="blk img"><img src="assets/real-rooftop.webp" alt="Rooftop com balcão curvo, plantas e a cidade ao fundo" loading="lazy" decoding="async"><span class="lbl">04 · Rooftop</span></div>
+  <div class="blk img"><img src="assets/real-bar-vista.webp" alt="Bar com vista à noite, com barras de LED coloridas nas janelas e a cidade acesa" loading="lazy" decoding="async"><span class="lbl">03 · Bar com vista · 5º andar</span></div>
+  <div class="blk img"><img src="assets/real-rooftop.webp" alt="Rooftop no fim de tarde rosado, com balcão curvo, plantas e a cidade ao fundo" loading="lazy" decoding="async"><span class="lbl">04 · Rooftop</span></div>
 </section>
 
 <section class="slide s-pilares" id="dia">
@@ -881,11 +909,12 @@ body.pdf .ph18 .shot{display:block}
 <section class="slide s-full" id="pista-led">
   <div class="gal">
     <figure class="fr on">
-      <img src="assets/real-pista-ceu.webp" alt="Pista à noite, com o teto de LED se abrindo para um céu vermelho e um personagem do CLUBE em prata" loading="lazy" decoding="async" style="object-position:50% 8%">
+      <img src="assets/real-pista-noite.webp" alt="Pista à noite, com o painel de LED do teto e da parede mostrando um céu noturno e um personagem do CLUBE em prata" loading="lazy" decoding="async" style="object-position:50% 8%">
       <figcaption class="blk ink cap">
         <p class="eyebrow">O espaço · Pista</p>
-        <h3 class="h3">Um céu dentro da pista</h3>
-        <p class="small">O LED começa na parede atrás da cabine e segue pelo teto. Na perspectiva de quem está na pista, o teto parece se abrir para um céu no gradiente do CLUBE, com os personagens da casa flutuando.</p>
+        <h3 class="h3">Imagem e som de alta definição</h3>
+        <p class="small">Painel de LED P1.9 de alta resolução, contínuo da parede atrás da cabine até o teto, que cria ilusão de profundidade na perspectiva de quem está na pista.</p>
+        <p class="small">Caixas de som de alta fidelidade, com falantes italianos, entre os melhores do mundo.</p>
       </figcaption>
     </figure>
   </div>
@@ -903,13 +932,26 @@ body.pdf .ph18 .shot{display:block}
   <div class="blk img land"><img src="assets/real-led-wave.webp" alt="Bar do 1º andar com as telas da galeria digital na parede" loading="lazy" decoding="async"></div>
 </section>
 
+<!-- MOBILIÁRIO -->
+<section class="slide s-mob" id="mobiliario">
+  <div class="blk ink txt between">
+    <div><p class="eyebrow" data-copy="mob-eyebrow">Mobiliário</p><h2 class="h2" data-copy="mob-titulo">Peças desenhadas para esta casa</h2></div>
+    <div><p class="body" data-copy="mob-texto">O mobiliário foi projetado com o designer Antonio especialmente para o espaço, no vocabulário de metal e concreto da identidade. Nenhuma peça veio de catálogo: cada uma responde a um lugar da casa, ao modo de sentar, apoiar o copo ou encostar na borda da pista. Peças assinadas, desenhadas para o uso que a noite exige.</p><p class="small muted" style="margin-top:1em" data-copy="mob-legenda">Alumínio fundido, couro e concreto em escala de corpo: o mobiliário segue o vocabulário da identidade.</p></div>
+  </div>
+  <div class="blk img tall"><img src="assets/mob-cadeiras.webp" alt="Banquetas de alumínio fundido vazado junto ao balcão do bar" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/mob-banco.webp" alt="Banco corrido de couro sobre base de concreto, ao longo da parede" loading="lazy" decoding="async"></div>
+  <div class="blk img"><img src="assets/mob-detalhe.webp" alt="Detalhe da trama vazada do alumínio fundido das banquetas" loading="lazy" decoding="async"></div>
+</section>
+
 <!-- 09e O HOTEL -->
 <section class="slide s-hotel" id="hotel">
-  <div class="blk ink txt">
-    <p class="eyebrow">O espaço · O hotel</p>
-    <h2 class="h2">Uma noite que tem quarto</h2>
+  <div class="blk ink between txt">
+    <div><p class="eyebrow">O espaço · O hotel</p>
+    <h2 class="h2">Uma noite que tem quarto</h2></div>
+    <div>
     <p class="body">O CLUBE ocupa um prédio que também é hotel. O convidado chega de tarde, janta no quarto, desce para a pista e dorme dois andares acima.</p>
     <p class="small muted" style="margin-top:1em">Room service, enxoval, chave de quarto e amenities são superfícies de assinatura. E a diária é o brinde que ninguém recusa: o contato com a marca não termina quando a música para.</p>
+    </div>
   </div>
   <div class="blk img port"><img src="assets/hotel-03.webp" alt="Hóspede com mala dentro do elevador vermelho do prédio" loading="lazy" decoding="async"></div>
   <div class="blk img land"><img src="assets/hotel-04.webp" alt="Corredor dos quartos, com paredes vermelhas e arandelas acesas" loading="lazy" decoding="async"></div>
@@ -952,7 +994,7 @@ body.pdf .ph18 .shot{display:block}
   <div class="blk pilar rule-row" style="--i:0"><p class="num">50</p><h3 class="h4">Fundadores</h3><p class="small">Convidados pela casa.</p></div>
   <div class="blk pilar rule-row" style="--i:1"><p class="num">+10</p><h3 class="h4">Indicações</h3><p class="small">Cada fundador indica dez pessoas.</p></div>
   <div class="blk pilar rule-row" style="--i:2"><p class="num">550</p><h3 class="h4">Membros</h3><p class="small">Na primeira formação do clube.</p></div>
-  <div class="blk pilar rule-row" style="--i:3"><p class="num" style="font-size:clamp(40px,4.6vw,76px)">Prata</p><h3 class="h4">Cartão</h3><p class="small">Nominal e numerado, em prata escovada.</p></div>
+  <div class="blk pilar rule-row" style="--i:3"><p class="num">Prata</p><h3 class="h4">Cartão</h3><p class="small">Nominal e numerado, em prata escovada.</p></div>
   <div class="blk foot"><p class="small muted">Benefícios do cartão: entrada sem fila, prioridade nas reservas de mesa, rooftop e hotel, convites para noites fechadas e vantagens das marcas parceiras.</p></div>
 </section>
 
@@ -980,12 +1022,8 @@ body.pdf .ph18 .shot{display:block}
 <!-- INSTAGRAM E PR -->
 <section class="slide s-social" id="social">
   <div class="blk ink between txt">
-    <div><p class="eyebrow">Instagram &amp; PR</p><h2 class="h2">O CLUBE nas redes e na imprensa</h2></div>
-    <div>
-      <p class="body">O feed do CLUBE tem dois ritmos que convivem: um sóbrio e fotográfico, outro denso e colorido. As marcas parceiras entram nos dois.</p>
-      <p class="body">A assessoria de imprensa é de <strong style="font-weight:500">Thiago Miguel</strong> e <strong style="font-weight:500">Danilo Novaes</strong>.</p>
-      <p class="small muted" style="margin-top:1em">@clubesp</p>
-    </div>
+    <div><p class="eyebrow">Instagram &amp; PR</p><h2 class="h2">A noite continua no feed</h2></div>
+    <p class="small muted">@clubesp</p>
   </div>
   <div class="blk igrid"><p class="eyebrow">Feed sóbrio</p><div class="ig"><img src="assets/feed-s-01.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-02.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-03.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-04.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-05.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-06.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-07.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-08.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-09.webp" alt="" loading="lazy" decoding="async"></div></div>
   <div class="blk igrid"><p class="eyebrow">Feed dinâmico</p><div class="ig"><img src="assets/feed-d-01.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-02.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-03.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-04.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-05.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-06.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-07.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-08.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-09.webp" alt="" loading="lazy" decoding="async"></div></div>
@@ -1067,9 +1105,9 @@ body.pdf .ph18 .shot{display:block}
     </div>
   </div>
   <div class="rules">
-    <div class="blk metal"><h4 class="h4">Cardápio e app</h4><p class="small">Logo das marcas parceiras no cardápio e no app, nas três cotas.</p></div>
-    <div class="blk metal"><h4 class="h4">Ordem</h4><p class="small">Headliner primeiro, depois Co-Headliner e Support.</p></div>
-    <div class="blk metal"><h4 class="h4">Redes e convites</h4><p class="small">Marca nas redes, nos convites e nos ingressos do CLUBE, nas três cotas.</p></div>
+    <div class="blk metal"><h4 class="h4">Cardápio e app</h4><p class="small">Nas três cotas.</p></div>
+    <div class="blk metal"><h4 class="h4">Ordem</h4><p class="small">Headliner, Co-Headliner e Support.</p></div>
+    <div class="blk metal"><h4 class="h4">Redes e convites</h4><p class="small">E ingressos, nas três cotas.</p></div>
   </div>
 </section>
 
@@ -1137,7 +1175,7 @@ body.pdf .ph18 .shot{display:block}
     </table>
     <p class="small muted" style="margin-top:1.4em">A lista não acumula: se a marca não indicar nomes, a vaga da noite não é usada.</p>
   </div>
-  <div class="blk img side"><img src="assets/real-acesso.webp" alt="Entrada do CLUBE, com portas de vidro e plantas na calçada" loading="lazy" decoding="async"></div>
+  <div class="blk img side"><img src="assets/real-acesso.webp" alt="Entrada do CLUBE à noite, com o painel de LED do logo e personagem na parede" loading="lazy" decoding="async" style="object-position:0% 50%"></div>
 </section>
 
 <!-- 10 COMPARATIVO -->
@@ -1314,7 +1352,7 @@ body.pdf .ph18 .shot{display:block}
   });
 
   // menu
-  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'Um céu dentro da pista','galeria-digital':'A galeria digital',hotel:'O hotel',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app e a Rádio CLUBE',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
+  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'A pista: LED P1.9 e som de alta fidelidade','galeria-digital':'A galeria digital',mobiliario:'Mobiliário',hotel:'O hotel',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app e a Rádio CLUBE',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
   slides.forEach(function(sl){
     var li=document.createElement('li'), a=document.createElement('a');
     a.href='#'+sl.id; a.textContent=titles[sl.id]||sl.id;
