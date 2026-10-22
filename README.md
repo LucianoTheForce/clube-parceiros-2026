@@ -8,7 +8,7 @@ Publicada em: https://clube-parceiros-2026.vercel.app
 
 | Caminho | O que é |
 |---|---|
-| `clube-apresentacao/index.html` | O deck de parceiros 2027: intro curta do espaço (24h, sala imersiva, LED da pista, galeria digital, hotel), clube de membros, app e Rádio CLUBE, Instagram e PR, e as cotas de patrocínio (Headliner, Co-Headliner, Support). Um arquivo, HTML/CSS/JS puros, sem framework. 22 páginas com scroll-snap. O slide da rádio embute o app ao vivo (`clube-blond.vercel.app/clube`) num iPhone. Só as cotas: tag `v2-cotas-fotos-tratadas`. |
+| `clube-apresentacao/index.html` | O deck de parceiros 2027: intro curta do espaço (24h, sala imersiva, LED da pista, galeria digital, hotel), clube de membros, app e Rádio CLUBE, Instagram e PR, e as cotas de patrocínio (Headliner, Co-Headliner, Support). Um arquivo, HTML/CSS/JS puros, sem framework. 22 páginas com scroll-snap. O app aparece num slideshow de mockups com as telas reais (`clube-blond.vercel.app/clube`). Só as cotas: tag `v2-cotas-fotos-tratadas`. |
 | `clube-apresentacao/assets/` | Imagens (WebP), vídeos (MP4), fontes (Archivo em WOFF2) e texturas do cartão. |
 | `clube-apresentacao/vercel.json` | Cabeçalhos de publicação (`noindex`, cache dos assets). |
 | `build-assets/` | Versões leves dos vídeos, usadas apenas na exportação de arquivo único. |

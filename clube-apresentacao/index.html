@@ -744,30 +744,6 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   body:not(.pdf) .tab .v{font-size:32px}
 }
 
-/* rádio: o app de verdade dentro de um iPhone, com um segundo aparelho atrás */
-.s-radio{grid-template-columns:5fr 7fr}
-.s-radio .stage{position:relative;display:block;padding:0;overflow:hidden}
-.ph18{position:absolute;top:50%;height:min(86%,640px);aspect-ratio:9/19.5;border-radius:15%/7%;background:#1c1c1e;padding:9px;
-  box-shadow:0 0 0 1.5px #4a4a4e,0 0 0 4px #121214,0 40px 80px rgba(0,0,0,.75)}
-.ph18 .scr{position:absolute;inset:9px;border-radius:12.5%/5.8%;overflow:hidden;background:#000}
-.ph18 .scr img{width:100%;height:100%;object-fit:cover;object-position:top}
-.ph18 .isl{position:absolute;left:50%;top:3.2%;width:30%;aspect-ratio:88/26;border-radius:99px;background:#000;transform:translateX(-50%);z-index:3}
-.ph18 iframe{position:absolute;left:0;top:0;width:460px;border:0;transform-origin:0 0;background:#000}
-.ph18 .shot{display:none}
-.ph18.front{left:58%;transform:translate(-50%,-50%) rotate(-3deg);z-index:2;animation:phFloat 7s ease-in-out infinite}
-.ph18.back{left:30%;transform:translate(-50%,-46%) rotate(6deg) scale(.86);opacity:.75;animation:phFloat2 9s ease-in-out infinite}
-@keyframes phFloat{0%,100%{transform:translate(-50%,-50%) rotate(-3deg)}50%{transform:translate(-50%,-53%) rotate(-1.5deg)}}
-@keyframes phFloat2{0%,100%{transform:translate(-50%,-46%) rotate(6deg) scale(.86)}50%{transform:translate(-50%,-43%) rotate(7.5deg) scale(.86)}}
-@media (prefers-reduced-motion:reduce){.ph18{animation:none!important}}
-body.pdf .ph18{animation:none!important}
-body.pdf .ph18 iframe{display:none}
-body.pdf .ph18 .shot{display:block}
-@media (max-width:900px){
-  body:not(.pdf) .s-radio .stage{min-height:620px}
-  body:not(.pdf) .ph18.back{display:none}
-  body:not(.pdf) .ph18.front{left:50%}
-}
-
 /* instagram: dois feeds reais em grade 3x3, como no perfil */
 .s-social .igrid{padding:0;background:none;justify-content:flex-start}
 .s-social .igrid .eyebrow{margin:0 0 10px}
@@ -998,25 +974,53 @@ body.pdf .ph18 .shot{display:block}
   <div class="blk foot"><p class="small muted">Benefícios do cartão: entrada sem fila, prioridade nas reservas de mesa, rooftop e hotel, convites para noites fechadas e vantagens das marcas parceiras.</p></div>
 </section>
 
-<section class="slide s-radio" id="radio">
-  <div class="blk ink between txt">
-    <div><p class="eyebrow">O app · Rádio CLUBE</p><h2 class="h2">A casa no bolso</h2></div>
-    <div>
-      <p class="body">A Rádio CLUBE toca no app com a curadoria musical da casa. O app mostra o que está aberto agora, a programação de cada turno e as reservas.</p>
-      <p class="small muted" style="margin-top:1em">O iPhone ao lado roda o app de verdade: dá para navegar, dar play na rádio e ver a programação.</p>
-      <p class="small muted" style="margin-top:.6em"><a href="https://clube-blond.vercel.app/clube" target="_blank" rel="noopener">clube-blond.vercel.app/clube</a></p>
-    </div>
+<section class="slide s-full" id="radio">
+  <div class="gal">
+    <figure class="fr on">
+      <img src="assets/app-mock-agora.webp" alt="App do CLUBE na mão, no bar: a casa agora, turno a turno" loading="lazy" decoding="async">
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O app · Agora</p>
+        <h3 class="h3">A casa no bolso</h3>
+        <p class="small">O que está aberto agora, turno a turno, com a Rádio CLUBE tocando no topo.</p>
+        <p class="small"><a href="https://clube-blond.vercel.app/clube" target="_blank" rel="noopener">Abrir o app ↗</a></p>
+      </figcaption>
+    </figure>
+    <figure class="fr">
+      <img src="assets/app-mock-programacao.webp" alt="App sobre o balcão do bar com vista, com a programação da semana" loading="lazy" decoding="async">
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O app · Programação</p>
+        <h3 class="h3">A semana inteira</h3>
+        <p class="small">DJ sets, aperitivo e late dinner, com reserva direto no app.</p>
+      </figcaption>
+    </figure>
+    <figure class="fr">
+      <img src="assets/app-mock-menu.webp" alt="App ao lado de um drink no balcão vermelho, com o cardápio" loading="lazy" decoding="async">
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O app · Menu</p>
+        <h3 class="h3">A carta na mão</h3>
+        <p class="small">Comida e drinks do café à madrugada, com fotos de cada prato.</p>
+      </figcaption>
+    </figure>
+    <figure class="fr">
+      <img src="assets/app-mock-estadia.webp" alt="App no rooftop ao anoitecer, com os quartos do hotel" loading="lazy" decoding="async">
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O app · Estadia</p>
+        <h3 class="h3">Uma noite que tem quarto</h3>
+        <p class="small">Os quartos do hotel, reservados no mesmo lugar.</p>
+      </figcaption>
+    </figure>
+    <figure class="fr">
+      <img src="assets/app-mock-carteira.webp" alt="App na entrada do CLUBE, com o cartão de membro" loading="lazy" decoding="async">
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O app · Carteira</p>
+        <h3 class="h3">O cartão é a chave</h3>
+        <p class="small">O cartão de membro prata mora no app e abre a porta.</p>
+      </figcaption>
+    </figure>
   </div>
-  <div class="blk black stage">
-    <div class="ph18 back" aria-hidden="true"><div class="scr"><img src="assets/app-radio-2.webp" alt=""></div><i class="isl"></i></div>
-    <div class="ph18 front">
-      <div class="scr">
-        <iframe data-src="https://clube-blond.vercel.app/clube" title="App do CLUBE com a Rádio CLUBE" loading="lazy" allow="autoplay"></iframe>
-        <img class="shot" src="assets/app-radio-1.webp" alt="App do CLUBE com a Rádio CLUBE tocando e a casa aberta agora">
-      </div>
-      <i class="isl"></i>
-    </div>
-  </div>
+    <button type="button" class="arw prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
+    <button type="button" class="arw next" aria-label="Próxima foto"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
+    <div class="count"><span class="n"><b>01</b> / 05</span><span class="ticks"><i class="on" data-go="0"></i><i data-go="1"></i><i data-go="2"></i><i data-go="3"></i><i data-go="4"></i></span></div>
 </section>
 
 <!-- INSTAGRAM E PR -->
@@ -1352,7 +1356,7 @@ body.pdf .ph18 .shot{display:block}
   });
 
   // menu
-  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'A pista: LED P1.9 e som de alta fidelidade','galeria-digital':'A galeria digital',mobiliario:'Mobiliário',hotel:'Um clube para se sentir em casa',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app e a Rádio CLUBE',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
+  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'A pista: LED P1.9 e som de alta fidelidade','galeria-digital':'A galeria digital',mobiliario:'Mobiliário',hotel:'Um clube para se sentir em casa',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
   slides.forEach(function(sl){
     var li=document.createElement('li'), a=document.createElement('a');
     a.href='#'+sl.id; a.textContent=titles[sl.id]||sl.id;
@@ -1798,19 +1802,6 @@ body.pdf .ph18 .shot{display:block}
   }
   var tb=null; window.addEventListener('resize',function(){ clearTimeout(tb); tb=setTimeout(tryBuild,200); });
   tryBuild();
-})();
-</script>
-<script>
-/* app ao vivo no iPhone: o iframe carrega quando o slide chega e é escalado para a tela do aparelho */
-(function(){
-  var W=460, ifr=document.querySelector('.ph18.front iframe'); if(!ifr||document.body.classList.contains('pdf')) return;
-  var scr=ifr.parentNode;
-  function fit(){ var k=scr.clientWidth/W; ifr.style.transform='scale('+k+')'; ifr.style.height=(scr.clientHeight/k)+'px'; }
-  function load(){ if(!ifr.src){ ifr.src=ifr.getAttribute('data-src'); } fit(); }
-  window.addEventListener('resize',fit);
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) load(); }); },{rootMargin:'100% 0px'}).observe(document.getElementById('radio'));
-  } else load();
 })();
 </script>
 </body>
