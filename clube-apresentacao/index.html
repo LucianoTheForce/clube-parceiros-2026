@@ -2034,14 +2034,16 @@ if(cv&&!document.body.classList.contains('pdf')){
     new RGBELoader().load('assets/studio_small_03_1k.hdr',function(hdr){ scene.environment=pmrem.fromEquirectangular(hdr).texture; hdr.dispose(); slide.classList.add('gl3d'); });
 
     const rot={x:0,y:0,z:0}, vel={x:.002,y:.003,z:.001}, orbit={x:.003,y:.004,z:.002};
-    let drag=false, last={x:0,y:0}, lastT=0, mouse={x:0,y:0}, tilt={x:0,y:0}, on=false, raf=0;
+    let drag=false, last={x:0,y:0}, lastT=0, on=false, raf=0;
     const ease=x=>1-Math.pow(1-x,3), easeIO=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
     function breath(t){ const n=(t%4)/4; return n<.33 ? ease(n/.33)*.3+.9 : (1-easeIO((n-.33)/.67))*.3+.9; }
     cv.addEventListener('pointerdown',e=>{ drag=true; last={x:e.clientX,y:e.clientY}; lastT=performance.now()/1000; cv.setPointerCapture(e.pointerId); });
     cv.addEventListener('pointermove',e=>{ if(!drag) return; const dx=e.clientX-last.x, dy=e.clientY-last.y;
       vel.y=dx*.001*32; vel.x=-dy*.001*32; vel.z=(Math.abs(dx)+Math.abs(dy))*.0005*8; last={x:e.clientX,y:e.clientY}; lastT=performance.now()/1000; });
     cv.addEventListener('pointerup',()=>{ drag=false; lastT=performance.now()/1000; vel.x*=.7; vel.y*=.7; vel.z*=.7; });
-    window.addEventListener('pointermove',e=>{ mouse.x=e.clientX/innerWidth*2-1; mouse.y=e.clientY/innerHeight*2-1; });
+    /* o mouse não move a mônada: o deslocamento dele vira impulso de giro, com a mesma inércia do arraste */
+    let pm=null; window.addEventListener('pointermove',e=>{ if(!on||drag){ pm=null; return; } if(pm){ const dx=e.clientX-pm.x, dy=e.clientY-pm.y;
+      vel.y+=dx*.00035; vel.x-=dy*.00035; vel.z+=(Math.abs(dx)+Math.abs(dy))*.00012; lastT=performance.now()/1000; } pm={x:e.clientX,y:e.clientY}; });
     function size(){ const w=cv.clientWidth, h=cv.clientHeight; if(!w||!h) return; r.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix(); }
     const clock=new THREE.Clock();
     function frame(){
@@ -2049,13 +2051,11 @@ if(cv&&!document.body.classList.contains('pdf')){
       const dt=Math.min(clock.getDelta(),.05), t=clock.elapsedTime, idle=performance.now()/1000-lastT;
       if(!drag){ ['x','y','z'].forEach(k=>{ vel[k]*=.95; if(idle>.5) vel[k]+=(orbit[k]-vel[k])*.2; if(Math.abs(vel[k])<Math.abs(orbit[k])) vel[k]=orbit[k]; }); }
       rot.x+=vel.x*dt*60; rot.y+=vel.y*dt*60; rot.z+=vel.z*dt*60;
-      tilt.x+=(mouse.y*.5-tilt.x)*.06; tilt.y+=(mouse.x*.7-tilt.y)*.06;          // acompanha o mouse
-      g.rotation.x+=(rot.x+Math.PI/2+tilt.x-g.rotation.x)*.1;
-      g.rotation.y+=(rot.y+tilt.y-g.rotation.y)*.1;
+      g.rotation.x+=(rot.x+Math.PI/2-g.rotation.x)*.1;
+      g.rotation.y+=(rot.y-g.rotation.y)*.1;
       g.rotation.z+=(rot.z-g.rotation.z)*.1;
       const k=(breath(t)+(drag?.2:0))*.62*Math.min(cv.clientWidth/cv.clientHeight*1.15,1);   // cabe com folga no bloco, também em telas estreitas
       g.scale.setScalar(g.scale.x+(k-g.scale.x)*.1);
-      g.position.x+=(mouse.x*.15-g.position.x)*.05; g.position.y+=(-mouse.y*.1-g.position.y)*.05;
       r.render(scene,cam); raf=requestAnimationFrame(frame);
     }
     new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting&&!on){ on=true; clock.getDelta(); frame(); } else if(!e.isIntersecting&&on){ on=false; cancelAnimationFrame(raf); } }),{threshold:.1}).observe(slide);
