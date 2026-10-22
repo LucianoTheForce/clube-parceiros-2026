@@ -809,10 +809,11 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 .s-museu .obra img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .s-museu .etiqueta{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(18px,3vh,32px);min-height:0}
 .s-museu .etiqueta .h2{font-size:clamp(28px,3.2vw,52px)}
-.s-museu .detalhe{margin:0;width:62%}
+.s-museu .detalhes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.2vw,18px)}
+.s-museu .detalhe{margin:0;width:100%}
 .s-museu .detalhe img{width:100%;aspect-ratio:1;object-fit:cover}
 .s-museu .detalhe figcaption{margin-top:.8em;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.55}
-@media (max-width:900px){body:not(.pdf) .s-museu .obra{aspect-ratio:4/5}}
+@media (max-width:900px){body:not(.pdf) .s-museu .obra{aspect-ratio:4/5;min-height:auto!important;width:100%}body:not(.pdf) .s-museu .detalhes{gap:8px}}
 /* casa da marca: a fachada ganha peso de imagem, não de faixa */
 .s-casa{grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:clamp(24px,3vw,56px)}
 
@@ -828,8 +829,6 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 .radio .rb-txt{overflow:hidden;text-overflow:ellipsis}
 .radio .rb-txt b{font-weight:500}
 .radio .rb-now{opacity:.7}
-.radio.on .rb-play::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--heat);margin-right:7px;vertical-align:1px;animation:rbPulse 1.6s ease-in-out infinite}
-@keyframes rbPulse{50%{opacity:.25}}
 body.pdf .radio{display:none}
 @media (max-width:900px){body:not(.pdf) .bar .r{display:flex!important}body:not(.pdf) .radio .rb-now{display:none}}
 /* ---------- app ao vivo: iPhone limpo em estúdio claro ---------- */
@@ -864,7 +863,10 @@ body.pdf .s-applive .shot{display:block}
 .radio .rb-next{background:none;color:inherit;width:20px}
 .radio svg{width:10px;height:10px}
 .radio .rb-next svg{width:12px;height:12px}
-.radio .rb-play .i-play{margin-left:2px}
+.radio .rb-play .i-play{margin-left:1px}
+.radio button svg{display:block}
+.radio .rb-play{width:28px;height:28px}
+.radio.on .rb-play{background:var(--heat);color:#fff}
 .radio .rb-txt{position:relative;overflow:hidden;width:min(300px,26vw);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .radio .rb-track{display:inline-flex;white-space:nowrap;animation:rbMarq 26s linear infinite}
 .radio .rb-track span{padding-right:2.5em}
@@ -931,7 +933,20 @@ body.pdf .s-force .monada{display:none}
   body:not(.pdf) .s-force .mark{min-height:62svh}
   /* museu: obra em pé, etiqueta embaixo */
   body:not(.pdf) .s-museu{grid-template-columns:1fr;gap:24px}
-  body:not(.pdf) .s-museu .detalhe{width:56%}
+}
+
+/* feed no mobile: cada post 4:5, sem altura máxima que sobreponha as grades */
+@media (max-width:900px){
+  body:not(.pdf) .s-social .ig{max-height:none;aspect-ratio:auto}
+  body:not(.pdf) .s-social .ig img{height:auto;aspect-ratio:4/5}
+  body:not(.pdf) .s-social .igrid{margin-top:12px}
+}
+/* app no mobile: tamanho real, largura da tela, sem escala (iframe escalado não recebe toque direito no iPhone) */
+@media (max-width:900px){
+  body:not(.pdf) .s-applive .iph{width:100%;height:78svh;aspect-ratio:auto;padding:0;border-radius:22px;box-shadow:0 0 0 1px #3a3a3c}
+  body:not(.pdf) .s-applive .scr{inset:0;border-radius:22px}
+  body:not(.pdf) .s-applive iframe{width:100%!important;height:100%!important;transform:none!important}
+  body:not(.pdf) .s-applive .isl{display:none}
 }
 </style>
 </head>
@@ -1102,7 +1117,10 @@ body.pdf .s-force .monada{display:none}
   <div class="etiqueta">
     <div><p class="eyebrow">Mobiliário</p><h2 class="h2">Peças desenhadas para esta casa</h2></div>
     <div><p class="body" data-copy="mob-texto">O mobiliário foi projetado com o designer Antonio Azzolino especialmente para o espaço. Nenhuma peça veio de catálogo: cada uma responde a um lugar da casa.</p><p class="body">A cadeira Augusta, em alumínio fundido, carrega o mapa de São Paulo vazado no assento, com o CLUBE no centro e os Jardins logo acima.</p><p class="small muted" style="margin-top:1em" data-copy="mob-legenda">Alumínio fundido, couro e concreto, no vocabulário de metal e concreto da identidade.</p></div>
-    <figure class="detalhe"><img src="assets/mob-detalhe.webp" alt="Detalhe do assento da cadeira Augusta, com o mapa de São Paulo vazado no alumínio" loading="lazy" decoding="async"><figcaption>Cadeira Augusta · detalhe do assento</figcaption></figure>
+    <div class="detalhes">
+      <figure class="detalhe"><img src="assets/mob-detalhe.webp" alt="Detalhe do assento da cadeira Augusta, com o mapa de São Paulo vazado no alumínio" loading="lazy" decoding="async"><figcaption>Cadeira Augusta · assento</figcaption></figure>
+      <figure class="detalhe"><img src="assets/mob-banco.webp" alt="Banco corrido de couro sobre base de concreto, ao longo da parede" loading="lazy" decoding="async"><figcaption>Banco de couro e concreto</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -1180,8 +1198,8 @@ body.pdf .s-force .monada{display:none}
     <div><p class="eyebrow">Instagram &amp; PR</p><h2 class="h2">A noite continua no feed</h2></div>
     <p class="small muted">@clubesp</p>
   </div>
-  <div class="blk igrid"><p class="eyebrow">Feed sóbrio</p><div class="ig"><img src="assets/feed-s-01.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-02.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-03.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-04.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-05.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-06.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-07.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-08.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-s-09.webp" alt="" loading="lazy" decoding="async"></div></div>
-  <div class="blk igrid"><p class="eyebrow">Feed dinâmico</p><div class="ig"><img src="assets/feed-d-01.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-02.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-03.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-04.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-05.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-06.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-07.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-08.webp" alt="" loading="lazy" decoding="async"><img src="assets/feed-d-09.webp" alt="" loading="lazy" decoding="async"></div></div>
+  <div class="blk igrid"><p class="eyebrow">Feed sóbrio</p><div class="ig"><img src="assets/feed-s-01.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-s-02.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-s-03.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-s-04.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-s-05.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-s-06.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-s-07.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-s-08.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-s-09.webp" alt="" loading="eager" decoding="async"></div></div>
+  <div class="blk igrid"><p class="eyebrow">Feed dinâmico</p><div class="ig"><img src="assets/feed-d-01.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-d-02.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-d-03.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-d-04.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-d-05.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-d-06.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-d-07.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-d-08.webp" alt="" loading="eager" decoding="async"><img src="assets/feed-d-09.webp" alt="" loading="eager" decoding="async"></div></div>
 </section>
 
 <!-- STATEMENT -->
@@ -1982,7 +2000,7 @@ body.pdf .s-force .monada{display:none}
 (function(){
   var ifr=document.querySelector('.s-applive iframe'); if(!ifr||document.body.classList.contains('pdf')) return;
   var scr=ifr.parentNode, W=390;
-  function fit(){ var k=scr.clientWidth/W; ifr.style.transform='scale('+k+')'; ifr.style.height=(scr.clientHeight/k)+'px'; }
+  function fit(){ if(innerWidth<=900){ ifr.style.transform=''; ifr.style.height=''; return; } var k=scr.clientWidth/W; ifr.style.transform='scale('+k+')'; ifr.style.height=(scr.clientHeight/k)+'px'; }
   function load(){ if(!ifr.src) ifr.src=ifr.getAttribute('data-src'); fit(); }
   window.addEventListener('resize',fit);
   if('IntersectionObserver' in window) new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting) load();});},{rootMargin:'100% 0px'}).observe(document.getElementById('app-live'));
