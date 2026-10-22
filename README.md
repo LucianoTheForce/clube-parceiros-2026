@@ -8,7 +8,7 @@ Publicada em: https://clube-parceiros-2026.vercel.app
 
 | Caminho | O que é |
 |---|---|
-| `clube-apresentacao/index.html` | O deck: cotas de patrocínio 2027 (Headliner, Co-Headliner, Support), com uma introdução curta ao CLUBE. Um arquivo, HTML/CSS/JS puros, sem framework. 12 páginas com scroll-snap. O deck de parceiros de 28 páginas está no commit `a1600cf`. |
+| `clube-apresentacao/index.html` | O deck master de parceiros 2027: conceito, espaço (24h, sala imersiva, LED da pista, galeria digital), artistas, clube de membros, app e Rádio CLUBE, e as cotas de patrocínio (Headliner, Co-Headliner, Support). Um arquivo, HTML/CSS/JS puros, sem framework. 36 páginas com scroll-snap. O slide da rádio embute o app ao vivo (`clube-blond.vercel.app/clube`) num iPhone. Só as cotas: tag `v2-cotas-fotos-tratadas`. |
 | `clube-apresentacao/assets/` | Imagens (WebP), vídeos (MP4), fontes (Archivo em WOFF2) e texturas do cartão. |
 | `clube-apresentacao/vercel.json` | Cabeçalhos de publicação (`noindex`, cache dos assets). |
 | `build-assets/` | Versões leves dos vídeos, usadas apenas na exportação de arquivo único. |
@@ -53,7 +53,8 @@ O arquivo `.env.local` (token da Vercel) fica fora do repositório e fora do dep
 
 ## Regras de conteúdo
 
-- A casa tem **dois andares e um rooftop**: bar principal (1º), pista (2º) e rooftop.
+- A casa: bar (1º andar), pista (2º), bar com vista (5º), rooftop, sala imersiva e hotel. Aberta 24 horas (café, mesa, aperitivo, noite).
+- Fotos só das originais do espaço (sem IA), tratadas sem mudar arquitetura, piso nem móveis; ver `fotos-tratadas/` fora do repo.
 - Tipografia apenas em Archivo; logos em branco sólido.
 - Ordem do espaço sempre subindo: bar → pista → escada → rooftop.
 - Inserções de marca sempre discretas; no "momento da marca", o espaço inteiro assume a cor.
