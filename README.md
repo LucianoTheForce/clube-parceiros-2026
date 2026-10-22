@@ -53,7 +53,7 @@ O arquivo `.env.local` (token da Vercel) fica fora do repositório e fora do dep
 
 ## Regras de conteúdo
 
-- A casa: bar (1º andar), pista (2º), bar com vista (5º), rooftop, sala imersiva e hotel. Aberta 24 horas (café, mesa, aperitivo, noite).
+- A casa tem 8 andares (térreo = 1º): bar e restaurante (1º), hotel (2º ao 6º), pista e bar com vista (7º), rooftop (8º), mais a sala imersiva. Aberta 24 horas (café, mesa, aperitivo, noite).
 - Fotos só das originais do espaço (sem IA), tratadas sem mudar arquitetura, piso nem móveis; ver `fotos-tratadas/` fora do repo.
 - Tipografia apenas em Archivo; logos em branco sólido.
 - Ordem do espaço sempre subindo: bar → pista → escada → rooftop.
