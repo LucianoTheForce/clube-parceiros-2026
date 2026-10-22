@@ -882,6 +882,57 @@ body.pdf .s-applive .shot{display:block}
 .s-force .tf-links a{text-decoration:none;border-bottom:1px solid rgba(227,228,229,.35);padding-bottom:2px}
 .s-force .tf-links a:hover{border-color:currentColor}
 body.pdf .s-force .monada{display:none}
+
+/* ---------- versão mobile ---------- */
+@media (max-width:900px){
+  /* barra: marca à esquerda, rádio à direita com o letreiro; o contador sai */
+  body:not(.pdf) .bar{grid-template-columns:auto 1fr;gap:12px;padding:0 16px;height:48px}
+  body:not(.pdf) .bar .l span:nth-child(n+2){display:none}
+  body:not(.pdf) .bar .c{display:none}
+  body:not(.pdf) .bar .r{display:flex!important;justify-content:flex-end;min-width:0}
+  body:not(.pdf) .radio{max-width:100%;min-width:0;gap:8px}
+  body:not(.pdf) .radio .rb-txt{width:auto;flex:1;min-width:0;max-width:52vw}
+  body:not(.pdf) .radio .rb-now{display:inline!important}
+  body:not(.pdf) .slide{padding:calc(48px + 20px) 16px 28px}
+  body:not(.pdf) .h2{font-size:clamp(30px,8.6vw,40px)}
+  body:not(.pdf) .eyebrow{margin-bottom:1em}
+  body:not(.pdf) .hint{bottom:12px;right:12px}
+  /* fotos em tela cheia: a foto ocupa a tela, a legenda vai para a base, larga e enxuta */
+  body:not(.pdf) .slide.s-full{min-height:100svh;padding:0}
+  body:not(.pdf) .s-full .blk.cap{left:12px;right:12px;bottom:68px;max-width:none;padding:18px 18px 16px}
+  body:not(.pdf) .s-full .blk.cap .h3{font-size:24px}
+  body:not(.pdf) .s-full .blk.cap .small{font-size:13px;max-width:none}
+  body:not(.pdf) .s-full .count{top:calc(48px + 10px);left:12px;right:12px}
+  body:not(.pdf) .s-full .arw{display:none}
+  /* tabelas: cabem na largura, sem cortar a última coluna */
+  body:not(.pdf) .tabwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  body:not(.pdf) .tab th{font-size:9px;letter-spacing:.1em;padding:10px 4px}
+  body:not(.pdf) .tab th i{margin-top:.6em}
+  body:not(.pdf) .tab td{padding:14px 4px 14px 0}
+  body:not(.pdf) .tab td:first-child{width:42%}
+  body:not(.pdf) .tab .c{width:auto;padding-left:4px;padding-right:4px}
+  body:not(.pdf) .tab .v{font-size:30px}
+  body:not(.pdf) .tab td .h4{font-size:15px}
+  body:not(.pdf) .tab td .small{font-size:11px}
+  body:not(.pdf) .tab.tight td,body:not(.pdf) .tab.tight th{font-size:11px;padding:7px 3px}
+  body:not(.pdf) .tab.tight th{font-size:8.5px;letter-spacing:.06em}
+  body:not(.pdf) .tab.tight td:first-child{width:46%}
+  body:not(.pdf) .tab .dot{width:7px;height:7px}
+  body:not(.pdf) .s-casa{grid-template-columns:1fr}
+  /* cotas: cada cota respira, preço em destaque */
+  body:not(.pdf) .s-cotas .cota{padding-top:28px}
+  body:not(.pdf) .s-cotas .name{font-size:40px}
+  body:not(.pdf) .s-cotas .items li{font-size:13px}
+  /* app ao vivo: o iPhone ocupa a largura útil */
+  body:not(.pdf) .s-applive{grid-template-columns:1fr;gap:24px}
+  body:not(.pdf) .s-applive .palco{min-height:0;padding:28px 0;background:none}
+  body:not(.pdf) .s-applive .iph{height:auto;width:min(84vw,360px)}
+  /* the force: mônada maior no topo */
+  body:not(.pdf) .s-force .mark{min-height:46svh}
+  /* museu: obra em pé, etiqueta embaixo */
+  body:not(.pdf) .s-museu{grid-template-columns:1fr;gap:24px}
+  body:not(.pdf) .s-museu .detalhe{width:56%}
+}
 </style>
 </head>
 <body>
