@@ -786,6 +786,66 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 .s-casa-hotel .stmt{text-align:center;max-width:min(1100px,90%);display:grid;justify-items:center}
 .s-casa-hotel .h1{max-width:13ch}
 .s-casa-hotel .body{margin-top:1.6em;max-width:54ch;font-size:clamp(16px,1.4vw,21px);opacity:.85}
+
+/* ---------- editorial: tela cheia, museu e tipografia ---------- */
+:root{--pad:clamp(22px,3.6vw,60px)}
+.eyebrow{font-size:11px;letter-spacing:.22em;opacity:.6;margin:0 0 1.4em}
+.h2{font-weight:300;letter-spacing:-.022em;line-height:1.02}
+.h3{font-weight:300;letter-spacing:-.015em}
+.body{font-size:clamp(15px,1.12vw,18px);line-height:1.62;max-width:46ch}
+.small{line-height:1.6}
+.txt .body+.body{margin-top:1em}
+/* legenda das fotos em tela cheia: etiqueta de museu, sem caixa pesada */
+.s-full .blk.cap{background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  padding:clamp(20px,2vw,30px) clamp(22px,2.2vw,34px);max-width:min(400px,calc(100% - 2*var(--pad)))}
+.s-full .blk.cap .eyebrow{margin-bottom:1em}
+.s-full .blk.cap .h3{font-size:clamp(24px,2.3vw,36px);margin-bottom:.5em}
+.s-full .blk.cap .small{font-size:clamp(13px,.98vw,15px);opacity:.85;max-width:38ch}
+.s-full .blk.cap .small+.small{margin-top:.7em}
+/* museu: a obra com respiro na parede, a etiqueta ao lado */
+.s-museu{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(32px,5vw,96px);align-items:stretch;
+  padding-top:calc(var(--bar) + clamp(24px,4vh,56px));padding-bottom:clamp(32px,6vh,72px)}
+.s-museu .obra{margin:0;position:relative;min-height:0}
+.s-museu .obra img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.s-museu .etiqueta{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(18px,3vh,32px);min-height:0}
+.s-museu .etiqueta .h2{font-size:clamp(28px,3.2vw,52px)}
+.s-museu .detalhe{margin:0;width:62%}
+.s-museu .detalhe img{width:100%;aspect-ratio:1;object-fit:cover}
+.s-museu .detalhe figcaption{margin-top:.8em;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.55}
+@media (max-width:900px){body:not(.pdf) .s-museu .obra{aspect-ratio:4/5}}
+/* casa da marca: a fachada ganha peso de imagem, não de faixa */
+.s-casa{grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:clamp(24px,3vw,56px)}
+
+/* ---------- Rádio CLUBE na barra do topo ---------- */
+.bar .r{display:flex;justify-content:flex-end}
+.radio{pointer-events:auto;display:inline-flex;align-items:center;gap:10px;max-width:min(420px,40vw);white-space:nowrap}
+.radio button{all:unset;cursor:pointer;width:22px;height:22px;display:grid;place-items:center;border:1px solid currentColor;border-radius:50%}
+.radio button:focus-visible{outline:2px solid var(--freq);outline-offset:2px}
+.radio svg{width:9px;height:9px;fill:currentColor}
+.radio .i-pause{display:none}
+.radio.on .i-play{display:none}
+.radio.on .i-pause{display:block}
+.radio .rb-txt{overflow:hidden;text-overflow:ellipsis}
+.radio .rb-txt b{font-weight:500}
+.radio .rb-now{opacity:.7}
+.radio.on .rb-txt b::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--heat);margin-right:7px;vertical-align:1px;animation:rbPulse 1.6s ease-in-out infinite}
+@keyframes rbPulse{50%{opacity:.25}}
+body.pdf .radio{display:none}
+@media (max-width:900px){body:not(.pdf) .bar .r{display:flex!important}body:not(.pdf) .radio .rb-now{display:none}}
+/* ---------- app ao vivo: iPhone limpo em estúdio claro ---------- */
+.s-applive{grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:clamp(24px,4vw,80px);background:var(--soft);color:var(--black)}
+.s-applive .etq{display:flex;flex-direction:column;justify-content:space-between;padding:clamp(8px,1vw,16px) 0}
+.s-applive .palco{position:relative;display:grid;place-items:center;min-height:0;
+  background:radial-gradient(60% 70% at 50% 45%,#f4f4f5 0%,var(--soft) 55%,#cfd0d2 100%)}
+.s-applive .iph{position:relative;height:min(92%,700px);aspect-ratio:9/19.5;border-radius:15%/7%;background:#1d1d1f;padding:10px;
+  box-shadow:0 0 0 1.5px #5a5a5e,0 0 0 4px #2a2a2c,0 60px 90px -30px rgba(0,0,0,.45),0 18px 30px -12px rgba(0,0,0,.35)}
+.s-applive .scr{position:absolute;inset:10px;border-radius:12.5%/5.8%;overflow:hidden;background:#000}
+.s-applive iframe{position:absolute;left:0;top:0;width:390px;border:0;transform-origin:0 0;background:#000}
+.s-applive .shot{display:none;width:100%;height:100%;object-fit:cover}
+.s-applive .isl{position:absolute;left:50%;top:2.6%;width:29%;aspect-ratio:88/26;border-radius:99px;background:#000;transform:translateX(-50%);z-index:3;pointer-events:none}
+body.pdf .s-applive iframe{display:none}
+body.pdf .s-applive .shot{display:block}
+@media (max-width:900px){body:not(.pdf) .s-applive .palco{min-height:640px}}
 </style>
 </head>
 <body>
@@ -800,7 +860,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 <header class="bar" aria-hidden="true">
   <div class="l"><span>the force</span><span>clube</span><span>.cc</span></div>
   <div class="c"><b id="cur">01</b> / <span id="tot">21</span></div>
-  <div class="r">Parceiros · 2027</div>
+  <div class="r"><div class="radio" id="radio-bar"><button type="button" class="rb-play" aria-label="Tocar a Rádio CLUBE"><svg viewBox="0 0 24 24" class="i-play"><path d="M7 4l13 8-13 8z"/></svg><svg viewBox="0 0 24 24" class="i-pause"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg></button><button type="button" class="rb-next" aria-label="Próxima faixa"><svg viewBox="0 0 24 24"><path d="M5 4l10 8-10 8zM17 4h2v16h-2z"/></svg></button><span class="rb-txt"><b>Rádio CLUBE</b> <span class="rb-now">ao vivo</span></span><audio preload="none"></audio></div></div>
 </header>
 
 <main class="deck" id="deck">
@@ -833,15 +893,44 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 </section>
 
 <!-- 03 O ESPAÇO -->
-<section class="slide s-tres" id="espaco" style="grid-template-columns:repeat(4,1fr)">
-  <div class="head">
-    <div><p class="eyebrow">O espaço</p><h2 class="h2">Do bar ao rooftop</h2></div>
-    <p class="body">A noite começa no bar e restaurante, sobe para a pista e o bar com vista no quinto andar e termina no rooftop.</p>
+<section class="slide s-full" id="espaco">
+  <div class="gal">
+    <figure class="fr on">
+      <img src="assets/real-bar.webp" alt="Salão do bar e restaurante do 1º andar à noite, com banco de couro e telas na parede" loading="lazy" decoding="async">
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O espaço · 01 / 04</p>
+        <h3 class="h3">Bar e restaurante</h3>
+        <p class="small">1º andar. Do café da manhã ao jantar, com a Next Digital Gallery nas telas da parede.</p>
+      </figcaption>
+    </figure>
+    <figure class="fr">
+      <img src="assets/real-pista.webp" alt="Pista à noite, com a identidade do CLUBE no painel de LED atrás da cabine e no teto" loading="lazy" decoding="async">
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O espaço · 02 / 04</p>
+        <h3 class="h3">Pista</h3>
+        <p class="small">5º andar. Som fechado e painel de LED da parede ao teto.</p>
+      </figcaption>
+    </figure>
+    <figure class="fr">
+      <img src="assets/real-bar-vista.webp" alt="Bar com vista à noite, com o balcão de luz azul e a cidade acesa" loading="lazy" decoding="async">
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O espaço · 03 / 04</p>
+        <h3 class="h3">Bar com vista</h3>
+        <p class="small">5º andar. Um balcão de luz e a cidade inteira pela janela.</p>
+      </figcaption>
+    </figure>
+    <figure class="fr">
+      <img src="assets/real-rooftop.webp" alt="Rooftop à noite, com balcão curvo, plantas iluminadas e a cidade acesa ao fundo" loading="lazy" decoding="async">
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O espaço · 04 / 04</p>
+        <h3 class="h3">Rooftop</h3>
+        <p class="small">Cobertura. Lounge e bar a céu aberto, da golden hour à madrugada.</p>
+      </figcaption>
+    </figure>
   </div>
-  <div class="blk img"><img src="assets/real-bar.webp" alt="Salão do bar e restaurante do 1º andar, com banco de couro e telas na parede" loading="lazy" decoding="async"><span class="lbl">01 · Bar e restaurante · 1º andar</span></div>
-  <div class="blk img"><img src="assets/real-pista.webp" alt="Pista à noite, com a identidade do CLUBE no painel de LED atrás da cabine e no teto" loading="lazy" decoding="async"><span class="lbl">02 · Pista · 5º andar</span></div>
-  <div class="blk img"><img src="assets/real-bar-vista.webp" alt="Bar com vista à noite, com o balcão monolito de luz azul, barras de LED brancas nas janelas e a cidade acesa" loading="lazy" decoding="async"><span class="lbl">03 · Bar com vista · 5º andar</span></div>
-  <div class="blk img"><img src="assets/real-rooftop.webp" alt="Rooftop à noite, com balcão curvo, plantas iluminadas e a cidade acesa ao fundo" loading="lazy" decoding="async"><span class="lbl">04 · Rooftop</span></div>
+    <button type="button" class="arw prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
+    <button type="button" class="arw next" aria-label="Próxima foto"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
+    <div class="count"><span class="n"><b>01</b> / 04</span><span class="ticks"><i class="on" data-go="0"></i><i data-go="1"></i><i data-go="2"></i><i data-go="3"></i></span></div>
 </section>
 
 <section class="slide s-pilares" id="dia">
@@ -894,7 +983,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 <section class="slide s-full" id="pista-led">
   <div class="gal">
     <figure class="fr on">
-      <img src="assets/real-pista-noite.webp" alt="Pista à noite, com o painel de LED do teto e da parede mostrando um céu noturno e um personagem do CLUBE em prata" loading="lazy" decoding="async" style="object-position:50% 8%">
+      <img src="assets/real-pista-noite.webp" alt="Pista à noite, com o teto de LED em degradê vermelho em perspectiva e a tela do fundo com o personagem e o logo do CLUBE" loading="lazy" decoding="async" style="object-position:50% 30%">
       <figcaption class="blk ink cap">
         <p class="eyebrow">O espaço · Pista</p>
         <h3 class="h3">Imagem e som de alta definição</h3>
@@ -905,27 +994,28 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   </div>
 </section>
 
-<section class="slide s-hotel" id="galeria-digital">
-  <div class="blk ink between txt">
-    <div><p class="eyebrow">O espaço · Galeria digital</p><h2 class="h2">Next Digital Gallery</h2></div>
-    <div>
-      <p class="body">As telas verticais do bar formam uma galeria digital. A cada temporada, um artista convidado ocupa as telas com obras pensadas para elas.</p>
-      <p class="small muted" style="margin-top:1em">A mesma curadoria segue para a sala imersiva e para o LED da pista.</p>
-    </div>
+<section class="slide s-full" id="galeria-digital">
+  <div class="gal">
+    <figure class="fr on">
+      <img src="assets/real-bar.webp" alt="Telas verticais da Next Digital Gallery na parede do bar, sobre o banco de couro" loading="lazy" decoding="async" style="object-position:60% 50%">
+      <figcaption class="blk ink cap">
+        <p class="eyebrow">O espaço · Galeria digital</p>
+        <h3 class="h3">Next Digital Gallery</h3>
+        <p class="small">As telas verticais do bar formam uma galeria digital. A cada temporada, um artista convidado ocupa as telas com obras pensadas para elas.</p>
+        <p class="small">A mesma curadoria segue para a sala imersiva e para o LED da pista.</p>
+      </figcaption>
+    </figure>
   </div>
-  <div class="blk img port"><img src="assets/real-bar.webp" alt="Telas verticais na parede do bar, sobre o banco de couro" loading="lazy" decoding="async" style="object-position:30% 50%"></div>
-  <div class="blk img land"><img src="assets/real-led-wave.webp" alt="Bar do 1º andar com as telas da Next Digital Gallery na parede e o balcão azul" loading="lazy" decoding="async"></div>
 </section>
 
 <!-- MOBILIÁRIO -->
-<section class="slide s-mob" id="mobiliario">
-  <div class="blk ink txt between">
-    <div><p class="eyebrow" data-copy="mob-eyebrow">Mobiliário</p><h2 class="h2" data-copy="mob-titulo">Peças desenhadas para esta casa</h2></div>
+<section class="slide s-museu" id="mobiliario">
+  <figure class="obra"><img src="assets/mob-cadeiras.webp" alt="Cadeiras Augusta, em alumínio fundido vazado, junto ao balcão do bar" loading="lazy" decoding="async"></figure>
+  <div class="etiqueta">
+    <div><p class="eyebrow">Mobiliário</p><h2 class="h2">Peças desenhadas para esta casa</h2></div>
     <div><p class="body" data-copy="mob-texto">O mobiliário foi projetado com o designer Antonio Azzolino especialmente para o espaço. Nenhuma peça veio de catálogo: cada uma responde a um lugar da casa.</p><p class="body">A cadeira Augusta, em alumínio fundido, carrega o mapa de São Paulo vazado no assento, com o CLUBE no centro e os Jardins logo acima.</p><p class="small muted" style="margin-top:1em" data-copy="mob-legenda">Alumínio fundido, couro e concreto, no vocabulário de metal e concreto da identidade.</p></div>
+    <figure class="detalhe"><img src="assets/mob-detalhe.webp" alt="Detalhe do assento da cadeira Augusta, com o mapa de São Paulo vazado no alumínio" loading="lazy" decoding="async"><figcaption>Cadeira Augusta · detalhe do assento</figcaption></figure>
   </div>
-  <div class="blk img tall"><img src="assets/mob-cadeiras.webp" alt="Cadeiras Augusta, em alumínio fundido vazado, junto ao balcão do bar" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/mob-banco.webp" alt="Banco corrido de couro sobre base de concreto, ao longo da parede" loading="lazy" decoding="async"></div>
-  <div class="blk img"><img src="assets/mob-detalhe.webp" alt="Detalhe do assento da cadeira Augusta, com o mapa de São Paulo vazado no alumínio" loading="lazy" decoding="async"></div>
 </section>
 
 <!-- 09e O HOTEL -->
@@ -956,11 +1046,10 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
 <!-- 14 MEMBERSHIP · O CARTÃO -->
 <section class="slide s-card" id="membership">
   <div class="blk ink between txt">
-    <div><p class="eyebrow">Membership</p><h2 class="h2">O cartão prata</h2></div>
+    <div><p class="eyebrow">Membership</p><h2 class="h2">A chave da casa</h2></div>
     <div>
-      <p class="body">O cartão de membro do CLUBE é digital. Não tem plástico, produção nem logística: é emitido em segundos, a custo zero por unidade, e vai morar ao lado dos cartões do banco.</p>
-      <p class="body">Nominal, numerado e gravado em prata escovada. A leitura é de metal usinado, do tipo que bancos privados cobram caro para produzir. Sem custo unitário, a escassez passa a ser decisão de curadoria.</p>
-      <p class="small muted" style="margin-top:1em">Cada número é único e intransferível. É o que transforma acesso em pertencimento, e pertencimento em receita recorrente.</p>
+      <p class="body">O cartão de membro do CLUBE é digital e mora no celular, ao lado dos cartões do banco.</p>
+      <p class="body">Nominal, numerado e intransferível: é ele que transforma acesso em pertencimento.</p>
     </div>
   </div>
   <div class="blk black stage"><div class="mcard tilt"></div></div>
@@ -974,14 +1063,14 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   <div class="blk pilar rule-row" style="--i:0"><p class="num">50</p><h3 class="h4">Fundadores</h3><p class="small">Convidados pela casa.</p></div>
   <div class="blk pilar rule-row" style="--i:1"><p class="num">+10</p><h3 class="h4">Indicações</h3><p class="small">Cada fundador indica dez pessoas.</p></div>
   <div class="blk pilar rule-row" style="--i:2"><p class="num">550</p><h3 class="h4">Membros</h3><p class="small">Na primeira formação do clube.</p></div>
-  <div class="blk pilar rule-row" style="--i:3"><p class="num">Prata</p><h3 class="h4">Cartão</h3><p class="small">Nominal e numerado, em prata escovada.</p></div>
+  <div class="blk pilar rule-row" style="--i:3"><p class="num">Prata</p><h3 class="h4">Cartão</h3><p class="small">Nominal, numerado e intransferível.</p></div>
   <div class="blk foot"><p class="small muted">Benefícios do cartão: entrada sem fila, prioridade nas reservas de mesa, rooftop e hotel, convites para noites fechadas e vantagens das marcas parceiras.</p></div>
 </section>
 
 <section class="slide s-full" id="radio">
   <div class="gal">
     <figure class="fr on">
-      <img src="assets/app-mock-agora.webp" alt="App do CLUBE na mão, no bar: a casa agora, turno a turno" loading="lazy" decoding="async">
+      <img src="assets/app-mock-agora.webp" alt="iPhone com o app do CLUBE na aba Agora, em estúdio" loading="lazy" decoding="async">
       <figcaption class="blk ink cap">
         <p class="eyebrow">O app · Agora</p>
         <h3 class="h3">A casa no bolso</h3>
@@ -990,7 +1079,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
       </figcaption>
     </figure>
     <figure class="fr">
-      <img src="assets/app-mock-programacao.webp" alt="App sobre o balcão do bar com vista, com a programação da semana" loading="lazy" decoding="async">
+      <img src="assets/app-mock-programacao.webp" alt="iPhone com a programação da semana, sobre um bloco de alumínio" loading="lazy" decoding="async">
       <figcaption class="blk ink cap">
         <p class="eyebrow">O app · Programação</p>
         <h3 class="h3">A semana inteira</h3>
@@ -998,7 +1087,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
       </figcaption>
     </figure>
     <figure class="fr">
-      <img src="assets/app-mock-menu.webp" alt="App ao lado de um drink no balcão vermelho, com o cardápio" loading="lazy" decoding="async">
+      <img src="assets/app-mock-menu.webp" alt="iPhone com o cardápio, num set vermelho" loading="lazy" decoding="async">
       <figcaption class="blk ink cap">
         <p class="eyebrow">O app · Menu</p>
         <h3 class="h3">A carta na mão</h3>
@@ -1006,7 +1095,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
       </figcaption>
     </figure>
     <figure class="fr">
-      <img src="assets/app-mock-estadia.webp" alt="App no rooftop ao anoitecer, com os quartos do hotel" loading="lazy" decoding="async">
+      <img src="assets/app-mock-estadia.webp" alt="Mão segurando o iPhone com os quartos do hotel, em fundo preto" loading="lazy" decoding="async">
       <figcaption class="blk ink cap">
         <p class="eyebrow">O app · Estadia</p>
         <h3 class="h3">Uma noite que tem quarto</h3>
@@ -1014,7 +1103,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
       </figcaption>
     </figure>
     <figure class="fr">
-      <img src="assets/app-mock-carteira.webp" alt="App na entrada do CLUBE, com o cartão de membro" loading="lazy" decoding="async">
+      <img src="assets/app-mock-carteira.webp" alt="iPhone com o cartão de membro, sobre um bloco de travertino" loading="lazy" decoding="async">
       <figcaption class="blk ink cap">
         <p class="eyebrow">O app · Carteira</p>
         <h3 class="h3">O cartão é a chave</h3>
@@ -1025,6 +1114,25 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
     <button type="button" class="arw prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
     <button type="button" class="arw next" aria-label="Próxima foto"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
     <div class="count"><span class="n"><b>01</b> / 05</span><span class="ticks"><i class="on" data-go="0"></i><i data-go="1"></i><i data-go="2"></i><i data-go="3"></i><i data-go="4"></i></span></div>
+</section>
+
+<section class="slide s-applive" id="app-live">
+  <div class="etq">
+    <div><p class="eyebrow">O app · Ao vivo</p><h2 class="h2">Navegue pelo CLUBE</h2></div>
+    <div>
+      <p class="body">Este é o app de verdade. Toque nas abas, veja a programação, abra o cardápio e dê play na Rádio CLUBE.</p>
+      <p class="small muted" style="margin-top:1em"><a href="https://clube-blond.vercel.app/clube" target="_blank" rel="noopener">Abrir em tela cheia ↗</a></p>
+    </div>
+  </div>
+  <div class="palco">
+    <div class="iph">
+      <div class="scr">
+        <iframe data-src="https://clube-blond.vercel.app/clube" title="App do CLUBE, navegável" loading="lazy" allow="autoplay"></iframe>
+        <img class="shot" src="assets/app-mock-agora.webp" alt="">
+      </div>
+      <i class="isl"></i>
+    </div>
+  </div>
 </section>
 
 <!-- INSTAGRAM E PR -->
@@ -1366,7 +1474,7 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   });
 
   // menu
-  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'A pista: LED P1.9 e som de alta fidelidade','galeria-digital':'Next Digital Gallery',mobiliario:'Mobiliário',hotel:'Um clube para se sentir em casa',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
+  var titles={capa:'Capa',clube:'O CLUBE',espaco:'Do bar ao rooftop',dia:'Aberto 24 horas',imersiva:'A sala imersiva','pista-led':'A pista: LED P1.9 e som de alta fidelidade','galeria-digital':'Next Digital Gallery',mobiliario:'Mobiliário',hotel:'Um clube para se sentir em casa',cardhero:'O cartão prata',membership:'O cartão de membro',membros:'Clube de membros',radio:'O app','app-live':'O app ao vivo',social:'Instagram e PR','st-cotas':'Três formas de patrocinar o CLUBE',cotas:'Três cotas',comunicacao:'Presença na comunicação',waves:'Brand Waves',eventos:'Eventos da marca',relacionamento:'A casa da marca',comparativo:'Comparativo das cotas',theforce:'The Force',contato:'Contato'};
   slides.forEach(function(sl){
     var li=document.createElement('li'), a=document.createElement('a');
     a.href='#'+sl.id; a.textContent=titles[sl.id]||sl.id;
@@ -1812,6 +1920,45 @@ body.pdf .s-porta .slot-a,body.pdf .s-porta .slot-b,body.pdf .s-porta .wslot{max
   }
   var tb=null; window.addEventListener('resize',function(){ clearTimeout(tb); tb=setTimeout(tryBuild,200); });
   tryBuild();
+})();
+</script>
+<script>
+/* Rádio CLUBE: a mesma playlist do app, tocando a partir da barra do topo */
+(function(){
+  var box=document.getElementById('radio-bar'); if(!box||document.body.classList.contains('pdf')) return;
+  var au=box.querySelector('audio'), now=box.querySelector('.rb-now'), list=[], i=0;
+  function load(k){ i=(k+list.length)%list.length; var t=list[i]; au.src=t.url; now.textContent=t.artista.trim()+' · '+t.titulo; }
+  function play(){ if(!list.length) return; if(!au.src) load(Math.floor(Math.random()*list.length)); var p=au.play(); if(p&&p.catch) p.catch(function(){}); }
+  fetch('https://clube-blond.vercel.app/radio/playlist.json').then(function(r){return r.json()}).then(function(d){list=d.filter(function(t){return t.url});}).catch(function(){box.style.display='none';});
+  box.querySelector('.rb-play').addEventListener('click',function(e){e.stopPropagation(); au.paused?play():au.pause();});
+  box.querySelector('.rb-next').addEventListener('click',function(e){e.stopPropagation(); if(!list.length) return; load(i+1); play();});
+  au.addEventListener('play',function(){box.classList.add('on')});
+  au.addEventListener('pause',function(){box.classList.remove('on')});
+  au.addEventListener('ended',function(){load(i+1); play();});
+})();
+/* app ao vivo: o iframe carrega quando o slide chega e é escalado para a tela do iPhone */
+(function(){
+  var ifr=document.querySelector('.s-applive iframe'); if(!ifr||document.body.classList.contains('pdf')) return;
+  var scr=ifr.parentNode, W=390;
+  function fit(){ var k=scr.clientWidth/W; ifr.style.transform='scale('+k+')'; ifr.style.height=(scr.clientHeight/k)+'px'; }
+  function load(){ if(!ifr.src) ifr.src=ifr.getAttribute('data-src'); fit(); }
+  window.addEventListener('resize',fit);
+  if('IntersectionObserver' in window) new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting) load();});},{rootMargin:'100% 0px'}).observe(document.getElementById('app-live'));
+  else load();
+})();
+/* autoplay dos slideshows: avança sozinho enquanto o slide está na tela; pausa com o mouse em cima */
+(function(){
+  if(document.body.classList.contains('pdf')||window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var EVERY=5000;
+  Array.prototype.forEach.call(document.querySelectorAll('.s-full'),function(sl){
+    var t=0, hover=false;
+    function tick(){ var g=sl._gal; if(!g||hover) return; g.go(g.i>=g.n-1?0:g.i+1); }
+    function start(){ if(!t&&sl._gal) t=setInterval(tick,EVERY); }
+    function stop(){ clearInterval(t); t=0; }
+    sl.addEventListener('mouseenter',function(){hover=true}); sl.addEventListener('mouseleave',function(){hover=false});
+    Array.prototype.forEach.call(sl.querySelectorAll('.arw,.ticks i'),function(b){ b.addEventListener('click',function(){ stop(); start(); }); });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){es.forEach(function(e){ e.isIntersecting&&e.intersectionRatio>.5?start():stop(); });},{threshold:[0,.5,1]}).observe(sl);
+  });
 })();
 </script>
 </body>
